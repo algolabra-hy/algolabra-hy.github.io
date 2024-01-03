@@ -8,7 +8,7 @@ _Tämä ohje on kopio kurssin Ohjelmistotekniikka [Pylint-ohjeesta](https://ohje
 
 Koodin testauksen lisäksi koodin laadun ylläpitäminen on tärkeää. Laadun ylläpitäminen on mahdollista erilaisilla manuaalisilla menetelmillä, kuten laatuvaatimusten dokumentoinnilla ja koodikatselmoinneilla. Monet manuaaliset laadunhallinnan menetelmät osoittautuvat kuitenkin laajoissa ohjelmistoprojekteissa usein turhan aikaavieviksi ja virhealttiiksi. _Staattinen analyysi_ on menetelmä, jonka avulla koodia voidaan analysoida automatisoidusti ilman, että sitä tarvitsee suorittaa. Staattista analyysia hyödynnetään ohjelmistokehityksessä laajasti mm. ohjelmointivirheiden huomaamiseen ja laatutarkistuksien tekemiseen.
 
-Eräs Python-koodin staattisessa analyysissä laajasti käytetty työkalu on [Pylint](https://www.pylint.org/). Pylintin avulla voimme määrittä koodin laadulle erilaisia vaatimuksia ja automatisoidusti tarkastaa, noudattaako tarkastettava koodi näitä sääntöjä.
+Eräs Python-koodin staattisessa analyysissä laajasti käytetty työkalu on [Pylint](https://www.pylint.org/). Pylintin avulla voimme määrittää koodin laadulle erilaisia vaatimuksia ja automatisoidusti tarkastaa, noudattaako tarkastettava koodi näitä sääntöjä.
 
 > Pylint is a tool that checks for errors in Python code, tries to enforce a coding standard and looks for code smells. It can also look for certain type errors, it can recommend suggestions about how particular blocks can be refactored and can offer you details about the code's complexity.
 

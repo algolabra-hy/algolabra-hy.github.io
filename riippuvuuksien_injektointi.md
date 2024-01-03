@@ -5,9 +5,11 @@ inheader: no
 permalink: /riippuvuuksien_injektointi/
 ---
 
+_Nämä ohjeet on kopioitu kurssin [Ohjelmistotuotanto materiaalista](https://ohjelmistotuotanto-hy.github.io/riippuvuuksien_injektointi/)_
+
 Lue ensin <http://jamesshore.com/Blog/Dependency-Injection-Demystified.html>
 
-Alla oleva koodi löytyy gradle-muotoisina projekteina kurssin [tehtävärepositoriosta]({{site.java_exercise_repo_url}}) hakemistosta koodi/viikko1/RiippuvuuksienInjektointi1
+
 
 Seuraavassa yksinkertainen laskin:
 

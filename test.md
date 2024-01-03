@@ -6,12 +6,8 @@ title_long: Unittest
 inheader: no
 ---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
-  <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
-  />
-</a>
 
-_Nämä ohjeet on otettu kurssin Ohjelmistotuotanto [Unittest-ohjeesta](https://ohjelmistotuotanto-hy.github.io/unittest) sivuilta_
+_Nämä ohjeet perustuvat vahvasti kurssin Ohjelmistotuotanto [Unittest-ohjeisiin](https://ohjelmistotuotanto-hy.github.io/unittest)_
 
 Tutustutaan yksikkötestien tekemiseen [unittest](https://docs.python.org/3/library/unittest.html)-sovelluskehyksen avulla. Yksikkötesteissä testauksen kohteena ovat ohjelman pienimmät rakenneosaset eli yksittäiset funktiot sekä luokkien oliot ja niiden metodit.
 
@@ -52,9 +48,11 @@ class Maksukortti:
 
 **HUOM:** Kaikki raha-arvot, kuten maksukortin saldo ja aterioiden hinnat ovat senteissä.
 
-### Tehtävä 1: Alkutoimet
+Käydään läpi yksi tapa tämän luokan testaamiseen [poetryn](/poetry),  [unittestin](https://docs.python.org/3/library/unittest.html) ja [pytestin](https://docs.pytest.org/en/stable/) avulla. 
 
-Luo Labtooliin rekisteröimäsi repositorion hakemistoon _laskarit/viikko2_ hakemisto _maksukortti_. Suorita terminaalissa hakemiston sisällä tuttu, projektin alustamiseen vaadittava komento:
+### Alkutoimet
+
+Ensin luodaan kansio _maksukortti_, jonka sisällä suoritetaan terminaalissa projektin alustamiseen vaadittava komento:
 
 ```bash
 poetry init --python "^3.10"
@@ -68,7 +66,7 @@ Asennetaan projektiin kehityksen aikaiseksi riippuvuudeksi [pytest](https://docs
 poetry add pytest --group dev
 ```
 
-Seuraavaksi muodosta _maksukortti_-hakemistoon seuraava rakenne:
+Seuraavaksi muodostetaan _maksukortti_-hakemistoon seuraava rakenne:
 
 ```
 maksukortti/
@@ -80,8 +78,7 @@ maksukortti/
   ...
 ```
 
-Lisää tiedostoon _src/maksukortti.py_ edellä esitelty `Maksukortti`-luokan koodi.
-
+Ja lisätään tiedostoon _src/maksukortti.py_ edellä esitelty `Maksukortti`-luokan koodi.
 
 Yritetään seuraavaksi suorittaa testejä. Siirrytään virtuaaliympäristöön komennolla `poetry shell`, jonka jälkeen suoritetaan komento `pytest src`. Komennon suorittaminen antaa ymmärtää, ettei yhtään testiä ole suoritettu. Syy on yksinkertaisesti siinä, ettemme ole vielä toteuttaneet yhtään testiä.
 
@@ -286,23 +283,6 @@ def test_kortin_saldo_ei_ylita_maksimiarvoa(self):
     self.assertEqual(str(self.kortti), "Kortilla on rahaa 150.00 euroa")
 ```
 
-### Vapaaehtoinen tehtävä: lisää testejä
-
-Lisää lopuksi maksukortille seuraavat testit:
-
-- Maukkaan lounaan syöminen ei vie saldoa negatiiviseksi, ota tähän mallia testistä `test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi`
-- Negatiivisen summan lataaminen ei muuta kortin saldoa
-- Kortilla pystyy ostamaan edullisen lounaan, kun kortilla rahaa vain edullisen lounaan verran (eli 2.5 euroa)
-- Kortilla pystyy ostamaan maukkaan lounaan, kun kortilla rahaa vain maukkaan lounaan verran (eli 4 euroa)
-
-**HUOM:** On suositeltavaa, että yksi testi testaa vain "yhtä asiaa" kerrallaan. Tee siis jokaisesta ylläolevasta oma testinsä.
-
-**HUOM2:** Kirjoita `assertEqual`-komennot aina siten, että ensimmäisenä parametrina saatu tulos
-ja toisena parametrina on odotettu tulos. Esimerkiksi:
-
-```python
-self.assertEqual(self.kortti.saldo_euroina(), 150.0)
-```
 
 ### Testit ovat toisistaan riippumattomia
 

@@ -5,11 +5,10 @@ inheader: no
 permalink: /riippuvuuksien_injektointi_python/
 ---
 
-## Riippuvuuksien injektointi
+_Nämä ohjeet on kopioitu kurssin [Ohjelmistotuotanto materiaalista](https://ohjelmistotuotanto-hy.github.io/riippuvuuksien_injektointi_python/)_
+
 
 Lue ensin <http://jamesshore.com/Blog/Dependency-Injection-Demystified.html>
-
-Alla oleva koodi löytyy poetry-muotoisena projektina kurssin [tehtävärepositoriosta]({{site.python_exercise_repo_url}}) hakemistosta koodi/viikko1/riippuvuuksien-injektointi-1
 
 Seuraavassa yksinkertainen laskin:
 
