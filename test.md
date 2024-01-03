@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /unittest
-title: UnitTestaaminen
+title: Yksikkö Testaaminen
 title_long: Unittest
 inheader: no
 ---
@@ -11,7 +11,7 @@ inheader: no
   />
 </a>
 
-_Nämä ohjeet on otettu kurssin Ohjelmistotuotanto 2023 [Unittest-ohjeesta](https://ohjelmistotuotanto-hy.github.io/unittest) sivuilta_
+_Nämä ohjeet on otettu kurssin Ohjelmistotuotanto [Unittest-ohjeesta](https://ohjelmistotuotanto-hy.github.io/unittest) sivuilta_
 
 Tutustutaan yksikkötestien tekemiseen [unittest](https://docs.python.org/3/library/unittest.html)-sovelluskehyksen avulla. Yksikkötesteissä testauksen kohteena ovat ohjelman pienimmät rakenneosaset eli yksittäiset funktiot sekä luokkien oliot ja niiden metodit.
 
