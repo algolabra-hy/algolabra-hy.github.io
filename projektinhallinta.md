@@ -22,7 +22,7 @@ Näillä sivuilla on paljon varsinkin [Ohjelmistotuotannon](https://ohjelmistotu
 
 ## Pythonilla tehtävät harjoitustyöt
 - [Poetry](/poetry) on python projektien riippuvuuksien hallintaan kehitetty työkal.
-    - Muutamia petryn asentamiseen ja käyttöön liittyviä yleisiä ongelmia käsitellään [täällä](/ongelmia) olla hyötyä.
+    - Muutamia petryn asentamiseen ja käyttöön liittyviä yleisiä ongelmia käsitellään [täällä](/ongelmia).
 - [Pylint](/pylint) on python koodin stattiseen analysiin tarkoitetty työkalu jonka avulla koodin tason korkeana pitäminen helpottuu. 
 
 {% include typo_instructions.md %}

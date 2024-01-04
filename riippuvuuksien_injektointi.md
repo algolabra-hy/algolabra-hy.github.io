@@ -215,3 +215,5 @@ public class FakeRandom extends Random {
     }
 }
 ``` 
+
+{% include typo_instructions.md %}
