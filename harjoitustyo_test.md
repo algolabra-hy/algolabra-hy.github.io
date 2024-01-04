@@ -10,7 +10,7 @@ Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. Sivut ov
 
 
 ## Yksikkötestaus ja Riippuvuuksien injektointi
-Mikäli yksikkötestaus ei ole entuudestaan tuttua kannattaa ensin lukea Ohjelmistotuotanto kurssin [yksikkötestaus ohjeet](/unittest). Myös materiaali [riippuvuuden injektoinnista pythonille](/riippuvuuksien_injektointi_python) tai [javalle](/riippuvuuksien_injektointi)
+Mikäli yksikkötestaus ei ole entuudestaan tuttua kannattaa ensin lukea Ohjelmistotuotanto kurssin [yksikkötestaus ohjeet](/unittest). Myös materiaalista [riippuvuuden injektoinnista pythonille](/riippuvuuksien_injektointi_python) tai [javalle](/riippuvuuksien_injektointi)
 voi olla hyötyä. Riippuvuuksien injektointi on ohjelmointitekniikka joka tekee testaamisesta helpompaa. 
 
 ## Monimutkaisten algoritmien testauksesta. 
