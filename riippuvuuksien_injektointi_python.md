@@ -161,3 +161,5 @@ class Arpa:
     def randint(self, a, b):
         return 1
 ```
+
+{% include typo_instructions.md %}

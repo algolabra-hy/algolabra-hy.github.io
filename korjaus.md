@@ -2,7 +2,7 @@
 layout: page
 title: Materiaalin Korjaukset
 title_long: 'Korjaukset Materiaaliin'
-inheader: yes
+inheader: no
 permalink: /korjaus/
 ---
 

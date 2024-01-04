@@ -6,17 +6,12 @@ title_long: Gitin käyttö harjoitustyössä
 inheader: no
 ---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
-  <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
-  />
-</a>
-
-_Alkuperäinen ohje: Mika Huttunen ja Silja Polvi_
+_Alkuperäinen ohje: Mika Huttunen ja Silja Polvi joita Jeremias Berg on päivittänyt_
 
 # Aloittaminen
 ÄLÄ käytä Netbeansin tarjoamaa Git-lisäosaa ÄLÄKÄ graafisia ohjelmia. Tähän asti kaikki kurssilla päivän koodaustyönsä menettäneiden ongelmat ovat johtuneet näistä. Käytä aina Linuxissa/OSX:ssä terminaalia tai Windowsissa Git Bashia, ja tee Commitit sekä Pushit käsin.
 
-Kokeile ensin onko git asennettu koneellesi, esim ajamalla komento "git -v" terminaalissa jolloin tulosteen pitäisi musitittaa jotain seuraavanlaista:
+Kokeile ensin onko git asennettu koneellesi, esim ajamalla komento "git -v" terminaalissa jolloin tulosteen pitäisi muistuttaa jotain seuraavanlaista:
 ```  
 jezberg@LM2-500-27156 ~ % git -v 
 git version 2.39.3 (Apple Git-145)
@@ -28,8 +23,7 @@ Tilin luomisen jälkeen voit luoda uuden repositorion ylä oikealla olevan "+" s
 
 ![]({{ "/images/git-0.png" | absolute_url }})
 
-Laita repositorion nimeksi esimerkiksi “harjoitustyö”, harjoitustyösi aihe tai oma nimiehdotuksesi ohjelmalle ** Valitse “Public” ** Valitse ruutu “Initialize this repository with a README”.
-Halutessasi voit myös valita omalle koodauskielellesi sopivan "gitignore" tiedoston (lisää gitigonersta tässä alla)
+Laita repositorion nimeksi esimerkiksi “harjoitustyö”, harjoitustyösi aihe tai oma nimiehdotuksesi ohjelmalle. **Valitse “Public”**. Jos haluat suorittaa kaikki tällä sivulla löytyvät reponhallinta harjoitukset, valitse ruutu “Add a README file”. Halutessasi voit myös valita omalle koodauskielellesi sopivan "gitignore" tiedoston (lisää gitigonersta tässä alla)
 
 ![]({{ "/images/git-1.png" | absolute_url }})
 
@@ -48,10 +42,10 @@ Paina napista "code" ja avautuvasta ponnahdusikkunasta "ssh".
 
 ![]({{ "/images/git-3.png" | absolute_url }})
 
-Kopioi näkyviin tuleva repositorion osoite, joka on suunnilleen muotoa git@github.com:käyttäjätunnuksesi/HarjoitusRepo.git.
+Kopioi näkyviin tuleva repositorion osoite, joka on suunnilleen muotoa git@github.com:käyttäjätunnuksesi/harjoitustyo.git.
 Osoitteen voi kopioida esimerkiksi painamalla osoitteen vieressä olevaa symbolia. 
 
-Avaa komentorivi ja kopioi (cloonaa) reposirotio omalle koneellesi komennolla git clone "osoite"
+Avaa komentorivi ja kopioi (kloonaa) repositorio omalle koneellesi komennolla git clone "osoite"
 ```
 jezberg@LM2-500-27156 Documents % git clone git@github.com:jezberg/harjoitustyo.git
 Cloning into 'harjoitustyo'...
@@ -62,7 +56,7 @@ remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
 Receiving objects: 100% (4/4), done.
 jezberg@LM2-500-27156 Documents % 
 ```
-Mene komentorivillä äsken kloonaamaasi kansioon komennolla ```cd Hharjoitustyo``` tms. Kaikki tiedostot voit listata komennolla ```ls```.
+Mene komentorivillä äsken kloonaamaasi kansioon komennolla ```cd harjoitustyo``` tms. Kaikki tiedostot voit listata komennolla ```ls```.
 Nyt komennolla ls tulisi näkyä tiedosto README.
 ```
 jezberg@LM2-500-27156 Documents % cd harjoitustyo 
@@ -70,6 +64,8 @@ jezberg@LM2-500-27156 harjoitustyo % ls
 README.md
 jezberg@LM2-500-27156 harjoitustyo % 
 ```
+Jos README:tä ei näy, repositorion instantiaatiossa unohtui valita "add a README".
+
 Tämä kansioon lisätään nyt kaikki harjoitustyöhön liittyvät tiedostot joista ne voidaan siirtää Gihubiiin. Harjoitellaan seuraavaksi sen käyttöä kolmella treenillä. 
 
 # Repotreeni 1: Muokkaus
@@ -92,16 +88,16 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 Tästä näet, että viimeisimmän commitin (tallennuksen) jälkeen tiedostoa "README.md" on muokattu. 
-Comittaaksesi (tallentaaksesi) nämä muutokset meidän täytyy (periaattessa)) ensin lisätä muokatut tiedostot comittiin, ja sitten commitata ne jonkun kuvaavan viestin avulla. 
-Kuitenkin, jos haluamme tallentaa kaikki muutokset, voimme käyttää comit kommennon "-a" vipua. Viestin voi suoraan kirjoittaa commit komennon "-m" vivulla. 
+Comittaaksesi (tallentaaksesi) nämä muutokset meidän täytyy (periaattessa) ensin lisätä muokatut tiedostot comittiin, ja sitten commitata ne jonkun kuvaavan viestin avulla. 
+Kuitenkin, jos haluamme tallentaa kaikki muutokset, voimme käyttää commit kommennon "-a" vipua. Viestin voi suoraan kirjoittaa commit komennon "-m" vivulla. 
 ``` 
 jezberg@LM2-500-27156 harjoitustyo % git commit -am "ensi muokkaus"
 [main 1351813] ensi muokkaus
  1 file changed, 3 insertions(+), 1 deletion(-)
 jezberg@LM2-500-27156 harjoitustyo % 
 ```
-Jos tästä kommennosta unohtuu viesti (tässä. "ensi muokkaus") unohtuu, aukeaa editori (vim tain nano) jonne viestin voi kirjoittaa. Jos editorin käyttö ei ole tuttua, siitä voi myös poistua 
-komennolla :q ja antaa commit viestin uudelleen.
+Jos tästä kommennosta unohtuu viesti (tässä "ensi muokkaus"), aukeaa editori (luultavimmin vim tai nano) jonne viestin voi kirjoittaa. Jos editorin käyttö ei ole tuttua, siitä voi myös poistua 
+komennolla :q ja antaa commit käsky uudelleen.
 
 Nyt tekemäsi muokkaukset (README-tiedoston muokkaus) ovat paikallisessa repositoriossasi. Sieltä ne pitää vielä työntää verkossa olevaan Githubin repoosi komennolla git push. 
 ```
@@ -146,13 +142,13 @@ jezberg@LM2-500-27156 harjoitustyo % git commit -m "uusi testitiedosto"
  1 file changed, 1 insertion(+)
  create mode 100644 testikansio/tekstitesti.txt
 ```
-Huomaa, että nyt ei tarvita -a flagia, koska annoimme git add komennon aikaisemmin. Tärkeää on huomata, että -a flagi commit komennon yhteydessä ei lisää uusia tiedostoja, vaan tallentaa
-vain jo lisättyjen tiedostojen muuutokset. TOisin sanottuna, uusien tiedostojen lisäämisen yhteydessä täytyy aina antaa add komento erikseen. 
+Huomaa, että nyt ei tarvita -a flagia, koska annoimme ```git add``` komennon aikaisemmin. Tärkeää on huomata, että -a flagi commit komennon yhteydessä ei lisää uusia tiedostoja, vaan tallentaa
+vain jo lisättyjen tiedostojen muuutokset. Toisin sanottuna, uusien tiedostojen lisäämisen yhteydessä täytyy aina antaa add komento erikseen. 
 
 Anna push-komento (```git push```). Tarkista Githubin nettisivulta, että uusi kansiosi ja sen sisältämä tiedosto ilmestyvät repositorionäkymääsi.
 ![]({{ "/images/git-5.png" | absolute_url }})
 
-Jos haluat lisätä useita tiedostoja kerralla, se onnistuu esimerkiksi komennolla ```git add``` joka lisää nykyisen kansion (.) kaikki uudet tiedostot verisonhallintaan. 
+Jos haluat lisätä useita tiedostoja kerralla, se onnistuu esimerkiksi komennolla ```git add .``` joka lisää nykyisen kansion (.) kaikki uudet tiedostot verisonhallintaan. 
 
 Nyt osaat lisätä Githubiin tiedostoja ja kansioita: add - commit - push! Tee samaan malliin harjoitustyöllesi dokumentaatiokansio ja sinne ensimmäisellä viikolla tarvittava dokumentointi.
 
@@ -170,10 +166,10 @@ remote: Total 11 (delta 1), reused 6 (delta 0), pack-reused 0
 Receiving objects: 100% (11/11), done.
 Resolving deltas: 100% (1/1), done.
 ```
-Klooni luodaan siis muuten kuten kohdassa <a href="/git#repositorion-valmisteleminen-käyttöä-varten">Repositorion valmistelu käyttöä varten</a>, paitsi että nyt kloonikansio nimetään itse.
+Klooni luodaan siis muuten kuten kohdassa <a href="/git#repositorion-valmisteleminen-käyttöä-varten">repositorion valmistelu käyttöä varten</a>, paitsi että nyt kloonikansio nimetään itse.
 Muokkaa alkuperäisessä repossa olevaa tiedostoa README. Anna add-komento, commit-komento ja push-komento alkuperäisessä repositoriokloonikansiossasi, jotta äsken tehty muutos päätyy Githubiin asti.
 ``` 
-jezberg@LM2-500-27156 harjoitustyo % echo "repoharjoitus kolmosen lisäys readmehen" >> README.md 
+jezberg@LM2-500-27156 harjoitustyo % echo " repoharjoitus kolmosen lisäys readmehen\n" >> README.md 
 jezberg@LM2-500-27156 harjoitustyo % git commit -a -m "Harjoituskolme" 
 [main b1ecdc0] Harjoituskolme
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -213,7 +209,7 @@ Fast-forward
 jezberg@LM2-500-27156 varjorepo % cat README.md
 # harjoitustyo
 
-Repotreenin harjoitusrepoharjoitus kolmosen lisäys readmehen
+Repotreenin harjoitus repoharjoitus kolmosen lisäys readmehen
 ``` 
 Huomaat, että README-tiedosto päivittyy niiden muutosten mukaan, jotka teit alkuperäisessä kloonissa! Tarkista tämä vielä varjorepossa olevasta README-tiedostosta.
 

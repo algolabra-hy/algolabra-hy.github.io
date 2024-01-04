@@ -6,11 +6,6 @@ title_long: Harjoitustyön Testaaminen
 inheader: yes
 ---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
-  <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
-  />
-</a>
-
 Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. Sivut ovat vielä rakenteilla ja hyödyllisistä materiaaleista saa mielellään vinkata Jeremiakselle. 
 
 
@@ -21,12 +16,8 @@ voi olla hyötyä. Riippuvuuksien injektointi on ohjelmointitekniikka joka tekee
 ## Monimutkaisten algoritmien testauksesta. 
 Comming soon
 
-
-
-
-
 ## Lisää materiaalia
 - [Pylint](/pylint) on python koodin stattiseen analysiin tarkoitettu työkalu joka helpottaa koodin laadun ylläpitoa. 
 - [Neuroverkkojen testauksesta](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) Sebastian Björkqvistin blogikirjoitus.
 
-
+{% include typo_instructions.md %}

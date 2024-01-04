@@ -11,7 +11,7 @@ Tietoa itse harjoitustyön suoritamiseen liittyvistä asioista löytyy tämänhe
 ## Ihan ensiksi
 1. Tee ensin harjoitustyöllesi repositorio Gihubiin. Jos tämä ei ole entuudestaan tuttua [näistä ohjeista](/git) pitäisi olla apua. 
     - Muista myös [sallia issuet](/git#issuiden-salliminen).
-1. Tämän jälkeen rekisteröidy (Labtooliin)[https://study.cs.helsinki.fi/labtool/]
+1. Tämän jälkeen rekisteröidy [Labtooliin](https://study.cs.helsinki.fi/labtool/)
 
 ## Kurssimateriaalin tekijä ja lisenssi
 

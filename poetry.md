@@ -280,3 +280,5 @@ Kun kaikki toimenpiteet on suoritettu, yritä suorittaa epäonnistunut Poetry-ko
 ### Keyring-ongelma
 
 Jos `poetry install`-komennon suorittaminen pyytää keyring-salasanaa, ongelma pitäisi ratketa suorittamalla terminaalissa `export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring` ja sen jälkeen suorittamalla komento `poetry install` uudestaan. Kyseisen rivin voi laittaa _.bashrc_ (tai vastaavaan) tiedostoon, jotta sitä ei tarvitse suorittaa jokaisen terminaali-istunnon aluksi.
+
+{% include typo_instructions.md %}

@@ -87,3 +87,5 @@ autopep8 --in-place --recursive src
 ```
 
 Koodin formatointi onnistuu myös monissa editoreissa kätevästi yhdellä näppäinkomennolla. Ohje koodin formatointiin Visual Studio Codessa löytyy [täältä](https://code.visualstudio.com/docs/editor/codebasics#_formatting).
+
+{% include typo_instructions.md %}
