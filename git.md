@@ -259,10 +259,9 @@ Voidaksesi saada palautetta sinun täytyy ensin sallia issueiden luomisen alla o
 
 1. Mene repositoriosi
 1. Klikkaa ylhäältä Settings
+   ![]({{ "/images/git-7.png" | absolute_url }})
 1. Settings sivulta ruksita kohta Issues (kts. kuva alta) asetukset tallentuvat automaattisesti
-
-![]({{ "/images/git-7.png" | absolute_url }})
-![]({{ "/images/git-8.png" | absolute_url }})
+   ![]({{ "/images/git-8.png" | absolute_url }})
 
 
 
