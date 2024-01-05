@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /invarianttest
-title: Invariantti Testaus
+title: Invarianttitestaus
 title_long: Invariant
 inheader: no
 ---
