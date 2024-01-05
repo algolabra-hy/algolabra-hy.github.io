@@ -141,25 +141,26 @@ Jos tämä esimerkki tuntuu liian keinotekoiselta voit kuvitella esim. ohjelman 
 virhe on enemmän kuin 15% tai tekoälyn, joka toimii erilailla mikäli se toteaa voittomahdollisuuksiensa olevan yli 83%. 
 
 ## Yksittäisistä Syötteistä Invariantteihin.
-Nähtiin siis tapaus, jossa koodi toimii halutulla tavalla _melkein_ kaikilla syötteillä. Voidaksemme kirjoittaa testin joka huomaa bugin, meidän täytyisi osata arvata syötteet jolla koodi ei toimi. Harjoitustyössä toteutettaville algoritmeille tämä voi olla parhaimillaankin erittäin haastavaa, yleensä mahdotonta. Ykisttäisten syötteiden sijasta tälläisissä tapauksissa kannattaakin testata invariantteja joita metodien tulisi toteuttaa ja luoda mahdolliset syötteet automaattisesti. Englanniksi tätä tekniikka kutsutaan usein invariant tai property testing, ja se liittyy myös läheisesti ns. fuzzaukseen. 
+Nähtiin siis tapaus, jossa koodi toimii halutulla tavalla _melkein_ kaikilla syötteillä. Voidaksemme kirjoittaa testin joka huomaa bugin, meidän täytyisi osata arvata syötteet jolla koodi ei toimi. Harjoitustyössä toteutettaville algoritmeille tämä voi olla parhaimillaankin erittäin haastavaa, yleensä mahdotonta. Yksittäisten syötteiden sijasta tälläisissä tapauksissa kannattaakin testata invariantteja joita metodien tulisi toteuttaa, ja luoda mahdolliset syötteet automaattisesti. Englanniksi tätä tekniikka kutsutaan usein nimellä invariant tai property testing, ja se liittyy myös läheisesti ns. fuzzaukseen. 
 
 Invarianttitestauksessa ideana on, että:
 1. Kuvaillaan kaikki mahdolliset syötteet mitä halutaan testata. 
 1. Tehdään niille jotakin. 
 1. Tarkastetaan tulos.
-Vertaa tätä normaaleihin yksikkötestaukseen jossa: 
+
+Vertaa tätä "normaaliin" yksikkötestaukseen, jossa: 
 1. Valitaan _yksi_ syöte. 
 1. Tehdään sille jotakin.
 1. Tarkastetaan tulos.
 
-Invariantteja testattaessa käytetään usein olemassa olevia kirjastoja, joille voidaan kuvata miten mahdollisia syötteitä luodaan, ja minkä testin jokaisen syötteen pitäisi läpäistä. Kirjasto luo sitten syötteitä sattumanvaraisesti ja ajaa niita testien läpi kunnes joko jokin aikaraja saavutetaan, tai jokin syötteistä ei läpäise testiä. Jälkimmäisessä tapauksessa, invariantti testaukseen tarkoitettu kirjasto usein myös pyrkii heuristisesti pienentämään syötettä joka ei läpäissyt testiä löytääkseen pienimmän mahdollisen jolla testi ei mene läpi. Tämän tarkoituksena on auttaa ihmiskoodaajaa ymmärtämään, miten korjata koodia.
+Invariantteja testattaessa käytetään usein olemassa olevia kirjastoja, joille voidaan kuvata miten mahdollisia syötteitä luodaan, ja minkä testin jokaisen syötteen pitäisi läpäistä. Kirjasto luo sitten syötteitä sattumanvaraisesti ja ajaa niillä testejä läpi kunnes joko jokin raja saavutetaan, tai jokin syötteistä ei läpäise testiä. Jälkimmäisessä tapauksessa invariantti testaukseen tarkoitettu kirjasto usein myös pyrkii heuristisesti pienentämään syötettä joka ei läpäissyt testiä löytääkseen pienimmän mahdollisen jolla testi ei mene läpi. Tämän tarkoituksena on auttaa ihmiskoodaajaa ymmärtämään, miten korjata koodia.
 
 Katsotaan seuraavaksi konkreettisesti invarianttitestien toteuttamista pythonin [hypothesis](https://hypothesis.readthedocs.io/en/latest/#) kirjaston avulla. 
-Lisätään se ensin maksukortti projektiin kehityksen aikaisesksi riippuvuudekksi:
+Lisätään se ensin maksukortti projektiin kehityksen aikaisesksi riippuvuudeksi:
 ```
 jezberg@dhcp-85-175 maksukortti % poetry add hypothesis --group dev 
 ```
-Lisätään testi luokan (maksukorrti_test) alkuun.
+Lisätään testi luokan (maksukortti_test) alkuun.
 ```python
 import hypothesis.strategies as st
 from hypothesis import given
@@ -172,7 +173,7 @@ def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
     kortti.syo_maukkaasti()
     self.assertTrue(kortti.saldo_euroina() == ((arvo - 400) / 100) or arvo < 400)
 ```
-Tässä @given kertoo, mitä parametrin "arvo" mahdollisia syötteitä halutaan testata. Tässä tapauksessa käytetään hypothesis kirjaston omia valmiita [strategioita](https://hypothesis.readthedocs.io/en/latest/data.html) kokonaislukujen (ingetereiden) luomiseen. Tässä normaali strategiaan lisätään, että halutaan testata kaikkia arvoja 0an ja 15000 (kortin maksimiarvon) välillä. Ts. @given määrittelee, että seuraavassa testissä parametri "arvo" on jokin kokonaisluku välillä 0 ja 15000. 
+Tässä @given kertoo, mitä parametrin "arvo" mahdollisia arvoja halutaan testata. Tässä tapauksessa käytetään hypothesis kirjaston omia valmiita [strategioita](https://hypothesis.readthedocs.io/en/latest/data.html) kokonaislukujen (ingetereiden) luomiseen. Tässä normaali strategiaan lisätään, että halutaan testata kaikkia arvoja 0an ja 15000 (kortin maksimiarvon) välillä. Ts. @given määrittelee, että seuraavassa testissä parametri "arvo" on jokin kokonaisluku välillä 0 ja 15000. 
 Tätä seuraava testi oleellisesti testaa invarianttia "jos kortilla on arvoa yli 400 senttiä, niin tällöin metodin ```syo_maukkaasti``` kutsuminen vähentää arvoa 400:lla. 
 
 Kokeillaan testejä (muista käynnistää virtuaaliympäristö):
@@ -200,7 +201,7 @@ Kun verrataan [aiempaan reporttiin](http://localhost:4000/unittest#visuaalisempi
 huomataan, että haarakattavuutemme on parempi. Eritysesti, nykyisen rivin 18 (aiemman rivin 15) haarasta testataan nyt molemmat tapaukset. 
 Tämä johtuu siitä, että juuri kirjoittamamme testi kokeilee myös arvoja jotka ovat alle 4 euroa, kun aiemmat testit kutsuvat ```syo_maukkaasti``` metodia vain kun kortilla on 10 euroa. 
 
-Haarakattavuuden mielessä nämä testit ovat siis parempia ja testaavat suurempaa osaa koodista. Tämän lisäki toivottu invariantti tuntuu pitävän. Vielä tämäkään ei kuitenkaan riitä. Ongelmana on, että testimme hylkää täsmälleen yhden yhteensä 150000 mahdollisesta arvosta ja normaaleilla asetuksilla hypotheis kirjasto kokeilee vain [100 eri sattumanvaraisesti valittua](https://hypothesis.readthedocs.io/en/latest/settings.html#hypothesis.settings.max_examples). Jos ajaisimme testejä tarpeeksi monta kertaa, lopulta hypothesis voisi sattumalta valita arvon 1337, meilä ei kuitenkaan ole mitään takuita siitä monta kertaa täytyy ajaa. Toisin sanoen invarianttitestit eivät vielä itsessään täysin takaa koodin toimivuutta. Moninmutkaisten algoritmien testaaminen vaatii siis edelleenkin hyvää ymmärrystä algoritmista ja sen toivotusta toiminnasta 
+Haarakattavuuden mielessä nämä testit ovat siis parempia ja testaavat suurempaa osaa koodista. Tämän lisäki toivottu invariantti tuntuu pitävän. Vielä tämäkään ei kuitenkaan riitä. Ongelmana on, että testimme hylkää täsmälleen yhden yhteensä 150000 mahdollisesta arvosta ja normaaleilla asetuksilla hypotheis kirjasto ajaa jokaisen testin vain [100 kertaa](https://hypothesis.readthedocs.io/en/latest/settings.html#hypothesis.settings.max_examples) eri, sattumanvaraisesti valituilla, arvoilla. Jos ajaisimme testejä tarpeeksi monta kertaa, lopulta hypothesis voisi sattumalta valita arvon 1337 jolloin testit hylkäisivät. Meillä ei kuitenkaan ole mitään takuita siitä monta kertaa täytyy ajaa. Toisin sanoen invarianttitestit eivät vielä itsessään täysin takaa koodin toimivuutta. Moninmutkaisten algoritmien testaaminen vaatii siis edelleenkin hyvää ymmärrystä algoritmista ja sen toivotusta toiminnasta 
 
 ## Miten Parannetaan? 
 
@@ -262,7 +263,7 @@ E           /Library/Developer/CommandLineTools/Library/Frameworks/Python3.frame
 FAILED src/tests/maksukortti_test.py::TestMaksukortti::test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis - AssertionError: False is not true
 ========================================== 1 failed, 6 passed in 3.22s ==========================================
 ```
-Nyt saatiin mitä haluttiin, hypotheis kertoo, että yksi testi epäonnistui, ja myöäs että se epäonnistui silloin kun muuttuja arvo on 1337, eli aivan kuten odotimmekin. 
+Nyt saatiin mitä haluttiin, hypotheis kertoo, että yksi testi epäonnistui, ja myös että se epäonnistui silloin kun muuttuja arvo on 1337, eli aivan kuten odotimmekin. 
 
 # Lisätään Yksikkötestejä
 Jos ajoit edellisen testin itse, huomasit että siihen meni (verattaessa aiempaan) melko paljon aikaa. Tämä johtuu yksinkertaisesti siitä, että viimeinen testi ajettiin yhteensä 15000 kertaa. Tämä oin useamman arvon testaamisen heikkous, vaikeita metodeja voi olla aivan liian hidasta testata näin perusteellisesti aina kun ajetaan testejä. Tilanne pahenee edelleen jos halutaan testata ei vakioaikaisia metodeja. 
@@ -339,7 +340,7 @@ Invarianttitestaus automatisoi joitain osia testauksesta ja helpottaa bugien lö
 - [Hypothesis](https://hypothesis.readthedocs.io/en/latest/#) kirjaston oma dokumentaatio.
 - [Jqwik](https://jqwik.net/) on javalle tehty samanlainen kirjasto. 
 - [Junit-quickcheck](https://github.com/pholser/junit-quickcheck) on otinen Junit testikirjastoa muistuttava java kirjasto jolla tälläinen testaaminen onnistuu.
-    - Molempien näiden nimet viittaavat [Haskelin Quickcheck](https://hackage.haskell.org/package/QuickCheck) kirjastoon.
+- [Haskelin Quickcheck](https://hackage.haskell.org/package/QuickCheck) kirjasto on inspiroinut paljon olemassa olevista kirjastoista.
 - [Tutoriaali](https://www.inspiredpython.com/course/testing-with-hypothesis/testing-your-python-code-with-hypothesis) hypothesiksen käytöstä Mickey Petersenin kirjoittmana. 
 
 {% include typo_instructions.md %}
