@@ -21,11 +21,11 @@ Mikäli saat virheimoituksen (esim "command not found"), asenna ensin git esim [
 Gitin asentamisen jälkeen, luo seuraavaksi [Github](https://github.com/) tili (personal, ei enterprise).
 Tilin luomisen jälkeen voit luoda uuden repositorion ylä oikealla olevan "+" symbolin alla löytyvän "create repository" napin avulla. 
 
-![]({{ "/images/git-0.png" | absolute_url }})
+![]({{ "images/git-0.png" | absolute_url }})
 
 Laita repositorion nimeksi esimerkiksi “harjoitustyö”, harjoitustyösi aihe tai oma nimiehdotuksesi ohjelmalle. **Valitse “Public”**. Jos haluat suorittaa kaikki tällä sivulla löytyvät reponhallinta harjoitukset, valitse ruutu “Add a README file”. Halutessasi voit myös valita omalle koodauskielellesi sopivan "gitignore" tiedoston (lisää gitigonersta tässä alla)
 
-![]({{ "/images/git-1.png" | absolute_url }})
+![]({{ "images/git-1.png" | absolute_url }})
 
 
 ## SSH-avaimen luominen omalla koneella
@@ -36,11 +36,11 @@ Katso ohje [tästä](https://docs.github.com/en/authentication/connecting-to-git
 
 Hankkiudu Githubin sivulla luomasi repositorion näkymään. Sinne pääsee vaikkapa etusivulta kun olet kirjautunut, klikkaamalla repositorion nimeä.
 
-![]({{ "/images/git-2.png" | absolute_url }})
+![]({{ "images/git-2.png" | absolute_url }})
 
 Paina napista "code" ja avautuvasta ponnahdusikkunasta "ssh". 
 
-![]({{ "/images/git-3.png" | absolute_url }})
+![]({{ "images/git-3.png" | absolute_url }})
 
 Kopioi näkyviin tuleva repositorion osoite, joka on suunnilleen muotoa git@github.com:käyttäjätunnuksesi/harjoitustyo.git.
 Osoitteen voi kopioida esimerkiksi painamalla osoitteen vieressä olevaa symbolia. 
@@ -72,7 +72,7 @@ Tämä kansioon lisätään nyt kaikki harjoitustyöhön liittyvät tiedostot jo
 Varmista, että olet komentorivillä repositoriokansiossasi
 Avaa README-tiedosto millä tekstieditorilla haluat.
 Kirjoita tiedostoon jotakin ja tallenna se. 
-![]({{ "/images/git-4.png" | absolute_url }})
+![]({{ "images/git-4.png" | absolute_url }})
 
 Anna komentorivillä komento git status. Nyt näet luettelon tiedostoista, joita olet muokannut (modified), tässä tapauksessa README-tiedosto.
 ```
@@ -115,7 +115,7 @@ To github.com:jezberg/harjoitustyo.git
 Jos git push sanoo “Permission denied (publickey)”, kokeile ssh-avaimen generointia uudestaan tai komentoa ssh-add
 
 Mene Githubin sivulla olevaan repositoriosi näkymään (kuten edellisen ohjeen kohdassa 1) ja päivitä näkymä. Huomaat, että README-tiedostoon tekemäsi muokkaukset ovat nyt Githubissa asti, antamasi viestin kera!
-![]({{ "/images/git-5.png" | absolute_url }})
+![]({{ "images/git-5.png" | absolute_url }})
 
 
 # Repotreeni 2: Tiedoston lisäys
@@ -259,9 +259,9 @@ Voidaksesi saada palautetta sinun täytyy ensin sallia issueiden luomisen alla o
 
 1. Mene repositoriosi
 1. Klikkaa ylhäältä Settings
-   ![]({{ "/images/git-7.png" | absolute_url }})
+   ![]({{ "images/git-7.png" | absolute_url }})
 1. Settings sivulta ruksita kohta Issues (kts. kuva alta) asetukset tallentuvat automaattisesti
-   ![]({{ "/images/git-8.png" | absolute_url }})
+   ![]({{ "images/git-8.png" | absolute_url }})
 
 
 
