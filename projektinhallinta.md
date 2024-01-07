@@ -21,7 +21,7 @@ Näillä sivuilla on paljon varsinkin [Ohjelmistotuotannon](https://ohjelmistotu
 - [Gradle](/gradle/) on lähinnä javalle tarkoitettu työkalu joka automatisoi ohjelman kääntämiseen ja testaamiseen liittyviä tehtäviä. Gradlea voi (periaatteessa) käyttää [python kehitykseen](https://github.com/PrzemyslawSwiderski/python-gradle-plugin). Suosittelemme kuitenkin poetrya. 
 
 ## Pythonilla tehtävät harjoitustyöt
-- [Poetry](/poetry) on python projektien riippuvuuksien hallintaan kehitetty työkal.
+- [Poetry](/poetry) on python projektien riippuvuuksien hallintaan kehitetty työkalu.
     - Muutamia petryn asentamiseen ja käyttöön liittyviä yleisiä ongelmia käsitellään [täällä](/ongelmia).
 - [Pylint](/pylint) on python koodin stattiseen analysiin tarkoitetty työkalu jonka avulla koodin tason korkeana pitäminen helpottuu. 
 

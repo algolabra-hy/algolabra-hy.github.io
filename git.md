@@ -264,4 +264,7 @@ Voidaksesi saada palautetta sinun täytyy ensin sallia issueiden luomisen alla o
    ![]({{ "/images/git-8.png" | absolute_url }})
 
 
+{% include typo_instructions.md %}
+
+
 
