@@ -13,5 +13,8 @@ Suosittelemme kuitenkin, että katsot vain projekteija joiden aihe on eri kuin o
 Nämä sivut päivittyvät pikkuhiljaa, pyydämme eriksen lupaa harjoitustöiden esittelemiseen näillä sivuilla. 
 
 ## Esimerkkejä harjoitustöitä
-- Kalle Saunamäen [pakkausalgoritmien vertailu](https://github.com/ksaunamaki/tiralabra) (C#)
+- Kalle Saunamäki [pakkausalgoritmien vertailu](https://github.com/ksaunamaki/tiralabra) (C#)
 - Reetta Ylitalo [RSA](https://github.com/ylireetta/tiralabra-rsa) (Java)
+
+
+{% include typo_instructions.md %}
