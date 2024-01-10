@@ -20,7 +20,11 @@ Harjoitustyössä toteutetaan monimutkaisia algoritmeja. Näiden testaaminen voi
 - Pakkausalgoritmin oikeelisuuteen ei riitä, että purettu tiedosto on sama kuin pakattu. Tämän lisäksi esim pakatun tiedoston koon täytyy olla odotuksien mukainen. 
 - Neuroverkkojen oikeellisuuden testaamiseen ei riitä, että verkko klassifioi jonkun yksittäisen esimerkkitapauksen oikein. Sen sijaan täytyy testata toimiiko backpropagation oikein? Pieneneekö virhe jokaisella inputilla? Voiko yhden kokoisen treenisetin saada 0 erroriin? Lue lisää [Sebastian Björkqvistin blogista](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/).
 
-Monimutkaisille algoritmeille voi olla vaikea keksiä kuvaavia esimerkkisyötteitä joita testata. Voimmeko olla varmoja, että esimerkkisyötteemme testaavat kaikki haarat? Entä jos koodimme bugaa vain yli tuhannen kokoisilla syötteillä? Yksi tapa (ainakin osittain) lisätä testiemme luotettavuutta on ns. [invariantti testaus](/invarianttest).
+Monimutkaisille algoritmeille voi olla vaikea keksiä kuvaavia esimerkkisyötteitä joita testata. Voimmeko olla varmoja, että esimerkkisyötteemme testaavat kaikki haarat? Entä jos koodimme bugaa vain yli tuhannen kokoisilla syötteillä? 
+
+Kaksi hieman kehittyneempä testaustapaa jolla voi saada kiinni monimutkaisempia bugeja on
+- [Invarianttitestaus](/invarianttest), ja
+- [Suorituskykkytestaus](performancetest)
 
 **Huom** Verrattuna yksikkötesteihin, monimutkaisempien ominaisuuksien oikeellisuus- ja suorituskyvyn testit voivat kestää melko kauan. Niinpä niitä ei välttämättä kannata ajaa yksikkötestien kanssa joka kerralla. Sen sijaan testeistä kannattaa laittaa muutama edustava (esim automaattisesti löydetty) tapaus yksikkötesteihin ja ajaa loput erillisenä testiohjelmalla. Toisin sanoen, harjoitustyössä tarvitaan *sekä* yksikkötestejä, että monimutkaisempia testejä. 
 

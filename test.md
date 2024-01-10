@@ -414,7 +414,6 @@ Raportista näemme, että koko koodin haaraumakattavuus on 90%. Yksittäisen tie
 
 ![]({{ "/images/unittest.png" | absolute_url }})
 
-![](/assets/images/python/coverage-tiedosto.png)
 
 Kuvan tilanteessa kaksi if-ehtoa eivät koskaan saaneet arvoa `True`, joten kyseisiä haaroja ei testeissä käsitelty.
 

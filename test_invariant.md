@@ -345,6 +345,6 @@ Invarianttitestaus automatisoi joitain osia testauksesta ja helpottaa bugien lö
 - [Jqwik](https://jqwik.net/) on javalle tehty samanlainen kirjasto. 
 - [Junit-quickcheck](https://github.com/pholser/junit-quickcheck) on otinen Junit testikirjastoa muistuttava java kirjasto jolla tälläinen testaaminen onnistuu.
 - [Haskelin Quickcheck](https://hackage.haskell.org/package/QuickCheck) kirjasto on inspiroinut paljon olemassa olevista kirjastoista.
-- [Tutoriaali](https://www.inspiredpython.com/course/testing-with-hypothesis/testing-your-python-code-with-hypothesis) hypothesiksen käytöstä Mickey Petersenin kirjoittmana. 
+- [Tutoriaali](https://www.inspiredpython.com/course/testing-with-hypothesis/testing-your-python-code-with-hypothesis) hypothesiksen käytöstä Mickey Petersenin kirjoittamana. 
 
 {% include typo_instructions.md %}
