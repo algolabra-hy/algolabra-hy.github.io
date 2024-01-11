@@ -97,7 +97,7 @@ Kuten osa jo varmaan on huomannut, tämä implementaatio quicksortista on (keino
 
 ### Vertailu toiseen algoritmiin 
 
-Tira kurssilta tiedetään, että insertionsort algoritmin aikavaativuus on (useimmilla taulukoilla)huonompi kuin quicksortin. Voisimme siis testata oman quicksortimme oikeellisuutta vertaamalla sen ajoaikaa insertionsorttiin. 
+Tira kurssilta tiedetään, että insertionsort algoritmin aikavaativuus on (useimmilla taulukoilla)huonompi kuin quicksortin. Voisimme siis testata oman quicksortimme oikeellisuutta vertaamalla sen ajoaikaa bubblesorttiin. 
 
 Implementoidaan ensin bubblesort sort.py luokkaan (käyttäen [geeksforgeeksin](https://www.geeksforgeeks.org/python-program-for-bubble-sort/) ohjeita inspiraationa)
 
@@ -110,8 +110,8 @@ def bubblesort(taulukko):
                 taulukko[j], taulukko[j + 1] = taulukko[j + 1], taulukko[j]
 ```
 
-Jos quicksorttimme on oikein implementoitu, olettaisimme sen olevan nopeampi kuin bubblesort sort useimilla taulukoille. Pyritään seuraavaksi luomaan testi joka mittaa tätä. 
-Apuna metodien ajanottoon käytetään ```timeit``` kirjastoa. Muista lisätä se riippuvuudeksi projektiin. Ensimmäinen yritys testistä on seuraavanlainen:
+Jos quicksorttimme on oikein implementoitu, olettaisimme sen olevan nopeampi kuin bubblesort useimilla taulukoille. Pyritään seuraavaksi luomaan testi joka mittaa tätä. 
+Apuna metodien ajanottoon käytetään ```timeit``` kirjastoa. Ensimmäinen yritys testistä on seuraavanlainen:
 ```python
     @given(taulukko=st.lists(st.integers()))
     @settings(max_examples=100)
