@@ -11,7 +11,7 @@ _Nämä ohjeet on kirjoittanut Jeremias Berg_
 Käydään tässä läpi, miten ns suorituskykytesteillä voidaan testata asioita, joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta](/unittest) ja [invarianttitestuksesta](/invarianttest) sivuista.
 
 
-## Quicksortin Testaus
+## Quicksortin testaus
 Tarkastellaan seuraava quicksort algoritmin implementointia ja sen testejä. 
 
 ```python
@@ -174,7 +174,7 @@ Edelleen testi ei mene läpi. Tässä testissä kuitenkin edelleen vastaesimerkk
 vielä uskoa, että koodisamme olisi jotain vialla. 
  
 
-### Tarkempi Testi
+### Tarkempi testi
 Vaihdetaan taktiikkaa ja testataan invarianttia: "suurimalla osalla listoista jotka ovat epäjärjestyksessä quicksort on insertionsorttia nopeampi". Nyt pitäisi kuitenkin päättää, miten mitataan taulukon epäjärjestystä. Aloitetaan testillä joka järjestää 
 suuren määrän taulukoita ja testaa invarianttia: "suurimmalla osalla taulukoista quicksort on bubblesorttia nopeampi"
 ```python    
@@ -315,7 +315,7 @@ FAILED src/tests/sort_test.py::TestSort::test_quicksort_on_useimmiten_nopeampi_k
 ```
 Näyttää paremmalta, testi ei mene läpi ja tällä kerralla hypothesis löytää esimerkin jolla olettaisimme, että quicksort on insertion sorttia nopeampi. Nyt pitäisi herätä huoli siitä, että koodissamme on tosiaan jotain väärin. 
 
-## Korjataan Quicksort
+## Korjataan quicksort
 Testin perusteella alamme siis etsimään bugia. Onneksi keinotekoisesti lisätyt bugit on helppo korjata. Valitaan pivotti "sattumanvaraisesti" olemaan osataulukon ensimmäinen alkio. 
 ```python
 def quicksort_oikein_implementoitu(taulukko):
