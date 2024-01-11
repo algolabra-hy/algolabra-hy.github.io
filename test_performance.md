@@ -200,7 +200,7 @@ Kokeillaan:
 ```
 FAILED src/tests/sort_test.py::TestSort::test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort - hypothesis.errors.Flaky: Hypothesis test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort(self=<tests.sort_test.TestSort testMethod=test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort>, taulukko_lista=[[], [], []]) produces unreli...
 ```
-Hmm, ei vieläkään mitä haluttiin. Hypothesis ilmoittaa että testin tulokset heittävät. Kun hypothesis löytää esimerkin jolla testi ei mene läpi, se yrittää pienentää syötettä ppitämällä virheen. Tämä virheilmoitus sanoo, että kutsuttaessa testiä moneen kertaan tulokset vaihtelevat. Tämä johtuu siitä, että ajanmittaus on epädeterminististä. 
+Hmm, ei vieläkään mitä haluttiin. Hypothesis ilmoittaa että testin tulokset heittävät. Kun hypothesis löytää esimerkin jolla testi ei mene läpi, se yrittää pienentää syötettä siten, että virhe pysyy. Tämä virheilmoitus sanoo, että kutsuttaessa testiä moneen kertaan tulokset vaihtelevat. Tämä johtuu siitä, että ajanmittaus on epädeterminististä. 
 
 Pyritään korjaamaan tämä samalla lailla kuin aikaisemmin, lisätään timeitmetodin number parametri olemaan 10. 
 ```python
