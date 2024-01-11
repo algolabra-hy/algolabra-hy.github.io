@@ -8,10 +8,10 @@ inheader: no
 _Nämä ohjeet on kirjoittanut Jeremias Berg_
 
 
-Käydään tässä läpi vielä, miten suorituskykytesteillä voidaan saada kiinni bugjea joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta](/unittest) ja [invarianttitestuksesta](/invarianttest).
+Käydään tässä läpi, miten ns suorituskykytesteillä voidaan testata asioita, joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta](/unittest) ja [invarianttitestuksesta](/invarianttest) sivuista.
 
 
-### Quicksort ja sen testit
+## Quicksortin Testaus
 Tarkastellaan seuraava quicksort algoritmin implementointia ja sen testejä. 
 
 ```python
@@ -31,7 +31,7 @@ def quicksort_vaarin_implementoitu(taulukko):
         oikea = [x for x in taulukko[1:] if x >= pivot]
         return quicksort_vaarin_implementoitu(vasen) + [pivot] + quicksort_vaarin_implementoitu(oikea)
 ```
-Tässä siis melko simppeli quicksortin implementaatio listcomprehensioneiden avulla, inspiraationa on käytetty [tätä](https://www.geeksforgeeks.org/python-program-for-quicksort/) Geeksfor Geeksin ohjetta. Varmista, että ymmärrät miten algoritmi toimii. 
+Tässä siis melko simppeli quicksortin implementaatio, inspiraationa on käytetty [tätä](https://www.geeksforgeeks.org/python-program-for-quicksort/) Geeksfor Geeksin ohjetta. Varmista, että ymmärrät miten algoritmi toimii. 
 Voit jo nyt miettiä, mikä bugi tässä implementaatiossa on. 
 
 Oletetaan, että kunnollisina koodareina olemme tehneet seuraavat testit:
@@ -90,12 +90,12 @@ Ja tarkastetaan kattavuus
 
 Eli toisin sanoen, voimme testiemme perusteella todeta, että 15000 eri listalla oma implementaatiomme quicksortista palauttaa saman järjestyksen kuin pythonin oma kirjastojärjestys. Tämän lisäksi testien kattavuus on 100%. Nyt olisi houkuttelevaa todeta, että olemme implementoineet quicksortin oikein. 
 
-## Tehokkuusbugit
+## Suorituskykytestaus
 Kuten osa jo varmaan on huomannut, tämä implementaatio quicksortista on (keinotekoisesti) muokattu olemaan erittäin huono. Koska pivotiksi valitaan aina listan pienin alkio, jokaisessa rekursiivisessa kutsussa osalista vasen on tyhjä, jolloin tämä algoritmin ajoaika on aina neliöllinen listan pituuden suhteen. Tarkastellaan seuraavaksi muutamaa tapaa, millä tämän bugin voisi huomata automatisoiduilla testeillä. 
 
 **Huom** Seuraavassa on tärkeää huomata, että suorituskykytestien suunnitellu on huomattavan paljon haasteellisempaa, kuin [yksikkötestien](/unittest) ja [invarianttitestien](/invarianttest). Tämä johtuu yksinkertaisesti siitä, että koodin ajanotto ei ole determinististä. Saman metodin ajaminen moneen kertaan samalla syötteellä voi kestää eri määrän aikaa, riippuen esim processorin muusta käytöstä. Tämä tarkoittaa, että suorituskykytestien kirjoituksessa täytyy olla tarkkana sen kanssa, että testit todellakin testaavat sitä, mitä on tarkoitus. 
 
-# Vertailu toiseen algoritmiimn 
+### Vertailu toiseen algoritmiin 
 
 Tira kurssilta tiedetään, että insertionsort algoritmin aikavaativuus on (useimmilla taulukoilla)huonompi kuin quicksortin. Voisimme siis testata oman quicksortimme oikeellisuutta vertaamalla sen ajoaikaa insertionsorttiin. 
 
@@ -174,7 +174,7 @@ Edelleen testi ei mene läpi. Tässä testissä kuitenkin edelleen vastaesimerkk
 vielä uskoa, että koodisamme olisi jotain vialla. 
  
 
-# Tarkempi Testi
+### Tarkempi Testi
 Vaihdetaan taktiikkaa ja testataan invarianttia: "suurimalla osalla listoista jotka ovat epäjärjestyksessä quicksort on insertionsorttia nopeampi". Nyt pitäisi kuitenkin päättää, miten mitataan taulukon epäjärjestystä. Aloitetaan testillä joka järjestää 
 suuren määrän taulukoita ja testaa invarianttia: "suurimmalla osalla taulukoista quicksort on bubblesorttia nopeampi"
 ```python    
@@ -198,7 +198,11 @@ Jokainen listan taulukko järjestetään sekä bubblesortilla ja quicksortilla j
 
 Kokeillaan:
 ```
-FAILED src/tests/sort_test.py::TestSort::test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort - hypothesis.errors.Flaky: Hypothesis test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort(self=<tests.sort_test.TestSort testMethod=test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort>, taulukko_lista=[[], [], []]) produces unreli...
+FAILED src/tests/sort_test.py::TestSort::test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort - 
+hypothesis.errors.Flaky: Hypothesis 
+test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort(self=<tests.sort_test.TestSort 
+testMethod=test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort>, 
+taulukko_lista=[[], [], []]) produces unreliable results...
 ```
 Hmm, ei vieläkään mitä haluttiin. Hypothesis ilmoittaa että testin tulokset heittävät. Kun hypothesis löytää esimerkin jolla testi ei mene läpi, se yrittää pienentää syötettä siten, että virhe pysyy. Tämä virheilmoitus sanoo, että kutsuttaessa testiä moneen kertaan tulokset vaihtelevat. Tämä johtuu siitä, että ajanmittaus on epädeterminististä. 
 
@@ -311,7 +315,7 @@ FAILED src/tests/sort_test.py::TestSort::test_quicksort_on_useimmiten_nopeampi_k
 ```
 Näyttää paremmalta, testi ei mene läpi ja tällä kerralla hypothesis löytää esimerkin jolla olettaisimme, että quicksort on insertion sorttia nopeampi. Nyt pitäisi herätä huoli siitä, että koodissamme on tosiaan jotain väärin. 
 
-# Korjataan Quicksort
+## Korjataan Quicksort
 Testin perusteella alamme siis etsimään bugia. Onneksi keinotekoisesti lisätyt bugit on helppo korjata. Valitaan pivotti "sattumanvaraisesti" olemaan osataulukon ensimmäinen alkio. 
 ```python
 def quicksort_oikein_implementoitu(taulukko):
@@ -356,7 +360,7 @@ src/tests/sort_test.py .....                                                    
 Eli tuntuisi toimivan. Olipas kuitenkin haastavaa.... 
 
 
-## Toinen Tapa Testata
+## Toinen tapa testata
 Huomattiin siis, että ajoaikaa mittaavilla testeillä voidaan periaatteessa saada kiinni hienovaraisempia bugeija kuin invariantti ja yksikkötestauksella. Tämä vaatii kuitenkin tarkkuutta ja testien muuttamista hieman epädeterministisiksi. Tässä on omat haasteensa. 
 
 Toinen (ja usein parempi) tapa on miettiä, voiko toivottuja asioita testata deterministisesti ilman ajoajan mittaamista. Järjestysalgoritmien tapauksessa voidaan miettiä, voisiko olla joku toinen (detemrinistinen) parametri joka erottaa bubblesortin ja quicksortin. Tälläinnen löytyy esim miettimällä _miksi_ quicksortin aikavaatimus on yleensä n log n kun bubblesortin on neliöllinen. Kuten tira kurssilta muistetaan, tämä johtuu siitä, että quicksortin ei yleensä tarvitse verrata kaikkia listan alkioita pareittan toisiinsa, sen sijaan jokaisella kierroksella verrataan kaikkia osalistan alkioita pivottiin. Muutetaan siis seuraavaksi 
@@ -364,8 +368,12 @@ sekä bubblesorttiamme ja quick sorttiamme niin, että ne palauttavat myös teht
 
 Jätetään tälläiset testit kotitehtäväksi. 
 
-# Yhteeenveto 
+## Yhteeenveto 
 Verrattuna muihin testityyppeihin, suorituskykytestien suunnittelussa pitää olla tietoinen siitä, että ajannittaus on epädeterminististä. Näimpä testit kannattaa suunnitella niin, että ne sallivat pienen heiton. Huomasimme myös, että hypothesiksen laajemmassa käytössä pitää alkaa olla tarkkana sen kanssa, minkälaista syötettä testataan ja mittaako se todella niitä asioita mitä halutaan. Oikein käytettynä tällä lailla voidaan kuitenkin saada kiinni bugeija joita muilla tekniikoilla ei saa. 
+
+Tärkeä huomio on, että myös monimutkaisemmissa testeissä kannattaa keskittyä yhden asian testaamiseen.
+Näimme, että järkevissä suorituskykytesteissä tarvitaan vähän isompia listoja joissa on "enemmän tekemistä" järjestysalgoritmien 
+kannalta. Rajatapusten, kuten jo järjestetyjen ja tyhjien listojen testaus on kuitenkin oleellista, aikaisemmissa esimerkeissä tät hoitaa testimme ```test_quicksort_jarjestaa_listan_hypothesis``` jolloin tehokkuustestaukseen ei tarvita ihan kaikkia listoja. 
 
 
 Vaikka quicksort ja listan järjestys algoritmit muutenkin ovat harjoitustyötä varten liian helppoja, samoja ideoita voi hyvin soveltaa myös harjoitustyöhön sopivissa aiheissa. Helppo esimerkikki on esimerkiksi reitinhaku algoritmit. Monet reitinhakualgoritmit voivat olla väärin implementoituja, mutta silti palauttaa lyhyimmän reitin. Mieti miten polunetsintäsi pitäis toimia, ja suunnitele testit testaamaan iniitä heuristiikkoja. Polunetsinnässäkään ei tarvitse luottaa ajoaikaan, sen sijaan voit laskea esimerkiksi vierailtujen solmujen määrän.
