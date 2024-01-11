@@ -9,7 +9,7 @@ inheader: yes
 Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. Sivut ovat vielä rakenteilla ja hyödyllisistä materiaaleista saa mielellään vinkata Jeremiakselle. 
 
 
-## Yksikkötestaus ja Riippuvuuksien Injektointi
+## Yksikkötestaus ja riippuvuuksien injektointi
 Mikäli yksikkötestaus ei ole entuudestaan tuttua kannattaa ensin lukea Ohjelmistotuotanto kurssin [yksikkötestaus ohjeet](/unittest). Myös materiaalista [riippuvuuden injektoinnista pythonille](/riippuvuuksien_injektointi_python) tai [javalle](/riippuvuuksien_injektointi)
 voi olla hyötyä. Riippuvuuksien injektointi on ohjelmointitekniikka joka tekee testaamisesta helpompaa. 
 
@@ -22,7 +22,7 @@ Harjoitustyössä toteutetaan monimutkaisia algoritmeja. Näiden testaaminen voi
 
 Monimutkaisille algoritmeille voi olla vaikea keksiä kuvaavia esimerkkisyötteitä joita testata. Voimmeko olla varmoja, että esimerkkisyötteemme testaavat kaikki haarat? Entä jos koodimme bugaa vain yli tuhannen kokoisilla syötteillä? 
 
-Kaksi hieman kehittyneempä testaustapaa jolla voi saada kiinni monimutkaisempia bugeja on
+Kaksi hieman kehittyneempää testaustapaa jolla voi saada kiinni monimutkaisempia bugeja on
 - [Invarianttitestaus](/invarianttest), ja
 - [Suorituskykkytestaus](performancetest)
 
