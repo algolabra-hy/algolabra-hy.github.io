@@ -14,7 +14,7 @@ permalink: /korjaus/
 ## Typoja materiaalissa
 
 Kun huomaat näillä sivuilla kirjoitusvirheitä tai muita heikkouksia, tee korjausehdotus. Kurssimateriaali on repositoriossa
-[https://github.com/algolabra-hy/algolabra-hy.github.io/](https://github.com/algolabra-hy/algolabra-hy.github.io/) tiedostoissa [testaus.md](https://github.com/jezberg/algoLabra) jne.
+[https://github.com/algolabra-hy/algolabra-hy.github.io/](https://github.com/algolabra-hy/algolabra-hy.github.io/). Esimerkiksi tämä sivu löytyy tiedostosta [korjaus.md](https://github.com/algolabra-hy/algolabra-hy.github.io/blob/main/korjaus.md).
 
 Muutosehdotuksen tekeminen aloitetaan painamalla tiedoston _kynä-symbolia_:
 
