@@ -101,7 +101,7 @@ TOTAL                   22      1      8      2    90%
 Simuloidaan seuraavaksi (hieman keinotekoisesti) monimutkaisemman algoritmin testausta. 
 Kuvitellaan, että syödessä maukkaasti halutaan tarkastaa jokin monimutkainen ehto, joka varmistaa,
 että syöjällä on tähän oikeudet. Kuvitellaan myös, että tämän ehdon implementoinissa tapahtuu virhe
-jonka seurauksena oikeasti kortit jolla on 1337 senttiä eivät voi syödä maukkaasti. 
+jonka seurauksena kortit jolla on 1337 senttiä eivät voi syödä maukkaasti. 
 
 Lisätään nämä metodit Maksukortti luokkaan:
 ```python
@@ -135,10 +135,10 @@ Huomaamme, että testien kattavuus on itse asiassa lisääntynyt. Syy tähän on
 
 **Huom.** Tässä keinotekoisessa esimerkissä on toki helppo huomata, että metodia ```monimutkainen_ehto()``` ei testata ja lisätä yksikkötesti joka alustaa kortin juuri 1337 sentillä. 
 Tässä kuitenkin simuloidaan tilannetta, jossa funktion 
-```monimutkainen_ehto()```totuusarvoa on mahdotonta todeta staattisesti etukäteen. Tämän seurauksena 
+```monimutkainen_ehto()``` totuusarvoa on mahdotonta todeta staattisesti etukäteen. Tämän seurauksena 
 emme pysty määrittelemään syöteitä yksikkötestille joka varmasti saisi sen palauttamaan sekä true, että false. 
 Jos tämä esimerkki tuntuu liian keinotekoiselta voit kuvitella esim. ohjelman joka tekee jotain erilailla jos jonkun neuroverkon 
-virhe on enemmän kuin 15% tai tekoälyn, joka toimii erilailla mikäli se toteaa voittomahdollisuuksiensa olevan yli 83%. 
+virhe on enemmän kuin 15%, tai tekoälyn, joka toimii erilailla mikäli se toteaa voittomahdollisuuksiensa olevan yli 83%. 
 
 ## Yksittäisistä Syötteistä Invariantteihin.
 Nähtiin siis tapaus, jossa koodi toimii halutulla tavalla _melkein_ kaikilla syötteillä. Voidaksemme kirjoittaa testin joka huomaa bugin, meidän täytyisi osata arvata syötteet jolla koodi ei toimi. Harjoitustyössä toteutettaville algoritmeille tämä voi olla parhaimillaankin erittäin haastavaa, yleensä mahdotonta. Yksittäisten syötteiden sijasta tälläisissä tapauksissa kannattaakin testata invariantteja joita metodien tulisi toteuttaa, ja luoda mahdolliset syötteet automaattisesti. Englanniksi tätä tekniikka kutsutaan usein nimellä invariant tai property testing, ja se liittyy myös läheisesti ns. fuzzaukseen. 
@@ -266,7 +266,7 @@ FAILED src/tests/maksukortti_test.py::TestMaksukortti::test_syo_maukkaasti_vahen
 Nyt saatiin mitä haluttiin, hypotheis kertoo, että yksi testi epäonnistui, ja myös että se epäonnistui silloin kun muuttuja arvo on 1337, eli aivan kuten odotimmekin. 
 
 # Lisätään Yksikkötestejä
-Jos ajoit edellisen testin itse, huomasit että siihen meni (verattaessa aiempaan) melko paljon aikaa. Tämä johtuu yksinkertaisesti siitä, että viimeinen testi ajettiin yhteensä 15000 kertaa. Tämä oin useamman arvon testaamisen heikkous, vaikeita metodeja voi olla aivan liian hidasta testata näin perusteellisesti aina kun ajetaan testejä. Tilanne pahenee edelleen jos halutaan testata ei vakioaikaisia metodeja. 
+Jos ajoit edellisen testin itse, huomasit että siihen meni (verattaessa aiempaan) melko paljon aikaa. Tämä johtuu yksinkertaisesti siitä, että viimeinen testi ajettiin yhteensä 15000 kertaa. Tämä on useamman arvon testaamisen heikkous, vaikeita metodeja voi olla aivan liian hidasta testata näin perusteellisesti aina kun ajetaan testejä. Tilanne pahenee edelleen jos metodi jota testataan ei ole vakioaikainen. 
 
 Kuitenkin jos satuttaisiin jollain lailla tietämään, että arvo 1337 on hankala metodille (esim. ajamalla kerran perusteelliset testit), niin voimme pakottaa hypotheis kirjaston aina kokeilemaan ainakin sen arvon. Tämä onnistuu @example lisäyksellä:
 ```python
@@ -282,7 +282,7 @@ def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
     kortti.syo_maukkaasti()
     self.assertTrue(kortti.saldo_euroina() == ((arvo - 400) / 100) or arvo < 400)
 ```
-Huomaa, että poistimme aikaisemmin lisätyn setting käskyn. Täten hypothesis kokeilee vain 100 eri arvoa, jonkas ei pitäisi kestää niin kauaa. Kuitenkin @example lisäyksen takia, yksi näistä arvoista on varmasti 1337.
+Huomaa, että poistimme aikaisemmin lisätyn setting käskyn. Täten hypothesis kokeilee vain 100 eri arvoa, jonka ei pitäisi kestää niin kauaa. Kuitenkin @example lisäyksen takia, yksi näistä arvoista on varmasti 1337.
 Kokeillaan:
 ``` 
 (maksukortti-py3.9) jezberg@dhcp-85-175 maksukortti % pytest src
@@ -319,7 +319,7 @@ FAILED src/tests/maksukortti_test.py::TestMaksukortti::test_syo_maukkaasti_vahen
 ```
 Eli testi ei mene läpi, eikä kestäkään niin kauaa enää,.
 
-*Huom* Yleisessä tapauksessa invariantti testejä ei siis kannata ajaa kaikille mahdollisille syötteille, tämä veisi aivan liian kauan. Sen sijaan niitä kannattaa ajaa _tarpeeksi monelle_ arvolle vähän harvemmin kuin perus yksikkkötestejä. Nämä, vähän hitaammat, testit voi sitten ajaa aina isompien muutosten jälkeen, ja tarpeen mukaan nostaa niistä löydettyjä hankalia syötteitä yksikkötesteihin jotka ajetaan useammin, esimerkiksi @example komennon kautta.
+*Huom* Yleisessä tapauksessa invariantti testejä ei siis kannata ajaa kaikille mahdollisille syötteille, tämä veisi aivan liian kauan. Sen sijaan niitä kannattaa ajaa _tarpeeksi monelle_ arvolle usein. Ja vähän useammalle vähän harvemmin kuin perus yksikkkötestejä. Nämä, vähän hitaammat, testit voi sitten ajaa aina isompien muutosten jälkeen, ja tarpeen mukaan nostaa niistä löydettyjä hankalia syötteitä yksikkötesteihin jotka ajetaan useammin, esimerkiksi @example komennon kautta.
 
 # Testataan Tarkemmin
 Lopuksi voimme myös todeta, että jos sattuisimme tietäämään, että kortin arvot 1300-1400 ovat haassteellisia niin voimme toki käskeä hypothesista testaamaan vain niitä:
@@ -343,8 +343,8 @@ Invarianttitestaus automatisoi joitain osia testauksesta ja helpottaa bugien lö
 ## Lisää materiaalia
 - [Hypothesis](https://hypothesis.readthedocs.io/en/latest/#) kirjaston oma dokumentaatio.
 - [Jqwik](https://jqwik.net/) on javalle tehty samanlainen kirjasto. 
-- [Junit-quickcheck](https://github.com/pholser/junit-quickcheck) on otinen Junit testikirjastoa muistuttava java kirjasto jolla tälläinen testaaminen onnistuu.
-- [Haskelin Quickcheck](https://hackage.haskell.org/package/QuickCheck) kirjasto on inspiroinut paljon olemassa olevista kirjastoista.
+- [Junit-quickcheck](https://github.com/pholser/junit-quickcheck) on toinen Junit testikirjastoa muistuttava java kirjasto jolla tälläinen testaaminen onnistuu.
+- [Haskelin Quickcheck](https://hackage.haskell.org/package/QuickCheck) kirjasto on inspiroinut paljon muita tälläisiä kirjastoja.
 - [Tutoriaali](https://www.inspiredpython.com/course/testing-with-hypothesis/testing-your-python-code-with-hypothesis) hypothesiksen käytöstä Mickey Petersenin kirjoittamana. 
 
 {% include typo_instructions.md %}
