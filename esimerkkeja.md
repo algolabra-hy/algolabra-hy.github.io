@@ -10,7 +10,7 @@ Näille sivulle kerätään esimerkkejä aikaisemmin suoritetuista (hyvistä) ha
 Näihin saa tutustua ennen oman projektin aloitusta.
 Suosittelemme kuitenkin, että katsot vain projekteija joiden aihe on eri kuin omasi, muiden koodin tai sisällön esittäminen omanaan ei ole sallittua ja tulkitaan vilpiksi.
 
-Nämä sivut päivittyvät pikkuhiljaa, pyydämme eriksen lupaa harjoitustöiden esittelemiseen näillä sivuilla. 
+Nämä sivut päivittyvät pikkuhiljaa. Pyydämme eriksen lupaa harjoitustöiden esittelemiseen näillä sivuilla. 
 
 ## Esimerkkejä harjoitustöitä
 - Kalle Saunamäki [pakkausalgoritmien vertailu](https://github.com/ksaunamaki/tiralabra) (C#)

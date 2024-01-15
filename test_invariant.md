@@ -96,7 +96,7 @@ src/maksukortti.py      22      1      8      2    90%   15->exit, 20
 TOTAL                   22      1      8      2    90%
 ```
 
-## Monimutkainen maksukortti
+## Monimutkainen Maksukortti
 
 Simuloidaan seuraavaksi (hieman keinotekoisesti) monimutkaisemman algoritmin testausta. 
 Kuvitellaan, että syödessä maukkaasti halutaan tarkastaa jokin monimutkainen ehto, joka varmistaa,
@@ -140,7 +140,7 @@ emme pysty määrittelemään syöteitä yksikkötestille joka varmasti saisi se
 Jos tämä esimerkki tuntuu liian keinotekoiselta voit kuvitella esim. ohjelman joka tekee jotain erilailla jos jonkun neuroverkon 
 virhe on enemmän kuin 15%, tai tekoälyn, joka toimii erilailla mikäli se toteaa voittomahdollisuuksiensa olevan yli 83%. 
 
-## Yksittäisistä Syötteistä Invariantteihin.
+## Yksittäisistä Syötteistä Invariantteihin
 Nähtiin siis tapaus, jossa koodi toimii halutulla tavalla _melkein_ kaikilla syötteillä. Voidaksemme kirjoittaa testin joka huomaa bugin, meidän täytyisi osata arvata syötteet jolla koodi ei toimi. Harjoitustyössä toteutettaville algoritmeille tämä voi olla parhaimillaankin erittäin haastavaa, yleensä mahdotonta. Yksittäisten syötteiden sijasta tälläisissä tapauksissa kannattaakin testata invariantteja joita metodien tulisi toteuttaa, ja luoda mahdolliset syötteet automaattisesti. Englanniksi tätä tekniikka kutsutaan usein nimellä invariant tai property testing, ja se liittyy myös läheisesti ns. fuzzaukseen. 
 
 Invarianttitestauksessa ideana on, että:
