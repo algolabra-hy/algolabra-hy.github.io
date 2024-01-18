@@ -7,8 +7,7 @@ inheader: yes
 ---
 
 Näille sivulle kerätään esimerkkejä aikaisemmin suoritetuista (hyvistä) harjoitustöistä. 
-Näihin saa tutustua ennen oman projektin aloitusta.
-Suosittelemme kuitenkin, että katsot vain projekteija joiden aihe on eri kuin omasi, muiden koodin tai sisällön esittäminen omanaan ei ole sallittua ja tulkitaan vilpiksi.
+Näihin saa tutustua ennen oman projektin aloitusta. Huomaa kuitenkin, että muiden koodin tai sisällön esittäminen omanaan ei ole sallittua ja tulkitaan vilpiksi.
 
 Nämä sivut päivittyvät pikkuhiljaa. Pyydämme eriksen lupaa harjoitustöiden esittelemiseen näillä sivuilla. 
 
