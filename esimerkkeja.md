@@ -14,6 +14,7 @@ Nämä sivut päivittyvät pikkuhiljaa. Pyydämme eriksen lupaa harjoitustöiden
 ## Esimerkkejä harjoitustöitä
 - Kalle Saunamäki [pakkausalgoritmien vertailu](https://github.com/ksaunamaki/tiralabra) (C#)
 - Reetta Ylitalo [RSA](https://github.com/ylireetta/tiralabra-rsa) (Java)
+- Sari Bäckman [Tieteellinen laskin](https://github.com/sari-bee/tieteellinen_laskin) (Python)
 
 
 {% include typo_instructions.md %}
