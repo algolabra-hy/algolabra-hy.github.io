@@ -322,15 +322,15 @@ Eli tuntuisi toimivan. Olipas kuitenkin haastavaa....
 ## Sanity Check
 Tarkastetaan vielä, mitä käy jos yritämme testata oikein implementoitua quicksorttia lyhyillä listoilla. Toisin sanoen, lisätään ```@example``` komennolla aikaisemmin hylätty lista [0,0] testeihin. 
 ```python    
-    taulukot_aikatesti_isot = st.lists(st.integers(), min_size=50, unique=True)
-    @given(taulukko=taulukot_aikatesti_isot)
-    @example([0,0])
-    @settings(max_examples=100)
-    def test_quicksort_oikea_on_nopeampi_kuin_bubblesort_hypothesis(self, taulukko):
-        kopio = taulukko.copy()
-        bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=10)
-        quicksort_aika = timeit.timeit(lambda: quicksort_oikein_implementoitu(taulukko), number=10)
-        self.assertGreaterEqual(bubblesort_aika, quicksort_aika)
+taulukot_aikatesti_isot = st.lists(st.integers(), min_size=50, unique=True)
+@given(taulukko=taulukot_aikatesti_isot)
+@example([0,0])
+@settings(max_examples=100)
+def test_quicksort_oikea_on_nopeampi_kuin_bubblesort_hypothesis(self, taulukko):
+    kopio = taulukko.copy()
+    bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=10)
+    quicksort_aika = timeit.timeit(lambda: quicksort_oikein_implementoitu(taulukko), number=10)
+    self.assertGreaterEqual(bubblesort_aika, quicksort_aika)
 ```
 
 Kokeillaan:
@@ -394,7 +394,7 @@ Jätetään tämän tutkiminen kotitehtäväksi.
 Verrattuna muihin testityyppeihin, suorituskykytestien suunnittelussa pitää olla tietoinen siitä, että ajannittaus on epädeterminististä. Näimpä testit kannattaa suunnitella niin, että ne sallivat pienen heiton. Huomasimme myös, että hypothesiksen laajemmassa käytössä pitää alkaa olla tarkkana sen kanssa, minkälaista syötettä testataan ja mittaako se todella niitä asioita mitä halutaan. Oikein käytettynä tällä lailla voidaan kuitenkin saada kiinni bugeja joita muilla tekniikoilla ei saa. 
 
 Tärkeä huomio on, että myös monimutkaisemmissa testeissä kannattaa keskittyä yhden asian testaamiseen.
-Näimme, että järkevissä suorituskykytesteissä tarvitaan vähän isompia listoja joilla järjestysalgoritmeilla on "enemmän tekemistä". Rajatapusten, kuten jo järjestetyjen ja tyhjien listojen testaus on kuitenkin oleellista, aikaisemmissa esimerkeissä tämän hoitaa testimme ```test_quicksort_jarjestaa_listan_hypothesis```. Ei siis kannatta testata sekä oikeellisuutta, että tehokkuutta samalla testillä.  
+Näimme, että järkevissä suorituskykytesteissä tarvitaan vähän isompia listoja joilla järjestysalgoritmeilla on "enemmän tekemistä". Rajatapusten, kuten jo järjestetyjen ja tyhjien listojen testaus on kuitenkin oleellista, aikaisemmissa esimerkeissä tämän hoitaa testimme ```test_quicksort_jarjestaa_listan_hypothesis```. Ei siis kannata testata sekä oikeellisuutta, että tehokkuutta samalla testillä.  
 
 Vaikka quicksort, ja järjestys algoritmit muutenkin, ovat harjoitustyötä varten liian helppoja, samoja ideoita voi hyvin soveltaa myös harjoitustyöhön sopivissa aiheissa. Monet reitinhakualgoritmit voivat olla väärin implementoituja, mutta silti palauttaa lyhyimmän reitin. Mieti miten polunetsintäsi pitäis toimia, ja suunnitele testit testaamaan niitä heuristiikkoja. Polunetsinnässäkään ei tarvitse (välttämättä) luottaa ajoaikaan, sen sijaan voit laskea esimerkiksi vierailtujen solmujen määrän.
 
