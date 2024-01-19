@@ -37,31 +37,13 @@ Voit jo nyt miettiä, mikä bugi tässä implementaatiossa on.
 Oletetaan, että kunnollisina koodareina olemme tehneet seuraavat testit:
 ```python
 import unittest
-
 import hypothesis.strategies as st
 from hypothesis import given , settings , example
-
-
 from sort import quicksort
 
-class TestSort(unittest.TestCase):
-    def test_quick_sort_jarjestaa_listan(self):
-        lista = [1, 7, 4, 1, 10, 9, -2]
-        jarjestetty = quicksort_vaarin_implementoitu(lista)
-        self.assertEqual(jarjestetty, [-2,1,1,4,7,9,10])
-    
-    def test_quicksort_ei_muuta_jarjestettya_listaa(self):
-        lista = [-2, 1, 1, 4, 7, 9, 10]
-        jarjestetty = quicksort_vaarin_implementoitu(lista)
-        self.assertEqual(jarjestetty, lista)
-    
-    def test_quicksort_jarjestaa_kaannety_listan(self):
-        lista = [10, 9,7, 4, 1, 1, -2]
-        jarjestetty = quicksort_vaarin_implementoitu(lista)
-        self.assertEqual(jarjestetty, [-2,1,1,4,7,9,10])
-    
-    
+class TestSort(unittest.TestCase):  
     @given(taulukko=st.lists(st.integers()))
+    @example([10, 9,7, 4, 1, 1, -2], [-2, 1, 1, 4, 7, 9, 10], []) 
     @settings(max_examples=15000)
     def test_quicksort_jarjestaa_listan_hypothesis(self, taulukko):
         kirjasto_jarjestys = sorted(taulukko)
@@ -69,7 +51,7 @@ class TestSort(unittest.TestCase):
         self.assertEqual(oma_jarjestys, kirjasto_jarjestys)
 
 ```
-Tässä siis ensin testataan muutamaa yksittäistä tapausta ja sen jälkeen tehdään vielä invarianttitesti joka testaa, että oman algoritmimme palauttaa listan numerot samassa järjestyksessa kuin pythonin oma järjestysalgorimi. 
+Tässä siis yksi testi joka testaa invarianttia <span style="color:blue">"oma quicksort implementaatiomme laittaa listan saman järjestykseen kuin pythonin kirjaston järjestysalgoritmi"</span>. Tähän testiin on @example komennolla lisätty muutama reunatapaus kuten tyhjä lista, käännetty lista, sekä jo jrjestyksessä oleva lista. 
 
 Kokeillaan testejä (jos projektin alustaminen tuntuu epäselvältä, katso esimerkki [yksikkötestauksen luvusta](/unittest)): 
 ```
@@ -78,11 +60,11 @@ Kokeillaan testejä (jos projektin alustaminen tuntuu epäselvältä, katso esim
 platform darwin -- Python 3.9.6, pytest-7.4.4, pluggy-1.3.0
 rootdir: /Users/jezberg/Documents/teaching/tiralabra/sorttaus
 plugins: hypothesis-6.92.6
-collected 4 items                                                                                          
+collected 1 items                                                                                          
 
 src/tests/sort_test.py ....                                                                          [100%]
 
-============================================ 4 passed in 0.26s =============================================
+============================================ 1 passed in 0.26s =============================================
 Wrote HTML report to htmlcov/index.html
 ```
 Ja tarkastetaan kattavuus
@@ -99,7 +81,7 @@ Kuten osa jo varmaan on huomannut, tämä implementaatio quicksortista on (keino
 
 Tira kurssilta tiedetään, että bubblesort algoritmin aikavaativuus on (useimmilla taulukoilla) huonompi kuin quicksortin. Voisimme siis testata oman quicksortimme oikeellisuutta vertaamalla sen ajoaikaa bubblesorttiin. 
 
-Implementoidaan ensin bubblesort sort.py luokkaan (käyttäen [geeksforgeeksin](https://www.geeksforgeeks.org/python-program-for-bubble-sort/) ohjeita inspiraationa)
+Implementoidaan ensin bubblesort sort.py luokkaan (käyttäen [Geeks for Geeksin](https://www.geeksforgeeks.org/python-program-for-bubble-sort/) ohjeita inspiraationa)
 
 ```python 
 def bubblesort(taulukko):
@@ -113,15 +95,14 @@ def bubblesort(taulukko):
 Jos quicksorttimme on oikein implementoitu, olettaisimme sen olevan nopeampi kuin bubblesort useimilla taulukoille. Pyritään seuraavaksi luomaan testi joka mittaa tätä. 
 Apuna metodien ajanottoon käytetään ```timeit``` kirjastoa. Ensimmäinen yritys testistä on seuraavanlainen:
 ```python
-    taulukot_aikatesti = st.lists(st.integers())
-
-    @given(taulukko=taulukot_aikatesti)
-    @settings(max_examples=100)
-    def test_quicksort_vaara_on_nopeampi_kuin_bubblesort_hypothesis(self, taulukko):
-        kopio = taulukko.copy()
-        bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=1)
-        quicksort_aika = timeit.timeit(lambda: quicksort_vaarin_implementoitu(taulukko), number=10)
-        self.assertGreaterEqual(bubblesort_aika, quicksort_aika)
+taulukot_aikatesti = st.lists(st.integers())
+@given(taulukko=taulukot_aikatesti)
+@settings(max_examples=100)
+def test_quicksort_vaara_on_nopeampi_kuin_bubblesort_hypothesis(self, taulukko):
+    kopio = taulukko.copy()
+    bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=1)
+    quicksort_aika = timeit.timeit(lambda: quicksort_vaarin_implementoitu(taulukko), number=10)
+    self.assertGreaterEqual(bubblesort_aika, quicksort_aika)
 ```
 Tässä ensin luodaan kokeiltavasta taulukosta kopio, ja sen jälkeen kutsutaan timeit metodia joka mittaa, kauanko molempien järjestysalgoritmien ajamiseen menee. Timeit metodi haluaa ensimmäiseksi parametrikseen kutsuttavan metodin, joten teemme ns. nimettömän lambda funktion joka kutsuu järjestysalgoritmia. Timeit funktion parametri ```number``` määrittelee kuinka monta kertaa funktiota kutsutaan ajan mittauksen aikana. Tässä siis kutsutaan kumpaakin järjestysalgoritmia kerran.  
 
@@ -156,7 +137,7 @@ AssertionError: 1.208000000030296e-06 not greater than or equal to 2.458999...
 ========================= 1 failed, 4 passed in 0.20s ==========================
 
 ```
-Tässä siis hypothesis on todennut, että kun kokeillaan listalla [0,0] niin bubblesortilla meni 0.000001208... sekunttia järjestämiseen kun taas quicksortilla 0.0000024....
+Tässä siis hypothesis on todennut, että kun kokeillaan listalla [0,0] niin bubblesortilla meni 0.0000012... sekunttia järjestämiseen kun taas quicksortilla 0.0000024....
 
 Tämän testin luotettavuutta kuitenkin heikentää se, että **ajanmittaus on epädeterminististä**. Timeit metodin ilmoittavat ajoajat ovat niin pieniä, että tulokset voivat hyvinkin riippua kohinasta.
 
@@ -201,19 +182,21 @@ Edellinen testi osoittaa edustavien testisyötteiden tärkeyden. Kun aikaisemmin
 
 Nyt haluamme kuitenkin testata tehokkuutta. Aikaisemman testimme ongelma on, että invariantti <span style="color:blue">"quicksort on aina nopeampi kuin insertionsort"</span>  ei päde oikeissa implementaatioissa koska ajanmittaus on epädeterminististä. Vaihdetaan siis taktiikkaa ja testataan invarianttia <span style="color:blue">"quicksort on nopeampi kuin insertion sort listoilla joiden järjestäminen vaatii työtä"</span>. 
 
-Seuraavaksi pitäisi miettä, mitä tarkoittaa että listan järjestäminen vaatii työtä. Tässä kannattaa miettiä, mikä on helppo approximaatio vaikeasti järjestettävälle listalle. Tarkemmin sanottuna, voisimme käyttää paljon aikaa kirjoittaaksemme oman hypotheis strategiamme joka luo listoja, jossa on paljon alkioita väärin päin. Tämä vaatii kuitnekin työtä joka on pois harjoitustyön itsensä kehityksestä. Kokeillaan siis ensin, mitä tapahtuu jos järjestetään listoja joissa on vähintään 50 numeroa joista mitkään eivät ole samoja.
+Seuraavaksi pitäisi miettä, mitä tarkoittaa että listan järjestäminen vaatii työtä. Tässä kannattaa miettiä, mikä on helppo approximaatio vaikeasti järjestettävälle listalle. Tarkemmin sanottuna, voisimme kirjoittaa oman hypothesis strategian, 
+joka luo listoja, jossa on paljon alkioita väärin päin. Tämä vaatii kuitenkin työtä joka on pois harjoitustyön itsensä kehityksestä. 
+Parempi tapa onkin miettiä, olisiko joku toinen syötteen generointi joka olisi "tarpeeksi vaikea".
+Kokeillaan ensin luoda listoja joissa on vähintään 50 alkiota joista mitkään eivät ole samoja.
 Tämä onnistuu erittäin pienellä muutoksella:
 ```python
-    taulukot_aikatesti = st.lists(st.integers())
-    
-    taulukot_aikatesti_isot = st.lists(st.integers(), min_size=50, unique=True)
-    @given(taulukko=taulukot_aikatesti_isot)
-    @settings(max_examples=100)
-    def test_quicksort_vaara_on_nopeampi_kuin_bubblesort_hypothesis(self, taulukko):
-        kopio = taulukko.copy()
-        bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=10)
-        quicksort_aika = timeit.timeit(lambda: quicksort_vaarin_implementoitu(taulukko), number=10)
-        self.assertGreaterEqual(bubblesort_aika, quicksort_aika)
+taulukot_aikatesti = st.lists(st.integers())    
+taulukot_aikatesti_isot = st.lists(st.integers(), min_size=50, unique=True)
+@given(taulukko=taulukot_aikatesti_isot)
+@settings(max_examples=100)
+def test_quicksort_vaara_on_nopeampi_kuin_bubblesort_hypothesis(self, taulukko):
+    kopio = taulukko.copy()
+    bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=10)
+    quicksort_aika = timeit.timeit(lambda: quicksort_vaarin_implementoitu(taulukko), number=10)
+    self.assertGreaterEqual(bubblesort_aika, quicksort_aika)
 ```
 Tässä siis lisätään kaksi parametria taulukoiden strategian generointiin. ```min_size```
 parametri vaatii, että luotavassa taulukossa on vähintään 50 alkiota. ```unique``` parametri vaatii, että kaikki taulukoiden alkiot ovat uniikkeja. Toisin sanoen, että taulukossa ei ole kahta samaa numeroa. 
@@ -293,7 +276,7 @@ E       These lines were always and only run by failing examples:
 E           /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/case.py:1234
 =========================================================== short test summary info ===========================================================
 FAILED src/tests/sort_test.py::TestSort::test_quicksort_vaara_on_nopeampi_kuin_bubblesort_hypothesis - AssertionError: 0.0005241249999983211 not greater than or equal to 0.0009875829999970165
-=================================================== 1 failed, 4 passed in 81.62s (0:01:21) ====================================================
+=================================================== 1 failed, 1 passed in 81.62s (0:01:21) ====================================================
 ```
 Näyttää paremmalta, testi ei mene läpi ja tällä kerralla hypothesis löytää vastaesimerkin jolla olettaisimme, että quicksort on insertion sorttia nopeampi. Nyt pitäisi herätä huoli siitä, että koodissamme on tosiaan jotain väärin. 
 
@@ -311,16 +294,15 @@ def quicksort_oikein_implementoitu(taulukko):
 ```
 ja sen testi
 ```python 
-    taulukot_aikatesti = st.lists(st.integers())
-    
-    taulukot_aikatesti_isot = st.lists(st.integers(), min_size=50, unique=True)
-    @given(taulukko=taulukot_aikatesti_isot))
-    @settings(max_examples=100)
-    def test_quicksort_oikea_on_nopeampi_kuin_bubblesort_hypothesis(self, taulukko):
-        kopio = taulukko.copy()
-        bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=10)
-        quicksort_aika = timeit.timeit(lambda: quicksort_oikein_implementoitu(taulukko), number=10)
-        self.assertGreaterEqual(bubblesort_aika, quicksort_aika)
+taulukot_aikatesti = st.lists(st.integers())
+taulukot_aikatesti_isot = st.lists(st.integers(), min_size=50, unique=True)
+@given(taulukko=taulukot_aikatesti_isot))
+@settings(max_examples=100)
+def test_quicksort_oikea_on_nopeampi_kuin_bubblesort_hypothesis(self, taulukko):
+    kopio = taulukko.copy()
+    bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=10)
+    quicksort_aika = timeit.timeit(lambda: quicksort_oikein_implementoitu(taulukko), number=10)
+    self.assertGreaterEqual(bubblesort_aika, quicksort_aika)
 ```
 Ja kokeillaan: 
 ```
@@ -333,7 +315,7 @@ collected 5 items
 
 src/tests/sort_test.py .....                                                                                                            [100%]
 
-============================================================== 5 passed in 1.65s ==============================================================
+============================================================== 2 passed in 1.65s ==============================================================
 ```
 Eli tuntuisi toimivan. Olipas kuitenkin haastavaa.... 
 
@@ -376,7 +358,7 @@ E       taulukko=[0, 0],
 E   )
 =========================================================== short test summary info ===========================================================
 FAILED src/tests/sort_test.py::TestSort::test_quicksort_oikea_on_nopeampi_kuin_bubblesort_hypothesis - AssertionError: 5.332999999996257e-06 not greater than or equal to 8.459000000016204e-06
-========================================================= 1 failed, 4 passed in 0.14s =========================================================
+========================================================= 1 failed, 1 passed in 0.14s =========================================================
 ```
 Eli näin lyhyellä listalla myös oikein implementoitu quicksort on hitaampi kuin bubblesort, joka osoittaa syötteen miettimisen tärkeyden. 
 
@@ -385,20 +367,20 @@ Eli näin lyhyellä listalla myös oikein implementoitu quicksort on hitaampi ku
 Vaikka tässä esimerkissä riitti muuttaa yksittäisen taulukon generointia, hypothesis taipuu monimutkaisempiikin testeihin. Alla esimerkki testistä, joka järjestää korkeintaan 100 taulukkoa ja vaatii, että quicksort on bubblesorttia nopeampi vähintään puolella. 
 
 ```python
-    taulukko = st.lists(st.integers()) 
-    @given(taulukko_lista=st.lists( taulukko, max_size=100 ) )
-    def test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort(self, taulukko_lista):
-        quicksort_win = 0
-        bubblesort_win = 0
-        for taulukko in taulukko_lista:
-            kopio = taulukko.copy()
-            bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=10)
-            quicksort_aika = timeit.timeit(lambda: quicksort_vaarin_implementoitu(taulukko), number=10)
-            if bubblesort_aika > quicksort_aika:
-                quicksort_win += 1
-            else:
-                bubblesort_win += 1 
-        self.assertGreaterEqual(quicksort_win -bubblesort_win, (len(taulukko_lista) / 2))
+taulukko = st.lists(st.integers()) 
+@given(taulukko_lista=st.lists( taulukko, max_size=100 ) )
+def test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort(self, taulukko_lista):
+    quicksort_win = 0
+    bubblesort_win = 0
+    for taulukko in taulukko_lista:
+        kopio = taulukko.copy()
+        bubblesort_aika = timeit.timeit(lambda: bubblesort(kopio), number=10)
+        quicksort_aika = timeit.timeit(lambda: quicksort_vaarin_implementoitu(taulukko), number=10)
+        if bubblesort_aika > quicksort_aika:
+            quicksort_win += 1
+        else:
+            bubblesort_win += 1 
+    self.assertGreaterEqual(quicksort_win -bubblesort_win, (len(taulukko_lista) / 2))
 ```
 # Pitääkö mitata aikaa?
 Tässä on toivottavasti huomattu, että ajoaikaa mittaavilla testeillä voidaan periaatteessa saada kiinni hienovaraisempia bugeija kuin invariantti ja yksikkötestauksella. Tämä vaatii kuitenkin tarkkuutta ja testien muuttamista hieman epädeterministisiksi. Tässä on omat haasteensa. 
@@ -414,8 +396,7 @@ Verrattuna muihin testityyppeihin, suorituskykytestien suunnittelussa pitää ol
 Tärkeä huomio on, että myös monimutkaisemmissa testeissä kannattaa keskittyä yhden asian testaamiseen.
 Näimme, että järkevissä suorituskykytesteissä tarvitaan vähän isompia listoja joilla järjestysalgoritmeilla on "enemmän tekemistä". Rajatapusten, kuten jo järjestetyjen ja tyhjien listojen testaus on kuitenkin oleellista, aikaisemmissa esimerkeissä tämän hoitaa testimme ```test_quicksort_jarjestaa_listan_hypothesis```. Ei siis kannatta testata sekä oikeellisuutta, että tehokkuutta samalla testillä.  
 
-
-Vaikka quicksort ja järjestys algoritmit muutenkin ovat harjoitustyötä varten liian helppoja, samoja ideoita voi hyvin soveltaa myös harjoitustyöhön sopivissa aiheissa. Helppo esimerkikki on esimerkiksi reitinhakualgoritmit. Monet reitinhakualgoritmit voivat olla väärin implementoituja, mutta silti palauttaa lyhyimmän reitin. Mieti miten polunetsintäsi pitäis toimia, ja suunnitele testit testaamaan niitä heuristiikkoja. Polunetsinnässäkään ei tarvitse luottaa ajoaikaan, sen sijaan voit laskea esimerkiksi vierailtujen solmujen määrän.
+Vaikka quicksort, ja järjestys algoritmit muutenkin, ovat harjoitustyötä varten liian helppoja, samoja ideoita voi hyvin soveltaa myös harjoitustyöhön sopivissa aiheissa. Monet reitinhakualgoritmit voivat olla väärin implementoituja, mutta silti palauttaa lyhyimmän reitin. Mieti miten polunetsintäsi pitäis toimia, ja suunnitele testit testaamaan niitä heuristiikkoja. Polunetsinnässäkään ei tarvitse (välttämättä) luottaa ajoaikaan, sen sijaan voit laskea esimerkiksi vierailtujen solmujen määrän.
 
 
 {% include typo_instructions.md %}

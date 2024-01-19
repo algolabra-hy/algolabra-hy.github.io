@@ -3,7 +3,6 @@ layout: page
 title: Materiaalin Korjaukset
 title_long: 'Korjaukset Materiaaliin'
 inheader: no
-nav_order: 8
 permalink: /korjaus/
 ---
 
