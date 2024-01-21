@@ -32,5 +32,6 @@ Kaksi hieman kehittyneempää testaustapaa jolla voi saada kiinni monimutkaisemp
 ## Lisää materiaalia
 - [Pylint](/pylint) on Python koodin stattiseen analysiin tarkoitettu työkalu joka helpottaa koodin laadun ylläpitoa. 
 - [Neuroverkkojen testauksesta](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) Sebastian Björkqvistin blogikirjoitus.
+- [Range Minimum Querie esimerkki](https://github.com/TiraLabra/Testing-and-rmq) repositorio jossa esimerkkejä hieman monimutkaisempien algoritmien testaamisesta. 
 
 {% include typo_instructions.md %}
