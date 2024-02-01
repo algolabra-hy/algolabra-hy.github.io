@@ -280,7 +280,7 @@ FAILED src/tests/sort_test.py::TestSort::test_quicksort_vaara_on_nopeampi_kuin_b
 ```
 Näyttää paremmalta, testi ei mene läpi ja tällä kerralla hypothesis löytää vastaesimerkin jolla olettaisimme, että quicksort on insertion sorttia nopeampi. Nyt pitäisi herätä huoli siitä, että koodissamme on tosiaan jotain väärin. 
 
-## Korjataan Quicksort
+## Korjataan quicksort
 Testin perusteella alamme siis etsimään bugia. Onneksi keinotekoisesti lisätyt bugit on helppo korjata. Valitaan pivotti "sattumanvaraisesti" olemaan osataulukon ensimmäinen alkio. 
 ```python
 def quicksort_oikein_implementoitu(taulukko):
@@ -319,7 +319,7 @@ src/tests/sort_test.py .....                                                    
 ```
 Eli tuntuisi toimivan. Olipas kuitenkin haastavaa.... 
 
-## Sanity Check
+### Sanity check
 Tarkastetaan vielä, mitä käy jos yritämme testata oikein implementoitua quicksorttia lyhyillä listoilla. Toisin sanoen, lisätään ```@example``` komennolla aikaisemmin hylätty lista [0,0] testeihin. 
 ```python    
 taulukot_aikatesti_isot = st.lists(st.integers(), min_size=50, unique=True)
