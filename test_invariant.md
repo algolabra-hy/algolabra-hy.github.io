@@ -8,7 +8,7 @@ inheader: no
 _Nämä ohjeet on kirjoittanut Jeremias Berg_
 
 Jatketaan siitä mihin [yksikkötestauksessa](/unittest) jäätiin. Jos unittest sovelluskehys, poetry ja pytest ovat tuttuja, voit lukea
-tämän suoraan. Muuten kannattaa tustua ensin [tähän](/unittest).
+tämän suoraan. Muuten kannattaa tutustua ensin [tähän](/unittest).
 
 Muistutuksena, tämänhetkinen `Maksukortti` luokka:
 
