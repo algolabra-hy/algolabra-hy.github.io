@@ -317,12 +317,12 @@ E   )
 FAILED src/tests/maksukortti_test.py::TestMaksukortti::test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis - AssertionError: False is not true
 ========================================== 1 failed, 6 passed in 0.13s ==========================================
 ```
-Eli testi ei mene läpi, eikä kestäkään niin kauaa enää,.
+Eli testi ei mene läpi, eikä kestäkään niin kauaa enää.
 
 *Huom* Yleisessä tapauksessa invariantti testejä ei siis kannata ajaa kaikille mahdollisille syötteille, tämä veisi aivan liian kauan. Sen sijaan niitä kannattaa ajaa _tarpeeksi monelle_ arvolle usein. Ja vähän useammalle vähän harvemmin kuin perus yksikkkötestejä. Nämä, vähän hitaammat, testit voi sitten ajaa aina isompien muutosten jälkeen, ja tarpeen mukaan nostaa niistä löydettyjä hankalia syötteitä yksikkötesteihin jotka ajetaan useammin, esimerkiksi @example komennon kautta.
 
 # Testataan tarkemmin
-Lopuksi voimme myös todeta, että jos sattuisimme tietäämään, että kortin arvot 1300-1400 ovat haassteellisia niin voimme toki käskeä hypothesista testaamaan vain niitä:
+Lopuksi voimme myös todeta, että jos sattuisimme tietäämään, että kortin arvot 1300-1400 ovat haasteellisia niin voimme toki käskeä hypothesista testaamaan vain niitä:
 ```python 
 @given(arvo=st.integers(min_value=1300, max_value=1400))
 def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
@@ -333,7 +333,7 @@ def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
 joka epäonnistuu ilman parametrien säätöä. Tälläinen tapaus voisi sattua jos vaikka tietäisimme että ```monimutkainen_ehto``` metodimme Maksukortti luokassa tekee jotain (vaikka emme tietäisi mitä) vain jos arvo on tietyllä välillä. 
 
 # Syötteiden generoinnista
-Lopuksi mainittakoon vielä, että hypothesiksen syötteen generointi ulottuu huomattavasti kokonaislukuja pidemmälle. Hypothetiksen [valmiit strategiat](https://hypothesis.readthedocs.io/en/latest/data.html) määrittelevät kuinka perustyyppejä voidaan luoda, mutta myös miten voit määritellä oman datatyyppisi luojan tai yhdistellä eri tyyppien generoijia toisinsa. Täten voit käytännössä käyttää hypothesista minkälaisten metodien testaamiseen tahansa. Palataakseni aikaisempiin esimerkkeihin, voisimme esim testata metodeja jotka otavat koko neuroverkon syötteeksi muista [riippuvuuden injektointi](/riippuvuuksien_injektointi_python) ja kertoa hypothesikselle, miten neuroverkkoja muodostetaan. Tällöin kirjasto voisi (teoriassa) testata sattumanvaraisesti muodostetuilla (ja treenatuilla) neuroverkoilla kunnes löytyy joku, jonka virhe on yli 15%, ilman että meidän täytyy itse osata määritellä, miten sellainen muodostetaan. 
+Lopuksi mainittakoon vielä, että hypothesiksen syötteen generointi ulottuu huomattavasti kokonaislukuja pidemmälle. Hypothetiksen [valmiit strategiat](https://hypothesis.readthedocs.io/en/latest/data.html) määrittelevät kuinka perustyyppejä voidaan luoda, mutta myös miten voit määritellä oman datatyyppisi luojan tai yhdistellä eri tyyppien generoijia toisinsa. Täten voit käytännössä käyttää hypothesista minkälaisten metodien testaamiseen tahansa. Palataakseni aikaisempiin esimerkkeihin, voisimme esim testata metodeja jotka otavat koko neuroverkon syötteeksi (muista [riippuvuuden injektointi](/riippuvuuksien_injektointi_python)) ja kertoa hypothesikselle, miten neuroverkkoja muodostetaan. Tällöin kirjasto voisi (teoriassa) testata sattumanvaraisesti muodostetuilla (ja treenatuilla) neuroverkoilla kunnes löytyy joku, jonka virhe on yli 15%, ilman että meidän täytyy itse osata määritellä, miten sellainen muodostetaan. 
 
 
 ## Yhteenveto 
