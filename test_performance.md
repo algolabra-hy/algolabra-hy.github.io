@@ -9,7 +9,7 @@ _Nämä ohjeet on kirjoittanut Jeremias Berg_
 
 {% include no_requirement.md %}
 
-Käydään tässä läpi, miten ns suorituskykytesteillä voidaan testata asioita, joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta](/unittest) ja [invarianttitestuksesta](/invarianttest), warsinkin peotryn käytöstä.
+Käydään tässä läpi, miten ns suorituskykytesteillä voidaan testata asioita, joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta](/unittest) ja [invarianttitestuksesta](/invarianttest), varsinkin [Poetryn](/poetry) käytöstä.
 
 
 ## Quicksortin testaus
