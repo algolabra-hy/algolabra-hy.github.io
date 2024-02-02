@@ -29,7 +29,6 @@ python --version
 
 Jos molemmissa tapauksissa versio on alle 3.10, asenna tietokoneellesi [uusin Python-versio](https://www.python.org/downloads/). Muista varmistaa asennuksen jälkeen, että oikea versio on käytössä. Muussa tapauksessa käytä komentoa, jonka käyttämä versio on vähintään 3.10.
 
-_Kurssilla käytetään Poetryn versiota 1.6.1. Jos koneellasi on vanhempi versio, se on syytä päivittää!_
 
 ### Asennus
 

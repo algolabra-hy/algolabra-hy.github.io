@@ -6,7 +6,10 @@ title_long: Harjoitustyön Testaaminen
 inheader: yes
 ---
 
-Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. Sivut ovat vielä rakenteilla ja hyödyllisistä materiaaleista saa mielellään vinkata Jeremiakselle. 
+Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. Sivut ovat vielä rakenteilla. Hyödyllisistä materiaaleista saa mielellään vinkata Jeremiakselle. 
+
+## Ihan ensiksi
+Lue harjoitustyön [testauksen vaatimuksista](/testreqs) kurssin arvostelussa.
 
 
 ## Yksikkötestaus ja riippuvuuksien injektointi
@@ -18,7 +21,7 @@ Harjoitustyössä toteutetaan monimutkaisia algoritmeja. Näiden testaaminen voi
 - Pelejä pelaavan botin oikeellisuus ei ole että se "pelaa hyvin". Miinaharavabotti ei saa koskaan osua miinaan silloin, kun ruutua pidetään turvallisena. Shakkibotti ei saa tehdä laittomia siirtoja, ja sen on osattava tehdä matti, mikäli se on mahdollista sillä laskentasyvyydellä, jota käytetään. 
 - Reitinhaku algoritmin oikeellisuus ei ole vain että se löytää lyhyimmän reitin. Esimerkiksi A* haku, jonka heuristiikka on käänteellinen, löytää lyhyimmän reitin mutta siihen menee vaan paljon kauemmin aikaa kuin pitäisi. 
 - Pakkausalgoritmin oikeellisuuteen ei riitä, että purettu tiedosto on sama kuin pakattu. Tämän lisäksi esim pakatun tiedoston koon täytyy olla odotuksien mukainen. 
-- Neuroverkkojen oikeellisuuden testaamiseen ei riitä, että verkko klassifioi jonkun yksittäisen esimerkkitapauksen oikein. Sen sijaan täytyy testata toimiiko backpropagation oikein? Pieneneekö virhe jokaisella inputilla? Voiko yhden kokoisen treenisetin saada 0 erroriin? Lue lisää [Sebastian Björkqvistin blogista](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/).
+- Neuroverkkojen oikeellisuuden testaamiseen ei riitä, että verkko klassifioi ison osan testisetistä oikein. Tämän lisäksi pitäisi testata, onko sen rakenne oikein? Toimiiko backpropagation oikein?
 
 Monimutkaisille algoritmeille voi olla vaikea keksiä kuvaavia esimerkkisyötteitä joita testata. Voimmeko olla varmoja, että esimerkkisyötteemme testaavat kaikki haarat? Entä jos koodimme bugaa vain yli tuhannen kokoisilla syötteillä? 
 
