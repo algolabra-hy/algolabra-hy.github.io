@@ -4,6 +4,6 @@
 
 <p>
 Alla oleva on tarkoitettu mahdolliseksi harjoitustyön kehittämistä helpottavaksi työkaluksi. Tämän materiaalin omaksumista ei vaadita tällä kurssilla, vaikka siitä voi hyötyä ollakin.  
-</p>
+ </p>
 
 </div>
