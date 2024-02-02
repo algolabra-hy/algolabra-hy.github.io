@@ -45,7 +45,7 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 
 | Taso (pistemäärä)                 | Kuvaus |
 | :---------------------------------  |--------: |
-| riittämätön/hylätty (0)           | <span style="font-size:0.9em;">Testejä ei ole ollenkaan tai ne eivät testaa oikeellisuuteen liitviä asioita.</span> |
+| riittämätön/hylätty (0)           | <span style="font-size:0.9em;">Testejä ei ole ollenkaan tai ne eivät testaa oikeellisuuteen liityviä asioita.</span> |
 | *heikko (1)*                    |  <span style="font-size:0.9em;">*Projektin pääfunktioita testataan muutamalla syötteellä. Valittujen syötteiden edustavuudessa puutteita.*</span>        |
 | keskinkertainen <br> (2-4)           | <span style="font-size:0.9em;">Keskeisimmät metodit on testattu muutamalla edustavalla syötteellä. Testien dokumentaatiosta käy ilmi niiden tarkoitus.</span> |
 | *tyydyttävä (5-7)*                |  <span style="font-size:0.9em;">*Kaikki keskeiset metodit on testattu. Käytettävät syötteet ovat edustavia. Testit ovat toistettavia ja selkeitä.*</span>       |
