@@ -42,6 +42,7 @@ Ohjaajalta kannattaa kysyä, jos on epäselvää.
 Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin. 
 
 ---
+
 | Taso (pistemäärä)                 | Kuvaus |
 | :---------------------------------  |--------: |
 | riittämätön/hylätty (0)           | <span style="font-size:0.9em;">Testejä ei ole ollenkaan.</span> |
@@ -49,6 +50,7 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 | keskinkertainen <br> (3-4)           | <span style="font-size:0.9em;">Suurinta osaa keskeisistä metodeista on testattu muutamalla yksittäisellä syötteellä. Testeistä käy ilmi niiden tarkoitus sekä mitä niillä testataan.</span> |
 | *tyydyttävä (5-7)*                |  <span style="font-size:0.9em;">*Kaikki keskeiset metodit on testattu. Käytettävät syötteet kattavat metodeille oletetut normaalit syötteet. Testeistä käy selkeästi ilmi niiden tarkoitus. Testit ovat toistettavia ja dokumentaatiosta käy ilmi miten ne toistetaan.*</span>       |
 | *vakuuttava / erinomainen (8-10)* | <span style="font-size:0.9em;">*Kaikki[^1] metodit on testattu. Testauksessa käytetään hyvin niitä oman harjoitustyön aiheeseen sopivia tekniikoita[^2] jotka täydentävät yksikkötestejä ja ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat selkeitä ja niiden kattavuus laaja.*</span>  |
+
 ---
 
 
