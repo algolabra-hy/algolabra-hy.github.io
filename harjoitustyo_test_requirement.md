@@ -20,12 +20,12 @@ Aina kun löydätte jonkun bugin, sille kannattaa kirjoittaa testi.
 </div>
 
 ## Testien vaatimuksista - mitä pitää testata?
-Jokaisessa harjoitustyössä vaaditaan vähintään automaattiset [yksikkötestit](unittest) jotka testaavat työn **toimintalogiikaa**. Käyttöliittymää ja esim. I/O:ta (esimerkiksi tiedostojen lukua) *ei* tarvitse testata, eikä niiden testauksesta saa arvostelussa lisäpisteitä. 
+Jokaisessa harjoitustyössä vaaditaan vähintään automaattiset [yksikkötestit](unittest) jotka testaavat työn **toimintalogiikaa**. Käyttöliittymää ja I/O:ta (esimerkiksi tiedostojen lukua) *ei* tarvitse testata, eikä niiden testauksesta saa arvostelussa lisäpisteitä. 
 
 Yleisesti ottaen hyvien testien tarkoitus on varmistaa, että oma algoritmi on oikein implementoitu. Mitä tämä täsmälleen tarkoittaa
 riippuu aiheesta. Alla muutamia aihespecifisiä esimerkkejä. Lisää tulee kunkin toteutuksen aiheehdotus sivuille.
 
-- Onko neuroverkkosi rakenne sellainen kun sen pitäisi?
+- Onko neuroverkkosi rakenne sellainen kun pitäisi?
 - Tekeekö pelitekoälysi aina laillisia siirtoja?
 - Löytääkö shakkibottisi matin jos sellainen on omalla laskentasyvyydellä?
 - Tarkastaako reitinhakusi juuri ne solmut jotka pitäisi eikä niitä enempää?
@@ -37,19 +37,19 @@ Vakuuttavissa testeissä on siis sekä "ihmiselle ymmärrettaviä" syötteitä, 
 Tämän takia yksikkötestit eivät yleensä riitä vakuuttaviin testeihin, tarvitaan myös esim. [integraatio](https://en.wikipedia.org/wiki/Integration_testing) tai [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testausta. 
 
 Alla olevassa taulukossa annetaan hieman tarkempaa osviittaa siitä, mitä harjoitustyön testeiltä vaaditaan. 
-Kukin työ arvioidaan kuitenkin aina kokonaisuutena ja esimerkiksi, aiheen vaativuus voi hieman vaikuttaa arvosteluun.
-Ohjaajalta kannattaa kysyä, jos on epäselvää.  
+Kukin työ arvioidaan kuitenkin aina kokonaisuutena ja esimerkiksi aiheen vaativuus voi hieman vaikuttaa arvosteluun.
+Ohjaajalta kannattaa kysyä tarpeen mukaan.  
 Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin. 
 
 ---
 
 | Taso (pistemäärä)                 | Kuvaus |
 | :---------------------------------  |--------: |
-| riittämätön/hylätty (0)           | <span style="font-size:0.9em;">Testejä ei ole ollenkaan.</span> |
-| *heikko (1-2)*                    |  <span style="font-size:0.9em;">*Muutamia metodeja testattu yksittäisillä syötteillä. <br>Syötteiden valinnassa suuria puutteita. Testeistä ei ilmene mitä testataan.*</span>        |
-| keskinkertainen <br> (3-4)           | <span style="font-size:0.9em;">Suurinta osaa keskeisistä metodeista on testattu muutamalla yksittäisellä syötteellä. Testeistä käy ilmi niiden tarkoitus sekä mitä niillä testataan.</span> |
-| *tyydyttävä (5-7)*                |  <span style="font-size:0.9em;">*Kaikki keskeiset metodit on testattu. Käytettävät syötteet kattavat metodeille oletetut normaalit syötteet. Testeistä käy selkeästi ilmi niiden tarkoitus. Testit ovat toistettavia ja dokumentaatiosta käy ilmi miten ne toistetaan.*</span>       |
-| *vakuuttava / erinomainen (8-10)* | <span style="font-size:0.9em;">*Kaikki[^1] metodit on testattu. Testauksessa käytetään hyvin niitä oman harjoitustyön aiheeseen sopivia tekniikoita[^2] jotka täydentävät yksikkötestejä ja ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat selkeitä ja niiden kattavuus laaja.*</span>  |
+| riittämätön/hylätty (0)           | <span style="font-size:0.9em;">Testejä ei ole ollenkaan tai ne eivät testaa oikeellisuuteen liitviä asioita.</span> |
+| *heikko (1)*                    |  <span style="font-size:0.9em;">*Projektin pääfunktioiden oikeellisuus testataan muutamalla syötteellä. Valittujen syötteiden edustavuudessa puutteita.*</span>        |
+| keskinkertainen <br> (2-4)           | <span style="font-size:0.9em;">Keskeisimmät metodit on testattu muutamalla edustavalla syötteellä. Testien dokumentaatiosta käy ilmi niiden tarkoitus.</span> |
+| *tyydyttävä (5-7)*                |  <span style="font-size:0.9em;">*Kaikki keskeiset metodit on testattu. Käytettävät syötteet ovat edustavia. Testit ovat toistettavia ja selkeitä.*</span>       |
+| *vakuuttava / erinomainen (8-10)* | <span style="font-size:0.9em;">*Kaikki[^1] metodit on testattu. Testauksessa käytetään niitä oman harjoitustyön aiheeseen sopivia tekniikoita[^2] jotka täydentävät yksikkötestejä ja ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat erittäin selkeitä ja niiden kattavuus laaja. Käytettävät syötteet ovat erittäin edustavia, kattaen sekä oletetut syötteet, että reunatapaukset.*</span>  |
 
 ---
 
