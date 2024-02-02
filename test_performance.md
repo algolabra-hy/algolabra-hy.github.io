@@ -52,7 +52,7 @@ class TestSort(unittest.TestCase):
         self.assertEqual(oma_jarjestys, kirjasto_jarjestys)
 
 ```
-Tässä siis yksi testi joka testaa invarianttia <span style="color:blue">"oma quicksort implementaatiomme laittaa listan saman järjestykseen kuin pythonin kirjaston järjestysalgoritmi"</span>. Tähän testiin on @example komennolla lisätty muutama reunatapaus kuten tyhjä lista, käännetty lista, sekä jo jrjestyksessä oleva lista. 
+Tässä siis yksi testi joka testaa invarianttia <span style="color:blue">"oma quicksort implementaatiomme laittaa listan saman järjestykseen kuin pythonin kirjaston järjestysalgoritmi"</span>. Tähän testiin on @example komennolla lisätty muutama reunatapaus kuten tyhjä lista, käännetty lista, sekä jo järjestyksessä oleva lista. 
 
 Kokeillaan testejä (jos projektin alustaminen tuntuu epäselvältä, katso esimerkki [yksikkötestauksen luvusta](/unittest)): 
 ```
