@@ -49,7 +49,7 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 | *heikko (1)*                    |  <span style="font-size:0.9em;">*Projektin päämetodeja testataan muutamalla syötteellä. Valittujen syötteiden edustavuudessa puutteita.*</span>        |
 | keskinkertainen <br> (2-4)           | <span style="font-size:0.9em;">Keskeisimmät metodit on testattu muutamalla edustavalla syötteellä. Testien dokumentaatiosta käy ilmi niiden tarkoitus.</span> |
 | *tyydyttävä (5-7)*                |  <span style="font-size:0.9em;">*Kaikki keskeiset metodit on testattu. Käytettävät syötteet ovat edustavia. Testit ovat toistettavia ja selkeitä.*</span>       |
-| *vakuuttava / erinomainen (8-10)* | <span style="font-size:0.9em;">*Kaikki[^1] metodit on testattu. Testauksessa käytetään niitä oman harjoitustyön aiheeseen sopivia tekniikoita[^2] jotka täydentävät yksikkötestejä ja ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat erittäin selkeitä ja niiden kattavuus laaja. Käytettävät syötteet ovat erittäin edustavia, kattaen sekä oletetut syötteet, että reunatapaukset.*</span>  |
+| *vakuuttava / erinomainen (8-10)* | <span style="font-size:0.9em;">*Kaikki[^1] metodit on testattu. Testauksessa käytetään niitä oman harjoitustyön aiheeseen sopivia tekniikoita[^2] jotka täydentävät yksikkötestejä ja ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat erittäin selkeitä ja niiden kattavuus laaja. Käytettävät syötteet ovat erittäin edustavia.*</span>  |
 
 ---
 
