@@ -12,7 +12,7 @@ inheader: no
 <h4>Huom!</h4>
 
 <p>
-Alla asiaa herjoitustyön testien vaatimuksista. Painotamme kuitenkin, että testien 
+Alla asiaa harjoitustyön testien vaatimuksista. Painotamme kuitenkin, että testien 
 päätarkoitus on auttaa työn kehityksessä. Suosittelemme vahvasti, että kirjoitatte testejä kehitystyön aikana eikä vasta jälkikäteen.
 Aina kun löydätte jonkun bugin, sille kannattaa kirjoittaa testi. 
 </p>
