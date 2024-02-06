@@ -11,23 +11,24 @@ permalink: /gradle/
 
 
 [Gradle](https://en.wikipedia.org/wiki/Gradle) on ns. [build automation](https://en.wikipedia.org/wiki/Build_automation) työkalu jonka tarkoituksena on automatisoida
-projektinhallintaan liittyviä tehtäviä, kuten sen kääntaminen ja testaus. 
+projektinhallintaan liittyviä tehtäviä, kuten ohjelman kääntaminen ja testaus. 
 
 
-Gradlea käytetään pääsääntöisesti java projektien kehitykseen, sille löytyy kuitenkin myös 
-(epävirallisia) [python plugineja](https://github.com/PrzemyslawSwiderski/python-gradle-plugin), jotka mahdollistavat käytön myös python projektien kehitykseen. 
+Gradlea käytetään pääsääntöisesti java projektien kehitykseen. Sille löytyy kuitenkin myös 
+(epävirallisia) [Python plugineja](https://github.com/PrzemyslawSwiderski/python-gradle-plugin), jotka mahdollistavat käytön myös Python projektien kehitykseen. 
 Python plugineja saa käyttää omassa harjoitustyössä, mutta niiden toimivuutta ei ole kurssinhenkilökunnan puolelta testattu. 
-Toisaalta, koska python projeteja ei tarvitse (eikä helposti voikkaan) kääntää, gradle on tavallaan turhan monimutkainen pythonin kanssa käytettäväksi. 
-Suosittelemme pythonille ennemmin [Poetrya](/poetry/).
+Toisaalta, koska Python koodia ei tarvitse (eikä helposti voikkaan) kääntää, gradle on tavallaan turhan monimutkainen Pythonin kanssa käytettäväksi. 
+Suosittelemme Pythonille ennemmin [Poetrya](/poetry/).
 
 
 ## Johdatus Gradlen konfigurointiin (Javalle)
 
 _Nämä ohjeet ovat melkein suora kopio kurssin [Ohjelmistotuotanto](https://ohjelmistotuotanto-hy.github.io/gradle/) kurssin sivuilta_ 
 
-Tehdään gradle-projekti alusta asti itse. Tee [palautusrepositorioosi](/tehtavat1#teht%C3%A4vien-palautusrepositoriot) uusi hakemisto ja mene hakemistoon. 
+Tehdään gradle-projekti alusta asti itse. Tee [projektirepoositooriossi](/git) uusi hakemisto ja mene hakemistoon. 
 
-Kokeile toimiiko koneessasi komento `gradle`. Huomaa, että esimerkiksi fuksiläppäreissä on asennettuna erittäin vanha gradlen versio. Komennon suorittaminen näyttää mikä versio on kyseessä
+Kokeile toimiiko koneessasi komento `gradle`. Huomaa, että esimerkiksi fuksiläppäreissä on asennettuna erittäin vanha gradlen versio. 
+Komennon suorittaminen näyttää mikä versio on kyseessä
 
 ```
 mluukkai@melkki:~$ gradle
@@ -38,10 +39,69 @@ Starting a Gradle Daemon (subsequent builds will be faster)
 Welcome to Gradle 4.4.1.
 ```
 
+Jos komento ei toimi **tai versio on vanhempi kuin 6.7**, asenna uusin versio Gradlesta [täällä](https://gradle.org/install/) olevien ohjeiden mukaan.
 
-Jos komento ei toimi **tai versio on vanhempi kuin 6.7**, kopioi hakemistoon jostain aiemmasta gradle-projektistasi (edellisen viikon tehtävistä) tiedosto _gradlew_ jos käytät Linux tai OSX tai _gradlew.bat_ jos käytät Windowsia ja käytä jatkossa komentoa _./gradlew_ tai _gradlew_. Tämän lisäksi joudut kopioimaan aiemmasta projektista myös hakemiston _gradle_ ja sen alla olevan hakemiston _gradle/wrapper_.
+Aloita antamalla komento _gradle_:
 
-Mikäli edelleen ei toimi voit ottaa lähtökohdaksesi [täällä olevan](https://github.com/ohjelmistotuotanto-hy/syksy2021-java/tree/main/koodi/viikko2/TyhjaProjeki) Matti Luukkaisen alustaman tyhjän gradle-projektin.
+```
+> Task :help
+
+Welcome to Gradle 8.6.
+
+Directory '/Users/jezberg/Documents/teaching/tiralabra/gradletest' does not contain a Gradle build.
+
+To create a new build in this directory, run gradle init
+
+For more detail on the 'init' task, see https://docs.gradle.org/8.6/userguide/build_init_plugin.html
+
+For more detail on creating a Gradle build, see https://docs.gradle.org/8.6/userguide/tutorial_using_tasks.html
+
+To see a list of command-line options, run gradle --help
+
+For more detail on using Gradle, see https://docs.gradle.org/8.6/userguide/command_line_interface.html
+
+For troubleshooting, visit https://help.gradle.org
+...
+```
+
+Ohje kertoo, että nykyisessä kansiossa ei ole Gradle buildia, ts. että emme ole alustaneet gradle projektiamme vielä. 
+Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  
+
+**Saat luotua tiedoston** suorittamalla taskin _init_ (eli antamalla komennon _gradle init_).
+Ajetaan siis seuraavaksi init käsky. 
+
+```
+jezberg@LM2-500-27156 gradletest % gradle init 
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 
+```
+
+Valitse _basic_ (type of project), _Groovy_ (build script DSL) ja anna projektille nimi. Valitse myös "no" kysymykseen uusista API toiminnoista. 
+
+Huomaat että operaation jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
+
+<pre>
+$ ls -la
+drwxr-xr-x  9 jezberg  ATKK\hyad-all   288 Feb  6 17:06 .
+drwxr-xr-x  8 jezberg  ATKK\hyad-all   256 Feb  6 16:55 ..
+-rw-r--r--  1 jezberg  ATKK\hyad-all   214 Feb  6 17:06 .gitattributes
+-rw-r--r--  1 jezberg  ATKK\hyad-all   103 Feb  6 17:06 .gitignore
+-rw-r--r--  1 jezberg  ATKK\hyad-all   201 Feb  6 17:06 build.gradle
+drwxr-xr-x  4 jezberg  ATKK\hyad-all   128 Feb  6 17:06 gradle
+-rwxr-xr-x  1 jezberg  ATKK\hyad-all  8692 Feb  6 17:06 gradlew
+-rw-r--r--  1 jezberg  ATKK\hyad-all  2918 Feb  6 17:06 gradlew.bat
+-rw-r--r--  1 jezberg  ATKK\hyad-all   345 Feb  6 17:06 settings.gradle
+</pre>
+
+
+Näistä hakemisto _.gradle_ kannattaa gitignoroida. Gradle-projekteissa tulee gitignoroida aina myös hakemisto _build_ mihin kaikki gradle-taskien generoimat tiedostot sijoitetaan. Gradle luokin valmiiksi tilanteeseen sopivan gitignore-tiedoston. 
+
+Tavoitteenamme on lisätä projektiin Java-koodia ja JUnit-testejä. Oletusarvoisesti gradle ei ymmärrä Javasta mitään, mutta ottamalla käyttöön _java-pluginin_, se lisää projektille uusia, Javan kääntämiseen liittyviä taskeja.
 
 Aloita antamalla komento _gradle_:
 
@@ -97,27 +157,6 @@ Komento listaa käytettävissä olevat _taskit_. Gradlen [dokumentaatio](https:/
 
 Taskit ovat siis "komentoja", joita voimme suorittaa gradle-projekteille.
 
-Gradle-projekti määritellään projektihakemiston juureen sijoitettavan tiedoston _build.gradle_ avulla.  
-
-**Saat luotua tiedoston** suorittamalla taskin _init_ (eli antamalla komennon _gradle init_).
-
-Valitse _basic_ (type of project), _Groovy_ (build script DSL) ja anna projektille nimi.
-
-Huomaat että operaation jälkeen hakemistoon on tullut tiedoston _build.gradle_ lisäksi muutakin:
-
-<pre>
-$ ls -la
--rw-r--r--  1 mluukkai  984178727   198 Oct 27 18:00 build.gradle
-drwxr-xr-x  3 mluukkai  984178727    96 Oct 27 18:00 gradle
--rwxr-xr-x  1 mluukkai  984178727  5766 Oct 27 18:00 gradlew
--rw-r--r--  1 mluukkai  984178727  2763 Oct 27 18:00 gradlew.bat
--rw-r--r--  1 mluukkai  984178727   359 Oct 27 18:00 settings.gradle
-</pre>
-
-Näistä hakemisto _.gradle_ kannattaa gitignoroida. Gradle-projekteissa tulee gitignoroida aina myös hakemisto _build_ mihin kaikki gradle-taskien generoimat tiedostot sijoitetaan. Gradle luokin valmiiksi tilanteeseen sopivan gitignore-tiedoston. 
-
-Tavoitteenamme on lisätä projektiin Java-koodia ja JUnit-testejä. Oletusarvoisesti gradle ei ymmärrä Javasta mitään, mutta ottamalla käyttöön _java-pluginin_, se lisää projektille uusia, Javan kääntämiseen liittyviä taskeja.
-
 Otetaan nyt käyttöön java-plugin lisäämällä tiedostoon _build.gradle_ rivi:
 
 <pre>
@@ -156,8 +195,6 @@ Verification tasks
 check - Runs all checks.
 test - Runs the unit tests.
 </pre>
-
-Voimme nyt siis suorittaa projektille esim. viime viikoilta tutut komennot _gradle build_ ja _gradle test_.
 
 Jos suoritamme esimerkiksi taskin _build_ eli komennon _gradle build_, on tulostus seuraava
 
@@ -223,6 +260,7 @@ $ tree
 ...
 </pre>
 
+**Muista** että gradle kommennot täytyy suorittaa projektin juuresta, , eli hakemistossa missä tiedosto _build.gradle_ sijaitsee.
 Task _compileJava_ on siis luonut hakemiston _build_ ja sen sisälle käännöksen tuloksena olevan _class_-tiedoston.
 
 Suorita käännetty koodi menemällä hakemistoon ja antamalla komento _java Main_:
@@ -238,7 +276,9 @@ Yleensä Java-koodia ei suoriteta käyttämällä suoraan _class_-tiedostoja. Pa
 Jar-tiedosto muodostetaan gradlen taskilla _jar_. Help kertoo seuraavaa:
 
 <pre>
-$ gradle help --task jar
+% gradle help --task jar
+
+> Task :help
 Detailed task information for jar
 
 Path
@@ -247,11 +287,19 @@ Path
 Type
      Jar (org.gradle.api.tasks.bundling.Jar)
 
+Options
+     --rerun     Causes the task to be re-run even if up-to-date.
+
 Description
-     Assembles a jar archive containing the main classes.
+     Assembles a jar archive containing the classes of the 'main' feature.
+
+Group
+     build
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
 </pre>
 
-**HUOM** komento _gradle_ tulee suorittaa aina projektihakemiston juuressa, eli hakemistossa missä tiedosto _build.gradle_ sijaitsee.
 
 Määritellään taskia varten _pääohjelman sijainti_ lisäämällä seuraava tiedoston _build.gradle_ loppuun:
 
@@ -288,7 +336,7 @@ Hello gradle!
 
 ## application-plugin
 
-Aiemmissa tehtävissä olemme pystyneet suorittamaan koodin myös komennolla _gradle run_. 
+Koodin voi (periaattessa) suorittaa myös komennolla _gradle run_. 
 
 Komento aiheuttaa kuitenkin nyt virheilmoituksen _Task 'run' not found in root project_.
 
@@ -494,28 +542,27 @@ Tarvittava määrittely on seuraava:
 
 <pre>
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    testImplementation group: 'junit', name: 'junit', version: '4.13'
+    testImplementation group: 'junit', name: 'junit', version: 'latest-release'
 }
 </pre>
 
-Ensimmäinen osa _repositories_ kertoo gradlelle mistä sen tulee etsiä riippuvuuksia. [jcenter](https://bintray.com/bintray/jcenter) on eräs niistä paikoista, johon on talletettu suuri määrä gradlen ja mavenin käyttämiä kirjastoja. Toinen vaihtoehtoinen paikka riippuvuuksien etsimiseen on [mavenCentral](https://search.maven.org). _repositories_-osassa voidaan määritellä myös useita paikkoja joista gradle käy etsimässä projektiin määriteltyjä riippuvuuksia.
+Ensimmäinen osa _repositories_ kertoo gradlelle mistä sen tulee etsiä riippuvuuksia. [mavenCentral](https://search.maven.org) on eräs niistä paikoista, johon on talletettu suuri määrä gradlen ja mavenin käyttämiä kirjastoja. _repositories_-osassa voidaan määritellä myös useita paikkoja joista gradle käy etsimässä projektiin määriteltyjä riippuvuuksia.
 
-Toinen osa määrittelee, että _testImplementation_-vaiheeseen otetaan käyttöön JUnit-kirjaston versio 4.13. Käytännössä tämä tarkoittaa, että kääntäessään testien koodia gradle liittää JUnitin _classpathiin_.
+Toinen osa määrittelee, että _testImplementation_-vaiheeseen otetaan käyttöön JUnit-kirjaston uusin versio. Käytännössä tämä tarkoittaa, että kääntäessään testien koodia gradle liittää JUnitin _classpathiin_.
 
 Lisättävän riippuvuuden erittelevälle riville voidaan käyttää myös vaihtoehtoista syntaksia, missä riippuvuus, ja sen versio ilmaistaan yhtenä merkkijonona:
 
 <pre>
 dependencies {
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:latest-release'
 }
 </pre>
 
 Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii. 
 
-Rikotaan vielä testi ja varmistetaan että testit huomaavat virheen.
+Muista vielä kokeilla rikkoa testi ja varmistaa että testit huomaavat virheen.
 
-JUnitin uusi versio [JUnit5](http://junit.org/junit5/) on ilmestynyt vuosien odotuksen jälkeen jo jonkin aikaa sitten. JUnit5:ssä on monia mielenkiintoisia uudistuksia, mutta valitettavasti työkalutuki on edelleen vielä niin keskeneräinen, että joudumme kurssilla käyttämään vielä vanhaa JUnitia.
