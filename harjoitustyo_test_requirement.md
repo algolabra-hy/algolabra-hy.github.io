@@ -60,4 +60,4 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 
 # Lisähuomautukset
 [^1]: poislukien erittäin yksinkertaiset metodit kuten getterit ja setterit jotka eivät muokkaa syötteitään mitenkään.
-[^2]: Tälläiset tekniikat voivat olla esimerkiksi empiirinen testaus, [integraatio](https://en.wikipedia.org/wiki/Integration_testing) testaus, [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testaus, [invariantti](/invarianttest) testaus, [suorituskyky](/performancetest) testaus. **Huomaa** kuitenkin että näitä kaikkia ei missään nimessä vaadita. Tärkeintä on tehdä omalle harjoitustyölle sopivat testit, ohjaaja auttaa tarvittaessa.   
+[^2]: Tälläiset tekniikat voivat olla esimerkiksi empiirinen testaus, [integraatio](https://en.wikipedia.org/wiki/Integration_testing) testaus, [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testaus, [invariantti](/invarianttest)testaus, [suorituskyky](/performancetest)testaus. **Huomaa** kuitenkin että näitä kaikkia ei missään nimessä vaadita. Tärkeintä on tehdä omalle harjoitustyölle sopivat testit, ohjaaja auttaa tarvittaessa.   
