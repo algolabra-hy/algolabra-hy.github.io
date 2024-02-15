@@ -1,0 +1,50 @@
+---
+layout: page
+permalink: /yleiskatsaus
+title: Yleiskatsaus Harjoitustyöstä
+title_long: Yleiskatsaus Harjoitustyön Kulusta
+inheader: no
+---
+
+Alla yleiskatsaus kurssin kulusta. Kaikista tällä sivuilla käsitellyistä aiheista löytyy 
+tarkempaa tietoa materiaalin muista osista. Kurssilla opiskelija toteuttaa ohjelman, joka ratkaisee jonkin ohjelmointiongelman. Ongelmanratkaisuun käytetään sopivia tehokkaita algoritmeja ja tietorakenteita. Aihe on vapaa, kunhan ratkaisussa on tarpeeksi algoritmista vaativuutta. Käytännössä tämä tarkoittaa kirjallisuuteen perustuvien algoritmien käyttämistä, jotta tiedetään algoritmin olevan tarkoitukseen soveltuva ja tuottavan halutun tuloksen.
+Relevantin kirjallisuuden etsiminen ja siihen tutustuminen---tarvittaessa kurssin henkilökunnan avustuksella---on oleellinen (ja aikaa vievä) osa harjoitustyötä. 
+
+### Aiheen Valinnasta 
+Kurssimateriaalissa löytyy ehdotuksia harjoitustyön sopivista aiheista. Näiden lisäksi,
+opiskelijat voivat---periaatteessa---valita harjoitustyönsä aiheen itse. 
+Algoritmit, jotka on opittu kurssilla “Tietorakenteet ja algoritmit” tai sitä edeltävillä ohjelmointikursseilla, ovat tämän kurssin esitietoa, eivätkä siten voi olla projektin oleellista sisältöä. Tämän lisäksi harjoitustyön toteutuksen tulee 
+olla käytettävissä jonkin algoritmin soveltamiseen käytännön tilanteessa. Tämä toteutuu kaikissa kurssimateriaalin aihe-ehdotuksissa.
+
+Jos valitset täysin oman aiheen, tai aihe-ehdotuksesi ei ole yksityiskohtainen, sovi tapaaminen ohaajan kanssa jo ensimmäisellä viikolla, ennen määrittelydokumentin palautusta, jotta voitte sopia, miten aihe kannattaa rajata, ja mitkä osat aiheesta sinun tulee toteuttaa itse, jotta harjoitustyölle saavutetaan vaadittu laajuus.
+
+### Ohjelmointikielen Valinnasta
+Harjoitustyössä käytettävä ohjelmointikieli on---periaatteessa---vapaasti valittavissa.
+Useimissa aiheissa voidaan käyttää mitä tahansa ohjelmointikieltä. 
+Kuitenkin esimerkiksi tietorakennevertailu on aihe, joka ei ole mielekäs muuten kuin laiteläheisellä kielellä (C, C++) toteutettuna. Muuten voidaan päätyä mittaamaan tietorakenteiden erojen sijasta enemmänkin käytetyn ohjelmointikielen välineiden valintaa tai tehokkuutta. Lähtökohtaisesti sinun kannattaa käyttää kieltä, jonka osaat parhaiten. Uutta kieltä ei ole hyvä alkaa projektin yhteydessä opettelemaan, koska harjoitustyön aiheen omaksumisessa on opittavaa tarpeeksi.
+
+Python on monessa mielessä paras valinta ohjelmointikieleksi, mikäli osaat sitä riittävästi. 
+Useimmat kurssilaiset tekevät projektin Pythonilla, ja moni ei tunne muita kieliä. Siksi kurssin ohjeet painottuvat Pythoniin ja Javaan, joka on toiseksi yleisin käytetty kieli. 
+Jos käytät Pythonia, saat luultavasti vertaisarvioinneissa tutkittavaksi projekteja, joissa on sama tai vastaava aihe kuin itselläsi. Saat yleensä myös itse vertaispalautetta joltain, joka tuntee aiheesi ja ohjelmointikielesi. 
+Vertaisarvioita jaettaessa hyödynnetään opiskelijoiden antamia tietoja osaamistaan kielistä, mutta perusjako on, että Pythonia käyttävät arvioivat toisiaan, ja kaikki muut taas toisiaan kielestä riippumatta.
+
+Huomaa, ettö automaattinen [testaus](/testing) ja testikattavuuden laskenta ovat pakollista kaikissa projekteissa, kielestä riippumatta. Tästä ei ole kurssimateriaalissa ohjeita muille kuin Pythonille, eikä ohjaajakaan välttämättä 
+osaa neuvoa. Täten, mikäli valitsen jonkun muun kielen, joudut ottamaan enemmän vastuuuta näiden asioiden omaksumisesta. 
+Kunhan hallitset ohjelmistokehitykseen tarvittavat välineet omassa kielessäsi, saat kuitenkin ohjaajalta tuen toteutettavien algoritmien ymmärtämisessä ja toteutuksen virheiden jäljityksessä. Virheiden etsintä tapahtuu joka tapauksessa enimmäkseen yhdessä ohjaajan kanssa esim. Zoomissa, ei niin että ohjaaja tutkii oma-aloitteisesti koodiasi.
+
+Kurssin tavoite on oppia toteuttamaan itse tietorakenteita ja algoritmeja, jotka eivät sisälly kurssin esitietoihin. Lähinnä toteutetaan algoritmeja, mutta osassa suppeammista aiheista vaaditaan myös tietorakenteiden 
+omaa toetuttamista. Tälläisissä aiheissa suosittelemme, että laitat ensin kuntoon omah harjoitustyön ytimen 
+käyttäen kielen standardikirjastojen valmiita tietorakenteita ja algoritmeja. Kun ohjelma toimii oikein, voit sitten korvata valmiit välineet omilla toteutuksilla.
+
+Jokaisessa harjoitustyössä saa käyttää kielen alkeistyyppien matemaattisia funktioita ja merkkijonojen funktioita,
+
+### Harjoitustyön Testaamisesta 
+Ohjelman toiminnan oikeellisuuden testaaminen on olennaisen tärkeää, kun käytetään vaativia algoritmeja. Täytyy tutkia tuottaako algoritmi oikean tuloksen, ja toimiiko algoritmi myös niin tehokkaasti kuin sen tulisi. Oikeellisuustestaus tehdään automaattisin yksikkötestein, joita laaditaan projektin alusta asti sitä mukaa, kun testattavaa koodia syntyy. Yleisohje testaamiseen (m.m sen vaatimuksista) löytyy [testaus](/testing) sivulta. 
+
+
+### Käyttöliittymästä
+Käyttöliittymä ei ole keskeisin asia kurssilla, mutta toimiva käyttöliittymä on tärkeä olla alusta asti.
+Sovelluksen tulee tuottaa tuloste (teksti, kuva, ääni, muu tiedosto), josta on helppo havaita ohjelman toimivan oikein.
+Mitä tämä tarkalleen tarkoittaa, riippuu työn aiheesta. Joissakin tapauksessa pelkät kometorivin käynnistysparametrit ovat riittävä tapa kommunikoida ohjelman kanssa. Yleensä kuitenkin tarvitaan ainakin valikko-ohjaus komentoriviltä ja ASCII grafiikka. Usein myös selkeä visualisointi on välttämätön jo ohjelman kehitysvaiheessa, jotta näkee toimiiko ohjelma oikein. Graafisenkin käyttöliittymän koodaamiseen kuluva aika voi säästyä harjoitustyön kehitys- / testausvaiheessa, jos siitä on ennestään kokemusta, tai jos joutuu paljon kokeilemaan ohjelmaa erilaisilla parametrien arvoilla yms., vaikkapa valitsemaan pisteitä kartalta. 
+
+Käyttöliittymän kehityksessä saa käyttää mitä tahansa valmiita välineitä. Käyttöliittymää ei tarvitse testata, eikä sen testaamisesta saa harjoitustyön arvostelussa lisäpisteitä.

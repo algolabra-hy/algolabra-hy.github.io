@@ -35,7 +35,8 @@ tekniikoista ovat:
 - [Päästä päähän testaus](https://www.browserstack.com/guide/end-to-end-testing)
 - [Invarianttitestaus](/invarianttest), ja
 - [Suorituskykytestaus](performancetest)
-Huomaa kuitenkin, että näitä kaikkia ei tarvitse käyttää. Tärkeintä on miettiä omaan harjoitustyöhön sopivat testit. Kurssin henkilökunta auttaa tarvittaessa. 
+
+**Huomaa** kuitenkin, että näitä kaikkia ei tarvitse käyttää. Tärkeintä on miettiä omaan harjoitustyöhön sopivat testit. Kurssin henkilökunta auttaa tarvittaessa. 
 
 
 **Huom** Verrattuna yksikkötesteihin, monimutkaisempien ominaisuuksien oikeellisuus- ja suorituskyvyn testit voivat kestää melko kauan. Niinpä niitä ei välttämättä kannata ajaa yksikkötestien kanssa joka kerralla. Sen sijaan testeistä kannattaa laittaa muutama edustava (esim automaattisesti löydetty) tapaus yksikkötesteihin ja ajaa loput erillisenä testiohjelmalla. Toisin sanoen, harjoitustyössä tarvitaan *sekä* yksikkötestejä, että monimutkaisempia testejä. 

@@ -30,7 +30,7 @@ riippuu aiheesta. Alla muutamia aihespecifisiä esimerkkejä. Lisää tulee kunk
 - Löytääkö shakkibottisi matin jos sellainen on omalla laskentasyvyydellä?
 - Tarkastaako reitinhakusi juuri ne solmut jotka pitäisi eikä niitä enempää?
 
-Toinen tärkeä osa vakuuttavia testejä on "oikeilla" syötteillä testaaminen. Useat harjoitustyössä 
+Toinen tärkeä osa vakuuttavia testejä on [edustavilla](/respresentativeinputs) syötteillä testaaminen. Useat harjoitustyössä 
 toteutetut algoritmit ovat tarpeeksi monimutkaisia, että bugeja voi olla vaan isoilla syötteillä.
 RSA:han liittyvissä harjoitustöissä realistinen alkulukujen koko ei esimerkiksi ole 13 tai edes 61403. 
 Vakuuttavissa testeissä on siis sekä "ihmiselle ymmärrettaviä" syötteitä, että "realistisia" syötteitä.
@@ -46,8 +46,8 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 | Taso (pistemäärä)                 | Kuvaus |
 | :---------------------------------  |--------: |
 | riittämätön/hylätty (0)           | <span style="font-size:0.9em;">Projektin päämetodeja ei testata ollenkaan tai niiden testit eivät testaa oikeellisuuteen liityviä asioita.</span> |
-| *heikko (1)*                    |  <span style="font-size:0.9em;">*Projektin päämetodeja testataan muutamalla syötteellä. Valittujen syötteiden edustavuudessa puutteita.*</span>        |
-| keskinkertainen <br> (2-4)           | <span style="font-size:0.9em;">Keskeisimmät metodit on testattu muutamalla edustavalla syötteellä. Testien dokumentaatiosta käy ilmi niiden tarkoitus.</span> |
+| *heikko (1)*                    |  <span style="font-size:0.9em;">*Projektin päämetodeja testataan muutamalla syötteellä. Valittujen syötteiden [edustavuudessa](/respresentativeinputs) puutteita.*</span>        |
+| keskinkertainen <br> (2-4)           | <span style="font-size:0.9em;">Keskeisimmät metodit on testattu muutamalla [edustavalla](/respresentativeinputs) syötteellä. Testien dokumentaatiosta käy ilmi niiden tarkoitus.</span> |
 | *tyydyttävä (5-7)*                |  <span style="font-size:0.9em;">*Kaikki keskeiset metodit on testattu. Käytettävät syötteet ovat edustavia. Testit ovat toistettavia ja selkeitä.*</span>       |
 | *vakuuttava / erinomainen (8-10)* | <span style="font-size:0.9em;">*Kaikki[^1] metodit on testattu. Testauksessa käytetään niitä oman harjoitustyön aiheeseen sopivia tekniikoita[^2] jotka täydentävät yksikkötestejä ja ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat erittäin selkeitä ja niiden kattavuus laaja. Käytettävät syötteet ovat erittäin edustavia.*</span>  |
 

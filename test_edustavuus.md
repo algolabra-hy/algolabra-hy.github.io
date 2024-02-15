@@ -12,8 +12,8 @@ Alla olevat ohjeet olettavat osaamista [yksikkötesteistä](/unittest) ja Python
 alustamisesta [Poetrylla](/poetry).
 
 Tämän osion tarkoitus on näyttää edustavien testisyötteiden valinnan 
-tärkeyden ja kuinka, jopa järkevästi suunnitellut testit 
-eivät paljasta bugeja jos syöte on väärä. 
+tärkeyden ja kuinka, jopa järkevästi suunnitellut testit,
+eivät välttämättä paljasta bugeja jos syötteet eivät ole edustavia. 
 
 ## Leveyssuuntainen Läpikäynti
 Tutkitaan seuraavaa leveyssuuntaista läpikäyntiä lyhyimmän etäisyyden laskemiseen. 
