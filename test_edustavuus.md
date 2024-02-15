@@ -125,11 +125,11 @@ Piirretään ensimmäisen testin verkko:
 
 ![]({{ "/images/verkko1.png" | absolute_url }})
 
-Ja toisen testin verkko:
+ja toisen testin verkko:
 
 ![]({{ "/images/verkko2.png" | absolute_url }})
 
-Molemissa etsitään lyhyntä reittiä solmun 0 ja solmun 3 välillä. 
+Molemissa etsitään lyhyintä reittiä solmun 0 ja solmun 3 välillä. 
 Näitä tarkastelemalla huomataan, että vaikka nämä ovat eri verkot, 
 ne eivät itse asiassa testaa eri asioita meidän algoritmissamme. 
 Molemmissa verkoissa kaikki reitit solmun 0 ja 3 välillä ovat yhtä pitkiä. 
@@ -137,7 +137,7 @@ Ts. nämä syötteet eivät ole **edustavia**. Toinen testi ei lisää testiemme
 vakuuttavuutta tai kattavuutta. 
 
 # Toisenlainen Testiverkko
-Aikaisemmasta viisastuneena kehitetään testi jossa lähtö ja maalisolmun välillä on 
+Aikaisemmasta viisastuneena kehitetään testi jossa lähtö- ja maalisolmun välillä on 
 eri pituisia reittejä: 
 ```python
 def test_bfstoimiikunoneripituisiareitteja(self):
@@ -216,14 +216,14 @@ src/tests/bfs_test.py ...                                                       
 ============== 3 passed in 0.02s ===============
 ```
 
-Hyvin valittujen testisyötteiden avulla löydettiin ja korjatiin hienovarainen bugi. 
+Hyvin valittujen testisyötteiden avulla löydettiin ja korjatiin muuten hankalasti löydettävissä oleva bugi. 
 
 ## Yhteenveto
 Monimutkaisten algoritmien testauksessa testisyötteiden valinta on yhtä tärkeää kuin testien suunnittelu. Tässä käytettiin vain yhden tyyppistä testiä "annettuna verko jonka lyhyin reitti lähdön ja maalin välillä tunnetaan, testaa palauttaako metodimme saman arvon". Tällä testillä saatiin kiinni koodin bugi, mutta kuitenkin vain oikeanlaisella syötteellä. 
 
-Vikka omaa hajroitustyön kehityksessä ei aina voi tietää, että koodissa on bugeja, 
-syötteiden edustavuuteen pitää silti aina kiinnittää huomiota. Testejä kannattaa kirjoittaa 
-kehitysvaiheessa. Aina kun törmäät bugiin, kirjoita testi joka hylkää bugin. 
+Vaikka omaa hajroitustyön kehityksessä ei aina voi tietää, että koodissa on bugeja, 
+syötteiden edustavuuteen pitää silti aina kiinnittää huomiota. Testejä kannattaa kirjoittaa jo 
+työn kehitysvaiheessa eikä vasta jälkikäteen. Aina kun törmäät bugiin, kirjoita testi joka hylkää koodin nykyisen version. 
 
 {% include typo_instructions.md %}
 
@@ -289,7 +289,7 @@ Koska kaikkien edustavien syötteiden itse keksiminen ei ole realistista, tarvit
 Tuntuisi ilmeisesltä, että metodimme pitäisi palauttaa sama arvo, riippumatta siitä, missä järjestyksessä kaaret on lisätty verkkoon. Tehdään siis testi joka kokeilee tätä: 
 
 ```python
-def test_bfsteiriipukaarienjarjestyksesta(self):
+def test_bfseiriipukaarienjarjestyksesta(self):
 	kaaret = []
 	kaaret.append((0,2))
 	kaaret.append((0,1))
@@ -310,8 +310,8 @@ def test_bfsteiriipukaarienjarjestyksesta(self):
 ```
 Tässä siis kerätään kaaret listaan, ja sitten permutoidaan sitä ja tarkastetaan, että kaikilla järjestyksillä tulee sama tulos. Tämä testi hylkää odotetusti. 
 
-Vaikka tämä on periaatteessa hyvä idea, yleisessä tapauksissa (oikean kokoisilla verkoilla) 
+Vaikka tämä on periaatteessa hyvä idea, yleisessä tapauksissa (järkevän kokoisilla verkoilla) 
 kaikkien permutaatioiden testaaminen ei ole käytännöllistä. Sen sijaan kannattaa testata vain osaa permutaatioista. 
 
-Testi "kaikilla kaarien järjestyksillä tulee sama tulos" voidaan nähdä ns [invariantti testinä](/invarianttest). Tälläisille testeille löytyy valmiita kirjastoja jotka mahdollistavat verkkojen sattumanvaraisen generoinnin melko helposti, jonka avulla taas pystymme löytämään entistä monimutkaisempia bugeja. Lisää näistä kirjastoista löytyy esim. [täältä](/invarianttest)
+Testi "kaikilla kaarien järjestyksillä tulee sama tulos" voidaan nähdä ns [invariantti testinä](/invarianttest). Tälläisille testeille löytyy valmiita kirjastoja jotka mahdollistavat verkkojen sattumanvaraisen generoinnin melko helposti, jonka avulla taas pystymme löytämään entistä monimutkaisempia bugeja. Lisää näistä kirjastoista löytyy esim. [invariantti testauksesta kertovasta materiaalista](/invarianttest)
 
