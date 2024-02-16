@@ -291,7 +291,7 @@ Tämä ei kuitenkaan ole realistista, edes tässä helpossa tapauksessa, saati s
 
 ### Lisää Testejä
 Koska kaikkien edustavien syötteiden itse keksiminen ei ole realistista, tarvitaan muita testaustekniikkoja. Tässä kannattaa miettiä, mitä muuta metodimme pitäisi toteuttaa. 
-Tuntuisi ilmeisesltä, että metodimme pitäisi palauttaa sama arvo, riippumatta siitä, missä järjestyksessä kaaret on lisätty verkkoon. Tehdään siis testi joka kokeilee tätä: 
+Tuntuisi ilmeiseltä, että metodimme pitäisi palauttaa sama arvo, riippumatta siitä, missä järjestyksessä kaaret on lisätty verkkoon. Tehdään siis testi joka kokeilee tätä: 
 
 ```python
 def test_bfseiriipukaarienjarjestyksesta(self):
