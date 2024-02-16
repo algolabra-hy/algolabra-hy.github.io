@@ -12,7 +12,7 @@ _Nämä ohjeet on kirjoittanut Jeremias Berg_
 Käydään tässä läpi, miten ns suorituskykytesteillä voidaan testata asioita, joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta](/unittest) ja [invarianttitestuksesta](/invarianttest), varsinkin [Poetryn](/poetry) käytöstä.
 
 
-## Quicksortin testaus
+## Quicksortin Testaus
 Tarkastellaan seuraava quicksort algoritmin implementointia ja sen testejä. 
 
 ```python
@@ -78,7 +78,7 @@ Kuten osa jo varmaan on huomannut, tämä implementaatio quicksortista on (keino
 
 **Huom** Seuraavassa on tärkeää huomata, että suorituskykytestien suunnitellu on huomattavan paljon haasteellisempaa, kuin [yksikkötestien](/unittest) ja [invarianttitestien](/invarianttest). Tämä johtuu siitä, että koodin ajanotto ei ole determinististä. Saman metodin ajaminen moneen kertaan samalla syötteellä voi kestää eri määrän aikaa, riippuen esim processorin muusta käytöstä. Tämä tarkoittaa, että suorituskykytestien kirjoituksessa täytyy olla tarkkana sen kanssa, että testit todellakin testaavat sitä, mitä on tarkoitus. 
 
-### Vertailu toiseen (huonompaan) algoritmiin 
+### Vertailu Toiseen (Huonompaan) Algoritmiin 
 
 Tira kurssilta tiedetään, että bubblesort algoritmin aikavaativuus on (useimmilla taulukoilla) huonompi kuin quicksortin. Voisimme siis testata oman quicksortimme oikeellisuutta vertaamalla sen ajoaikaa bubblesorttiin. 
 
@@ -178,7 +178,7 @@ Edelleenkään testi ei mene läpi. Nyt timeit kirjasto on ajanut molemmat metod
 vähentää kohinaa. Kuitenkin, tässä testissä kuitenkin edelleen vastaesimerkkinä erittäin lyhyt lista. Täten ei ehkä kannata 
 vielä uskoa, että koodissamme olisi jotain vialla. 
 
-### Edustava testisyöte
+### Edustava Testisyöte
 Edellinen testi osoittaa edustavien testisyötteiden tärkeyden. Kun aikaisemmin halusimme testata invarianttia "quicksort järjestää listan oikein" on tärkeää, että käytetyt syötteet kattavat kaikki listojen reunatapaukset kuten: jo järjestetyt, monta samaa numeroa sisäätävät, tyhjät etc. listat. 
 
 Nyt haluamme kuitenkin testata tehokkuutta. Aikaisemman testimme ongelma on, että invariantti <span style="color:blue">"quicksort on aina nopeampi kuin insertionsort"</span>  ei päde oikeissa implementaatioissa koska ajanmittaus on epädeterminististä. Vaihdetaan siis taktiikkaa ja testataan invarianttia <span style="color:blue">"quicksort on nopeampi kuin insertion sort listoilla joiden järjestäminen vaatii työtä"</span>. 
@@ -281,7 +281,7 @@ FAILED src/tests/sort_test.py::TestSort::test_quicksort_vaara_on_nopeampi_kuin_b
 ```
 Näyttää paremmalta, testi ei mene läpi ja tällä kerralla hypothesis löytää vastaesimerkin jolla olettaisimme, että quicksort on insertion sorttia nopeampi. Nyt pitäisi herätä huoli siitä, että koodissamme on tosiaan jotain väärin. 
 
-## Korjataan quicksort
+## Korjataan Quicksort
 Testin perusteella alamme siis etsimään bugia. Onneksi keinotekoisesti lisätyt bugit on helppo korjata. Valitaan pivotti "sattumanvaraisesti" olemaan osataulukon ensimmäinen alkio. 
 ```python
 def quicksort_oikein_implementoitu(taulukko):
@@ -320,7 +320,7 @@ src/tests/sort_test.py .....                                                    
 ```
 Eli tuntuisi toimivan. Olipas kuitenkin haastavaa.... 
 
-### Sanity check
+### Sanity Check
 Tarkastetaan vielä, mitä käy jos yritämme testata oikein implementoitua quicksorttia lyhyillä listoilla. Toisin sanoen, lisätään ```@example``` komennolla aikaisemmin hylätty lista [0,0] testeihin. 
 ```python    
 taulukot_aikatesti_isot = st.lists(st.integers(), min_size=50, unique=True)
@@ -383,7 +383,7 @@ def test_quicksort_on_useimmiten_nopeampi_kuin_bubblesort(self, taulukko_lista):
             bubblesort_win += 1 
     self.assertGreaterEqual(quicksort_win -bubblesort_win, (len(taulukko_lista) / 2))
 ```
-# Pitääkö mitata aikaa?
+# Pitääkö Mitata Aikaa?
 Tässä on toivottavasti huomattu, että ajoaikaa mittaavilla testeillä voidaan periaatteessa saada kiinni hienovaraisempia bugeija kuin invariantti ja yksikkötestauksella. Tämä vaatii kuitenkin tarkkuutta ja testien muuttamista hieman epädeterministisiksi. Tässä on omat haasteensa. 
 
 Toinen (ja usein parempi) tapa on miettiä, voiko toivottuja asioita testata deterministisesti ilman ajoajan mittaamista. Järjestysalgoritmien tapauksessa voidaan miettiä, voisiko olla joku toinen (detemrinistinen) parametri joka erottaa bubblesortin ja quicksortin. Tälläinen löytyy esim miettimällä _miksi_ quicksortin aikavaatimus on yleensä n*log(n) kun bubblesortin on neliöllinen. Kuten tira kurssilta muistetaan, tämä johtuu siitä, että quicksortin ei yleensä tarvitse verrata kaikkia listan alkioita pareittan toisiinsa, sen sijaan jokaisella kierroksella verrataan kaikkia osalistan alkioita vain pivottiin. Parempi tapa testata metodiamme olisikin (ehkä) muuttaa quicksortin implementaatiota niin, että se palauttaa tehtyjen vertailujen määrän. 
