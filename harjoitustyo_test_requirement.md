@@ -23,7 +23,7 @@ Aina kun löydätte jonkun bugin, sille kannattaa kirjoittaa testi.
 Jokaisessa harjoitustyössä vaaditaan vähintään automaattiset [yksikkötestit](unittest) jotka testaavat työn **toimintalogiikaa**. Käyttöliittymää ja I/O:ta (esimerkiksi tiedostojen lukua) *ei* tarvitse testata, eikä niiden testauksesta saa arvostelussa lisäpisteitä. 
 
 Yleisesti ottaen hyvien testien tarkoitus on varmistaa, että oma algoritmi on oikein implementoitu. Mitä tämä täsmälleen tarkoittaa
-riippuu aiheesta. Alla muutamia aihespecifisiä esimerkkejä. Lisää tulee kunkin toteutuksen aiheehdotus sivuille.
+riippuu aiheesta. Alla muutamia aihespecifisiä esimerkkejä. Kurssin henkilökunta auttaa tarvittaessa.
 
 - Onko neuroverkkosi rakenne sellainen kun pitäisi?
 - Tekeekö pelitekoälysi aina laillisia siirtoja?
