@@ -98,7 +98,7 @@ src/maksukortti.py      22      1      8      2    90%   15->exit, 20
 TOTAL                   22      1      8      2    90%
 ```
 
-## Monimutkainen maksukortti
+## Monimutkainen Maksukortti
 
 Simuloidaan seuraavaksi (hieman keinotekoisesti) monimutkaisemman algoritmin testausta. 
 Kuvitellaan, että syödessä maukkaasti halutaan tarkastaa jokin monimutkainen ehto, joka varmistaa,
@@ -142,7 +142,7 @@ emme pysty määrittelemään syöteitä yksikkötestille joka varmasti saisi se
 Jos tämä esimerkki tuntuu liian keinotekoiselta voit kuvitella esim. ohjelman joka tekee jotain erilailla jos jonkun neuroverkon 
 virhe on enemmän kuin 15%, tai tekoälyn, joka toimii erilailla mikäli se toteaa voittomahdollisuuksiensa olevan yli 83%. 
 
-## Yksittäisistä syötteistä invariantteihin
+## Yksittäisistä Syötteistä Invariantteihin
 Nähtiin siis tapaus, jossa koodi toimii halutulla tavalla _melkein_ kaikilla syötteillä. Voidaksemme kirjoittaa testin joka huomaa bugin, meidän täytyisi osata arvata syötteet jolla koodi ei toimi. Harjoitustyössä toteutettaville algoritmeille tämä voi olla parhaimillaankin erittäin haastavaa, yleensä mahdotonta. Yksittäisten syötteiden sijasta tälläisissä tapauksissa kannattaakin testata invariantteja joita metodien tulisi toteuttaa, ja luoda mahdolliset syötteet automaattisesti. Englanniksi tätä tekniikka kutsutaan usein nimellä invariant tai property testing, ja se liittyy myös läheisesti ns. fuzzaukseen. 
 
 Invarianttitestauksessa ideana on, että:
@@ -205,14 +205,14 @@ Tämä johtuu siitä, että juuri kirjoittamamme testi kokeilee myös arvoja jot
 
 Haarakattavuuden mielessä nämä testit ovat siis parempia ja testaavat suurempaa osaa koodista. Tämän lisäki toivottu invariantti tuntuu pitävän. Vielä tämäkään ei kuitenkaan riitä. Ongelmana on, että testimme hylkää täsmälleen yhden yhteensä 150000 mahdollisesta arvosta ja normaaleilla asetuksilla hypotheis kirjasto ajaa jokaisen testin vain [100 kertaa](https://hypothesis.readthedocs.io/en/latest/settings.html#hypothesis.settings.max_examples) eri, sattumanvaraisesti valituilla, arvoilla. Jos ajaisimme testejä tarpeeksi monta kertaa, lopulta hypothesis voisi sattumalta valita arvon 1337 jolloin testit hylkäisivät. Meillä ei kuitenkaan ole mitään takuita siitä monta kertaa täytyy ajaa. Toisin sanoen invarianttitestit eivät vielä itsessään täysin takaa koodin toimivuutta. Moninmutkaisten algoritmien testaaminen vaatii siis edelleenkin hyvää ymmärrystä algoritmista ja sen toivotusta toiminnasta 
 
-## Miten parannetaan? 
+## Miten Parannetaan? 
 
 Katsotaan vielä, miten tätä yhtä testiä voisi parantaa saamaan kiinni tunnetun bugin. Yleisesti tähän on kolme tapaa:
 1. Testataan enemmän arvoja.
 1. Lisätään yksittäisiä arvoja pakollisiksi testeiksi.  
 1. Testataan arvoja jotka oletamme vaikeiksi
 
-# Testataan enemmän
+# Testataan Enemmän
 Tämä on ehkä kaikkein luonnollisin ajatus parantaa testejä. Käsketään yksinkertaisesti hypothesisiä kokeilemaan enemmän arvoja. 
 Tämä onnistuu lisäämällä importteihin "settings" käskyn ja lisäämällä sen testin eteen:
 ```python
@@ -267,7 +267,7 @@ FAILED src/tests/maksukortti_test.py::TestMaksukortti::test_syo_maukkaasti_vahen
 ```
 Nyt saatiin mitä haluttiin, hypotheis kertoo, että yksi testi epäonnistui, ja myös että se epäonnistui silloin kun muuttuja arvo on 1337, eli aivan kuten odotimmekin. 
 
-# Lisätään yksikkötestejä
+# Lisätään Yksikkötestejä
 Jos ajoit edellisen testin itse, huomasit että siihen meni (verattaessa aiempaan) melko paljon aikaa. Tämä johtuu yksinkertaisesti siitä, että viimeinen testi ajettiin yhteensä 15000 kertaa. Tämä on useamman arvon testaamisen heikkous, vaikeita metodeja voi olla aivan liian hidasta testata näin perusteellisesti aina kun ajetaan testejä. Tilanne pahenee edelleen jos metodi jota testataan ei ole vakioaikainen. 
 
 Kuitenkin jos satuttaisiin jollain lailla tietämään, että arvo 1337 on hankala metodille (esim. ajamalla kerran perusteelliset testit), niin voimme pakottaa hypotheis kirjaston aina kokeilemaan ainakin sen arvon. Tämä onnistuu @example lisäyksellä:
@@ -323,7 +323,7 @@ Eli testi ei mene läpi, eikä kestäkään niin kauaa enää.
 
 *Huom* Yleisessä tapauksessa invariantti testejä ei siis kannata ajaa kaikille mahdollisille syötteille, tämä veisi aivan liian kauan. Sen sijaan niitä kannattaa ajaa _tarpeeksi monelle_ arvolle usein. Ja vähän useammalle vähän harvemmin kuin perus yksikkkötestejä. Nämä, vähän hitaammat, testit voi sitten ajaa aina isompien muutosten jälkeen, ja tarpeen mukaan nostaa niistä löydettyjä hankalia syötteitä yksikkötesteihin jotka ajetaan useammin, esimerkiksi @example komennon kautta.
 
-# Testataan tarkemmin
+# Testataan Tarkemmin
 Lopuksi voimme myös todeta, että jos sattuisimme tietäämään, että kortin arvot 1300-1400 ovat haasteellisia niin voimme toki käskeä hypothesista testaamaan vain niitä:
 ```python 
 @given(arvo=st.integers(min_value=1300, max_value=1400))
@@ -334,7 +334,7 @@ def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
 ```
 joka epäonnistuu ilman parametrien säätöä. Tälläinen tapaus voisi sattua jos vaikka tietäisimme että ```monimutkainen_ehto``` metodimme Maksukortti luokassa tekee jotain (vaikka emme tietäisi mitä) vain jos arvo on tietyllä välillä. 
 
-# Syötteiden generoinnista
+# Syötteiden Generoinnista
 Lopuksi mainittakoon vielä, että hypothesiksen syötteen generointi ulottuu huomattavasti kokonaislukuja pidemmälle. Hypothetiksen [valmiit strategiat](https://hypothesis.readthedocs.io/en/latest/data.html) määrittelevät kuinka perustyyppejä voidaan luoda, mutta myös miten voit määritellä oman datatyyppisi luojan tai yhdistellä eri tyyppien generoijia toisinsa. Täten voit käytännössä käyttää hypothesista minkälaisten metodien testaamiseen tahansa. Palataakseni aikaisempiin esimerkkeihin, voisimme esim testata metodeja jotka otavat koko neuroverkon syötteeksi (muista [riippuvuuden injektointi](/riippuvuuksien_injektointi_python)) ja kertoa hypothesikselle, miten neuroverkkoja muodostetaan. Tällöin kirjasto voisi (teoriassa) testata sattumanvaraisesti muodostetuilla (ja treenatuilla) neuroverkoilla kunnes löytyy joku, jonka virhe on yli 15%, ilman että meidän täytyy itse osata määritellä, miten sellainen muodostetaan. 
 
 
@@ -342,7 +342,7 @@ Lopuksi mainittakoon vielä, että hypothesiksen syötteen generointi ulottuu hu
 Invarianttitestaus automatisoi joitain osia testauksesta ja helpottaa bugien löytämistä monimutkaisista algoritmeista. Teoriassa voimme vain kuvailla minkälaisia syötteitä haluamme testata, ja mitä näiden syötteiden täytyy toteuttaa. Kuitenkin, kuten tässä huomasimme, myös invarianttitestien toteuttaminen vaatii hyvää algoritmin tuntemusta ja tarkkuutta testien toteuttamisessa. Suositelemme vahvasti käyttämään niitä yksikkötestien lisänä harjoitustyön kehityksessä.
 
 
-## Lisää materiaalia
+## Lisää Materiaalia
 - [Hypothesis](https://hypothesis.readthedocs.io/en/latest/#) kirjaston oma dokumentaatio.
 - [Jqwik](https://jqwik.net/) on javalle tehty samanlainen kirjasto. 
 - [Junit-quickcheck](https://github.com/pholser/junit-quickcheck) on toinen Junit testikirjastoa muistuttava java kirjasto jolla tälläinen testaaminen onnistuu.
