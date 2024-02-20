@@ -26,7 +26,7 @@ Näillä sivuilla on paljon varsinkin [Ohjelmistotuotannon](https://ohjelmistotu
 Löytyy ehdotuksia kurssin moodle sivuilta. 
 
 ## Projektin Hallinta
-Alla nuutama hyväksi havaittu työkalu projektinhallintaan. 
+Alla muutama hyväksi havaittu työkalu projektinhallintaan. 
 
 ### Pythonilla Tehtävät Harjoitustyöt
 - [Poetry](/poetry) on Python projektien riippuvuuksien hallintaan kehitetty työkalu.

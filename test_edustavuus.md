@@ -55,7 +55,7 @@ katso pystytkö jo tässä vaiheessa huomaamaan sen?
 
 # Yksikkötestit
 Tehdään BFS algoritmille yksikkötestit. Jos testien tekeminen ja ajaminen ei tunnu tutulta 
-kannattaa tutstua aikaisempaan materiaaliin [yksikkö testauksesta](/unittest).
+kannattaa tutstua aikaisempaan materiaaliin [yksikkötestauksesta](/unittest).
 
 ```python
 import unittest
@@ -92,7 +92,8 @@ lyhyin reitti kahden solmun välillä, joten testi joka tarkastaa, että näin t
 on järkevä. Ongelmana tässä on, että tällä syötteellä bugia ei saa kiinni. 
 
 Kuvitellaan, että emme 
-tiedä, että koodissa on bugi. Hyvinä koodaajina tiedämme kuitenkinm että yhden esimerkin periaatteella ei pitkälle pötkitä ja tehdään toinenkin testi. 
+tiedä, että koodissa on bugi. Hyvinä koodaajina tiedämme kuitenkin, 
+että yhden esimerkin periaatteella ei pitkälle pötkitä ja tehdään toinenkin testi. 
 
 ```python
 def test_bfslaskeeetaisyydenoikein_toinen(self):
@@ -129,7 +130,7 @@ ja toisen testin verkko:
 
 ![]({{ "/images/verkko2.png" | absolute_url }})
 
-Molemissa etsitään lyhyintä reittiä solmun 0 ja solmun 3 välillä. 
+Molemmissa etsitään lyhyintä reittiä solmun 0 ja solmun 3 välillä. 
 Näitä tarkastelemalla huomataan, että vaikka nämä ovat eri verkot, 
 ne eivät itse asiassa testaa eri asioita meidän algoritmissamme. 
 Molemmissa verkoissa kaikki reitit solmun 0 ja 3 välillä ovat yhtä pitkiä. 
@@ -219,11 +220,13 @@ src/tests/bfs_test.py ...                                                       
 Hyvin valittujen testisyötteiden avulla löydettiin ja korjatiin muuten hankalasti löydettävissä oleva bugi. 
 
 ## Yhteenveto
-Monimutkaisten algoritmien testauksessa testisyötteiden valinta on yhtä tärkeää kuin testien suunnittelu. Tässä käytettiin vain yhden tyyppistä testiä "annettuna verko jonka lyhyin reitti lähdön ja maalin välillä tunnetaan, testaa palauttaako metodimme saman arvon". Tällä testillä saatiin kiinni koodin bugi, mutta kuitenkin vain oikeanlaisella syötteellä. 
+Monimutkaisten algoritmien testauksessa testisyötteiden valinta on yhtä tärkeää kuin testien suunnittelu. Tässä käytettiin 
+vain yhden tyyppistä testiä "annettuna verko jonka lyhyin reitti lähdön ja maalin välillä tunnetaan, 
+testaa palauttaako metodimme saman arvon". Tällä testillä saatiin kiinni koodin bugi, mutta kuitenkin vain oikeanlaisella syötteellä. 
 
-Vaikka omaa hajroitustyön kehityksessä ei aina voi tietää, että koodissa on bugeja, 
+Vaikka omaa harjoitustyön kehityksessä ei aina voi tietää, että koodissa on bugeja, 
 syötteiden edustavuuteen pitää silti aina kiinnittää huomiota. Testejä kannattaa kirjoittaa jo 
-työn kehitysvaiheessa eikä vasta jälkikäteen. Aina kun törmäät bugiin, kirjoita testi joka hylkää koodin nykyisen version. 
+työn kehitysvaiheessa eikä vasta jälkikäteen. Aina kun törmäät bugiin, kirjoita testi joka hylkää koodin nykyisen version, ja korjaa vasta sitten. 
 
 {% include typo_instructions.md %}
 
@@ -266,7 +269,7 @@ Tämä on melkein sama kuin testi jolla saimme bugin kiinni. Tässäkin testataa
 
 ![]({{ "/images/verkko3.png" | absolute_url }})
 
-Ainoa ero on järjestys, jossa kaaret lisätään verkkoon. Tässä kaari (0,2) lisätään ennen kaatya (0,1).  
+Ainoa ero on järjestys jossa kaaret lisätään verkkoon. Tässä kaari (0,2) lisätään ennen kaarta (0,1).  
 Kokeillaan:
 
 ```
@@ -282,11 +285,13 @@ src/tests/bfs_test.py .                                                         
 ```
 Eli nyt meneekin läpi. Nyt tässä nimittäin käy niin, että syvyyssuuntainen läpikäynti löytää (sattumalta) lyhyimmän reitin maaliin koska solmun 0 naapureista, se kokeilee ensin solmua 1. 
 
-Toisin sanoen, buginen koodimme toimii jos lähdon ja maalin väliset reitit ovat kaikki yhtä pitkiä, ja joskus vaikka näin ei olisikaan. Ollaksemme täysin varmoja koodin oikeellisuudesta meidän pitäisi pystyä "keksimään" kaikke eri tyyppiset verkot, ja kokeilemaan niitä kaikkia. Tämä ei kuitenkaan ole realistista, edes tässä helpossa tapauksessa, saati sitten vaikeempien harjoitustyön aiheiden testaamisessa. 
+Toisin sanoen, buginen koodimme toimii jos lähdon ja maalin väliset reitit ovat kaikki yhtä pitkiä, ja joskus vaikka näin ei olisikaan. Ollaksemme täysin varmoja koodin oikeellisuudesta meidän 
+pitäisi pystyä "keksimään" kaikki eri tyyppiset verkot, ja kokeilemaan niitä kaikkia.
+Tämä ei kuitenkaan ole realistista, edes tässä helpossa tapauksessa, saati sitten vaikeempien harjoitustyön aiheiden testaamisessa. 
 
 ### Lisää Testejä
-Koska kaikkien edustavien syötteiden itse keksiminen ei ole realistista, tarvitaan muita testaustekniikkoja. Tässä kannattaa miettiä, mitä muuta metodimme pitäisi toetuttaa. 
-Tuntuisi ilmeisesltä, että metodimme pitäisi palauttaa sama arvo, riippumatta siitä, missä järjestyksessä kaaret on lisätty verkkoon. Tehdään siis testi joka kokeilee tätä: 
+Koska kaikkien edustavien syötteiden itse keksiminen ei ole realistista, tarvitaan muita testaustekniikkoja. Tässä kannattaa miettiä, mitä muuta metodimme pitäisi toteuttaa. 
+Tuntuisi ilmeiseltä, että metodimme pitäisi palauttaa sama arvo, riippumatta siitä, missä järjestyksessä kaaret on lisätty verkkoon. Tehdään siis testi joka kokeilee tätä: 
 
 ```python
 def test_bfseiriipukaarienjarjestyksesta(self):
@@ -313,5 +318,7 @@ Tässä siis kerätään kaaret listaan, ja sitten permutoidaan sitä ja tarkast
 Vaikka tämä on periaatteessa hyvä idea, yleisessä tapauksissa (järkevän kokoisilla verkoilla) 
 kaikkien permutaatioiden testaaminen ei ole käytännöllistä. Sen sijaan kannattaa testata vain osaa permutaatioista. 
 
-Testi "kaikilla kaarien järjestyksillä tulee sama tulos" voidaan nähdä ns [invariantti testinä](/invarianttest). Tälläisille testeille löytyy valmiita kirjastoja jotka mahdollistavat verkkojen sattumanvaraisen generoinnin melko helposti, jonka avulla taas pystymme löytämään entistä monimutkaisempia bugeja. Lisää näistä kirjastoista löytyy esim. [invariantti testauksesta kertovasta materiaalista](/invarianttest)
+Testi "kaikilla kaarien järjestyksillä tulee sama tulos" voidaan nähdä ns [invariantti testinä](/invarianttest). Tälläisille testeille 
+löytyy valmiita kirjastoja jotka mahdollistavat verkkojen sattumanvaraisen generoinnin melko helposti, jonka avulla taas pystymme löytämään 
+entistä monimutkaisempia bugeja. Lisää näistä kirjastoista löytyy esim. [invariantti testauksesta kertovasta materiaalista](/invarianttest)
 
