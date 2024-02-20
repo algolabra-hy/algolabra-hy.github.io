@@ -32,7 +32,7 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
 - Projektin koodi on alusta asti [dokumentoitua](/dokumentaatio#koodin-dokumentointi) 
 - Projektin testien kehitys [edustavilla](/respresentativeinputs) syötteillä aloitettu.
     - Kehitä testejä samaan aikaan koodin kanssa. 
-    - Testien on tarkoitus mitata koodin *oikeellisuutta* älä kuluta aikaa tarpeettomien testien kehitykseen, vaan mieti ensin minkälaisia testejä juuri oma työsi tarvitsee. 
+    - Testien on tarkoitus mitata koodin *oikeellisuutta*. Älä kuluta aikaa tarpeettomien testien kehitykseen, vaan mieti ensin minkälaisia testejä juuri oma työsi tarvitsee. 
         - [Testaus](//testing) sivuilla on materiaalia, mutta kaikki harjoitustyöt eivät tarvitse kaikkea sieltä löytyvää. 
     - Projektin [testikattavuus](/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus) seurattavissa. 
 
