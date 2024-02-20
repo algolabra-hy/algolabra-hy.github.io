@@ -98,7 +98,7 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
     - Muista [käyttöohje](/dokumentaatio#käyttöohje)
 
 **Viikko 6. Palautus**
-- [Viikkoraportti 5](/dokumentaatio#viikkopalautukset)
+- [Viikkoraportti 6](/dokumentaatio#viikkopalautukset)
 
 ## Lopullinen Palautus
 (Tarkka päivä löytyy moodlen kalenterista)
