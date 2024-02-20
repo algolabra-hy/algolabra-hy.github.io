@@ -43,7 +43,7 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
 - Projektin ydinalue kehittynyt
     - Projektilla on toimiva (ei tarvitse olla hiottu) käyttöliittymä. 
     - **Ydintä tuksevat metodit kaikki valmiita**. 
-    - Ideaalitapauksessa viikon jälkeen projektia pitäisi jo voida ajaa ja sen toiminnallisuutta havainmoida. 
+    - Ideaalitapauksessa viikon aikana työtä pitäisi jo voida ajaa ja sen toiminnallisuutta havainnoida. 
 - Koodin laatua ylläpidetään esim [pylintin](/pylint) avulla.
 - Projektin jo toteutetut päämetodit ovat kattavasti yksikkötestattuja [edustavilla](/respresentativeinputs) syötteillä. 
 - [Testausdokumentin](/dokumentaatio#testausdokumentti) kirjoitus aloitettu. 
@@ -55,7 +55,7 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
 
 
 ## Viikko 4
-Tällä viikolla kannattaa keskittyä harjoitustyön valmistelua vertaisarviointia varten. 
+Tällä viikolla kannattaa keskittyä harjoitustyön valmisteluun vertaisarviointia varten. 
 Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityksellistä palautetta.
 
 - Ohjelman ydintoiminta melkein valmis. Mahdolliset omat tietorakenteet aloitettu. 
