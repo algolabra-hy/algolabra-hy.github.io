@@ -28,7 +28,7 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
 ## Viikko 2
 - Projektin ydinalueen kehitykseen pitäisi päästä **jo tällä viikolla**. 
     - Tämä tarkoittaa esimerkiksi, että jos teet jonkin pelin tekoälyä, itse tekoälyn kehitykseen pitäisi päästä jo tällä viikolla. 
-    - Jos harjoitustyösi kuuluu oman tietorakenteen toteutus, voit tässä vaiheessa käyttää kielesi valmiita rakenteita ja korvata ne myöhemmin.
+    - Jos harjoitustyöösi kuuluu tietorakenteiden toteutusta, voit tässä vaiheessa käyttää kielesi valmiita rakenteita ja korvata ne myöhemmin.
 - Projektin koodi on alusta asti [dokumentoitua](/dokumentaatio#koodin-dokumentointi) 
 - Projektin testien kehitys [edustavilla](/respresentativeinputs) syötteillä aloitettu.
     - Kehitä testejä samaan aikaan koodin kanssa. 
