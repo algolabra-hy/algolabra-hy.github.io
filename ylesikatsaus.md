@@ -7,7 +7,9 @@ inheader: no
 ---
 
 Alla yleiskatsaus kurssin kulusta. Kaikista tällä sivuilla käsitellyistä aiheista löytyy 
-tarkempaa tietoa materiaalin muista osista. Kurssilla opiskelija toteuttaa ohjelman, joka ratkaisee jonkin ohjelmointiongelman. Ongelmanratkaisuun käytetään sopivia tehokkaita algoritmeja ja tietorakenteita. Aihe on vapaa, kunhan ratkaisussa on tarpeeksi algoritmista vaativuutta. Käytännössä tämä tarkoittaa kirjallisuuteen perustuvien algoritmien käyttämistä, jotta tiedetään algoritmin olevan tarkoitukseen soveltuva ja tuottavan halutun tuloksen.
+tarkempaa tietoa materiaalin muista osista. 
+
+Kurssilla opiskelija toteuttaa ohjelman, joka ratkaisee jonkin ohjelmointiongelman. Ongelmanratkaisuun käytetään sopivia tehokkaita algoritmeja ja tietorakenteita. Aihe on vapaa, kunhan ratkaisussa on tarpeeksi algoritmista vaativuutta. Käytännössä tämä tarkoittaa kirjallisuuteen perustuvien algoritmien käyttämistä, jotta tiedetään algoritmin olevan tarkoitukseen soveltuva ja tuottavan halutun tuloksen.
 Relevantin kirjallisuuden etsiminen ja siihen tutustuminen---tarvittaessa kurssin henkilökunnan avustuksella---on oleellinen (ja aikaa vievä) osa harjoitustyötä. 
 
 ### Aiheen Valinnasta 
@@ -48,3 +50,17 @@ Sovelluksen tulee tuottaa tuloste (teksti, kuva, ääni, muu tiedosto), josta on
 Mitä tämä tarkalleen tarkoittaa, riippuu työn aiheesta. Joissakin tapauksessa pelkät kometorivin käynnistysparametrit ovat riittävä tapa kommunikoida ohjelman kanssa. Yleensä kuitenkin tarvitaan ainakin valikko-ohjaus komentoriviltä ja ASCII grafiikka. Usein myös selkeä visualisointi on välttämätön jo ohjelman kehitysvaiheessa, jotta näkee toimiiko ohjelma oikein. Graafisenkin käyttöliittymän koodaamiseen kuluva aika voi säästyä harjoitustyön kehitys- / testausvaiheessa, jos siitä on ennestään kokemusta, tai jos joutuu paljon kokeilemaan ohjelmaa erilaisilla parametrien arvoilla yms., vaikkapa valitsemaan pisteitä kartalta. 
 
 Käyttöliittymän kehityksessä saa käyttää mitä tahansa valmiita välineitä. Käyttöliittymää ei tarvitse testata, eikä sen testaamisesta saa harjoitustyön arvostelussa lisäpisteitä.
+
+### Aikataulusta
+Kurssin [aikataulu](/aikataulu) on tiukka. Suunnittele ajankäyttösi niin, että voit käyttää suurimman osan ajastasi harjoitustyösi [*ytimen*](dokumentaatio#määrittelydokumentti) kehitykseen. 
+- Älä käytä esimerkiksi käyttöliittymän kehitykseen enempää aikaa, kuin mitä tarvitset ymmärtääksesi ohjelman kulkua. 
+- **Esim.** jos teet shakkibottia, shakkipelin siirtojen generoinnin pitäisi olla valmis toisen viikon aikana.   
+
+Kurssilla ei juurikaan ole aikaa tehdä asioita, jotka eivät edistä harjoitustyötä. Varmista siis, että 
+et käytä aikaa sellaisten asioiden kehitykseen, jotka eivät kuulu omaan aiheeseesi. 
+    - 3 kertaa 3 ristionollan kehitys ei edistä isomman pelin kehitystä koska
+      useimmat haasteet ilmaantuvat vasta kun siirryt isompiin lautoihin. 
+    - Kehitä testejä samaan aikaan ohjelman kanssa, niistä on silloin eniten hyötyä. Muista kuitenkin, että 
+      tarvittavien testien tyypit riippuu omasta aiheestasi. Kaikki aiheet eivät vaadid esim suorituskykytestausta.
+    - Kysy henkilökunnalta jos olet epävarma. Varaudu kuitenkin miettimään asiaa ensin. Kysy mielummin "onko asian X kehittäminen minulle hyödyllistä" kuin "mitä minun pitäisi nyt tehdä"? 
+    
