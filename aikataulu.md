@@ -13,8 +13,8 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
     - Tutustu (moodle sivuilla oleviiin) aihe-ehdotuksiin.
     - Juttele tarvittaessa ohjaajan kanssa, varsinkin jos aiheesi ei ole ehdotusten listalla. 
     - Ohjaaja tarkistaa määrritelydokumentin ja antaa palautetta tarvittaessa. 
-- [Harjoitustyön repostiorio](/git) alustettu ja rekisteröity [Labtooliin](https://study.cs.helsinki.fi/labtool/).
-    - Muista myös sallia [issuet](/git#issuiden-salliminen)
+- [Harjoitustyön repositoorio](/git) alustettu ja rekisteröity [Labtooliin](https://study.cs.helsinki.fi/labtool/).
+    - Muista myös sallia [issuet](/git#issuiden-salliminen).
 - [Projektinhallinta](/projektinhallinta#projektin-hallinta) kunnossa. 
     - Muista tutustua myös [yksikkötestien](/unittest) tekemiseen.
 
@@ -27,7 +27,7 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
 
 ## Viikko 2
 - Projektin ydinalueen kehitykseen pitäisi päästä **jo tällä viikolla**. 
-    - Tämä tarkoittaa esimerkiksi, että jos teet jonkin pelin tekoälyä, itse tekoälyn kehitykseen pitäisi päästä jo tällä viikolla. 
+    - Tämä tarkoittaa esimerkiksi, että jos teet pelin tekoälyä, itse tekoälyn kehitykseen pitäisi päästä jo tällä viikolla. 
     - Jos harjoitustyöösi kuuluu tietorakenteiden toteutusta, voit tässä vaiheessa käyttää kielesi valmiita rakenteita ja korvata ne myöhemmin.
 - Projektin koodi on alusta asti [dokumentoitua](/dokumentaatio#koodin-dokumentointi) 
 - Projektin testien kehitys [edustavilla](/respresentativeinputs) syötteillä aloitettu.
@@ -42,7 +42,7 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
 ## Viikko 3
 - Projektin ydinalue kehittynyt
     - Projektilla on toimiva (ei tarvitse olla hiottu) käyttöliittymä. 
-    - **Ydintä tuksevat metodit kaikki valmiita**. 
+    - **Ydintoimintaa tuksevat metodit kaikki valmiita**. 
     - Ideaalitapauksessa viikon aikana työtä pitäisi jo voida ajaa ja sen toiminnallisuutta havainnoida. 
 - Koodin laatua ylläpidetään esim [pylintin](/pylint) avulla.
 - Projektin jo toteutetut päämetodit ovat kattavasti yksikkötestattuja [edustavilla](/respresentativeinputs) syötteillä. 
