@@ -114,7 +114,7 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
 
 **Ohjelma:**
 -   Mielellään suoritettava ohjelma [github releasena](https://ohjelmistotekniikka-hy.github.io/python/viikko5#github-release) 
--   Määrittelydokumentin laajuus saavutettu.  
+-   Toiminallisuudessa määrittelydokumenttiin kirjoitettu laajuus saavutettu.  
 -   Työ valmis ja hiottu
 
 **Testaus:**
