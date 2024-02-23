@@ -104,7 +104,7 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
 (Tarkka päivä löytyy moodlen kalenterista)
 
 **Dokumentaatio:**
-- 100% selkeää ja kommentoitu koodi
+- 100% selkeä ja kommentoitu koodi
 - Valmiit dokumentit:
     - [Määrittelydokumetti](dokumentaatio#määrittelydokumentti) (ei tarvitse päivittää alkuperäisestä)
     - [Toteutusdokumentti](/dokumentaatio#toteutusdokumentti)
@@ -113,12 +113,12 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
     - [Käyttöohje](/dokumentaatio#käyttöohje)
 
 **Ohjelma:**
--   Mielellään suoritettava ohjelma [github releasena](https://ohjelmistotekniikka-hy.github.io/python/viikko5#github-release) 
+-   Mielellään suoritettava ohjelma. 
 -   Toiminallisuudessa määrittelydokumenttiin kirjoitettu laajuus saavutettu.  
--   Työ valmis ja hiottu
+-   Työ valmis ja hiottu.
 
 **Testaus:**
 -   Koodin [kattava](/testreqs) yksikkötestaus
 -   Ohjelman testaus dokumnetoitu testausdokumenttiin
 
-
+{% include typo_instructions.md %}
