@@ -2,7 +2,7 @@
 layout: page
 permalink: /projektinhallinta
 title: Yleisiä Ohjeita
-title_long: Projektinhallinta
+title_long: Ohjeita
 inheader: yes
 ---
 
@@ -10,7 +10,7 @@ Näillä sivuilla löytyy ohjeita eri projektinhallintaa helpottaville työkalui
 Nämä ovat tarkoitettu lähinnä opiskelijoille, joille nämä työkalut eivät ole entuudestaan 
 tuttuja, harjoitustyössä ei ole pakko käyttää juuri näitä jos joku muu työkalu tuntuu luontevammalta. 
 
-Näillä sivuilla on paljon varsinkin [Ohjelmistotuotannon](https://ohjelmistotuotanto-hy.github.io/) kurssin materiaaleista lainattua ja lyhennettyä.
+Näillä sivuilla on paljon varsinkin Ohjelmistotuotannon kurssin materiaaleista lainattua ja lyhennettyä.
 
 ## Ihan Ensiksi
 - Kurssin aikana kaikki harjoitustyöt luodaan git repositorioina GitHub sivuille. Mikäli tämä ei ole tuttua, kannattaa tustua [näihin ohjeisiin](/git). 
