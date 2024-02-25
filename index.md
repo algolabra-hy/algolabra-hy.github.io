@@ -3,12 +3,18 @@ layout: home
 permalink: /
 ---
 
-Näillä sivuilla on Helsingin Yliopiston Algoritmit ja Tekoäly harjoitustyöhön liittyvää materiaalia. Tärkeimmät osat liittyvät harjoitustyön [hallintaan](/projektinhallinta) sekä [testaamiseen](/testing). Ajan myötä suunnitteilla on myös siirtää tänne [esimerkkejä hyvistä harjoitustöistä](/esimerkkeja) ja aukikirjoitettuja aihe ideoita.
+Näillä sivuilla on Helsingin Yliopiston Algoritmit ja Tekoäly harjoitustyöhön liittyvää materiaalia. Tärkeimmät osat liittyvät harjoitustyön [hallintaan](/projektinhallinta) sekä [testaamiseen](/testing). 
 
 Sivut ovat vielä rakenteella ja päivittyvät jatkuvasti. 
 Tietoa itse harjoitustyön suoritamiseen liittyvistä asioista löytyy tämänhetkisen toteutuksen moodlesta johonka pääsee [kurssin sivujen](https://studies.helsinki.fi/kurssit/opintojakso/otm-3d27dcc5-f7b5-4eec-b5db-53217aee3918/TKT20010) kautta ilmoittautumisen jälkeen.  
 
-## Ihan ensiksi
+## Lue Ensin Moodle
+Voit tutustua näihin sivuihin saadaksesi yleiskuvaa kurssin kulusta jo 
+ennen ilmoittautumista. Mikäli kuitenkin olet jo ilmoittaunut, käy ensin lukemassa 
+[kurssitoteutuksen moodle sivut]({{site.moodle}}) jossa selitetään kurssin tavoitteista ja 
+ilmoittautumisesta tarkemmin. Nämä sivut olettavat, että olet tutustunut moodlen materiaaliin. 
+
+## Ihan Ensiksi
 1. Tee ensin harjoitustyöllesi repositorio Gihubiin. Jos tämä ei ole entuudestaan tuttua [näistä ohjeista](/git) pitäisi olla apua. 
     - Muista myös [sallia issuet](/git#issuiden-salliminen).
 1. Tämän jälkeen rekisteröidy [Labtooliin](https://study.cs.helsinki.fi/labtool/). Muista rekisteröityä oikealle kurssille.

@@ -15,6 +15,7 @@ email: jeremias.berg@helsinki.fi
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: ''
 url: 'https://algolabra-hy.github.io'
+moodle: 'https://moodle.helsinki.fi/course/view.php?id=62031'
 github_username: jezberg
 repo_url: 'https://github.com/algolabra-hy/algolabra-hy.github.io'
 repo_branch: 'master'
