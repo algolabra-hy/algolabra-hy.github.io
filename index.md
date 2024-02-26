@@ -10,9 +10,8 @@ Tietoa itse harjoitustyön suoritamiseen liittyvistä asioista löytyy tämänhe
 
 ## Lue Ensin Moodle
 Voit tutustua näihin sivuihin saadaksesi yleiskuvaa kurssin kulusta jo 
-ennen ilmoittautumista. Mikäli kuitenkin olet jo ilmoittaunut, käy ensin lukemassa 
-[kurssitoteutuksen moodle sivut]({{site.moodle}}) jossa selitetään kurssin tavoitteista ja 
-ilmoittautumisesta tarkemmin. Nämä sivut olettavat, että olet tutustunut moodlen materiaaliin. 
+ennen ilmoittautumista. Mikäli kuitenkin olet jo ilmoittautunut, käy ensin lukemassa 
+[kurssitoteutuksen moodle sivut]({{site.moodle}}) jossa selitetään kurssin tavoitteista, rakenteesta, ja arvostelusta tarkemmin. Nämä sivut olettavat, että olet tutustunut moodlen materiaaliin ja voivat tuntua sekavilta jos et ole.
 
 ## Ihan Ensiksi
 1. Tee ensin harjoitustyöllesi repositorio Gihubiin. Jos tämä ei ole entuudestaan tuttua [näistä ohjeista](/git) pitäisi olla apua. 
