@@ -175,7 +175,7 @@ def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
     kortti.syo_maukkaasti()
     self.assertTrue(kortti.saldo_euroina() == ((arvo - 400) / 100) or arvo < 400)
 ```
-Tässä @given kertoo, mitä parametrin "arvo" mahdollisia arvoja halutaan testata. Tässä tapauksessa käytetään hypothesis kirjaston omia valmiita [strategioita](https://hypothesis.readthedocs.io/en/latest/data.html) kokonaislukujen (ingetereiden) luomiseen. Tässä normaali strategiaan lisätään, että halutaan testata kaikkia arvoja 0an ja 15000 (kortin maksimiarvon) välillä. Ts. @given määrittelee, että seuraavassa testissä parametri "arvo" on jokin kokonaisluku välillä 0 ja 15000. 
+Tässä @given kertoo, mitä parametrin "arvo" mahdollisia arvoja halutaan testata. Tässä tapauksessa käytetään hypothesis kirjaston omia valmiita [strategioita](https://hypothesis.readthedocs.io/en/latest/data.html) kokonaislukujen (intgetereiden) luomiseen. Tässä normaali strategiaan lisätään, että halutaan testata kaikkia arvoja 0an ja 15000 (kortin maksimiarvon) välillä. Ts. @given määrittelee, että seuraavassa testissä parametri "arvo" on jokin kokonaisluku välillä 0 ja 15000. 
 Tätä seuraava testi oleellisesti testaa invarianttia "jos kortilla on arvoa yli 400 senttiä, niin tällöin metodin ```syo_maukkaasti``` kutsuminen vähentää arvoa 400:lla. 
 
 Kokeillaan testejä (muista käynnistää virtuaaliympäristö):
@@ -348,5 +348,18 @@ Invarianttitestaus automatisoi joitain osia testauksesta ja helpottaa bugien lö
 - [Junit-quickcheck](https://github.com/pholser/junit-quickcheck) on toinen Junit testikirjastoa muistuttava java kirjasto jolla tälläinen testaaminen onnistuu.
 - [Haskelin Quickcheck](https://hackage.haskell.org/package/QuickCheck) kirjasto on inspiroinut paljon muita tälläisiä kirjastoja.
 - [Tutoriaali](https://www.inspiredpython.com/course/testing-with-hypothesis/testing-your-python-code-with-hypothesis) hypothesiksen käytöstä Mickey Petersenin kirjoittamana. 
+
+## Lisää mietittävää
+Palataan testiin: 
+```python 
+@given(arvo=st.integers(min_value=0, max_value=15000))
+@settings(max_examples=15000)
+def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
+    kortti = Maksukortti(arvo)
+    kortti.syo_maukkaasti()
+    self.assertTrue(kortti.saldo_euroina() == ((arvo - 400) / 100) or arvo < 400)
+```
+- Löydätkö tästä testistä bugin? 
+- Mitä tapahtuu jos maksukorttimme vähentäisi 450 senttiä silloin kun kortilla on 410 senttiä? 
 
 {% include typo_instructions.md %}
