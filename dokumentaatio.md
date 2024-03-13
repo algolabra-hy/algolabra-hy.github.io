@@ -74,6 +74,7 @@ Määrittelydokumentin pitää sisältää seuraavat tiedot:
 - Minkä ongelman ratkaiset?
 - Mitä syötteitä ohjelma saa ja miten niitä käytetään?
 - Tavoitteena olevat aika- ja tilavaativuudet (esim. O-analyysit)
+    - Tätä ei kannata (tai edes pidä) yrittää todistaa itse. Nämä kannattaa katsoa wikipediasta ja varmistaa, että ymmärrätte oman algoritmin kohdalla mistä ne tulevat. 
 - Viitteet
 
 **Harjoitustyön Ydin.** Kuvaile määrittelydokumenttiin muutamalla lauseella, mikä on aiheesi *ydin*. 
