@@ -27,6 +27,7 @@ Lyhyesti sanottuna, alustalta saa käyttöönsä grafisen käyttöliittymän ja 
 **Mikäli aiot kokeilla käyttöliittymää**:
 1. Kerro tästä määrittelydokumentissasi. 
 1. Lisää jokaiseen viikkoraporttiin lyhyt palaute sen toimivuudesta ja siitä, mikä vaikutus sillä on harjoitustyön kehitykseen. 
+1. Muista kirjoittaa käyttöohjeeseesi miten koko projektisi ajetaan. Tämä on tärkeää mm. vertaisarviointia varten. 
 
 
 ## Ohjeet Käyttöliittymän Lataamiseen
