@@ -34,7 +34,7 @@ Lyhyesti sanottuna, alustalta saa käyttöönsä grafisen käyttöliittymän ja 
 ![]({{ "/images/ailocal0.png" | absolute_url }})
 
 1. Aloita lataamalla github release [AI-localin](https://github.com/game-ai-platform-team/tira-ai-local/releases/tag/v1.0.0) repositoriosta (kuvan .zip tiedosto).
-1. Pura zip tiedosto ja käynnistä sieltä löytyvä tira-ai-local ohjelma (joko terminaalista )
+1. Pura zip tiedosto ja käynnistä sieltä löytyvä tira-ai-local ohjelma (joko terminaalista tai kansiosta klikkaamalla)
 
 ![]({{ "/images/ailocal1.png" | absolute_url }})
 
