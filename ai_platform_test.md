@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /aiplatformtest
-title: Tekoäly Alustan Testaus
+title: Tekoälyalustan Testaus
 title_long: AIPlatform
 inheader: no
 ---
