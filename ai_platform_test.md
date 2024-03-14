@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /aiplatformtest
-title: Tekoäly Platformin Testaus
+title: Tekoäly Alustan Testaus
 title_long: AIPlatform
 inheader: no
 ---
@@ -12,10 +12,10 @@ inheader: no
 <h4>Vasta Koekäytössä</h4>
 
 <p>
-Tekoälyplatformi on tällä kurssilla (4 periodi lukukaudella 23-24) 
+Tekoälyalusta on tällä kurssilla (4 periodi lukukaudella 23-24) 
 vasta koekäytössä. Kurssin henkilökuntakin vasta harjoittelee sen kanssa. Näinpä ohjeissa voi olla jonkin verran epäselvyyksiä ja käytännöt muuttua. Pyrimme minimoimaan muutoksista aiheutuvat häiriöt opiskelijoille. 
 
-Tällä hetkellä käyttöliittymä toimii vain Linuxilla. 
+Tällä hetkellä alusta toimii vain Linuxilla. 
  </p>
 
 </div>
@@ -81,9 +81,9 @@ if __name__ == "__main__":
 
 Esimerkissä tekoäly keskustelee käyttöliittymän kanssa input() ja print komentojen kautta. 
 Input komenolla luetaan käyttöliitymästä tuleva (ihmisen tekemä) siirto ns. uci muodossa. 
-Tämän jälkeen uusi siirto tallennetaan tekoälyn omaan laudan hallintaan (esimerkissä rivillä 66) jonka jälkeen oman tekoäly laskee seuraavan siirron. Esimerkkitekoälymme yksinkertaisesti arpoo sattumanvaraisesti jonkun laillisista siirroista ja palauttaa sen sitten rivillä 74. Muista ettei oma harjoitustyösi saa käyttää chess kirjaston metodeja. 
+Tämän jälkeen uusi siirto tallennetaan tekoälyn omaan laudan hallintaan (esimerkissä komennolla "board.push()) jonka jälkeen oman tekoäly laskee seuraavan siirron. Esimerkkitekoälymme yksinkertaisesti arpoo sattumanvaraisesti jonkun laillisista siirroista ja palauttaa sen sitten toisessa print lauseessa. Muista ettei oma harjoitustyösi saa käyttää chess kirjaston metodeja. 
 
-Käyttöliittymä tukee myös muun syötteen loggaamista. Kaikki print lauseet paitsi ne, jotka alkavat "MOVE:" syötetään käyttöliittymän outputtiin josta ne voi lukea ohjelman aavamassa terminaalissa.
+Käyttöliittymä tukee myös muun syötteen loggaamista. Kaikki print lauseet paitsi ne, jotka alkavat "MOVE:" syötetään käyttöliittymän outputtiin josta ne voi lukea ohjelman avaamassa terminaalissa.
 Jos yrität omasta tekoälystäsi lähettää laittoman siirron, käyttöliittymä kaattuu.  
 
 ### Siirtojen Käsittely Merkkijonoina
