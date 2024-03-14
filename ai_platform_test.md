@@ -40,7 +40,10 @@ Lyhyesti sanottuna, alustalta saa käyttöönsä grafisen käyttöliittymän ja 
 
 Käynnistyvään ohjelmaan voit linkata oman tekoälyprojektisi root kansion (file-path ruutuun jonka jälkeen paina submit). 
 
-**Jos ohjelma ei käynnisty**: voi olla että Linux distributiostasi puuttuu libatk kirjasto. Tämän voi ladata [täällä](https://www.masmasit.com/2021/08/how-to-install-package-libatk-10so0-on_01058658241.html) olevien ohjeiden mukaisesti. 
+![]({{ "/images/ailocal2.png" | absolute_url }})
+
+**Jos ohjelma ei käynnisty**: voi olla että Linux distributiostasi puuttuu jokin kirjastoista 
+joista se riippuu. Näihin kuuluu ainakin libatk, libatk-bridge2.0-0, libcups2, libgtk-3-0 ja libgbm1. Näitä voi asentaa [täällä](https://www.masmasit.com/2021/08/how-to-install-package-libatk-10so0-on_01058658241.html) olevien ohjeiden mukaisesti. 
 
 ## Oman Tekoälyn Konfiguroiminen 
 
