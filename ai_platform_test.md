@@ -15,7 +15,7 @@ inheader: no
 Tekoälyalusta on tällä kurssilla (4 periodi lukukaudella 23-24) 
 vasta koekäytössä. Kurssin henkilökuntakin vasta harjoittelee sen kanssa. Näinpä ohjeissa voi olla jonkin verran epäselvyyksiä ja käytännöt muuttua. Pyrimme minimoimaan muutoksista aiheutuvat häiriöt opiskelijoille. 
 
-Tällä hetkellä alusta toimii vain Linuxilla. 
+Tällä hetkellä alusta toimii vain (jollain) Linuxin distributioilla. 
  </p>
 
 </div>
@@ -39,6 +39,8 @@ Lyhyesti sanottuna, alustalta saa käyttöönsä grafisen käyttöliittymän ja 
 ![]({{ "/images/ailocal1.png" | absolute_url }})
 
 Käynnistyvään ohjelmaan voit linkata oman tekoälyprojektisi root kansion (file-path ruutuun jonka jälkeen paina submit). 
+
+**Jos ohjelma ei käynnisty**: voi olla että Linux distributiostasi puuttuu libatk kirjasto. Tämän voi ladata [täällä](https://www.masmasit.com/2021/08/how-to-install-package-libatk-10so0-on_01058658241.html) olevien ohjeiden mukaisesti. 
 
 ## Oman Tekoälyn Konfiguroiminen 
 
@@ -90,7 +92,7 @@ Jos yrität omasta tekoälystäsi lähettää laittoman siirron, käyttöliittym
 Käyttöliitymä tukee ns uci standardia shakin siirtojen merkitsemiseen merkkijonoina. 
 Jokaisessa siirtoa kuvaavassa merkkijonossa on neljä tai viisi merkkiä.  
 Merkkijonon kaksi ensimmäistä merkkiä ovat siirrettävän nappulan lähtöruutu. Seuraavat kaksi 
-ovat ruutu jonne se siirretään. Katso alla oleva kuva, valkoiset nappulat aloittavar riveiltä 1 ja 2, mustat riveiltä 7 ja 8. Valkoinen kuningas aloittaa ruudusta e1 ja valkoinen kuningatar ruudusta d1. 
+ovat ruutu jonne se siirretään (katso alla oleva kuva). Valkoiset nappulat aloittavat riveiltä 1 ja 2, mustat riveiltä 7 ja 8. Valkoinen kuningas aloittaa ruudusta e1 ja valkoinen kuningatar ruudusta d1. 
 
 Viidettä merkkiä käytetään vain sotilaiden korotuksessa. 
 Viides merkki kuvaa nappulaa johon sotilas korotetaan:
