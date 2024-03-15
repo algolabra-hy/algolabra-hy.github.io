@@ -30,7 +30,7 @@ In short, the platform provides a graphical user interface and the possibility t
 ## Instructions for Downloading the Interface
 ![]({{ "/images/ailocal0.png" | absolute_url }})
 
-1. Start by downloading the [AI-local](https://github.com/game-ai-platform-team/tira-ai-local/releases/tag/v1.0.0) release from the repository (the .zip file in the picture).
+1. Start by downloading the **newest** [AI-local](https://github.com/game-ai-platform-team/tira-ai-local/tags) release from the repository (the .zip file in the picture, the picture is from the 1.0.0 release which is not the newest anymore).
 1. Unzip the file and launch the tira-ai-local program found therein (either from the terminal or by clicking on the folder).
 
 ![]({{ "/images/ailocal1.png" | absolute_url }})
@@ -50,9 +50,20 @@ Let's look at the structure of the example project's AI (stupid_ai.py).
 
 ```python
 import random
-import time
-# the chess library IS NOT PREMITED in your project
+# the chess library is not allowed in the project work.  
 import chess
+import time
+import random
+
+def set_board(board: chess.Board, board_position:str):
+    board.set_fen(board_position)
+
+def make_move(board: chess.Board):
+    legal_moves = [move.uci() for move in list(board.legal_moves)]
+    choice = random.choice(legal_moves)
+    board.push_uci(choice)
+
+    return choice
 
 def main():
 
@@ -61,16 +72,24 @@ def main():
     while True:
         opponent_move = input()
         time.sleep(random.randrange(1,10)/100)
-        if opponent_move != "":
-            board.push_uci(opponent_move)
-        legal_moves = [move.uci() for move in list(board.legal_moves)]
-        choice = random.choice(legal_moves)
-        board.push_uci(choice)
+        if opponent_move.startswith("BOARD: "):
+            set_board(board, opponent_move.removeprefix("BOARD: "))
+        elif opponent_move.startswith("START: "):
+            board.reset()
+            print("Started a new game!")
+            choice = make_move(board)
+            print(f"MOVE: {choice}")
+        elif opponent_move.startswith("MOVE: "):
+            board.push_uci(opponent_move.removeprefix("MOVE: "))
+            choice = make_move(board)
 
-        # example about logs
-        print(f"I moved {choice}\n")
-        # example about posting a move
-        print(f"MOVE: {choice} \n")                                                                                                              
+            # example about logs
+            print(f"I moved {choice}")
+            # example about posting a move
+            print(f"MOVE: {choice}")
+        else:
+            print("Unknown tag!")
+            break
 
 if __name__ == "__main__":
     main()
@@ -78,7 +97,12 @@ if __name__ == "__main__":
 
 **Note** this example uses the ready-made Python chess library which is not allowed in your project work. You need to implement the board management and move writing yourself.
 
-In the example, the AI communicates with the interface through input() and print statements. The input() command reads the (human-made) move from the interface in the so-called uci format. After this, a new move is saved in the AI's own board management (in the example, the command "board.push()) after which the AI calculates the next move. Our example AI simply randomly chooses one of the legal moves and returns it in another print statement. Remember that your own project work cannot use methods from the chess library.
+In the example, the AI communicates with the interface through input() and print statements. The input() command reads the command from the UI. These commands can be one of three types.
+1. Reset statement, i.e. a string that starts with "START:". This signals the start of a new game, the board state should be reset after which it is the AIs turn to move. 
+1. A custom board state in [Forsyth-Edwards Notation](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation). Such commands start with the "BOARD:" string. The board state should be set correspondingly, after which the UI should make the next move. **Your AI need not support this functionlaity, but doing so might help you debug your AI. 
+1. A (human-made) move from the AI that starts with "MOVE:", the move is in the so called uci format (see below)   
+
+When new move received from the UI or made by the AI, it should be saved in the AI's own board management (in the example, the command "board.push()). New moves should also be printed to standard out in the uci format.  Our example AI simply randomly chooses one of the legal moves. Remember that your own project work cannot use methods from the chess library.
 
 The interface also supports logging of other inputs. All print statements except those that begin with "MOVE:" are fed into the interface output, which can be read in the terminal opened by the program. If you try to send illegal moves from your AI, the interface will crash.
 
