@@ -21,6 +21,7 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
   - 2048
   - Kivi-sakset-paperi
   - 15-peli
+- [DPLL](/aiheet/#dpll)
 - [Koneoppiminen](/aiheet/#koneoppiminen)
   - Laskennallinen Luovuus, teskstin tai musiikin generointi.
   - Hahmontunnistus 
@@ -156,6 +157,24 @@ pelaamaan hyvin sitä vastaan. Yksi tapa oppia toisen pelityyli on käyttää us
 
 #### Miinaharava
 Tälle kurrsille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Becerran kandidaatin tutkielmasta](https://dash.harvard.edu/handle/1/14398552).  Jos käytät projektissa Javaa, voit toteuttaa ratkaisijan / auttajan käyttöliittymän valmiilla [Miinaharavan projektipohjalla](https://github.com/TiraLabra/minesweeper). Jos käytät valmista Java-pohjaa, kerro koodin kommenteissa selvästi mikä on omaa koodiasi, ja mikä on pohjaa. Älä muokkaa pohjaa, vaan kirjoita oma koodisi omaan luokkaansa / metodiinsa.
+
+## DPLL
+[Propositiologiikan päätösongelma](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) on 
+keskeinen sekä teoreettisessa, että käytännöllisessä tietojenkäsittelytieteessä. 
+Nykyaikaiset ns. CDCL algoritmien toteutukset (SAT-solverit) pystyvät päättämään miljoonia muutujia sisältävien 
+kaavojen toteutuvuuden. Tälläisiä algoritmeja käytetään monissa [käytännön sovelluksissa](https://en.wikipedia.org/wiki/SAT_solver),
+tehokkaat SAT solverit ovat esimerkiksi oleellisia erilaisten piirien oikeellisuden varmistamisessa. 
+
+Tehokkaan CDCL algoritmin toteuttaminen on harjoitustyölle liian vaativaa. Sen sijaan tässä
+aiheessa tutkimme sen edeltäjää, [DPLL](https://en.wikipedia.org/wiki/DPLL_algorithm) algoritmia. 
+
+### Tarkempi määrittely
+Toteuta ohjelma, joka lukee propositioloogisen kaavan konjunktiivisessa normaalimuodossa [DIMACS](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS) tiedostomuodossa ja palauttaa joko sen toteuttavan totuusjakelun, tai tiedon siitä, ettei tälläistä jakelua ole. Ohjelman pitää käyttää DPLL algoritmia. 
+
+Ollakseen hyväksyttävä ohjelman täytyy toteuttaa ainakin yksikköpropagaatio ja puhtaan literaalin poisto. Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html). Kaavan käsittelyyn vaadittavat tietorakenteet täytyy toteuttaa itse. Jos haluat lisähaastetta voit tustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) tapaan toteuttaa yksikköpropagaatio tehokkaasti. Ilman tätä ohjelmasi tuskin pystyy ratkomaan kovin isoja kaavoja. 
+
+Aihe on parasta toteuttaa **C++** kielellä. 
+
 
 ## Koneoppiminen
 Koneoppiminen on erittäin laaja ala josta löytyy paljon harjoitustyöhön sopivia 
