@@ -42,10 +42,10 @@ Miten löydetään tehokkaasti nopein/lyhin reitti verkossa kahden pisteen väli
 Toteuta **vähintään kahden** eri reitinhakualgoritmin vertailu. Näistä **korkeintaan toinen** saa olla [Dijkstra](https://fi.wikipedia.org/wiki/Dijkstran_algoritmi) tai [A](https://fi.wikipedia.org/wiki/A*-algoritmi)\* koska Dijkstra opitaan harjoitustyön esitetoihin kuuluvalla Tira-kurssilla ja A* on toteutukseltaan erittäin lähellä Dijkstraa. 
 
 Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
-- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI)
+- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI).
   - Soveltuu vain pikselikartoille. Pikselikartalla on kahdeksan etenemissuuntaa ja kaksi mahdollista painoa, kaaren paino riippuu siitä kuljetaanko seuraavaan solmuun suoraan vai viistottain. 
-  - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta
-- [IDA](https://en.wikipedia.org/wiki/Iterative_deepening_A*)\*
+  - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
+- [IDA](https://en.wikipedia.org/wiki/Iterative_deepening_A*)\*.
 - [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf) joka on astetta haastavampi. 
 
 Muutama **lisävaatimus**:
@@ -76,12 +76,13 @@ Harjoitustyöhön sopivia pakkausemenetelmiä ovat esim:
 - [Huffman Koodaus](https://en.wikipedia.org/wiki/Huffman_coding) johonka liityy oleellisesti [Huffman-puun talettaminen](https://stackoverflow.com/questions/759707/efficient-way-of-storing-huffman-tree)
 
 Sopiva aihe harjoitustyölle on esimerkiksi yhden LZ algoritmin vertaaminen Huffman Koodaukseen tekstin pakkauksessa. 
+Ohjelman tulee tuottaa kiintolevylle tiedosto, joka sisältää kaiken sen purkamiseen tarvittavan datan, ja jonka koko on käytetylle pakkausmenetelmälle tyypillinen.
 
 ### Hyödyllisiä Neuvoja 
 Kun pakataan luonnollista kieltä (tai ohjelmistokoodia) pakatun tiedoston koon tulisi olla noin 40-60% alkuperäisestä koosta, kunhan pakattava tiedosto on riittävän suuri. Tekstin pakkaamiseen käytetään vain häviöttömiä menetelmiä, joten pakatut tekstitiedostot täytyy pystyä palauttamaan alkuperäiseen muotoon.
 Kuvaa ja ääntä pakattaessa pyritään paljon suurempaan pakkaustehoon, mutta käyttäen häviöllisiä menetelmiä jolloin pakattua tiedostoa ei voi enää palauttaa alkuperäiseksi.
 
-Ohjelman tulee tuottaa kiintolevylle tiedosto, joka sisältää kaiken sen purkamiseen tarvittavan datan, ja jonka koko on käytetylle pakkausmenetelmälle tyypillinen, eli tieto esitetään tehokkaasti. Se tarkoittaa datan lukemista ja kirjoittamista tiedostoon bittitasolla, mikä ei onnistu samoilla välineillä kuin tekstitiedoston käsittely. Voit käyttää ohjelmointikielen valmiita tietorakenteita kaikissa pakkausalgoritmeissa.
+Aiheen vaatimusten saavuttaminen vaatii datan lukemista ja kirjoittamista tiedostoon bittitasolla, mikä ei onnistu samoilla välineillä kuin tekstitiedoston käsittely. Voit käyttää ohjelmointikielen valmiita tietorakenteita kaikissa pakkausalgoritmeissa.
 **Huomaa** että pakkausalgoritmejasi täytyy testata [edustavilla](/respresentativeinputs) syötteillä, jotka ovat tarpeeksi isoja. 
 
 ## Pelit
@@ -94,7 +95,7 @@ voidaan laskea voittoon, häviöön, tai tasapeliin asti, lasketaan sen sijaan t
 ### Tarkempi Määrittely
 Toteuta jonkin pelin tekoäly. Tekoälysi pitää pystyä pelaamaan ihmistä vastaan käyttöliittymäsi kautta. 
 Voidaksesi käyttää tekoälyäsi, sinun täytyy myös toteuttaa sovelluslogiikka ja käyttöliittymä pelillesi. Sovelluslogiikan ja käyttöliittymän toteuttamiseen ei kuitenkaan saisi käyttää liikaa aikaa, harjoitustyön ydin on itse tekoäly. 
-Valmiita kirjastoja tms. ei saa käyttää pelin sovelluslogiikassa, vaan esim. sallittujen siirtojen generointi, voiton tunnistus ja siirtojen suorittaminen toteutetaan itse. Käyttöliittymään voi käyttää valmiita välineitä, mutta monissa peleissä tekstipohjainen käyttöliittymä on täysin käyttökelpoinen. Käyttöliittymää ei tarvitse testata, solvelluslogiikkaa ja varsinkin tekoälyä täytyy testata. 
+Valmiita kirjastoja tms. ei saa käyttää pelin sovelluslogiikassa, vaan esim. sallittujen siirtojen generointi, voiton tunnistus ja siirtojen suorittaminen toteutetaan itse. Käyttöliittymään voi käyttää valmiita välineitä, mutta monissa peleissä tekstipohjainen käyttöliittymä on täysin käyttökelpoinen. Käyttöliittymää ei tarvitse testata. 
 
 Alla lista mahdollisista peleistä sekä hyödyllisiä neuvoja kullekin pelille. Peleissä joiden solvelluslogiikka ja käyttöliittymä ovat helpompia toteuttaa, itse tekoälyltä vaaditaan hieman lisää ominaisuuksia. Nämä vaatimukset mainitaan erikseen pelin kohdalta. 
 Mikäli pelin kohdalla ei mainita muuta, tekoälyn sille pelille voi toteuttaa minimax algoritmilla. 
@@ -160,9 +161,9 @@ Tälle kurrsille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Bec
 
 ## DPLL
 [Propositiologiikan päätösongelma](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) on 
-keskeinen sekä teoreettisessa, että käytännöllisessä tietojenkäsittelytieteessä. 
+keskeinen sekä teoreettisessa, että soveltavassa tietojenkäsittelytieteessä. 
 Nykyaikaiset ns. CDCL algoritmien toteutukset (SAT-solverit) pystyvät päättämään miljoonia muutujia sisältävien 
-kaavojen toteutuvuuden. Tälläisiä algoritmeja käytetään monissa [käytännön sovelluksissa](https://en.wikipedia.org/wiki/SAT_solver),
+kaavojen toteutuvuuden. Tälläisiä algoritmeja käytetään monissa [käytännön sovelluksissa](https://en.wikipedia.org/wiki/SAT_solver#Applications),
 tehokkaat SAT solverit ovat esimerkiksi oleellisia erilaisten piirien oikeellisuden varmistamisessa. 
 
 Tehokkaan CDCL algoritmin toteuttaminen on harjoitustyölle liian vaativaa. Sen sijaan tässä
@@ -171,9 +172,14 @@ aiheessa tutkimme sen edeltäjää, [DPLL](https://en.wikipedia.org/wiki/DPLL_al
 ### Tarkempi määrittely
 Toteuta ohjelma, joka lukee propositioloogisen kaavan konjunktiivisessa normaalimuodossa [DIMACS](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS) tiedostomuodossa ja palauttaa joko sen toteuttavan totuusjakelun, tai tiedon siitä, ettei tälläistä jakelua ole. Ohjelman pitää käyttää DPLL algoritmia. 
 
-Ollakseen hyväksyttävä ohjelman täytyy toteuttaa ainakin yksikköpropagaatio ja puhtaan literaalin poisto. Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html). Kaavan käsittelyyn vaadittavat tietorakenteet täytyy toteuttaa itse. Jos haluat lisähaastetta voit tustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) tapaan toteuttaa yksikköpropagaatio tehokkaasti. Ilman tätä ohjelmasi tuskin pystyy ratkomaan kovin isoja kaavoja. 
+Ollakseen hyväksyttävä ohjelman täytyy toteuttaa [yksikköpropagaatio](https://en.wikipedia.org/wiki/Unit_propagation) ja [puhtaan literaalin poisto](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/preprocessing.html#pure-literal-elimination). Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html). Kaavan käsittelyyn vaadittavat tietorakenteet täytyy toteuttaa itse. Aihe on parasta toteuttaa **C++** kielellä. 
 
-Aihe on parasta toteuttaa **C++** kielellä. 
+**Lisähaastetta**
+Jos haluat lisähaastetta voit tustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) tapaan toteuttaa yksikköpropagaatio tehokkaasti. 
+Huomaa, että ilman 2-watched literaalia ohjelmasi luutavimmin pystyy vain satoja muutujia sisältävien kaavojen ratkaisuun. Tämä riittää harjoitustyöhön, mutta 
+testisyötteitesi koko kannattaa säätää tämän mukaan. 
+Lisää mahdollisia tehostuksia algoritmillesi löytyy esim [Aalto Yliopiston](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/cdcl.html) kurssimateriaalista. 
+Oleellisena (mutta haasteellisena) tehostuksena mainittakoon konfliktiklausuulien oppiminen ja epäkronolooginen taaksepäinhyppy. 
 
 
 ## Koneoppiminen
@@ -191,8 +197,8 @@ sekvenssien perusteella.
 #### Tarkempi Määrittely 
 Toteuta ohjelma, joka lukee harjoitusdataa, oppii siitä sekvenssejä ja generoi niiden perusteella  
 uusia sekvenssejä käyttäjän kehotteiden perusteella. Tällä kurssilla suosittelemme käyttämään 
-[markovin ketjuja](https://en.wikipedia.org/wiki/Markov_chain) jonka avulla voidaan onnistuneesti tuottaa esimerkiksi musiikkia tai luonnollisen kielen kaltaisia sanoja tai [lauseita](https://algoritmaonline.com/text-generating-with-markov-chains/). Ketju voi tallettaa 
-harjoitusdatansa esimerkiksi [trie](https://www.geeksforgeeks.org/trie-insert-and-search/#:~:text=Definition%3A%20A%20trie%20(derived%20from,%2C%20are%2C%20bat%2C%20bad.)) tietorakenteeseen josta voidaan tehokkaasti etsiä mahdollisia jatkoja annetulle syöttelle. 
+[markovin ketjuja](https://en.wikipedia.org/wiki/Markov_chain) jonka avulla voidaan onnistuneesti tuottaa esimerkiksi musiikkia tai luonnollisen kielen kaltaisia sanoja tai [lauseita](https://algoritmaonline.com/text-generating-with-markov-chains/). Ketju tallettaa 
+harjoitusdatansa [trie](https://www.geeksforgeeks.org/trie-insert-and-search/#:~:text=Definition%3A%20A%20trie%20(derived%20from,%2C%20are%2C%20bat%2C%20bad.)) tietorakenteeseen josta voidaan tehokkaasti etsiä mahdollisia jatkoja annetulle syöttelle. 
 
 Toteuta itse trie-tietorakenne sanojen / lauseiden / sävel- / sointusekvenssien tallettamiseen. Voit käyttää sekä valmiita kirjastoja että ulkoisia ohjelmia opetusdatan esikäsittelyyn, melodian soittamiseen / nuotintamiseen jne.
 
@@ -200,9 +206,9 @@ Toteuta itse trie-tietorakenne sanojen / lauseiden / sävel- / sointusekvenssien
 
 Markovin ketju on prosessi, jonka jokainen tila määrittelee todennäköisyyden sitä seuraaville tiloille. 
 Tässä tapauksessa jokainen tila on tämänhetkisen syötteen (sanan, lauseen, musiikin etc.) viimeinen kirjain/sana/nuotti, tai sointu. Siirtyminen seuraavaan tilaan määrittelee mitä lisätään syötteeseen. Markovin ketjun
-kukin tila riippuu vain edellisestä tilasta---tässä tapauksessa tämähetkisen syötteen viimeisimmästä osasta---
+kunkin tila riippuu vain edellisestä tilasta---tässä tapauksessa tämähetkisen syötteen viimeisimmästä osasta---
 jolloin puhutaan ensimmäisen asteen ketjusta. Vastaavasti, toisen asteen ketjun tila riippuu kahdesta viimeisimmästä 
-tilasta, eli toisin sanoen tämänhetkisen syötteen kahdesta viimeisimmästä osasta.  Huomaa, että esimerkiksi toisen asteen Markovin ketjun toteuttaminen vaatii kaikkien opetusdatassa peräkkäin esiintyvien kolmikoiden tallettamista, jotta tiedetään kullekin kahden viimeisimmän 
+tilasta, eli toisin sanoen tämänhetkisen syötteen kahdesta viimeisimmästä osasta.  Huomaa, että esimerkiksi toisen asteen Markovin ketjun toteuttaminen vaatii kaikkien opetusdatassa peräkkäin esiintyvien kolmikoiden tallettamista, jotta tiedetään kullekin viimeisimmälle
 kaksikolle mahdolliset seuraajat ja niiden todennäköisyydet. Kokeile generointia alkaen 1. asteesta ja vertaa tuloksia eri asteilla. Seuraava kirjain, sana tai sävel arvotaan opetusdatasta opittujen todennäköisyyksien mukaan. Järkevien - tai hauskojen - lauseiden tuottamiseen tarvitaan minimissään toisen asteen Markovin ketju. Musiikkikin on 1-asteella tuotettuna aika satunnaista, vaikka noudattaa toki jotain sävellajia, kunhan opetusdata on ollut siinä suhteessa konsistenttia. 
 
 **Musiikin tuottaminen.** Aiemmissa projekteissa on musiikkidataa syötetty ohjelmalle MIDI-tiedostoina, [Lilypond](http://lilypond.org/)-nuotteina tai [abc](https://abcnotation.com/)-notaationa. Python-kirjastossa [music21](https://web.mit.edu/music21/) on monia hyödyllisiä välineitä. Markov ketjuja musiikin generaatioon voi tehostaa muillakin tekniikoilla, katso esim. (Musikalisches Würfelspiel)[https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel]. Myös [geneettisillä algoritmeilla](https://en.wikipedia.org/wiki/Genetic_algorithm) voi tuottaa taidetta.
@@ -230,7 +236,7 @@ Lisää materiaalis neuroverkoista:
 - [Michael Nielsenin](http://neuralnetworksanddeeplearning.com/chap1.html) kirjoittama arikkeli MNISTin numeroiden tunnistuksesta neuroverkoilla. 
 - [Heli Tuomisen](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) kirjoittama kurssimateriaali neuroverkkojen matematiikasta suomeksi. 
 - [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)in erittäin hyvin tehdyt videot neuroverkoista. 
-- [Deep Learning](https://www.deeplearningbook.org/) oppikirja ns. syväoppimisesta. **Huom** vaikka syväoppiminen on "aidoissa" sovelluksissa useimmin käytetty tekniikka, on syväoppivan verkon toteuttaminen huomattavasti haastavampaa kuin kurssilta vaaditaan. 
+- [Deep Learning](https://www.deeplearningbook.org/) oppikirja ns. syväoppimisesta. **Huom** vaikka syväoppiminen on "aidoissa" sovelluksissa useimmin käytetty tekniikka, on syväoppivan verkon toteuttaminen huomattavasti haastavampaa kuin tältä harjoitustyöltä vaaditaan. 
 
 
 # Luolastojen Generointi
@@ -254,7 +260,9 @@ Esimerkkejä sopivista tietorakenteista:
 - [Skip List](https://en.wikipedia.org/wiki/Skip_list#:~:text=Skip%20lists%20are%20a%20probabilistic,faster%20and%20use%20less%20space.)
 - [Brodal Keko](https://en.wikipedia.org/wiki/Brodal_queue) (tämä on haastava)
 - [Trie Puu](https://www.geeksforgeeks.org/introduction-to-trie-data-structure-and-algorithm-tutorials/)
-- [Muista ideoita](https://www.geeksforgeeks.org/advanced-data-structures/)
+- [Muita ideoita](https://www.geeksforgeeks.org/advanced-data-structures/)
+
+Muista varmistaa ohjaajalta, että valitsemasi tietorakenteet ovat sopivia harjoitustyölle. 
 
 ## Salaus ja Tietoturva
 Tietoturva on tänä päivänä tärkeämpää kuin koskaan monien toimintojemme siirryttyä verkkoon. Salausta voi tehdä useilla eri tavoilla ja moniin käyttötarkoituksiin. Esim. [RSA-salaus](https://fi.wikipedia.org/wiki/RSA) on harjoitustyöhön sopiva aihe. 
@@ -264,7 +272,7 @@ Toteuta ohjelma joka salaa ja purkaa tekstiä. Ohjelman tulee salaamisen ja sala
 
 Tämän kurssin vaatimustasoa **eivät** vastaa sellaiset salausmenetelmät, jotka perustuvat yksittäisten sanojen tai koko tekstin merkkien paikan vaihtamiseen tai yksittäisten merkkien korvaamiseen aina jollain tietyllä merkillä.
 
-**Vahitoehtoisesti** voit toteuttaa ohjelman joka purkaa salauksia. Vaihtosalaukseen perustuvan salakirjoituksen saa murrettua sanaston avulla merkkien frekvenssejä analysoimalla, jos teksti on riittävän pitkä ja tiedetään mitä kieltä se on. Ratkaisuksi käy peruuttava haku, joka kokeilee korvata salattuja merkkejä siinä järjestyksessä, mitkä frekvenssien perusteella ovat luultavimpia. Sanaston talletukseen sopii [trie](https://www.geeksforgeeks.org/introduction-to-trie-data-structure-and-algorithm-tutorials/#:~:text=Trie%20data%20structure%20is%20defined,finding%20something%20or%20obtaining%20it.)-tietorakenne. Koska mikään sanasto ei ole täydellinen, pitää peruuttava haku toteuttaa niin, että hyväksytään tietty määrä virheellisiltä vaikuttavia sanoja.
+**Vahitoehtoisesti** voit toteuttaa ohjelman joka **murtaa** (eli purkaa tietämättä siihen tarvittavaa avainta) salauksia. Vaihtosalaukseen perustuvan salakirjoituksen saa murrettua sanaston avulla merkkien frekvenssejä analysoimalla, jos teksti on riittävän pitkä ja tiedetään mitä kieltä se on. Ratkaisuksi käy peruuttava haku, joka kokeilee korvata salattuja merkkejä siinä järjestyksessä, mitkä frekvenssien perusteella ovat luultavimpia. Sanaston talletukseen sopii [trie](https://www.geeksforgeeks.org/introduction-to-trie-data-structure-and-algorithm-tutorials/#:~:text=Trie%20data%20structure%20is%20defined,finding%20something%20or%20obtaining%20it.)-tietorakenne. Koska mikään sanasto ei ole täydellinen, pitää peruuttava haku toteuttaa niin, että hyväksytään tietty määrä virheellisiltä vaikuttavia sanoja.
 
 ## Muita Aiheita
 ### Signaalinkäsittely (kuva, ääni)
@@ -290,8 +298,8 @@ Toteuta laskin joka laskee annetun matemaattisen lausekkeen arvon, ja mahdollise
 {% include typo_instructions.md %}
 
 [^1]: **Huomaa**, että lopullinen päätösvalta kunkin aiheen hyväksyttävyydellä on kurssin henkilökunnalla. Omaa aihe ehdotustasi joudutaan ehkä muokkaamaan jotta päästään kurssin vaatimaan vaativuuteen. 
-[^2]: Muista kuitenkin, että ohjaaja auttaa tiedonhaussa tarvittaessa, yritä ensin itse ja ota sitten yhteyttä. 
-[^3]: Kuvien tuottaminen on kuitenkin tälle kursille liian haastava aihe. 
+[^2]: Muista kuitenkin, että ohjaaja auttaa tiedonhaussa tarvittaessa, yritä ensin itse ja ota sitten yhteyttä matalalla kynnyksellä. 
+[^3]: Kuvien tuottaminen on tälle kursille liian haastava aihe. 
 
 
 
