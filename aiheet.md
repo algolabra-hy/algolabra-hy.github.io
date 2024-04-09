@@ -32,7 +32,7 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
 - [Kontin Pakkaus](/aiheet/#kontin-pakkaus)
 - [Sännölliset Lausekkeet](/aiheet/#säännöllisten-lausekkeiden-tulkki-tai-kääntäjä)
 - [Kirjoitusvirheiden Korjaaja](/aiheet/#kirjoitusvirheiden-korjaaja)
-- [/aiheet/#tieteellinen-laskin](/aiheet/#tieteellinen-laskin)
+- [Tieteellinen Laskin](/aiheet/#tieteellinen-laskin)
 
 
 ## Verkot ja Polunetsintä
@@ -175,7 +175,7 @@ Toteuta ohjelma, joka lukee propositioloogisen kaavan konjunktiivisessa normaali
 Ollakseen hyväksyttävä ohjelman täytyy toteuttaa [yksikköpropagaatio](https://en.wikipedia.org/wiki/Unit_propagation) ja [puhtaan literaalin poisto](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/preprocessing.html#pure-literal-elimination). Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html). Kaavan käsittelyyn vaadittavat tietorakenteet täytyy toteuttaa itse. Aihe on parasta toteuttaa **C++** kielellä. 
 
 **Lisähaastetta**
-Jos haluat lisähaastetta voit tustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) tapaan toteuttaa yksikköpropagaatio tehokkaasti. 
+Jos haluat lisähaastetta voit tutustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) tapaan toteuttaa yksikköpropagaatio tehokkaasti. 
 Huomaa, että ilman 2-watched literaalia ohjelmasi luutavimmin pystyy vain satoja muutujia sisältävien kaavojen ratkaisuun. Tämä riittää harjoitustyöhön, mutta 
 testisyötteitesi koko kannattaa säätää tämän mukaan. 
 Lisää mahdollisia tehostuksia algoritmillesi löytyy esim [Aalto Yliopiston](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/cdcl.html) kurssimateriaalista. 
@@ -248,21 +248,6 @@ Luolaston generointi voi olla joko etukäteen tapahtuva tai dynaamisesti pelin a
 - [Tom Stephensonin](https://www.tomstephensondeveloper.co.uk/post/creating-simple-procedural-dungeon-generation) blogikirjoitus
 - [Bowyer–Watson](https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm) algoritmi delaunay triangulaatioiden laskemiseen. 
 
-## Tietorakennevertailut
-Tietorakenteita on monenlaisia, mikä olisi paras kuhunkin ongelmaan? 
-
-### Tarkempi Määrittely
-Valitse neljä tietorakennetta joita ei ole käsitelty Tietorakenteet ja Algoritmit -kurssilla, toteuta ne ja vertaile niitä toisiina. 
-Tutki missä tilanteessa kukin on paras, eli missä tilanteessa käyttäisit kutakin rakennetta. Tämä aihe soveltuu parhaiten C / C++ -kielellä tehtäväksi.
-
-Esimerkkejä sopivista tietorakenteista:
-- [Fibonacci Keko](https://en.wikipedia.org/wiki/Fibonacci_heap)
-- [Skip List](https://en.wikipedia.org/wiki/Skip_list#:~:text=Skip%20lists%20are%20a%20probabilistic,faster%20and%20use%20less%20space.)
-- [Brodal Keko](https://en.wikipedia.org/wiki/Brodal_queue) (tämä on haastava)
-- [Trie Puu](https://www.geeksforgeeks.org/introduction-to-trie-data-structure-and-algorithm-tutorials/)
-- [Muita ideoita](https://www.geeksforgeeks.org/advanced-data-structures/)
-
-Muista varmistaa ohjaajalta, että valitsemasi tietorakenteet ovat sopivia harjoitustyölle. 
 
 ## Salaus ja Tietoturva
 Tietoturva on tänä päivänä tärkeämpää kuin koskaan monien toimintojemme siirryttyä verkkoon. Salausta voi tehdä useilla eri tavoilla ja moniin käyttötarkoituksiin. Esim. [RSA-salaus](https://fi.wikipedia.org/wiki/RSA) on harjoitustyöhön sopiva aihe. 
