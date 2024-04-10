@@ -111,7 +111,6 @@ Mikäli pelin kohdalla ei mainita muuta, tekoälyn sille pelille voi toteuttaa m
 **Hyödylliset Neuvot.**
 Ristinollan tekoälyn ja solvelluslogiikan toteuttamista ei ehdottomasti kannata lähestyä niin, että toteuttaa ensin 3 x 3 pelin tms. koska kaikki pitää tehdä täysin eri tavalla, kun lauta on laaja.
 
-
 #### Shakki
 
 Normaaleilla säännöillä 8 x 8 laudalla pelattava shakkipeli seuraavin poikkeuksin. Voit jättää toteuttamatta osan tai kaikki näistä toiminnoista: tornitus, ohestalyönti, sotilaan korotus ja toistuvaan asemaan perustuva tasapeli.
@@ -144,7 +143,6 @@ satunnaiselementti. Näimpä sen tekoälyn pohjaksi sopii [expectiminimax-algori
 Jos otat jostain mallia heuristiseen arviointifunktioon, huomaa että ihan sama funktio ei ehkä ole ihanteellinen minimaxille ja expectiminimaxille. Minimaxilla saavutetaan alfa-beta -karsinnan avulla suurempi laskentasyvyys, jolloin esim. vapaiden ruutujen määrä ennustaa paremmin menestystä. Hyvä heuristinen funktio huomioi joka tapauksessa sekä vapaan tilan määrän että arvojen sijoittumisen.
 Yun Nie, Wenqi Hou ja Yicheng An ovat kirjoittaneet [lyhyen artikkelin lähestymistavoista ja heuristiikoista](https://cs229.stanford.edu/proj2016/report/NieHouAn-AIPlays2048-report.pdf).
 
-
 #### Battle Sheep
 [Battle Sheep](https://www.lautapelit.fi/product/20852/battle-sheep) on hauska vaihtoehto klassikkopeleille. Pelilaudan ei tarvitse olla muokattava, kuten lautapelissä, vaan voit käyttää sopivaa kiinteää pelilautaa. Tähän peliin tarvitaan graafinen käyttöliittymä, jotta pelaaminen on sujuvaa.
 
@@ -174,12 +172,23 @@ Toteuta ohjelma, joka lukee propositioloogisen kaavan konjunktiivisessa normaali
 
 Ollakseen hyväksyttävä ohjelman täytyy toteuttaa [yksikköpropagaatio](https://en.wikipedia.org/wiki/Unit_propagation) ja [puhtaan literaalin poisto](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/preprocessing.html#pure-literal-elimination). Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html). Kaavan käsittelyyn vaadittavat tietorakenteet täytyy toteuttaa itse. Aihe on parasta toteuttaa **C++** kielellä. 
 
+### Hyödyllisiä neuvoja 
+Omaa algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tulostukseen. Esim [CaDiCal](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) on tähän oikeen oivallinen. Molemissa näiden repositoorioissa löytyy myös testi instansseja: ([Cadical](https://github.com/arminbiere/cadical/tree/master/test/cnf), [Kissat](https://github.com/arminbiere/kissat/tree/master/test/cnf.)). Muista vaan, että sekä CaDiCal, että Kissat ovat erittäin optimpoituja CDCL algoritmin toteutuksia, tämänm kurssin aikana oma ratkojasi ei pääse lähellekkään 
+samanlaista tehokkuutta. 
+
+Lisää testilauseita voi luoda esim: [CNFGen](https://massimolauria.net/cnfgen/) työkalulla. 
+
+
+
 **Lisähaastetta**
 Jos haluat lisähaastetta voit tutustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) tapaan toteuttaa yksikköpropagaatio tehokkaasti. 
 Huomaa, että ilman 2-watched literaalia ohjelmasi luutavimmin pystyy vain satoja muutujia sisältävien kaavojen ratkaisuun. Tämä riittää harjoitustyöhön, mutta 
 testisyötteitesi koko kannattaa säätää tämän mukaan. 
 Lisää mahdollisia tehostuksia algoritmillesi löytyy esim [Aalto Yliopiston](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/cdcl.html) kurssimateriaalista. 
 Oleellisena (mutta haasteellisena) tehostuksena mainittakoon konfliktiklausuulien oppiminen ja epäkronolooginen taaksepäinhyppy. 
+
+Huomaa, että SAT solvereilla voi ratkoa monta erilaista ongelmaa mallintamalla ne ensiksi propositiologiikaan. Saatko omasta DPLL algoritmistasi tarpeeksi tehokkaan,
+jotta se pystyy ratkomaan [Sudokuja](https://sat.inesc-id.pt/~ines/publications/aimath06.pdf)?
 
 
 ## Koneoppiminen
