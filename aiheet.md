@@ -178,8 +178,6 @@ samanlaista tehokkuutta.
 
 Lisää testilauseita voi luoda esim: [CNFGen](https://massimolauria.net/cnfgen/) työkalulla. 
 
-
-
 **Lisähaastetta**
 Jos haluat lisähaastetta voit tutustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) tapaan toteuttaa yksikköpropagaatio tehokkaasti. 
 Huomaa, että ilman 2-watched literaalia ohjelmasi luutavimmin pystyy vain satoja muutujia sisältävien kaavojen ratkaisuun. Tämä riittää harjoitustyöhön, mutta 
