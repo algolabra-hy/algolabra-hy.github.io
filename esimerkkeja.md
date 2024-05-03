@@ -14,6 +14,8 @@ Nämä sivut päivittyvät pikkuhiljaa. Pyydämme eriksen lupaa harjoitustöiden
 - Kalle Saunamäki [pakkausalgoritmien vertailu](https://github.com/ksaunamaki/tiralabra) (C#)
 - Reetta Ylitalo [RSA](https://github.com/ylireetta/tiralabra-rsa) (Java)
 - Sari Bäckman [Tieteellinen laskin](https://github.com/sari-bee/tieteellinen_laskin) (Python)
+- Olivia Brotherus [Kirjoitusvirheiden korjaus](https://github.com/brotholi/tiralabra) (Python)
+- Joona Kettunen [Reitinhakualgoritmien vertailu](https://github.com/joonarafael/visualpathfinder) (Typescript)
 
 
 {% include typo_instructions.md %}
