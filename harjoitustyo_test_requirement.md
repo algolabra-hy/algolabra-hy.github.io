@@ -6,21 +6,9 @@ title_long: Mitä vaaditaan harjotustyön testeiltä
 inheader: no
 ---
 
-
-<div style="color:black; border-style: solid; border-width: thick; border-color: red; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
-
-<h4>Huom!</h4>
-
-<p>
-Alla asiaa harjoitustyön testien vaatimuksista. Painotamme kuitenkin, että testien 
-päätarkoitus on auttaa työn kehityksessä. Suosittelemme vahvasti, että kirjoitatte testejä kehitystyön aikana eikä vasta jälkikäteen.
-Aina kun löydätte jonkun bugin, sille kannattaa kirjoittaa testi. 
-</p>
-
-</div>
-
 ## Testien vaatimuksista - mitä pitää testata?
-Jokaisessa harjoitustyössä vaaditaan vähintään automaattiset [yksikkötestit](unittest) jotka testaavat työn **toimintalogiikaa**. Käyttöliittymää ja I/O:ta (esimerkiksi tiedostojen lukua) *ei* tarvitse testata, eikä niiden testauksesta saa arvostelussa lisäpisteitä. 
+Jokaisessa harjoitustyössä vaaditaan vähintään automaattiset [yksikkötestit](unittest) jotka testaavat työn **toimintalogiikaa**. 
+Käyttöliittymää ja I/O:ta (esimerkiksi tiedostojen lukua) *ei* tarvitse testata, eikä niiden testauksesta saa arvostelussa lisäpisteitä. 
 
 Yleisesti ottaen hyvien testien tarkoitus on varmistaa, että oma algoritmi on oikein implementoitu. Mitä tämä täsmälleen tarkoittaa
 riippuu aiheesta. Alla muutamia aihespecifisiä esimerkkejä. Kurssin henkilökunta auttaa tarvittaessa.
@@ -29,16 +17,37 @@ riippuu aiheesta. Alla muutamia aihespecifisiä esimerkkejä. Kurssin henkilöku
 - Tekeekö pelitekoälysi aina laillisia siirtoja?
 - Löytääkö shakkibottisi matin jos sellainen on omalla laskentasyvyydellä?
 - Tarkastaako reitinhakusi juuri ne solmut jotka pitäisi eikä niitä enempää?
+- Toimiiko RSA salauksesi oikein sekä pienillä, että isoilla avaimilla? 
+- Pakkaako ja purkaako tiedonpakkausalgoritmisi kaiken kokoisia tiedostoja oikein?
 
 Toinen tärkeä osa vakuuttavia testejä on [edustavilla](/respresentativeinputs) syötteillä testaaminen. Useat harjoitustyössä 
-toteutetut algoritmit ovat tarpeeksi monimutkaisia, että bugeja voi olla vaan isoilla syötteillä.
+toteutetut algoritmit ovat tarpeeksi monimutkaisia, että kaikkia bugeja ei löydy pienillä syötteillä. 
 RSA:han liittyvissä harjoitustöissä realistinen alkulukujen koko ei esimerkiksi ole 13 tai edes 61403. 
 Vakuuttavissa testeissä on siis sekä "ihmiselle ymmärrettaviä" syötteitä, että "realistisia" syötteitä.
-Tämän takia yksikkötestit eivät yleensä riitä vakuuttaviin testeihin, tarvitaan myös esim. [integraatio](https://en.wikipedia.org/wiki/Integration_testing) tai [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testausta. 
+Tämän takia yksikkötestit eivät yleensä riitä vakuuttaviin testeihin, tarvitaan myös esim. [integraatio](https://en.wikipedia.org/wiki/Integration_testing) 
+tai [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testausta. 
+
+## Testien tarkoituksesta tällä kurssilla
+Tämän kurssin olennaisena osana on kokonaisen projektin, ja sen testien *itsenäinen* suunnittelu ja toteutus.
+Takoitus on siis---ohjaajan avulla---itse miettiä minkälaiset testit tarvitaan, jotta voitaisiin olla (melko) varmoja 
+siitä, että ohjelmasi on oikein implementoitu. Huomaa että tämä on eri asia kuin ohjelman tehokkuuden testaaminen. Muilla kursseilla 
+testejä usein tarjotaan valmiina ja vaaditaan, että ohjelmasi pitää päästä juuri niistä läpi. Tällä 
+kurssilla sen sijaan vaaditaan ymmärrystä siitä, mitä kussakin harjoitustyössä edes pitäisi testata. 
+**Varaudu käyttämään testien suunnitteluun aikaa**. Mieti mitä ohjelmasi eri metodien pitäisi tehdä? Minkä kokoisilla syötteillä sen pitäisi toimia? 
+Mitä reunatapauksia pitäisi osata käsitellä? Huomaa, että esim.. testien määrä ei ole oleellinen asia. Edustaviin testeihin päästään usein 
+muutamalla hyvin valitulla testillä ja syöttellä. Toisaalta suuri määrä sattumanvaraisesti tuotettuja testejä harvemmin riittää. 
+
+Pyri siihen, että jokaisessa toteuttamassasi testissä osaat selittää (ainakin itsellesi) miksi tämä testi näillä syötteillä on mukana? 
+**Ohjaaja auttaa tarvittaessa** ota yhteyttä jos testien kehitys ei etene. Varaudu kuitenkin siihen, että ohjaajakin kysyy mitä metodisi pitäisi tehdä ja 
+minkä kokoisilla syötteillä sen pitäisi toimia? Sinun ei tarvitse osata tyhjentävästi vastata näihin kysymyksiin ennen kuin otat yhteyttä ohjaajaan, mutta
+sinun täytyy miettiä näitä ja valmistautua kertomaan ohjaajalle oman näkökulmasi siitä, miksi testien suunnittelu ei etene. 
+
+
+## Testien arvostelusta
 
 Alla olevassa taulukossa annetaan hieman tarkempaa osviittaa siitä, mitä harjoitustyön testeiltä vaaditaan. 
 Kukin työ arvioidaan kuitenkin aina kokonaisuutena ja esimerkiksi aiheen vaativuus voi hieman vaikuttaa arvosteluun.
-Ohjaajalta kannattaa kysyä tarpeen mukaan.  
+Ohjaajalta kannattaa kysyä apua tarpeen mukaan.  
 Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin. 
 
 ---
@@ -60,4 +69,4 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 
 # Lisähuomautukset
 [^1]: poislukien erittäin yksinkertaiset metodit kuten getterit ja setterit jotka eivät muokkaa syötteitään mitenkään.
-[^2]: Tälläiset tekniikat voivat olla esimerkiksi empiirinen testaus, [integraatio](https://en.wikipedia.org/wiki/Integration_testing) testaus, [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testaus, [invariantti](/invarianttest)testaus, [suorituskyky](/performancetest)testaus. **Huomaa** kuitenkin että näitä kaikkia ei missään nimessä vaadita. Tärkeintä on tehdä omalle harjoitustyölle sopivat testit, ohjaaja auttaa tarvittaessa.   
+[^2]: Tälläiset tekniikat voivat olla esimerkiksi empiirinen testaus, [integraatio](https://en.wikipedia.org/wiki/Integration_testing) testaus, [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testaus, [invarianttitestaus](/invarianttest) tai [suorituskykytestaus](/performancetest). **Huomaa** kuitenkin että näitä kaikkia ei missään nimessä vaadita. Tärkeintä on tehdä omalle harjoitustyölle sopivat testit, ohjaaja auttaa tarvittaessa.   
