@@ -100,6 +100,10 @@ Minmax-algoritmi laskee jokaisesta pelitilateesta eteenpäin ja valitsee siirron
 voidaan laskea voittoon, häviöön, tai tasapeliin asti, lasketaan sen sijaan tietty määrä siirtoja eteenpäin ja 
 arvioidaan jollain heuristiikalla, kuinka hyvään pelitilanteeseen päästään. Heuristiikan perusteella valitaan se siirto, joka johtaa parhaimpaan pelitilanteeseen. 
 
+**Jos haluat tehdä shakille tai connect fourille tekoälyn** suosittelemme vahvasti harjoitustyön [tekoäly alustan](/aiplatform) käyttöä. 
+Alusta tarjoaa graafisen käyttöliittymän ja mahdollisuuden pelata omaa tekoälyäsi vastaan minimaalisella overheadilla. 
+
+
 ### Tarkempi määrittely
 Toteuta jonkin pelin tekoäly. Tekoälysi pitää pystyä pelaamaan ihmistä vastaan käyttöliittymäsi kautta. 
 Voidaksesi käyttää tekoälyäsi, sinun täytyy myös toteuttaa sovelluslogiikka ja käyttöliittymä pelillesi. Sovelluslogiikan ja käyttöliittymän toteuttamiseen ei 
@@ -144,12 +148,8 @@ käyttäen peliohjelmointiin yleisesti soveltuvia menetelmiä.
 **Lisävaatimukset**
 Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
 - *Siirtojen järjestäminen.* Kokeillaan kaikissa laskennan vaiheissa ensin keskimmäiseen sarakkeeseen tehtävä siirto ja edetään siitä reunoja kohti. Tämä tehostaa alfa-beta -karsintaa, koska paras siirto löytyy useammin keskeltä.
-<<<<<<< HEAD
-- [*Iteratiivinen syveneminen.*](https://domwil.co.uk/minimaxer/part2/) Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto.
-=======
 
 - [*Iteratiivinen syveneminen.*](https://domwil.co.uk/minimaxer/part2/) Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu, kun saadaan nopeasti nostettua / laskettua alfa / beta -arvoa. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto. Huomaa, että et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä, koska alfa-beta -karsinnan takia suurin osa minimaxin palauttamista arvoista ei ole aitoja vaan vain ylä- tai alarajoja todellisille arvoille. Kaikkia siirtoja täytyy kokeilla normaalisti, tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain siirtojen järjestämiseen. 
->>>>>>> 7430609024da72e3393562b87ef2dd56c74306d5
 
 #### Othello / Reversi
 [Othelloa](https://en.wikipedia.org/wiki/Reversi) pelataan 8 x 8 pelilaudalla. Pelin voittaa se, jolla on eniten nappuloita laudalla, kun kaikki ruudut on täytetty. 
