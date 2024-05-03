@@ -10,9 +10,9 @@ inheader: no
 Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse[^1], tai valita alla olevasta listasta. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa[^2]. 
 
 ## Lista aiheista
-- [Verkot ja Ppolunetsintä](/aiheet/#verkot-ja-polunetsintä)
-- [Tiedon tiivistys](/aiheet/#tiedon-tiivistys) 
-- [Pelit](/aiheet/#pelit)
+- [Verkot ja Ppolunetsintä](/aiheet#verkot-ja-polunetsintä)
+- [Tiedon tiivistys](/aiheet#tiedon-tiivistys) 
+- [Pelit](/aiheet#pelit)
   - Gomoku
   - Miinaharava 
   - Shakki
@@ -21,17 +21,17 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
   - 2048
   - Kivi-sakset-paperi
   - 15-peli
-- [DPLL](/aiheet/#dpll)
-- [Koneoppiminen](/aiheet/#koneoppiminen)
+- [DPLL](/aiheet#dpll)
+- [Koneoppiminen](/aiheet#koneoppiminen)
   - Laskennallinen Luovuus, tekstin tai musiikin generointi.
   - Hahmontunnistus 
   - Luolastojen Generointi
-- [Salaus ja tietoturva](/aiheet/#salaus-ja-tietoturva)
-- [Signaalin käsittely](/aiheet/#signaalinkäsittely-kuva-ääni)
-- [Kontin pakkaus](/aiheet/#kontin-pakkaus)
-- [Sännölliset lausekkeet](/aiheet/#säännöllisten-lausekkeiden-tulkki-tai-kääntäjä)
-- [Kirjoitusvirheiden korjaaja](/aiheet/#kirjoitusvirheiden-korjaaja)
-- [Tieteellinen laskin](/aiheet/#tieteellinen-laskin)
+- [Salaus ja tietoturva](/aiheet#salaus-ja-tietoturva)
+- [Signaalin käsittely](/aiheet#signaalinkäsittely-kuva-ääni)
+- [Kontin pakkaus](/aiheet#kontin-pakkaus)
+- [Sännölliset lausekkeet](/aiheet#säännöllisten-lausekkeiden-tulkki-tai-kääntäjä)
+- [Kirjoitusvirheiden korjaaja](/aiheet#kirjoitusvirheiden-korjaaja)
+- [Tieteellinen laskin](/aiheet#tieteellinen-laskin)
 
 ---
 
