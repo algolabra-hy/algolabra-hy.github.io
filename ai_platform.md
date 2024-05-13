@@ -211,7 +211,7 @@ Shakkilaudan tilaa kuvaava merkkijono selitetään [täällä](https://github.co
 Harjoitustyötä varten sinun ei tarvitse välttämättä pitää kirjaa tornituksista tai oheestälyönnistä (en-passant). Tekoälyalusta sallii kutenkin näiden siirtojen tekemisen, eli jos teet ihmisenä sen kautta näitä siirtoja, joudut ottamaan tämän huomioon oikeellisuuden tarkistuksessa. 
 
 ### Connect four
-Katso myös [readmeta](https://github.com/game-ai-platform-team/tira-ai-local?tab=readme-ov-file#connect-four)
+Katso myös [readmeta](https://github.com/game-ai-platform-team/tira-ai-local?tab=readme-ov-file#connect-four).
 #### Connect four siirrot
 Connect fourin siirrot merkataan yksinkertaisesti sarakkeena, jonne siirto tehdään. Vasemmanpuoleisin sarake on numero 0, oikeanpuoleisin numero 6. Huomaa, että tekoälysi täytyy itse pitää kirjaa siitä, kumman vuoro on. "Punainen" pelaaja tekee ensimmäisen siirronon 
 
