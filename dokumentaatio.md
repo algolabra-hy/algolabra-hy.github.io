@@ -16,7 +16,7 @@ Varmista viikottaisen deadlinen lähestyessä, että repositoriosi on ajantasall
 isää sinne viikkoraportti. Edistymistä katsotaan vain kerran viikossa, mutta muutokset kannattaa 
 pushata repositorioon vähintään joka kehityspäivän lopuksi.
 
-# Viikkoraportin Kirjoitus ja Tuntikirjanpito
+# Viikkoraportin kirjoitus ja tuntikirjanpito
 Raportti on noin puolesta sivusta kahteen sivua pitkä. Raportti palautetaan aina 
 viikkopalautuksen yhteydessä sijoitettuna samaan kansioon muun dokumentaation 
 kanssa ja nimetään selkeästi, esim. *Viikkoraportti 1*. 
@@ -43,7 +43,7 @@ Vaikka et olisi tehnyt mitään jollakin tietyllä viikolla, kannattaa viikkorap
 
 Kolmen peräkkäisen viikon ajan muuttumaton repositorio tulkitaan kurssin keskeyttämiseksi!
 
-## Harjoitustyön Dokumentointi
+## Harjoitustyön dokumentointi
 
 Harjoitustyön dokumentaatio koostuu seuraavista 
 osista:
@@ -56,7 +56,7 @@ osista:
 Dokumenttien merkitys kurssilla on melko vähäinen; olennainen asia on toimiva ja tehokas koodi. 
 Jokaisen dokumentin pituus on n. 1-2 A4, poislukien mahdolliset kuvat ja taulukot (mikäli nämä sopivat aiheeseen).
 
-### Koodin Dokumentointi
+### Koodin dokumentointi
 Ohjelmakoodin ja rakenteen tulee olla selkeää. Metodien on oltava riittävän lyhyitä. Luokkien, muuttujien ja metodien on oltava kuvaavasti nimettyjä.
 
 Koodin tulee olla kirjoitettu mahdollisimman selkeästi ja ymmärrettävästi. Kommentoi koodiasi kattavasti, mutta napakasti. Jokainen luokka, metodi ja attribuutti ei välttämättä kaipaa kommenttia, mutta kaikki olennainen ja vähemmän kuin itsestään selvä on oltava selostettu kommenteissa. Sisällytä metodien kommentteihin niiden parametrien ja paluuarvon merkitykset. Metodien sisäinen kommentointi ei ideaalitapauksessa ole tarpeen, sillä metodien tulee olla kuvaavasti nimettyjä, kompakteja, yksinkertaisia ja helposti hahmotettavia kokonaisuuksia. Mikäli metodin toimintaa kuitenkin on vaikea hahmottaa pelkän koodin ja metodin yleiskommentin perusteella, voidaan sen koodia kommentoida sisäisestikin.
