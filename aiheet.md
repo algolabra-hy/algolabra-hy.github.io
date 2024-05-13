@@ -42,7 +42,7 @@ Miten löydetään tehokkaasti nopein/lyhin reitti verkossa kahden pisteen väli
 Toteuta **vähintään kahden** eri reitinhakualgoritmin vertailu. Näistä **korkeintaan toinen** saa olla [Dijkstra](https://fi.wikipedia.org/wiki/Dijkstran_algoritmi) tai [A](https://fi.wikipedia.org/wiki/A*-algoritmi)\* koska Dijkstra opitaan harjoitustyön esitetoihin kuuluvalla Tira-kurssilla ja A* on toteutukseltaan erittäin lähellä Dijkstraa. 
 
 Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
-- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [tieteellinen paeri täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
+- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [tieteellinen paperi täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
   - Soveltuu vain pikselikartoille. Pikselikartalla on kahdeksan etenemissuuntaa ja kaksi mahdollista painoa, kaaren paino riippuu siitä kuljetaanko seuraavaan solmuun suoraan vai viistottain. 
   - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
 - [IDA](https://en.wikipedia.org/wiki/Iterative_deepening_A*)\*.
