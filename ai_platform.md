@@ -93,11 +93,11 @@ omia komentojaan stdouttiin. Pythonille tämä voisi näyttää esimerkiksi seur
 ```python 
 def main():
     while True:
-        # Read input commands from the program
+        # Lue komento alustalta
         command = input().strip()
         
-        # Process input commands and generate output responses
-        # Implement your AI logic here
+        # Käsittele komento ja tulosta vastaukset
+        # Tekoälysi logiikka tulee tänne
         
 if __name__ == "__main__":
     main()
@@ -114,7 +114,7 @@ Oma tekoälysi keskustelee alustan kanssa standard outputin ja inputin kautta.
     - **Huomaa** että tekoälysi voi saada monta play komentoa peräkkäin ja sen pitäisi siis pystyä laskemaan seuraava siirto pelin molemille osapuolille. Pidä siis huoli siitä, että tekoälysi tietää kumman vuoro on ja osaa tehdä siirron vuorossa olevalle pelaajalle aina lukiessaan ``PLAY`` komennon. 
 - ``MOVE``. Tämä tarkoittaa, että tekoälyalusta suoritti jonkun siirron jonka om tekoälysi pitäisi tallettaa pelilogiikkaansa. Yleensä tämä komento lähetetään sen jälkeen, kun ihminen on pelannut siirron alustan kautta. Suoritettu siirto on ``DATA``:ssa. Sen tarkka muoto riippuu mitä peliä pelataan. Katso pelikohtaiset formaatit [alta](). 
 - ``BOARD``. Tämä tarkoittaa, että tekoälysi sovelluslogiikan pitäisi asettaa lauta johonkin tiettyyn konfiguraatioon. Nyt ```DATA``` osassa on jokin merkkijono esitys pelilaudan nykyisestä tilasta.  Katso pelikohtaiset formaatit [alta](/aiplatform#pelikohtainen-info).
-- ``RESET``. TÄmä tarkoittaa, että alusta haluaa, että tekoälysi resetoi pelin alkuasetelmaan. 
+- ``RESET``. Tämä tarkoittaa, että alusta haluaa, että tekoälysi resetoi pelin alkuasetelmaan. 
 
 **Voidaksesi käyttää alustaa** sinun täytyy toteuttaa vähintään ``PLAY``ja ``MOVE`` komentojen kästtely tekoälyssäsi. ``BOARD`` ja ``RESET`` komennot lähetään vaan, jos tekoälyalustan käyttäjä (eli yleensä sinä itse):
 1. painaa reset nappia tai
