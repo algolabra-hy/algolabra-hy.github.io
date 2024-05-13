@@ -38,7 +38,7 @@ Käydään seuraavaksi läpi alustan käyttöönottoa. Tällä sivulla on oleell
 ## Minimaaliset ohjeet 
 
 Alla minimaaliset ohjeet python-pohjaisen shakki tai connect-four kehityksen aloittamiseen ai platformin kanssa linux koneella. 
-TÄmän osion jälkeen sinun pitäisi pystyä aloittamaan oman harjoitustyösi kehitys. 
+Tämän osion jälkeen sinun pitäisi pystyä aloittamaan oman harjoitustyösi kehitys pythonilla. 
 Alusta tukee myös muita 
 ohjelmointikieliä. Kohdassa [oman harjoitustyön konfigurointi](aiplatform#oman-harjoitustyön-konfigurointi) selitetään tarkemmin, miten oma harjotustyösi 
 pitää konfiguroida. 
