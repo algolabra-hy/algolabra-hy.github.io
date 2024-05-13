@@ -219,7 +219,7 @@ Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil
 tietorakenteet täytyy toteuttaa itse. Aihe on parasta toteuttaa **C++** kielellä. 
 
 ### Hyödyllisiä neuvoja 
-Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCal](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemissa näiden repositoorioissa löytyy myös testilauseita: ([Cadicalin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
+Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCal](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemmissa näiden repositorioissa löytyy myös testilauseita: ([Cadicalin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
 [Kissatin testit](https://github.com/arminbiere/kissat/tree/master/test/cnf.)). Muista vaan, että sekä CaDiCal, että Kissat ovat erittäin optimpoituja 
 CDCL algoritmin toteutuksia, tämän kurssin aikana oma ratkojasi ei pääse lähellekkään samanlaista tehokkuutta. 
 
