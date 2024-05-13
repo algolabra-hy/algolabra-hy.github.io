@@ -329,7 +329,7 @@ joka ei kuulu kurssin esitietoihin, esimerkiksi jokin [delaunay triangulaation](
 Tietoturva on tänä päivänä tärkeämpää kuin koskaan. Salausta voi tehdä useilla eri tavoilla ja moniin käyttötarkoituksiin. 
 Esim. [RSA-salaus](https://fi.wikipedia.org/wiki/RSA) on harjoitustyöhön sopiva aihe. 
 
-### Tarkempi Määrittely
+### Tarkempi määrittely
 Toteuta ohjelma joka salaa ja purkaa tekstiä. Ohjelman tulee salaamisen ja salauksen purkamisen lisäksi tuottaa avaimia, joiden pituus on oikean 
 RSA-salauksen tavoin vähintään 1024 bittiä. Käyttäjä voi antaa salattavaksi sen pituisen tekstin kuin avaimen pituus sallii. 
 [Paddingia](https://en.wikipedia.org/wiki/Padding_(cryptography)) ei tarvitse toteuttaa. Isojen alkulukujen etsimiseen ja avaimen muodostamiseen 
