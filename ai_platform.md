@@ -30,7 +30,7 @@ tekoälybottia vastaan.
 
 Alustan käyttöönotto on huomattavan paljon helpompaa, kuin oman GUI:n koodaaminen joten suosittelemme sitä vahvasti kaikille, jotka haluavat tehdä shakki tai connect 4 tekoälyn harjoitustyössä. 
 Tekoälyalusta löytyy [Githubista](https://github.com/game-ai-platform-team/tira-ai-local?tab=readme-ov-file). Sen readme on hyvä ja kattaa samat asiat kuin mitä tässä käydään (lyhennettynä)
-läpi. **Huomaa** kuitenkin, että readmen mainitsema [esimerrkiharjoitustyön](https://github.com/game-ai-platform-team/stupid-chess-ai) [tekoäly](https://github.com/game-ai-platform-team/stupid-chess-ai/blob/main/src/stupid_ai.py) käyttää pythonin chess kirjastoa jonka käyttö **ei ole sallittua** harjotustyössä. 
+läpi. **Huomaa** kuitenkin, että readmen mainitsema [esimerkkiharjoitustyön](https://github.com/game-ai-platform-team/stupid-chess-ai) [tekoäly](https://github.com/game-ai-platform-team/stupid-chess-ai/blob/main/src/stupid_ai.py) käyttää pythonin chess kirjastoa jonka käyttö **ei ole sallittua** harjotustyössä. 
 *Mikäli käytät harjoitustyössäsi tekoälyalustaa* muista mainita tästä dokumentaatiossasi ja ohjelmasi käyttöohjeissa jotta vertaisarvioijat osaavat ajaa ohjelmaasi oikein. 
 
 Käydään seuraavaksi läpi alustan käyttöönottoa. Tällä sivulla on oleellisesti samat ohjeet kuin [alustan readmessa](https://github.com/game-ai-platform-team/tira-ai-local/blob/master/README.md).
