@@ -10,7 +10,7 @@ inheader: no
 Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse[^1], tai valita alla olevasta listasta. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa[^2]. 
 
 ## Lista aiheista
-- [Verkot ja Ppolunetsintä](/aiheet#verkot-ja-polunetsintä)
+- [Verkot ja Polunetsintä](/aiheet#verkot-ja-polunetsintä)
 - [Tiedon tiivistys](/aiheet#tiedon-tiivistys) 
 - [Pelit](/aiheet#pelit)
   - Gomoku
@@ -23,7 +23,7 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
   - 15-peli
 - [DPLL](/aiheet#dpll)
 - [Koneoppiminen](/aiheet#koneoppiminen)
-  - Laskennallinen Luovuus, tekstin tai musiikin generointi.
+  - Laskennallinen luovuus, tekstin tai musiikin generointi.
   - Hahmontunnistus 
   - Luolastojen Generointi
 - [Salaus ja tietoturva](/aiheet#salaus-ja-tietoturva)
@@ -124,7 +124,7 @@ mainitaan erikseen pelin kohdalta. Mikäli pelin kohdalla ei mainita muuta, teko
 - Ristinollassa on usein pakko reagoida vastustajan edelliseen siirtoon, tai se on jatkoa ajatellen kannattavaa. Usein paras reaktio on jokin edellisen siirron viereinen siirto. Noudata tätä heuristiikkaa lisäämällä / nostamalla viimeisimmän siirron lähinaapurit ensimmäisiksi tutkittaviksi.
 - Voiton tarkistus tehdään tutkimalla vain rivit, jotka sisältävät edellisen siirron. Jos viiden rivi on syntynyt, voittaja on edellisen siirron tehnyt pelaaja, ja edellinen siirto on osa voittoriviä.
 
-**Hyödylliset Neuvot.**
+**Hyödylliset neuvot.**
 **Älä** toteuttaa ensin 3 x 3 pelin toimintalogiikaa ja tekoälyä. Kaikki pitää kuitenkin tehdä täysin eri tavalla, kun lauta on laaja.
 
 #### Shakki
