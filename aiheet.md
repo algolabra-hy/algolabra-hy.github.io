@@ -325,7 +325,7 @@ joka ei kuulu kurssin esitietoihin, esimerkiksi jokin [delaunay triangulaation](
 - [Bowyer–Watson](https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm) algoritmi delaunay triangulaatioiden laskemiseen. 
 
 ---
-## Salaus ja Tietoturva
+## Salaus ja tietoturva
 Tietoturva on tänä päivänä tärkeämpää kuin koskaan. Salausta voi tehdä useilla eri tavoilla ja moniin käyttötarkoituksiin. 
 Esim. [RSA-salaus](https://fi.wikipedia.org/wiki/RSA) on harjoitustyöhön sopiva aihe. 
 
