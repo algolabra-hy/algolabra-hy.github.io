@@ -74,7 +74,9 @@ Määrittelydokumentin pitää sisältää seuraavat tiedot:
 - Minkä ongelman ratkaiset?
 - Mitä syötteitä ohjelma saa ja miten niitä käytetään?
 - Tavoitteena olevat aika- ja tilavaativuudet (esim. O-analyysit)
-    - Tätä ei kannata (tai edes pidä) yrittää todistaa itse. Nämä kannattaa katsoa wikipediasta ja varmistaa, että ymmärrätte oman algoritmin kohdalla mistä ne tulevat. 
+    - Tästä kannattaa selvittää niin paljon kuin voitte. **Ei** ole tarkoitus todistaa tai mitata mitään itse. 
+    - Käytä aika ja tilavaatimuuksia apuvälineenä ymmärtääksenne, miten työhön kannattaa asennoitua. 
+      - Nämä kannattaa katsoa wikipediasta ja varmistaa, että ymmärrätte oman algoritmin kohdalla mistä ne tulevat. Miksi algoritmisi tarvitsee sen verran aikaa? 
 - Viitteet
 
 **Harjoitustyön Ydin.** Kuvaile määrittelydokumenttiin muutamalla lauseella, mikä on aiheesi *ydin*. 
@@ -120,3 +122,5 @@ Testausdokumentin pitääs sisältää seuraavat:
 ### Käyttöohje
 Miten ohjelma suoritetaan, miten eri toiminnallisuuksia käytetään
 Minkä muotoisia syötteitä ohjelma hyväksyy
+
+{% include typo_instructions.md %}
