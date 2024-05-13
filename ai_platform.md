@@ -43,21 +43,21 @@ Alusta tukee myös muita
 ohjelmointikieliä. Kohdassa [oman harjoitustyön konfigurointi](aiplatform#oman-harjoitustyön-konfigurointi) selitetään tarkemmin, miten oma harjotustyösi 
 pitää konfiguroida. 
 
-![]({{ "/images/tira-ai1.png" | absolute_url }})
 1. Lataa alustan uusimman [releasen zip tiedosto](https://github.com/game-ai-platform-team/tira-ai-local/releases) (kuvassa tira-ai-local-linux-x64-1.0.4.zip)
+![]({{ "/images/tira-ai1.png" | absolute_url }})
 1. Kloonaa esimerkkitekoälyn projekti: [shakki](https://github.com/game-ai-platform-team/stupid-chess-ai), [connect 4](https://github.com/game-ai-platform-team/stupid-connect-four-ai)
     - kopioi sen sisältö oman harjoitustyösi repositorioon. 
 1. Asenna [poetry](/poetry).
-![]({{ "/images/tira-ai2.png" | absolute_url }})
 1. Pura alustan zip tiedosto, navigoi purettuun kansioon terminaalissa ja käynnistä se komennolla ```./tira-ai-local```
-![]({{ "/images/tira-ai4.png" | absolute_url }})
+![]({{ "/images/tira-ai2.png" | absolute_url }})
 1. Valitse ylhäältä oikea peli. 
+![]({{ "/images/tira-ai4.png" | absolute_url }})
 1. Drag-and-droppaa oma harjoitustyösi juurikansio submit folderin alla olevaan ruutuun ja paina submit. 
-    - kunhan olet asentanut poetryn (kokeile ajamalla esim ```poetry -v``` terminaalissa ja varmista, ettei tule erroreita) voit jättää "run setup.sh" ruudun valitsematta. 
-![]({{ "/images/tira-ai5.png" | absolute_url }})
+    - kunhan olet asentanut poetryn (kokeile ajamalla esim ```poetry -v``` terminaalissa ja varmista, ettei tule erroreita) voit jättää "run setup.sh" ruudun valitsematta.
 1. Pelisi pitäisi alkaa. 
     - Mahdolliset virheilmoitukset printaantuvat terminaaliin ruudun alarunassa. Jos ilmenee ongelmia, varmista että oman projektisi rakenne vastaa täsmälleen esimerkkitekoälyjä. 
     - Kohdassa  [oman harjoitustyön konfigurointi](aiplatform#oman-harjoitustyön-konfigurointi) selitetään tarkemmin, mitä ehtoja oman projektisi täytyisi toteuttaa toimiakseen platformin kanssa. 
+![]({{ "/images/tira-ai5.png" | absolute_url }})
 ![]({{ "/images/tira-ai6.png" | absolute_url }})
 
 Jos pääsit näin pitkälle voit nyt aloittaa oman tekoälysi kehityksen muokkaamalla tiedostoa ``main.py`` (connect 4) tai ``src/stupid_ai.py``(shakki). 
