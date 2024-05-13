@@ -30,7 +30,7 @@ tekoälybottia vastaan.
 
 Alustan käyttöönotto on huomattavan paljon helpompaa, kuin oman GUI:n koodaaminen joten suosittelemme sitä vahvasti kaikille, jotka haluavat tehdä shakki tai connect 4 tekoälyn harjoitustyössä. 
 Tekoälyalusta löytyy [Githubista](https://github.com/game-ai-platform-team/tira-ai-local?tab=readme-ov-file). Sen readme on hyvä ja kattaa samat asiat kuin mitä tässä käydään (lyhennettynä)
-läpi. **Huomaa** kuitenkin, että readmen mainitsema [esimerrkiharjoitustyön](https://github.com/game-ai-platform-team/stupid-chess-ai) [tekoäly](https://github.com/game-ai-platform-team/stupid-chess-ai/blob/main/src/stupid_ai.py) käyttää pythonin chess kirjastoa jonka käyttö **ei ole sallittua** harjotustyössä. 
+läpi. **Huomaa** kuitenkin, että readmen mainitsema [esimerkkiharjoitustyön](https://github.com/game-ai-platform-team/stupid-chess-ai) [tekoäly](https://github.com/game-ai-platform-team/stupid-chess-ai/blob/main/src/stupid_ai.py) käyttää pythonin chess kirjastoa jonka käyttö **ei ole sallittua** harjotustyössä. 
 *Mikäli käytät harjoitustyössäsi tekoälyalustaa* muista mainita tästä dokumentaatiossasi ja ohjelmasi käyttöohjeissa jotta vertaisarvioijat osaavat ajaa ohjelmaasi oikein. 
 
 Käydään seuraavaksi läpi alustan käyttöönottoa. Tällä sivulla on oleellisesti samat ohjeet kuin [alustan readmessa](https://github.com/game-ai-platform-team/tira-ai-local/blob/master/README.md).
@@ -38,26 +38,26 @@ Käydään seuraavaksi läpi alustan käyttöönottoa. Tällä sivulla on oleell
 ## Minimaaliset ohjeet 
 
 Alla minimaaliset ohjeet python-pohjaisen shakki tai connect-four kehityksen aloittamiseen ai platformin kanssa linux koneella. 
-TÄmän osion jälkeen sinun pitäisi pystyä aloittamaan oman harjoitustyösi kehitys. 
+Tämän osion jälkeen sinun pitäisi pystyä aloittamaan oman harjoitustyösi kehitys pythonilla. 
 Alusta tukee myös muita 
 ohjelmointikieliä. Kohdassa [oman harjoitustyön konfigurointi](aiplatform#oman-harjoitustyön-konfigurointi) selitetään tarkemmin, miten oma harjotustyösi 
 pitää konfiguroida. 
 
-![]({{ "/images/tira-ai1.png" | absolute_url }})
 1. Lataa alustan uusimman [releasen zip tiedosto](https://github.com/game-ai-platform-team/tira-ai-local/releases) (kuvassa tira-ai-local-linux-x64-1.0.4.zip)
+![]({{ "/images/tira-ai1.png" | absolute_url }})
 1. Kloonaa esimerkkitekoälyn projekti: [shakki](https://github.com/game-ai-platform-team/stupid-chess-ai), [connect 4](https://github.com/game-ai-platform-team/stupid-connect-four-ai)
     - kopioi sen sisältö oman harjoitustyösi repositorioon. 
 1. Asenna [poetry](/poetry).
-![]({{ "/images/tira-ai2.png" | absolute_url }})
 1. Pura alustan zip tiedosto, navigoi purettuun kansioon terminaalissa ja käynnistä se komennolla ```./tira-ai-local```
-![]({{ "/images/tira-ai4.png" | absolute_url }})
+![]({{ "/images/tira-ai2.png" | absolute_url }})
 1. Valitse ylhäältä oikea peli. 
+![]({{ "/images/tira-ai4.png" | absolute_url }})
 1. Drag-and-droppaa oma harjoitustyösi juurikansio submit folderin alla olevaan ruutuun ja paina submit. 
-    - kunhan olet asentanut poetryn (kokeile ajamalla esim ```poetry -v``` terminaalissa ja varmista, ettei tule erroreita) voit jättää "run setup.sh" ruudun valitsematta. 
-![]({{ "/images/tira-ai5.png" | absolute_url }})
+    - kunhan olet asentanut poetryn (kokeile ajamalla esim ```poetry -v``` terminaalissa ja varmista, ettei tule erroreita) voit jättää "run setup.sh" ruudun valitsematta.
 1. Pelisi pitäisi alkaa. 
     - Mahdolliset virheilmoitukset printaantuvat terminaaliin ruudun alarunassa. Jos ilmenee ongelmia, varmista että oman projektisi rakenne vastaa täsmälleen esimerkkitekoälyjä. 
     - Kohdassa  [oman harjoitustyön konfigurointi](aiplatform#oman-harjoitustyön-konfigurointi) selitetään tarkemmin, mitä ehtoja oman projektisi täytyisi toteuttaa toimiakseen platformin kanssa. 
+![]({{ "/images/tira-ai5.png" | absolute_url }})
 ![]({{ "/images/tira-ai6.png" | absolute_url }})
 
 Jos pääsit näin pitkälle voit nyt aloittaa oman tekoälysi kehityksen muokkaamalla tiedostoa ``main.py`` (connect 4) tai ``src/stupid_ai.py``(shakki). 
@@ -93,11 +93,11 @@ omia komentojaan stdouttiin. Pythonille tämä voisi näyttää esimerkiksi seur
 ```python 
 def main():
     while True:
-        # Read input commands from the program
+        # Lue komento alustalta
         command = input().strip()
         
-        # Process input commands and generate output responses
-        # Implement your AI logic here
+        # Käsittele komento ja tulosta vastaukset
+        # Tekoälysi logiikka tulee tänne
         
 if __name__ == "__main__":
     main()
@@ -114,7 +114,7 @@ Oma tekoälysi keskustelee alustan kanssa standard outputin ja inputin kautta.
     - **Huomaa** että tekoälysi voi saada monta play komentoa peräkkäin ja sen pitäisi siis pystyä laskemaan seuraava siirto pelin molemille osapuolille. Pidä siis huoli siitä, että tekoälysi tietää kumman vuoro on ja osaa tehdä siirron vuorossa olevalle pelaajalle aina lukiessaan ``PLAY`` komennon. 
 - ``MOVE``. Tämä tarkoittaa, että tekoälyalusta suoritti jonkun siirron jonka om tekoälysi pitäisi tallettaa pelilogiikkaansa. Yleensä tämä komento lähetetään sen jälkeen, kun ihminen on pelannut siirron alustan kautta. Suoritettu siirto on ``DATA``:ssa. Sen tarkka muoto riippuu mitä peliä pelataan. Katso pelikohtaiset formaatit [alta](). 
 - ``BOARD``. Tämä tarkoittaa, että tekoälysi sovelluslogiikan pitäisi asettaa lauta johonkin tiettyyn konfiguraatioon. Nyt ```DATA``` osassa on jokin merkkijono esitys pelilaudan nykyisestä tilasta.  Katso pelikohtaiset formaatit [alta](/aiplatform#pelikohtainen-info).
-- ``RESET``. TÄmä tarkoittaa, että alusta haluaa, että tekoälysi resetoi pelin alkuasetelmaan. 
+- ``RESET``. Tämä tarkoittaa, että alusta haluaa, että tekoälysi resetoi pelin alkuasetelmaan. 
 
 **Voidaksesi käyttää alustaa** sinun täytyy toteuttaa vähintään ``PLAY``ja ``MOVE`` komentojen kästtely tekoälyssäsi. ``BOARD`` ja ``RESET`` komennot lähetään vaan, jos tekoälyalustan käyttäjä (eli yleensä sinä itse):
 1. painaa reset nappia tai
@@ -211,7 +211,7 @@ Shakkilaudan tilaa kuvaava merkkijono selitetään [täällä](https://github.co
 Harjoitustyötä varten sinun ei tarvitse välttämättä pitää kirjaa tornituksista tai oheestälyönnistä (en-passant). Tekoälyalusta sallii kutenkin näiden siirtojen tekemisen, eli jos teet ihmisenä sen kautta näitä siirtoja, joudut ottamaan tämän huomioon oikeellisuuden tarkistuksessa. 
 
 ### Connect four
-Katso myös [readmeta](https://github.com/game-ai-platform-team/tira-ai-local?tab=readme-ov-file#connect-four)
+Katso myös [readmeta](https://github.com/game-ai-platform-team/tira-ai-local?tab=readme-ov-file#connect-four).
 #### Connect four siirrot
 Connect fourin siirrot merkataan yksinkertaisesti sarakkeena, jonne siirto tehdään. Vasemmanpuoleisin sarake on numero 0, oikeanpuoleisin numero 6. Huomaa, että tekoälysi täytyy itse pitää kirjaa siitä, kumman vuoro on. "Punainen" pelaaja tekee ensimmäisen siirronon 
 
