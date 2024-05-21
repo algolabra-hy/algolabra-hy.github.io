@@ -10,6 +10,8 @@ inheader: no
 
 Tekoälyalustaa kehitetään jatkuvasti. Tällä hetkellä (alkukesä 2024) se tukee **shakkia** ja **connect-fouria**. 
 Tekoälyalustan lokaali (omalla koneella pyöritettävä) versio toimii **linux koneilla** (ainakin fuksiläppärillä). 
+Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. Tekoälyalustaa ei ole kunnolla testattu esim virtuaalikoneilla.  
+
 Sen serveripohjainen (remote) versio toimii muillakin, mutta sitä kannattaa käyttää  vasta oman tekoälyn perustoimintojen ollessa kunnossa .
 
 ## Briefly in English
