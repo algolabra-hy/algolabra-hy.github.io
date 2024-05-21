@@ -10,7 +10,7 @@ inheader: no
 Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse[^1], tai valita alla olevasta listasta. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa[^2]. 
 
 ## Lista aiheista
-- [Verkot ja Ppolunetsintä](/aiheet#verkot-ja-polunetsintä)
+- [Verkot ja Polunetsintä](/aiheet#verkot-ja-polunetsintä)
 - [Tiedon tiivistys](/aiheet#tiedon-tiivistys) 
 - [Pelit](/aiheet#pelit)
   - Gomoku
@@ -23,7 +23,7 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
   - 15-peli
 - [DPLL](/aiheet#dpll)
 - [Koneoppiminen](/aiheet#koneoppiminen)
-  - Laskennallinen Luovuus, tekstin tai musiikin generointi.
+  - Laskennallinen luovuus, tekstin tai musiikin generointi.
   - Hahmontunnistus 
   - Luolastojen Generointi
 - [Salaus ja tietoturva](/aiheet#salaus-ja-tietoturva)
@@ -42,7 +42,7 @@ Miten löydetään tehokkaasti nopein/lyhin reitti verkossa kahden pisteen väli
 Toteuta **vähintään kahden** eri reitinhakualgoritmin vertailu. Näistä **korkeintaan toinen** saa olla [Dijkstra](https://fi.wikipedia.org/wiki/Dijkstran_algoritmi) tai [A](https://fi.wikipedia.org/wiki/A*-algoritmi)\* koska Dijkstra opitaan harjoitustyön esitetoihin kuuluvalla Tira-kurssilla ja A* on toteutukseltaan erittäin lähellä Dijkstraa. 
 
 Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
-- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI).
+- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [tieteellinen paperi täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
   - Soveltuu vain pikselikartoille. Pikselikartalla on kahdeksan etenemissuuntaa ja kaksi mahdollista painoa, kaaren paino riippuu siitä kuljetaanko seuraavaan solmuun suoraan vai viistottain. 
   - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
 - [IDA](https://en.wikipedia.org/wiki/Iterative_deepening_A*)\*.
@@ -124,7 +124,7 @@ mainitaan erikseen pelin kohdalta. Mikäli pelin kohdalla ei mainita muuta, teko
 - Ristinollassa on usein pakko reagoida vastustajan edelliseen siirtoon, tai se on jatkoa ajatellen kannattavaa. Usein paras reaktio on jokin edellisen siirron viereinen siirto. Noudata tätä heuristiikkaa lisäämällä / nostamalla viimeisimmän siirron lähinaapurit ensimmäisiksi tutkittaviksi.
 - Voiton tarkistus tehdään tutkimalla vain rivit, jotka sisältävät edellisen siirron. Jos viiden rivi on syntynyt, voittaja on edellisen siirron tehnyt pelaaja, ja edellinen siirto on osa voittoriviä.
 
-**Hyödylliset Neuvot.**
+**Hyödylliset neuvot.**
 **Älä** toteuttaa ensin 3 x 3 pelin toimintalogiikaa ja tekoälyä. Kaikki pitää kuitenkin tehdä täysin eri tavalla, kun lauta on laaja.
 
 #### Shakki
@@ -149,7 +149,9 @@ käyttäen peliohjelmointiin yleisesti soveltuvia menetelmiä.
 Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
 - *Siirtojen järjestäminen.* Kokeillaan kaikissa laskennan vaiheissa ensin keskimmäiseen sarakkeeseen tehtävä siirto ja edetään siitä reunoja kohti. Tämä tehostaa alfa-beta -karsintaa, koska paras siirto löytyy useammin keskeltä.
 
-- [*Iteratiivinen syveneminen.*](https://domwil.co.uk/minimaxer/part2/) Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu, kun saadaan nopeasti nostettua / laskettua alfa / beta -arvoa. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto. Huomaa, että et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä, koska alfa-beta -karsinnan takia suurin osa minimaxin palauttamista arvoista ei ole aitoja vaan vain ylä- tai alarajoja todellisille arvoille. Kaikkia siirtoja täytyy kokeilla normaalisti, tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain siirtojen järjestämiseen. 
+- [*Iteratiivinen syveneminen.*](https://domwil.co.uk/minimaxer/part2/) Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu, kun saadaan nopeasti nostettua / laskettua alfa / beta -arvoa. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto.
+
+**Huomaa**, että iteratiivisessa syventämisessä et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä myöhemillä kierroksilla. Aikaisemmilla kierroksilla tallennetut arvot eivät alfa-beta -karsinnan useimmiten ole aitoja vaan, vain ylä- tai alarajoja todellisille arvoille. Ts. kaikkia siirtoja täytyy joka kerralla kokeilla normaalisti, tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain kokeiltavien siirtojen järjestämiseen. 
 
 #### Othello / Reversi
 [Othelloa](https://en.wikipedia.org/wiki/Reversi) pelataan 8 x 8 pelilaudalla. Pelin voittaa se, jolla on eniten nappuloita laudalla, kun kaikki ruudut on täytetty. 
@@ -219,7 +221,7 @@ Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil
 tietorakenteet täytyy toteuttaa itse. Aihe on parasta toteuttaa **C++** kielellä. 
 
 ### Hyödyllisiä neuvoja 
-Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCal](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemissa näiden repositoorioissa löytyy myös testilauseita: ([Cadicalin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
+Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCal](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemmissa näiden repositorioissa löytyy myös testilauseita: ([Cadicalin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
 [Kissatin testit](https://github.com/arminbiere/kissat/tree/master/test/cnf.)). Muista vaan, että sekä CaDiCal, että Kissat ovat erittäin optimpoituja 
 CDCL algoritmin toteutuksia, tämän kurssin aikana oma ratkojasi ei pääse lähellekkään samanlaista tehokkuutta. 
 
@@ -242,7 +244,7 @@ aiheita. Monissa koneoppimiseen liittyvissä aiheissa kannattaa muistaa, että a
 niiden tuottama tulos riippuu osaksi myös siitä harjoitusdatasta, jota niille syötetään. Täten niiden oikeellisuuden 
 varmistamiseen tarvitaan hyvin suunniteltuja [testejä](/testing) edustavilla syötteillä.
 
-# Laskennallinen luovuus.
+# Laskennallinen luovuus
 Sekä sanojen, lauseiden, musiikin, että kuvien[^3] tuottaminen algoritmisesti onnistuu periaatteessa samalla tavalla. 
 Ohjelma lukee ensin harjoitusdatan ja opettelee siitä erilaisia sanojen / lauseiden / sävel- / sointusekvenssejä. 
 Uutta materiaalia tuotetaan sitten tarkastelemalla tämänhetkistä tekstiä tai musiikkia, ja lisäämällä siihen jatkoa harjoitusdatasta opittujen 
@@ -273,7 +275,7 @@ Kokeile generointia alkaen 1. asteesta ja vertaa tuloksia eri asteilla. Seuraava
 todennäköisyyksien mukaan. Järkevien - tai hauskojen - lauseiden tuottamiseen tarvitaan minimissään toisen asteen Markovin ketju. 
 Musiikkikin on 1-asteella tuotettuna aika satunnaista, vaikka noudattaa toki jotain sävellajia, kunhan opetusdata on ollut siinä suhteessa konsistenttia. 
 
-**Musiikin tuottaminen.** Aiemmissa projekteissa on musiikkidataa syötetty ohjelmalle MIDI-tiedostoina, [Lilypond](http://lilypond.org/)-nuotteina tai [abc](https://abcnotation.com/)-notaationa. Python-kirjastossa [music21](https://web.mit.edu/music21/) on monia hyödyllisiä välineitä. Markov ketjuja musiikin generaatioon voi tehostaa muillakin tekniikoilla, katso esim. (Musikalisches Würfelspiel)[https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel]. Myös [geneettisillä algoritmeilla](https://en.wikipedia.org/wiki/Genetic_algorithm) voi tuottaa taidetta.
+**Musiikin tuottaminen.** Aiemmissa projekteissa on musiikkidataa syötetty ohjelmalle MIDI-tiedostoina, [Lilypond](http://lilypond.org/)-nuotteina tai [abc](https://abcnotation.com/)-notaationa. Python-kirjastossa [music21](https://web.mit.edu/music21/) on monia hyödyllisiä välineitä. Markov ketjuja musiikin generaatioon voi tehostaa muillakin tekniikoilla, katso esim. [Musikalisches Würfelspiel](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel). Myös [geneettisillä algoritmeilla](https://en.wikipedia.org/wiki/Genetic_algorithm) voi tuottaa taidetta.
 
 **Harjoitusdatan määrä**. Jotta ei päädytä toistamaan opetusdataa sellaisenaan, pitää esim. 2-asteella generoitaessa olla niin paljon opittuja mahdollisia 
 kolmen sanan / sävelen jonoja, että kahden edellisen perusteella voi kolmannen riittävän usein valita useammalla tavalla.
@@ -325,11 +327,11 @@ joka ei kuulu kurssin esitietoihin, esimerkiksi jokin [delaunay triangulaation](
 - [Bowyer–Watson](https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm) algoritmi delaunay triangulaatioiden laskemiseen. 
 
 ---
-## Salaus ja Tietoturva
+## Salaus ja tietoturva
 Tietoturva on tänä päivänä tärkeämpää kuin koskaan. Salausta voi tehdä useilla eri tavoilla ja moniin käyttötarkoituksiin. 
 Esim. [RSA-salaus](https://fi.wikipedia.org/wiki/RSA) on harjoitustyöhön sopiva aihe. 
 
-### Tarkempi Määrittely
+### Tarkempi määrittely
 Toteuta ohjelma joka salaa ja purkaa tekstiä. Ohjelman tulee salaamisen ja salauksen purkamisen lisäksi tuottaa avaimia, joiden pituus on oikean 
 RSA-salauksen tavoin vähintään 1024 bittiä. Käyttäjä voi antaa salattavaksi sen pituisen tekstin kuin avaimen pituus sallii. 
 [Paddingia](https://en.wikipedia.org/wiki/Padding_(cryptography)) ei tarvitse toteuttaa. Isojen alkulukujen etsimiseen ja avaimen muodostamiseen 

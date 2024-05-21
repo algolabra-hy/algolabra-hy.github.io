@@ -15,7 +15,10 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
     - Ohjaaja tarkistaa määrritelydokumentin ja antaa palautetta tarvittaessa. 
 - [Harjoitustyön repositoorio](/git) alustettu ja rekisteröity [Labtooliin](https://study.cs.helsinki.fi/labtool/).
     - Muista myös sallia [issuet](/git#issuiden-salliminen).
-- [Projektinhallinta](/projektinhallinta#projektin-hallinta) kunnossa. 
+- [Projektinhallinta](/projektinhallinta#projektin-hallinta) kunnossa.
+    - Tämä tarkoittaa, että repositorion pitäisi olla tehtynä ja labtooliin rekisteröitynä. Tämän lisäksi jonkinlainen tapa kääntää koodia
+      ja hallita riippuvuuksia pitäisi olla set-upattuna. Pythonilla tämä voi tarkoittaa poetrya, mutta jos jokin muu työkalu on
+      tutumpi niin sitäkin saa käyttää. 
     - Muista tutustua myös [yksikkötestien](/unittest) tekemiseen.
 
 **Viikko 1. Palautus** (katso päivä kurssikalenterista ja [ohjeet](/dokumentaatio) palautuksista)
