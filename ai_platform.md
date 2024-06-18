@@ -8,13 +8,11 @@ inheader: no
 
 #### Tällä hetkellä tuetut toiminnot
 
-Tekoälyalustaa kehitetään jatkuvasti. Tällä hetkellä (alkukesä 2024) se tukee **shakkia** ja **connect-fouria**. 
-Tekoälyalustan lokaali (omalla koneella pyöritettävä) versio toimii **linux koneilla** (ainakin fuksiläppärillä). 
-Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. Tekoälyalustaa ei ole kunnolla testattu esim virtuaalikoneilla.  
+Tekoälyalustaa kehitetään jatkuvasti. Tällä hetkellä (alkukesä 2024) se tukee **shakkia** ja **connect-fouria**. Tekoälyalustan lokaali (omalla koneella pyöritettävä) versio toimii **linux koneilla** (ainakin fuksiläppärillä). Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. **Huom** tekoälyalusta ei toimii virtuaalikoneilla.   
 
 Sen serveripohjainen (remote) versio toimii muillakin, mutta sitä kannattaa käyttää  vasta oman tekoälyn perustoimintojen ollessa kunnossa .
 
-## Briefly in English
+## Briefly in english
 This page describes how to use an AI-platform to support the devleopment of game AI:s in the project. The platform offers an GUI and 
 the ability to play against your AI with minimal overhead. 
 The platform can be found on [Github](https://github.com/game-ai-platform-team/tira-ai-local)
@@ -23,7 +21,6 @@ description of its usage. Notice however that the example chess AI project menti
 your own project is not allowed to use! 
 
 Currently the platform works on Linux and supports the games chess and connect 4. 
-
 
 ## AI-platform - tekoälyjen kehitystä tukeva alusta. 
 AI-platform on harjoitustyölle ohjelmistoprojektina tuotettu alusta, joka tarjoaa tämän kurssin opiskelijoille alustan jolla kehittää 

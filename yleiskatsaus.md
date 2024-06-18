@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /yleiskatsaus
-title: Yleiskatsaus Harjoitustyöstä
+title: Yleiskatsaus harjoitustyöstä
 title_long: Yleiskatsaus Harjoitustyön Kulusta
 inheader: no
 ---
@@ -12,15 +12,15 @@ tarkempaa tietoa materiaalin muista osista.
 Kurssilla opiskelija toteuttaa ohjelman, joka ratkaisee jonkin ohjelmointiongelman. Ongelmanratkaisuun käytetään sopivia tehokkaita algoritmeja ja tietorakenteita. Aihe on vapaa, kunhan ratkaisussa on tarpeeksi algoritmista vaativuutta. Käytännössä tämä tarkoittaa kirjallisuuteen perustuvien algoritmien käyttämistä, jotta tiedetään algoritmin olevan tarkoitukseen soveltuva ja tuottavan halutun tuloksen.
 Relevantin kirjallisuuden etsiminen ja siihen tutustuminen---tarvittaessa kurssin henkilökunnan avustuksella---on oleellinen (ja aikaa vievä) osa harjoitustyötä. 
 
-### Aiheen Valinnasta 
-Kurssimateriaalissa löytyy ehdotuksia harjoitustyön sopivista aiheista. Näiden lisäksi,
+### Aiheen valinnasta 
+[Kurssimateriaalissa](/aiheet) löytyy ehdotuksia harjoitustyön sopivista aiheista. Näiden lisäksi,
 opiskelijat voivat---periaatteessa---valita harjoitustyönsä aiheen itse. 
-Algoritmit, jotka on opittu kurssilla “Tietorakenteet ja algoritmit” tai sitä edeltävillä ohjelmointikursseilla, ovat tämän kurssin esitietoa, eivätkä siten voi olla projektin oleellista sisältöä. Tämän lisäksi harjoitustyön toteutuksen tulee 
+Algoritmit, jotka on opittu kurssilla “Tietorakenteet ja Algoritmit” tai sitä edeltävillä ohjelmointikursseilla, ovat tämän kurssin esitietoa, eivätkä siten voi olla projektin oleellista sisältöä. Tämän lisäksi harjoitustyön toteutuksen tulee 
 olla käytettävissä jonkin algoritmin soveltamiseen käytännön tilanteessa. Tämä toteutuu kaikissa kurssimateriaalin aihe-ehdotuksissa.
 
 Jos valitset täysin oman aiheen, tai aihe-ehdotuksesi ei ole yksityiskohtainen, sovi tapaaminen ohaajan kanssa jo ensimmäisellä viikolla, ennen määrittelydokumentin palautusta, jotta voitte sopia, miten aihe kannattaa rajata, ja mitkä osat aiheesta sinun tulee toteuttaa itse, jotta harjoitustyölle saavutetaan vaadittu laajuus.
 
-### Ohjelmointikielen Valinnasta
+### Ohjelmointikielen valinnasta
 Harjoitustyössä käytettävä ohjelmointikieli on---periaatteessa---vapaasti valittavissa.
 Useimissa aiheissa voidaan käyttää mitä tahansa ohjelmointikieltä. 
 Kuitenkin esimerkiksi tietorakennevertailu on aihe, joka ei ole mielekäs muuten kuin laiteläheisellä kielellä (C, C++) toteutettuna. Muuten voidaan päätyä mittaamaan tietorakenteiden erojen sijasta enemmänkin käytetyn ohjelmointikielen välineiden valintaa tai tehokkuutta. Lähtökohtaisesti sinun kannattaa käyttää kieltä, jonka osaat parhaiten. Uutta kieltä ei ole hyvä alkaa projektin yhteydessä opettelemaan, koska harjoitustyön aiheen omaksumisessa on opittavaa tarpeeksi.
@@ -40,9 +40,8 @@ käyttäen kielen standardikirjastojen valmiita tietorakenteita ja algoritmeja. 
 
 Jokaisessa harjoitustyössä saa käyttää kielen alkeistyyppien matemaattisia funktioita ja merkkijonojen funktioita,
 
-### Harjoitustyön Testaamisesta 
+### Harjoitustyön testaamisesta 
 Ohjelman toiminnan oikeellisuuden testaaminen on olennaisen tärkeää, kun käytetään vaativia algoritmeja. Täytyy tutkia tuottaako algoritmi oikean tuloksen, ja toimiiko algoritmi myös niin tehokkaasti kuin sen tulisi. Oikeellisuustestaus tehdään automaattisin yksikkötestein, joita laaditaan projektin alusta asti sitä mukaa, kun testattavaa koodia syntyy. Yleisohje testaamiseen (m.m sen vaatimuksista) löytyy [testaus](/testing) sivulta. 
-
 
 ### Käyttöliittymästä
 Käyttöliittymä ei ole keskeisin asia kurssilla, mutta toimiva käyttöliittymä on tärkeä olla alusta asti.
