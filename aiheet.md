@@ -39,18 +39,15 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
 Miten löydetään tehokkaasti nopein/lyhin reitti verkossa kahden pisteen välillä? Verkon pisteet voivat olla esimerkiksi katuosoitteita, joukkoliikenteen pysäkkejä, tai koordinaatteja.
 
 ### Tarkempi määrittely 
-Toteuta **vähintään kahden** eri reitinhakualgoritmin vertailu. Näistä **korkeintaan toinen** saa olla [Dijkstra](https://fi.wikipedia.org/wiki/Dijkstran_algoritmi) tai [A](https://fi.wikipedia.org/wiki/A*-algoritmi)\* koska Dijkstra opitaan harjoitustyön esitetoihin kuuluvalla Tira-kurssilla ja A* on toteutukseltaan erittäin lähellä Dijkstraa. 
+Toteuta **vähintään kahden** eri reitinhakualgoritmin vertailu. Näistä **korkeintaan toinen** saa olla [Dijkstra](https://fi.wikipedia.org/wiki/Dijkstran_algoritmi) tai [A](https://fi.wikipedia.org/wiki/A*-algoritmi)\* koska Dijkstra opitaan harjoitustyön esitetoihin kuuluvalla Tira-kurssilla, ja A* on toteutukseltaan erittäin lähellä Dijkstraa. 
 
 Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
 - [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [tieteellinen paperi täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
   - Soveltuu vain pikselikartoille. Pikselikartalla on kahdeksan etenemissuuntaa ja kaksi mahdollista painoa, kaaren paino riippuu siitä kuljetaanko seuraavaan solmuun suoraan vai viistottain. 
   - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
-- [IDA](https://en.wikipedia.org/wiki/Iterative_deepening_A*)\*.
-- [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf) joka on astetta haastavampi. 
+- [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf), joka on astetta haastavampi.
 
-Muutama **lisävaatimus**:
-- Jos aiheena on JPS vs Dijkstra / A*, voit käyttää ohjelmointikielen valmiita tietorakenteita. 
-- Mikäli aiheena on IDA\* vs Dijkstra / A\*, tulee toteuttaa itse minimikeko, jonka avulla järjestetään IDA\*:ssa naapurisolmut ja Dijkstrassa tutkittavat solmut. IDA\*:n pinoa ei tarvitse toteuttaa itse.
+Myös osiosta Pelit löytyvän 15-pelin ratkaiseminen perustuu reitinhakualgoritmiin.
 
 
 ### Hyödyllisiä neuvoja 
@@ -78,10 +75,10 @@ Harjoitustyöhön sopivia pakkausemenetelmiä ovat esim:
 - [Huffman koodaus](https://en.wikipedia.org/wiki/Huffman_coding) johonka liittyy oleellisesti [Huffman-puun tallettaminen](https://stackoverflow.com/questions/759707/efficient-way-of-storing-huffman-tree)
 
 Sopiva aihe harjoitustyölle on esimerkiksi yhden LZ algoritmin vertaaminen Huffman koodaukseen tekstin pakkauksessa. 
-Ohjelman tulee tuottaa kiintolevylle tiedosto, joka sisältää kaiken sen purkamiseen tarvittavan datan, ja jonka koko on käytetylle pakkausmenetelmälle tyypillinen.
+Ohjelman tulee tuottaa kiintolevylle tiedosto, joka sisältää kaiken sen purkamiseen tarvittavan datan, ja jonka koko on käytetylle pakkausmenetelmälle tyypillinen. Pakatun tiedoston pitää siis sisältää esim. Huffman-puu tai sanakirja, jos pakkausmenetelmä sellaista vaatii, ja myös niiden tulee olla esitettynä tehokkaasti, ei vaikkapa xml / json -muodossa.
 
 ### Hyödyllisiä neuvoja 
-Kun pakataan luonnollista kieltä (tai ohjelmistokoodia) pakatun tiedoston koon tulisi olla noin 40-60% alkuperäisestä koosta, kunhan pakattava tiedosto on riittävän suuri. 
+Kun pakataan luonnollista kieltä (tai ohjelman lähdekoodia) pakatun tiedoston koon tulisi olla noin 40-60% alkuperäisestä koosta, kunhan pakattava tiedosto on riittävän suuri. 
 Tekstin pakkaamiseen käytetään vain häviöttömiä menetelmiä, joten pakatut tekstitiedostot täytyy pystyä palauttamaan alkuperäiseen muotoon.
 Kuvaa ja ääntä pakattaessa pyritään paljon suurempaan pakkaustehoon, mutta käyttäen häviöllisiä menetelmiä jolloin pakattua tiedostoa ei voi enää palauttaa alkuperäiseksi.
 
