@@ -75,7 +75,7 @@ Harjoitustyöhön sopivia pakkausemenetelmiä ovat esim:
 - [Huffman koodaus](https://en.wikipedia.org/wiki/Huffman_coding) johonka liittyy oleellisesti [Huffman-puun tallettaminen](https://stackoverflow.com/questions/759707/efficient-way-of-storing-huffman-tree)
 
 Sopiva aihe harjoitustyölle on esimerkiksi yhden LZ algoritmin vertaaminen Huffman koodaukseen tekstin pakkauksessa. 
-Ohjelman tulee tuottaa kiintolevylle tiedosto, joka sisältää yhden kaiken sen purkamiseen tarvittavan datan, ja jonka koko on käytetylle pakkausmenetelmälle tyypillinen. Pakatun tiedoston pitää siis sisältää esim. Huffman-puu tai sanakirja, jos pakkausmenetelmä sellaista vaatii, ja myös niiden tulee olla esitettynä tehokkaasti, ei vaikkapa xml / json -muodossa.
+Ohjelman tulee tuottaa kiintolevylle yksi tiedosto, joka sisältää kaiken sen purkamiseen tarvittavan datan, ja jonka koko on käytetylle pakkausmenetelmälle tyypillinen. Pakatun tiedoston pitää siis sisältää esim. Huffman-puu tai sanakirja, jos pakkausmenetelmä sellaista vaatii, ja myös niiden tulee olla esitettynä tehokkaasti, ei vaikkapa xml / json -muodossa.
 
 ### Hyödyllisiä neuvoja 
 Kun pakataan luonnollista kieltä (tai ohjelman lähdekoodia) pakatun tiedoston koon tulisi olla noin 40-60% alkuperäisestä koosta, kunhan pakattava tiedosto on riittävän suuri. 
