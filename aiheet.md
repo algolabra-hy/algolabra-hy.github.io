@@ -75,17 +75,17 @@ Harjoitustyöhön sopivia pakkausemenetelmiä ovat esim:
 - [Huffman koodaus](https://en.wikipedia.org/wiki/Huffman_coding) johonka liittyy oleellisesti [Huffman-puun tallettaminen](https://stackoverflow.com/questions/759707/efficient-way-of-storing-huffman-tree)
 
 Sopiva aihe harjoitustyölle on esimerkiksi yhden LZ algoritmin vertaaminen Huffman koodaukseen tekstin pakkauksessa. 
-Ohjelman tulee tuottaa kiintolevylle tiedosto, joka sisältää kaiken sen purkamiseen tarvittavan datan, ja jonka koko on käytetylle pakkausmenetelmälle tyypillinen. Pakatun tiedoston pitää siis sisältää esim. Huffman-puu tai sanakirja, jos pakkausmenetelmä sellaista vaatii, ja myös niiden tulee olla esitettynä tehokkaasti, ei vaikkapa xml / json -muodossa.
+Ohjelman tulee tuottaa kiintolevylle tiedosto, joka sisältää yhden kaiken sen purkamiseen tarvittavan datan, ja jonka koko on käytetylle pakkausmenetelmälle tyypillinen. Pakatun tiedoston pitää siis sisältää esim. Huffman-puu tai sanakirja, jos pakkausmenetelmä sellaista vaatii, ja myös niiden tulee olla esitettynä tehokkaasti, ei vaikkapa xml / json -muodossa.
 
 ### Hyödyllisiä neuvoja 
 Kun pakataan luonnollista kieltä (tai ohjelman lähdekoodia) pakatun tiedoston koon tulisi olla noin 40-60% alkuperäisestä koosta, kunhan pakattava tiedosto on riittävän suuri. 
-Tekstin pakkaamiseen käytetään vain häviöttömiä menetelmiä, joten pakatut tekstitiedostot täytyy pystyä palauttamaan alkuperäiseen muotoon.
-Kuvaa ja ääntä pakattaessa pyritään paljon suurempaan pakkaustehoon, mutta käyttäen häviöllisiä menetelmiä jolloin pakattua tiedostoa ei voi enää palauttaa alkuperäiseksi.
+Tekstin pakkaamiseen käytetään vain häviöttömiä menetelmiä, koska pakatut tekstitiedostot täytyy pystyä palauttamaan alkuperäiseen muotoon.
+Kuvaa ja ääntä pakattaessa pyritään paljon suurempaan pakkaustehoon, mutta se on mahdollista vain häviöllisiä menetelmiä, jolloin pakattua tiedostoa ei voi enää palauttaa alkuperäiseksi.
 
 Aiheen vaatimusten saavuttaminen vaatii datan lukemista ja kirjoittamista tiedostoon bittitasolla, 
 mikä ei onnistu samoilla välineillä kuin tekstitiedoston käsittely. 
 Voit käyttää ohjelmointikielen valmiita tietorakenteita kaikissa pakkausalgoritmeissa.
-**Huomaa** että pakkausalgoritmejasi täytyy testata [edustavilla](/respresentativeinputs) syötteillä, jotka ovat tarpeeksi isoja. 
+**Huomaa** että pakkausalgoritmejasi täytyy testata [edustavilla](/respresentativeinputs) syötteillä, jotka ovat tarpeeksi isoja. Myös päästä päähän -testaus (pakkaus +purku ja tuloksen vertaaminen alkuperäiseen tiedostoon) on välttämätön osa oikeellisuustestausta, koska jotkin virheet tulevat esiin vasta, kun tiedosto on tarpeeksi suuri tai siinä on riittävän monta eri merkkiä. Et voi käsin laskea vertailuarvoksi, millainen usean megatavun kokoisen tiedoston oikea pakkaustulos on. 
 
 ---
 
@@ -93,7 +93,7 @@ Voit käyttää ohjelmointikielen valmiita tietorakenteita kaikissa pakkausalgor
 Miten toteutetaan tekoäly erityyppisille peleille? Tässä projektissa valitaan yksi peli, ja toteutetaan sille tekoäly. 
 Useimille alla olevista peleistä tekoälyn voi toteuttaa [minimax-algoritmilla, jota on tehostettu alpha-beta-karsinnalla](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning).
 
-Minmax-algoritmi laskee jokaisesta pelitilateesta eteenpäin ja valitsee siirron, joka johtaa omaan voittoon. Täten algoritmi olettaa, että sekä tekoäly että vastapelaaja tekevät joka tilanteessa itsensä kannalta parhaan mahdollisen siirron. Koska harvasta pelitilanteesta 
+Minmax-algoritmi laskee jokaisesta pelitilateesta eteenpäin ja valitsee siirron, joka johtaa varmaan voittoon, jos sellainen siirto on. Algoritmi olettaa, että sekä tekoäly että vastapelaaja tekevät joka tilanteessa itsensä kannalta parhaan mahdollisen siirron. Koska harvasta pelitilanteesta 
 voidaan laskea voittoon, häviöön, tai tasapeliin asti, lasketaan sen sijaan tietty määrä siirtoja eteenpäin ja 
 arvioidaan jollain heuristiikalla, kuinka hyvään pelitilanteeseen päästään. Heuristiikan perusteella valitaan se siirto, joka johtaa parhaimpaan pelitilanteeseen. 
 
@@ -110,7 +110,7 @@ voiton tunnistus ja siirtojen suorittaminen toteutetaan itse. Käyttöliittymä�
 käyttöliittymä on täysin käyttökelpoinen. Käyttöliittymää ei tarvitse testata. 
 
 Alla lista mahdollisista peleistä sekä hyödyllisiä neuvoja kullekin pelille. Peleissä joiden solvelluslogiikka ja 
-käyttöliittymä ovat helpompia toteuttaa, itse tekoälyltä vaaditaan hieman lisää ominaisuuksia. Nämä vaatimukset 
+käyttöliittymä ovat helpoimpia toteuttaa, itse tekoälyltä vaaditaan hieman lisää ominaisuuksia. Nämä vaatimukset 
 mainitaan erikseen pelin kohdalta. Mikäli pelin kohdalla ei mainita muuta, tekoälyn sille pelille voi toteuttaa minimax algoritmilla. 
 
 #### Ristinolla / Gomoku
@@ -144,11 +144,11 @@ käyttäen peliohjelmointiin yleisesti soveltuvia menetelmiä.
 
 **Lisävaatimukset**
 Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
-- *Siirtojen järjestäminen.* Kokeillaan kaikissa laskennan vaiheissa ensin keskimmäiseen sarakkeeseen tehtävä siirto ja edetään siitä reunoja kohti. Tämä tehostaa alfa-beta -karsintaa, koska paras siirto löytyy useammin keskeltä.
+- *Siirtojen järjestäminen.* Kokeillaan kaikissa laskennan vaiheissa (minimaxin sisällä) ensin keskimmäiseen sarakkeeseen tehtävä siirto ja edetään siitä reunoja kohti. Tämä tehostaa alfa-beta -karsintaa, koska paras siirto löytyy useammin keskeltä.
 
 - [*Iteratiivinen syveneminen.*](https://domwil.co.uk/minimaxer/part2/) Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu, kun saadaan nopeasti nostettua / laskettua alfa / beta -arvoa. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto.
 
-**Huomaa**, että iteratiivisessa syventämisessä et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä myöhemillä kierroksilla. Aikaisemmilla kierroksilla tallennetut arvot eivät alfa-beta -karsinnan useimmiten ole aitoja vaan, vain ylä- tai alarajoja todellisille arvoille. Ts. kaikkia siirtoja täytyy joka kerralla kokeilla normaalisti, tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain kokeiltavien siirtojen järjestämiseen. 
+**Huomaa**, että iteratiivisessa syventämisessä et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä myöhemillä kierroksilla. Voit vain tallettaa tiedon siitä, mikä oli paras siirto eli sarake siinä tilanteessa. Aikaisemmilla kierroksilla tallennetut arvot eivät alfa-beta -karsinnan takia useimmiten ole aitoja vaan vain ylä- tai alarajoja todellisille arvoille. Ts. kaikkia siirtoja täytyy joka kerralla kokeilla, tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain kokeiltavien siirtojen järjestämiseen. 
 
 #### Othello / Reversi
 [Othelloa](https://en.wikipedia.org/wiki/Reversi) pelataan 8 x 8 pelilaudalla. Pelin voittaa se, jolla on eniten nappuloita laudalla, kun kaikki ruudut on täytetty. 
