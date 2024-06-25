@@ -4,11 +4,23 @@ permalink: /testing
 title: Harjoitustyön Testaaminen
 title_long: Harjoitustyön Testaaminen
 inheader: yes
+dropdown: true
+children:
+  - title: Testauksen vaatimuksesta 
+    permalink: /testreqs
+  - title: Yksikkötestaaminen Pythonilla
+    permalink: /unittest
+  - title: Riippuvuuden injektointi Pythonilla
+    permalink: /riippuvuuksien_injektointi_python
+  - title: Testisyötteiden edustavuus
+    permalink: /respresentativeinputs
+  - title: Edistynemmmät testaustekniikat kurssilla 
+    permalink: /testing#yksikkötestien-lisäksi
 ---
 
 Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. Sivut ovat vielä rakenteilla. Hyödyllisistä materiaaleista saa mielellään vinkata Jeremiakselle. 
 
-## Ihan ensiksi
+## Testauksen vaatimuksista
 Lue harjoitustyön [testauksen vaatimuksista](/testreqs) kurssin arvostelussa.
 
 

@@ -2,7 +2,7 @@
 layout: page
 permalink: /yleiskatsaus
 title: Yleiskatsaus harjoitustyöstä
-title_long: Yleiskatsaus Harjoitustyön Kulusta
+title_long: Yleiskatsaus harjoitustyön Kklusta
 inheader: no
 ---
 
@@ -23,20 +23,21 @@ Jos valitset täysin oman aiheen, tai aihe-ehdotuksesi ei ole yksityiskohtainen,
 ### Ohjelmointikielen valinnasta
 Harjoitustyössä käytettävä ohjelmointikieli on---periaatteessa---vapaasti valittavissa.
 Useimissa aiheissa voidaan käyttää mitä tahansa ohjelmointikieltä. 
-Kuitenkin esimerkiksi tietorakennevertailu on aihe, joka ei ole mielekäs muuten kuin laiteläheisellä kielellä (C, C++) toteutettuna. Muuten voidaan päätyä mittaamaan tietorakenteiden erojen sijasta enemmänkin käytetyn ohjelmointikielen välineiden valintaa tai tehokkuutta. Lähtökohtaisesti sinun kannattaa käyttää kieltä, jonka osaat parhaiten. Uutta kieltä ei ole hyvä alkaa projektin yhteydessä opettelemaan, koska harjoitustyön aiheen omaksumisessa on opittavaa tarpeeksi.
+Kuitenkin esimerkiksi tietorakennevertailu on aihe, joka ei ole mielekäs muuten kuin laiteläheisellä (C, C++) kielellä  toteutettuna. Muuten voidaan päätyä mittaamaan tietorakenteiden erojen sijasta enemmänkin käytetyn ohjelmointikielen välineiden valintaa tai tehokkuutta. 
+
+Lähtökohtaisesti sinun kannattaa käyttää kieltä, jonka osaat parhaiten. *Uutta kieltä* ei ole hyvä alkaa projektin yhteydessä opettelemaan, koska harjoitustyön aiheen omaksumisessa on opittavaa tarpeeksi.
 
 Python on monessa mielessä paras valinta ohjelmointikieleksi, mikäli osaat sitä riittävästi. 
 Useimmat kurssilaiset tekevät projektin Pythonilla, ja moni ei tunne muita kieliä. Siksi kurssin ohjeet painottuvat Pythoniin ja Javaan, joka on toiseksi yleisin käytetty kieli. 
 Jos käytät Pythonia, saat luultavasti vertaisarvioinneissa tutkittavaksi projekteja, joissa on sama tai vastaava aihe kuin itselläsi. Saat yleensä myös itse vertaispalautetta joltain, joka tuntee aiheesi ja ohjelmointikielesi. 
 Vertaisarvioita jaettaessa hyödynnetään opiskelijoiden antamia tietoja osaamistaan kielistä, mutta perusjako on, että Pythonia käyttävät arvioivat toisiaan, ja kaikki muut taas toisiaan kielestä riippumatta.
 
-Huomaa, ettö automaattinen [testaus](/testing) ja testikattavuuden laskenta ovat pakollista kaikissa projekteissa, kielestä riippumatta. Tästä ei ole kurssimateriaalissa ohjeita muille kuin Pythonille, eikä ohjaajakaan välttämättä 
-osaa neuvoa. Täten, mikäli valitsen jonkun muun kielen, joudut ottamaan enemmän vastuuuta näiden asioiden omaksumisesta. 
+Huomaa, ettö automaattinen [testaus](/testing) ja testikattavuuden laskenta ovat pakollista kaikissa projekteissa, kielestä riippumatta. Tästä ei ole [kurssimateriaalissa](/unittest) ohjeita muille kuin Pythonille, eikä ohjaajakaan välttämättä  osaa neuvoa. Täten, mikäli valitsen jonkun muun kielen, joudut ottamaan enemmän vastuuuta näiden asioiden omaksumisesta. 
 Kunhan hallitset ohjelmistokehitykseen tarvittavat välineet omassa kielessäsi, saat kuitenkin ohjaajalta tuen toteutettavien algoritmien ymmärtämisessä ja toteutuksen virheiden jäljityksessä. Virheiden etsintä tapahtuu joka tapauksessa enimmäkseen yhdessä ohjaajan kanssa esim. Zoomissa, ei niin että ohjaaja tutkii oma-aloitteisesti koodiasi.
 
 Kurssin tavoite on oppia toteuttamaan itse tietorakenteita ja algoritmeja, jotka eivät sisälly kurssin esitietoihin. Lähinnä toteutetaan algoritmeja, mutta osassa suppeammista aiheista vaaditaan myös tietorakenteiden 
-omaa toetuttamista. Tälläisissä aiheissa suosittelemme, että laitat ensin kuntoon omah harjoitustyön ytimen 
-käyttäen kielen standardikirjastojen valmiita tietorakenteita ja algoritmeja. Kun ohjelma toimii oikein, voit sitten korvata valmiit välineet omilla toteutuksilla.
+omaa toetuttamista. Tälläisissä aiheissa suosittelemme, että laitat ensin kuntoon oman harjoitustyön [ytimen](dokumentaatio#määrittelydokumentti)
+käyttäen kielen standardikirjastojen valmiita tietorakenteita ja algoritmeja. Kun ohjelma toimii oikein, voit sitten korvata valmiit tietorakenteet omilla toteutuksilla.
 
 Jokaisessa harjoitustyössä saa käyttää kielen alkeistyyppien matemaattisia funktioita ja merkkijonojen funktioita,
 

@@ -6,8 +6,20 @@ title_long: Ohjeita
 inheader: yes
 dropdown: true
 children:
-  - title: Yleiskatsaus harjoitustyön kulusta
+  - title: Yleiskatsaus kurssin kulusta
     permalink: /yleiskatsaus
+  - title: Esimerkkiaikataulu 
+    permalink: /aikataulu
+  - title: Aihe ehdotuksia
+    permalink: /aiheet
+  - title: Esimerkkejä aikaisemmista projekteista
+    permalink: /esimerkkeja
+  - title: Git ohjeet
+    permalink: /git
+  - title: Työkalut projektinhallintaan
+    permalink: /yleista#projektin-hallinta
+  - title: Tekoälyalusta pelitekoälyille
+    permalink: /aiplatform
 ---
 
 
