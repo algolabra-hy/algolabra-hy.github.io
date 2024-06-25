@@ -8,7 +8,7 @@ Näillä sivuilla on Helsingin Yliopiston Algoritmit ja Tekoäly harjoitustyöh�
 Sivut ovat vielä rakenteella ja päivittyvät jatkuvasti. 
 Tietoa itse harjoitustyön suoritamiseen liittyvistä asioista löytyy tämänhetkisen toteutuksen moodlesta johonka pääsee [kurssin sivujen](https://studies.helsinki.fi/kurssit/opintojakso/otm-3d27dcc5-f7b5-4eec-b5db-53217aee3918/TKT20010) kautta ilmoittautumisen jälkeen.  
 
-## Lue Ensin Moodle
+## Lue ensin moodle
 Voit tutustua näihin sivuihin saadaksesi yleiskuvaa kurssin kulusta jo 
 ennen ilmoittautumista. Mikäli kuitenkin olet jo ilmoittautunut, käy ensin lukemassa 
 [kurssitoteutuksen moodle sivut]({{site.moodle}}) jossa selitetään kurssin tavoitteista, rakenteesta, ja arvostelusta tarkemmin. Nämä sivut olettavat, että olet tutustunut moodlen materiaaliin ja voivat tuntua sekavilta jos et ole.
