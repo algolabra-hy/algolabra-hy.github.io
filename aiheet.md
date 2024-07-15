@@ -45,7 +45,6 @@ Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
 - [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [tieteellinen paperi täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
   - Soveltuu vain pikselikartoille. Pikselikartalla on kahdeksan etenemissuuntaa ja kaksi mahdollista painoa, kaaren paino riippuu siitä kuljetaanko seuraavaan solmuun suoraan vai viistottain. 
   - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
-  - HUOM. Pythonilla tehtäessä [finxterin blogissa](https://blog.finxter.com/jump-search-algorithm-in-python-a-helpful-guide-with-video/) (johon ensimmäinen videokin viittaa) esitetty koodi on todella hidasta. Tätä voi hyvin käyttää algoritmin ymmärtämiseen, mutta sen varaan ei kannata rakentaa omaa koodiaan.
 - [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf), joka on astetta haastavampi.
 
 Myös osiosta [Pelit](/aiheet#pelit) löytyvän 15-pelin ratkaiseminen perustuu reitinhakualgoritmiin.
@@ -55,6 +54,9 @@ Myös osiosta [Pelit](/aiheet#pelit) löytyvän 15-pelin ratkaiseminen perustuu 
 Reitinhakualgoritmien vertailussa on syytä heti alkuun toteuttaa löydetyn reitin ja läpikäytyjen solmujen / hyppypisteiden visualisointi. Ilman sitä on vaikea nähdä toimiiko algoritmi oikein. 
 Visualisointi auttaa hakualgoritmin oikeellisuuden toteamisessa, ja se nopeuttaa myös virheiden löytämistä ohjelman kehityksen aikana. 
 Visualisoinnin laatimiseen ei saisi mennä paljon työaikaa, sillä varsinainen ydin on reitinhakualgoritmien toteutus ja huolellinen testaus. Graafinen käyttöliittymä on kätevä, mutta selkeä ASCII-grafiikka riittää, jos käytät pikselikarttoja. **Huomaa** että oikeellisuuden ja tehokkuuden testaamiseen tarvitaan monimutkaisia ja tarpeeksi laajoja karttoja, jotka ovat vertailemiesi algoritmien kannalta mielekkäitä. Niiden tuottaminen käsin olisi kohtuuttoman työlästä, joten tarvitset myös valmiita karttoja jostain lähteestä.
+
+Koodin toteutuksessa **ei** kannata lähteä toteuttamaan minkäänlaista "verkko" oliota. Sen sijaan kannattaa suoraan lukea kokonaisluku tai merkrkitaulukoita. Esimerkiksi [finxterin blogissa](https://blog.finxter.com/jump-search-algorithm-in-python-a-helpful-guide-with-video/) (johon ensimmäinen videokin viittaa) kuvattu JPS toteutus on todella hidas. Tälläisiä materiaaleja voi hyvin käyttää algoritmien ymmärtämiseen, mutta sen varaan ei kannata rakentaa omaa koodiaan.
+
 
 Valmiita karttoja löytyy esimerkiksi [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta, [shortest-path labin](https://bitbucket.org/shortestpathlab/benchmarks/src/master/grid-maps/) repositoriosta, tai [maanmittauslaitoksen kartoista](http://kartat.kapsi.fi/). Huomaa, että Moving AI:n pikselikartoissa ilmoitetut etäisyydet on laskettu niin, että reitti kiertää esteen kulmapikselin, sen sijaan että kulkisi viistosti tavallaan puoliksi estepikselin yli. Myös joukkoliikenteen [reitti / aikataulut](https://developers.google.com/transit/gtfs/) tai [digitransitin kartat](https://digitransit.fi/en/developers/) ja [avoin karttadata](https://www.openstreetmap.org) ovat olleet suosittuja valmiiden karttojen lähteitä.
 
