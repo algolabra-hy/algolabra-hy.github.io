@@ -48,7 +48,7 @@ Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
   - HUOM. Pythonilla tehtäessä [finxterin blogissa](https://blog.finxter.com/jump-search-algorithm-in-python-a-helpful-guide-with-video/) (johon ensimmäinen videokin viittaa) esitetty koodi on todella hidasta. Tätä voi hyvin käyttää algoritmin ymmärtämiseen, mutta sen varaan ei kannata rakentaa omaa koodiaan.
 - [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf), joka on astetta haastavampi.
 
-Myös osiosta Pelit löytyvän 15-pelin ratkaiseminen perustuu reitinhakualgoritmiin.
+Myös osiosta [Pelit](/aiheet#pelit) löytyvän 15-pelin ratkaiseminen perustuu reitinhakualgoritmiin.
 
 
 ### Hyödyllisiä neuvoja 
@@ -56,7 +56,7 @@ Reitinhakualgoritmien vertailussa on syytä heti alkuun toteuttaa löydetyn reit
 Visualisointi auttaa hakualgoritmin oikeellisuuden toteamisessa, ja se nopeuttaa myös virheiden löytämistä ohjelman kehityksen aikana. 
 Visualisoinnin laatimiseen ei saisi mennä paljon työaikaa, sillä varsinainen ydin on reitinhakualgoritmien toteutus ja huolellinen testaus. Graafinen käyttöliittymä on kätevä, mutta selkeä ASCII-grafiikka riittää, jos käytät pikselikarttoja. **Huomaa** että oikeellisuuden ja tehokkuuden testaamiseen tarvitaan monimutkaisia ja tarpeeksi laajoja karttoja, jotka ovat vertailemiesi algoritmien kannalta mielekkäitä. Niiden tuottaminen käsin olisi kohtuuttoman työlästä, joten tarvitset myös valmiita karttoja jostain lähteestä.
 
-Valmiita karttoja löytyy esimerkiksi [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta tai [maanmittauslaitoksen kartoista](http://kartat.kapsi.fi/). Huomaa, että Moving AI:n pikselikartoissa ilmoitetut etäisyydet on laskettu niin, että reitti kiertää esteen kulmapikselin, sen sijaan että kulkisi viistosti tavallaan puoliksi estepikselin yli. Myös joukkoliikenteen [reitti / aikataulut](https://developers.google.com/transit/gtfs/) tai [digitransitin kartat](https://digitransit.fi/en/developers/) ja [avoin karttadata](https://www.openstreetmap.org) ovat olleet suosittuja valmiiden karttojen lähteitä.
+Valmiita karttoja löytyy esimerkiksi [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta, [shortest-path labin](https://bitbucket.org/shortestpathlab/benchmarks/src/master/grid-maps/) repositoriosta, tai [maanmittauslaitoksen kartoista](http://kartat.kapsi.fi/). Huomaa, että Moving AI:n pikselikartoissa ilmoitetut etäisyydet on laskettu niin, että reitti kiertää esteen kulmapikselin, sen sijaan että kulkisi viistosti tavallaan puoliksi estepikselin yli. Myös joukkoliikenteen [reitti / aikataulut](https://developers.google.com/transit/gtfs/) tai [digitransitin kartat](https://digitransit.fi/en/developers/) ja [avoin karttadata](https://www.openstreetmap.org) ovat olleet suosittuja valmiiden karttojen lähteitä.
 
 Joidenkin karttojen mukana tulee etäisyystietoja erilaisille reiteille, ja niitä voi hyödyntää testeissä. Muista kuitenkin, että se että algoritmisi palauttaa oikean pituden ei vielä takaa, että se toimii oikein. 
 
@@ -98,8 +98,8 @@ Minmax-algoritmi laskee jokaisesta pelitilateesta eteenpäin ja valitsee siirron
 voidaan laskea voittoon, häviöön, tai tasapeliin asti, lasketaan sen sijaan tietty määrä siirtoja eteenpäin ja 
 arvioidaan jollain heuristiikalla, kuinka hyvään pelitilanteeseen päästään. Heuristiikan perusteella valitaan se siirto, joka johtaa parhaimpaan pelitilanteeseen. 
 
-**Jos haluat tehdä shakille tai connect fourille tekoälyn** suosittelemme vahvasti harjoitustyön [tekoäly alustan](/aiplatform) käyttöä. 
-Alusta tarjoaa graafisen käyttöliittymän ja mahdollisuuden pelata omaa tekoälyäsi vastaan minimaalisella overheadilla. 
+**Jos haluat tehdä shakille tai connect fourille tekoälyn ja sinulla on linux kone** suosittelemme vahvasti harjoitustyön [tekoäly alustan](/aiplatform) käyttöä. 
+Alusta tarjoaa graafisen käyttöliittymän ja mahdollisuuden pelata omaa tekoälyäsi vastaan minimaalisella overheadilla. Huomaa, että minkäänlainen linuxin emulointi ei kelpaa. 
 
 
 ### Tarkempi määrittely
@@ -142,6 +142,8 @@ Jos peli ei ole tuttu, katso [Connect Four Wikipediasta](https://en.wikipedia.or
 **Tämä on hyvä aihe**, jos haluat käyttää suurimman osan työajastasi juuri minimax-algoritmin tehostamiseen. Tutkittavien siirtojen generointi ja 
 siirtojen toteuttaminen on Connect4:ssä yksinkertaisempaa kuin monessa muussa pelissä, ja sen sijaan panostetaan laskennan nopeuttamiseen 
 käyttäen peliohjelmointiin yleisesti soveltuvia menetelmiä.
+
+Pelisiirtojen etsimiseen ja koodisi testaamiseen voit käyttää jotain netistä löytyvää valmista connect 4 työkalua. Esim. [tätä](https://connect4.gamesolver.org/)
 
 **Lisävaatimukset**
 Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
@@ -190,6 +192,7 @@ Siihen voi yhdistää muitakin malleja vastustajan toimminnalle. *Kannattaa jute
 Ratkaisussa tulee lähtökohtaisesti käyttää [IDA* -algoritmia](https://en.wikipedia.org/wiki/Iterative_deepening_A*). 
 Keskustele ohjaajan kanssa jos haluat käyttää jotain muuta. Tähän peliin soveltuvista heuristisista 
 etäisyysfunktioista kerrotaan esim. [Michael Kimin blogissa](https://michael.kim/blog/puzzle).
+Lisää tietoa IDA* algoritmista löytyy esim [geeks for geeksin](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/) sivulta. 
 
 #### Miinaharava
 Tälle kurssille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Becerran kandidaatin tutkielmasta](https://dash.harvard.edu/handle/1/14398552).  
