@@ -57,7 +57,6 @@ Visualisoinnin laatimiseen ei saisi mennä paljon työaikaa, sillä varsinainen 
 
 Koodin toteutuksessa **ei** kannata lähteä toteuttamaan minkäänlaista "verkko" oliota. Sen sijaan kannattaa suoraan lukea kokonaisluku tai merkrkitaulukoita. Esimerkiksi [finxterin blogissa](https://blog.finxter.com/jump-search-algorithm-in-python-a-helpful-guide-with-video/) (johon ensimmäinen videokin viittaa) kuvattu JPS toteutus on todella hidas. Tälläisiä materiaaleja voi hyvin käyttää algoritmien ymmärtämiseen, mutta sen varaan ei kannata rakentaa omaa koodiaan.
 
-
 Valmiita karttoja löytyy esimerkiksi [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta, [shortest-path labin](https://bitbucket.org/shortestpathlab/benchmarks/src/master/grid-maps/) repositoriosta, tai [maanmittauslaitoksen kartoista](http://kartat.kapsi.fi/). Huomaa, että Moving AI:n pikselikartoissa ilmoitetut etäisyydet on laskettu niin, että reitti kiertää esteen kulmapikselin, sen sijaan että kulkisi viistosti tavallaan puoliksi estepikselin yli. Myös joukkoliikenteen [reitti / aikataulut](https://developers.google.com/transit/gtfs/) tai [digitransitin kartat](https://digitransit.fi/en/developers/) ja [avoin karttadata](https://www.openstreetmap.org) ovat olleet suosittuja valmiiden karttojen lähteitä.
 
 Joidenkin karttojen mukana tulee etäisyystietoja erilaisille reiteille, ja niitä voi hyödyntää testeissä. Muista kuitenkin, että se että algoritmisi palauttaa oikean pituden ei vielä takaa, että se toimii oikein. 
