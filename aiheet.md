@@ -45,7 +45,7 @@ Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
 - [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [tieteellinen paperi täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
   - Soveltuu vain pikselikartoille. Pikselikartalla on kahdeksan etenemissuuntaa ja kaksi mahdollista painoa, kaaren paino riippuu siitä kuljetaanko seuraavaan solmuun suoraan vai viistottain. 
   - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
-  - HUOM. Pythonilla tehtäessä [finxterin blogissa](https://blog.finxter.com/jump-search-algorithm-in-python-a-helpful-guide-with-video/) (johon ensimmäinen videokin viittaa) esietty koodi on todella hidasta. Tätä voi hyvin käyttää algoritmin ymmärtämiseen, mutta sen varaan ei kannata rakentaa omaa koodiaan.
+  - HUOM. Pythonilla tehtäessä [finxterin blogissa](https://blog.finxter.com/jump-search-algorithm-in-python-a-helpful-guide-with-video/) (johon ensimmäinen videokin viittaa) esitetty koodi on todella hidasta. Tätä voi hyvin käyttää algoritmin ymmärtämiseen, mutta sen varaan ei kannata rakentaa omaa koodiaan.
 - [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf), joka on astetta haastavampi.
 
 Myös osiosta Pelit löytyvän 15-pelin ratkaiseminen perustuu reitinhakualgoritmiin.
