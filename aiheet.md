@@ -96,7 +96,7 @@ Miten toteutetaan tekoäly erityyppisille peleille? Tässä projektissa valitaan
 Useimille alla olevista peleistä tekoälyn voi toteuttaa [minimax-algoritmilla, jota on tehostettu alpha-beta-karsinnalla](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning).
 
 Minmax-algoritmi laskee jokaisesta pelitilateesta eteenpäin ja valitsee siirron, joka johtaa varmaan voittoon, jos sellainen siirto on. Algoritmi olettaa, että sekä tekoäly että vastapelaaja tekevät joka tilanteessa itsensä kannalta parhaan mahdollisen siirron. Koska harvasta pelitilanteesta 
-voidaan laskea voittoon, häviöön, tai tasapeliin asti, lasketaan sen sijaan tietty määrä siirtoja eteenpäin ja 
+voidaan laskea voittoon, häviöön tai tasapeliin asti, lasketaan sen sijaan tietty määrä siirtoja eteenpäin ja 
 arvioidaan jollain heuristiikalla, kuinka hyvään pelitilanteeseen päästään. Heuristiikan perusteella valitaan se siirto, joka johtaa parhaimpaan pelitilanteeseen. 
 
 **Jos haluat tehdä shakille tai connect fourille tekoälyn ja sinulla on linux kone** suosittelemme vahvasti harjoitustyön [tekoäly alustan](/aiplatform) käyttöä. 
@@ -111,9 +111,9 @@ Valmiita kirjastoja tms. ei saa käyttää pelin sovelluslogiikassa, vaan esim. 
 voiton tunnistus ja siirtojen suorittaminen toteutetaan itse. Käyttöliittymään voi käyttää valmiita välineitä, mutta monissa peleissä tekstipohjainen 
 käyttöliittymä on täysin käyttökelpoinen. Käyttöliittymää ei tarvitse testata. 
 
-Alla lista mahdollisista peleistä sekä hyödyllisiä neuvoja kullekin pelille. Peleissä joiden solvelluslogiikka ja 
-käyttöliittymä ovat helpoimpia toteuttaa, itse tekoälyltä vaaditaan hieman lisää ominaisuuksia. Nämä vaatimukset 
-mainitaan erikseen pelin kohdalta. Mikäli pelin kohdalla ei mainita muuta, tekoälyn sille pelille voi toteuttaa minimax algoritmilla. 
+Alla lista joistakin sopivista peleistä sekä hyödyllisiä neuvoja kullekin pelille. Peleissä, joiden solvelluslogiikka ja 
+käyttöliittymä ovat helpoimpia toteuttaa, vaaditaan itse tekoälyltä hieman enemmän ominaisuuksia. Nämä vaatimukset 
+mainitaan erikseen kunkin pelin kohdalta. Mikäli pelin kohdalla ei mainita muuta, tekoälyn sille pelille voi toteuttaa minimax algoritmilla. Jos haluat tehostaa minimaxia, on ensimmäinen askel pelistä riippumatta iteratiivisen syvenemisen toteuttaminen Connect4-pelin kohdalla kuvatulla tavalla. Transpositiotaulun avulla voidaan hyödyntää vielä enemmän aiemman laskennan tuottamaa tietoa. Transpositiotaulun käytöstä iteratiiviseen syvenemiseen yhdistettynä voi olla vaikea löytää oikeaa tietoa, joten kannattaa kysyä neuvoa kurssin ohjaajalta. Ilman iteratiivista syvenemistä on pelitilanteen arvoa arvioiva heuristinen funktio juuri niin hyvä kuin miten hyvin se kuvaa pelitilanteen potentiaalia. Kun käytetään iteratiivista syvenemistä, on heuristiikkafunktion johdonmukaisuus (vain osittain sama asia kuin oikeellisuus) merkittävä laskennan nopeuteen vaikuttava tekijä. Tästäkin saa neuvoja ohjaajalta.
 
 #### Ristinolla / Gomoku
 20 x 20 ruudukolla pelattava ristinolla, jossa voittaa kun saa vähintään 5 merkin pituisen rivin. 
@@ -152,7 +152,7 @@ Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
 
 - [*Iteratiivinen syveneminen.*](https://domwil.co.uk/minimaxer/part2/) Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu, kun saadaan nopeasti nostettua / laskettua alfa / beta -arvoa. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto.
 
-**Huomaa**, että iteratiivisessa syventämisessä et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä myöhemillä kierroksilla. Voit vain tallettaa tiedon siitä, mikä oli paras siirto eli sarake siinä tilanteessa. Aikaisemmilla kierroksilla tallennetut arvot eivät alfa-beta -karsinnan takia useimmiten ole aitoja vaan vain ylä- tai alarajoja todellisille arvoille. Ts. kaikkia siirtoja täytyy joka kerralla kokeilla, tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain kokeiltavien siirtojen järjestämiseen. 
+**Huomaa**, että iteratiivisessa syventämisessä et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä myöhemillä kierroksilla. Voit vain tallettaa tiedon siitä, mikä oli paras siirto eli sarake siinä tilanteessa. Aikaisemmilla kierroksilla tallennetut arvot eivät ole päteviä, koska heuristinen arvo muuttuu, kun lasketaan syvemmälle. Samalla iteraatiolla voidaan päätyä samaan pelitilanteeseen useammalla siirtosarjalla, mutta alfa-beta -karsinnan takia lasketut arvot eivät useimmiten ole aitoja vaan vain ylä- tai alarajoja todellisille arvoille. Talletettua pelitilanteen arvoa ei siksi voi sellaisenaan hyödyntää silloinkaan, kun laskentasyvyys on sama. Kaikkia sallittuja siirtoja täytyy kokeilla (mahdolliseen alfa/beta -katkaisuun asti), tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain kokeiltavien siirtojen järjestämiseen. 
 
 #### Othello / Reversi
 [Othelloa](https://en.wikipedia.org/wiki/Reversi) pelataan 8 x 8 pelilaudalla. Pelin voittaa se, jolla on eniten nappuloita laudalla, kun kaikki ruudut on täytetty. 
