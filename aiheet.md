@@ -325,6 +325,7 @@ käytävät ja kolmas halutun kaltaisen ulkoasun. Ohjelmassa tulee olla vähint�
 joka ei kuulu kurssin esitietoihin, esimerkiksi jokin [delaunay triangulaation](https://en.wikipedia.org/wiki/Delaunay_triangulation) suorittava algoritmi.
 
 **Hyödyllisiä Lähteitä**:
+- [Procedurally Generated Dungeons](https://vazgriz.com/119/procedurally-generated-dungeons/)
 - [Tom Stephensonin](https://www.tomstephensondeveloper.co.uk/post/creating-simple-procedural-dungeon-generation) blogikirjoitus
 - [Bowyer–Watson](https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm) algoritmi delaunay triangulaatioiden laskemiseen. 
 
