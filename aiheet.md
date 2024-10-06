@@ -336,10 +336,13 @@ Esim. [RSA-salaus](https://fi.wikipedia.org/wiki/RSA) on harjoitustyöhön sopiv
 
 ### Tarkempi määrittely
 Toteuta ohjelma joka salaa ja purkaa tekstiä. Ohjelman tulee salaamisen ja salauksen purkamisen lisäksi tuottaa avaimia, joiden pituus on oikean 
-RSA-salauksen tavoin vähintään 1024 bittiä. Käyttäjä voi antaa salattavaksi sen pituisen tekstin kuin avaimen pituus sallii. 
+RSA-salauksen tavoin vähintään 2048 bittiä. Käyttäjä voi antaa salattavaksi sen pituisen tekstin kuin avaimen pituus sallii. 
 [Paddingia](https://en.wikipedia.org/wiki/Padding_(cryptography)) ei tarvitse toteuttaa. Isojen alkulukujen etsimiseen ja avaimen muodostamiseen 
 tarvittavat metodit, kuten [Miller-Rabin](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test) algoritmi, tulee toteuttaa itse, 
-mutta ohjelmointikielen valmista modulaarista potenssiin korotusta saa käyttää laskennassa.
+mutta ohjelmointikielen valmista modulaarista potenssiin korotusta saa käyttää laskennassa. Miller-Rabin on hidas, ja esim.1024-bittisiä parittomia lukuja
+joutuu kokeilemaan keskimäärin satoja ennen kuin löytyy kaksi todennäköistä alkulukua (40 iteraatiota Miller-Rabinilla). Laske siksi etukäteen listaan esim.
+500 pienintä alkulukua, ja kokeile ensin meneekö jako jollain niistä tasan. Vasta jos ei mene, annetaan tutkittava luku Miller-Rabinille. Tehokas algoritmi
+pienten alkulukujen laskentaan: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
 Tämän kurssin vaatimustasoa **eivät** vastaa sellaiset salausmenetelmät, jotka perustuvat yksittäisten sanojen tai koko tekstin merkkien paikan 
 vaihtamiseen tai yksittäisten merkkien korvaamiseen aina jollain tietyllä merkillä.
