@@ -86,15 +86,11 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
 
 **Viikko 5. Palautus** 
 - [Viikkoraportti 5](/dokumentaatio#viikkopalautukset)
-- Toinen vertaisarviointi jaetaan viikon palautuksen jälkeen. 
-    - Katso labtoolista linkki katselmoitavaan repoon. 
-    - Muista sallia [issuet](/git#issuiden-salliminen)
-    - Vertaisarvioinnin deadline on **kolme päivää** arvioiden jaon jälkeen.
-    - Ohjeet vertaisarviointiin [moodlessa]({{site.moodle}}). 
+
 
 
 ## Viikko 6:
-- Toinen vertaisarviointi tehty.
+- Toinen vertaisarviointi.
 - Ohjelman viimeistelyä.
 - Testien viimeistelyä. 
 - [Dokumentaation](/dokumentaatio) viimestelyä. 
@@ -102,6 +98,11 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
 
 **Viikko 6. Palautus**
 - [Viikkoraportti 6](/dokumentaatio#viikkopalautukset)
+- Toinen vertaisarviointi jaetaan viikon palautuksen jälkeen, tälle deadline muutama päivä arvioinnin jälkeen. 
+    - Katso labtoolista linkki katselmoitavaan repoon. 
+    - Muista sallia [issuet](/git#issuiden-salliminen)
+    - Vertaisarvioinnin deadline on **kolme päivää** arvioiden jaon jälkeen.
+    - Ohjeet vertaisarviointiin [moodlessa]({{site.moodle}}). 
 
 ## Lopullinen Palautus
 (Tarkka päivä löytyy moodlen kalenterista)
