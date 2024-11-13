@@ -56,6 +56,7 @@ remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
 Receiving objects: 100% (4/4), done.
 jezberg@LM2-500-27156 Documents % 
 ```
+Mikäli saat SSH:hn liittyvän virheen, palaa takaisin äskeiseen osioon. 
 Mene komentorivillä äsken kloonaamaasi kansioon komennolla ```cd harjoitustyo``` tms. Kaikki tiedostot voit listata komennolla ```ls```.
 Nyt komennolla ls tulisi näkyä tiedosto README.
 ```
@@ -64,7 +65,7 @@ jezberg@LM2-500-27156 harjoitustyo % ls
 README.md
 jezberg@LM2-500-27156 harjoitustyo % 
 ```
-Jos README:tä ei näy, repositorion instantiaatiossa unohtui valita "add a README".
+Jos README:tä ei näy, repositorion luomisessa unohtui valita "add a README".
 
 Tämä kansioon lisätään nyt kaikki harjoitustyöhön liittyvät tiedostot joista ne voidaan siirtää Gihubiiin. Harjoitellaan seuraavaksi sen käyttöä kolmella treenillä. 
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /aikataulu
-title: Harjoitustyön (Suositus) Aikataulu  
+title: Harjoitustyön (suositus) Aikataulu  
 title_long: Tarkempi ehdotus harjoitustyön aikataulusta
 inheader: no
 ---
@@ -10,16 +10,15 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
 
 ## Viikko 1
 - Aihe, käytettävä ohjelmointikieli ja työn laajuus päätetty.
-    - Tutustu (moodle sivuilla oleviiin) aihe-ehdotuksiin.
-    - Juttele tarvittaessa ohjaajan kanssa, varsinkin jos aiheesi ei ole ehdotusten listalla. 
-    - Ohjaaja tarkistaa määrritelydokumentin ja antaa palautetta tarvittaessa. 
-- [Harjoitustyön repositoorio](/git) alustettu ja rekisteröity [Labtooliin](https://study.cs.helsinki.fi/labtool/).
+    - Tutustu [aihe-ehdotuksiin](/aiheet).
+    - Juttele tarvittaessa ohjaajan kanssa, varsinkin jos sunnittelemasi aihe ei ole ehdotusten listalla. 
+    - Ohjaaja tarkistaa määritelydokumentin ja antaa palautetta tarvittaessa. 
+- [Harjoitustyön repositorio](/git) alustettu ja rekisteröity [Labtooliin](https://study.cs.helsinki.fi/labtool/).
     - Muista myös sallia [issuet](/git#issuiden-salliminen).
 - [Projektinhallinta](/projektinhallinta#projektin-hallinta) kunnossa.
     - Tämä tarkoittaa, että repositorion pitäisi olla tehtynä ja labtooliin rekisteröitynä. Tämän lisäksi jonkinlainen tapa kääntää koodia
-      ja hallita riippuvuuksia pitäisi olla set-upattuna. Pythonilla tämä voi tarkoittaa poetrya, mutta jos jokin muu työkalu on
+      ja hallita riippuvuuksia pitäisi olla. Pythonilla tämä voi tarkoittaa poetrya, mutta jos jokin muu työkalu on
       tutumpi niin sitäkin saa käyttää. 
-    - Muista tutustua myös [yksikkötestien](/unittest) tekemiseen.
 
 **Viikko 1. Palautus** (katso päivä kurssikalenterista ja [ohjeet](/dokumentaatio) palautuksista)
 - [Viikkoraportti 1](/dokumentaatio#viikkopalautukset)
@@ -33,10 +32,10 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
     - Tämä tarkoittaa esimerkiksi, että jos teet pelin tekoälyä, itse tekoälyn kehitykseen pitäisi (mielellään) päästä jo tällä viikolla. 
     - Jos harjoitustyöösi kuuluu tietorakenteiden toteutusta, voit tässä vaiheessa käyttää kielesi valmiita rakenteita ja korvata ne myöhemmin.
 - Projektin koodi on alusta asti [dokumentoitua](/dokumentaatio#koodin-dokumentointi) 
-- Projektin testien kehitys [edustavilla](/respresentativeinputs) syötteillä aloitettu.
+- Projektin testien (ja [yksikkötestien](/unittest)) kehitys [edustavilla](/respresentativeinputs) syötteillä aloitettu.
     - Kehitä testejä samaan aikaan koodin kanssa. 
     - Testien on tarkoitus mitata koodin *oikeellisuutta*. Älä kuluta aikaa tarpeettomien testien kehitykseen, vaan mieti ensin minkälaisia testejä juuri oma työsi tarvitsee. 
-        - [Testaus](//testing) sivuilla on materiaalia, mutta kaikki harjoitustyöt eivät tarvitse kaikkea sieltä löytyvää. 
+        - [Testaus](/testing) sivuilla on materiaalia, mutta kaikki harjoitustyöt eivät tarvitse kaikkea sieltä löytyvää. 
     - Projektin [testikattavuus](/unittest#onko-jo-testattu-tarpeeksi-testauskattavuus) seurattavissa. 
 
 **Viikko 2. Palautus**
@@ -45,7 +44,7 @@ Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät k
 ## Viikko 3
 - Projektin ydinalue kehittynyt
     - Projektilla on toimiva (ei tarvitse olla hiottu) käyttöliittymä. 
-    - **Ydintoimintaa tuksevat metodit kaikki valmiita**. 
+    - **Ydintoimintaa tukevat metodit kaikki valmiita**. 
     - Ideaalitapauksessa viikon aikana työtä pitäisi jo voida ajaa ja sen toiminnallisuutta havainnoida. 
 - Koodin laatua ylläpidetään esim [pylintin](/pylint) avulla.
 - Projektin jo toteutetut päämetodit ovat kattavasti yksikkötestattuja [edustavilla](/respresentativeinputs) syötteillä. 
@@ -64,7 +63,7 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
 - Ohjelman ydintoiminta melkein valmis. Mahdolliset omat tietorakenteet aloitettu. 
 - Koodi hyvin [dokumentoitua](/dokumentaatio#koodin-dokumentointi) ja kattavasti testattua. 
 - [Toteutusdokumentin](/dokumentaatio#toteutusdokumentti) teko aloitettu. 
-- Mahdollisten [yksikkötestejä täyentävien](/testing#yksikkötestien-lisäksi) testien kehitys aloitettu.
+- Mahdollisten [yksikkötestejä täydentävien](/testing#yksikkötestien-lisäksi) testien kehitys aloitettu.
     - Muista, että kaikkia mahdollisia eri testityyppejä ei tarvita. Mieti mitkä ovat oleellisia oman aiheesi oikeellisuuden testaamiseen. 
     - Kirjoita näistä [testausdokumenttiin](/dokumentaatio#testausdokumentti).
 

@@ -53,7 +53,7 @@ class Graph:
 ```
 Tässä siis melko yksinkertainen koodi joka käyttää [leveyssuuntaista läpikäyntiä](https://en.wikipedia.org/wiki/Breadth-first_search) (BFS algoritmia) laskeakseen lyhyimmän reitin kahden solmun 
 välillä painottamattomassa verkossa. Tässä implementaatiossa on kuitenkin bugi, 
-katso pystytkö jo tässä vaiheessa huomaamaan sen?
+katso pystytkö jo tässä vaiheessa huomaamaan sen.
 
 # Yksikkötestit
 Tehdään BFS algoritmille yksikkötestit. Jos testien tekeminen ja ajaminen ei tunnu tutulta, 
@@ -186,7 +186,7 @@ BFS metodi ei poista jonon ensimmäistä alkiota, vaan viimeisen.
 Täten implementoimme vahingossa syvyyssuuntaisen läpikäynnin. 
 
 # Korjataan koodi
-Hyvän testin avulla koodin korjaus on melko yksikertaista. Lisätään jonon pop metodin argumentti, joka pyytää poistamaan ensimmäisen alkion. 
+Hyvän testin avulla koodin korjaus on melko yksikertaista. Lisätään jonon pop metodiin argumentti, joka pyytää poistamaan ensimmäisen alkion. 
 ```python
 def BFS(self, lahto, maali): 
     vierailtu = [False] * (self.solmut + 1)
@@ -292,7 +292,7 @@ pitäisi pystyä "keksimään" kaikki eri tyyppiset verkot, ja kokeilemaan niit�
 Tämä ei kuitenkaan ole realistista, edes tässä helpossa tapauksessa, saati sitten vaikeempien harjoitustyön aiheiden testaamisessa. 
 
 ### Lisää testejä
-Koska kaikkien edustavien syötteiden itse keksiminen ei ole realistista, tarvitaan muita testaustekniikkoja. Tässä kannattaa miettiä, mitä muuta metodimme pitäisi toteuttaa. 
+Koska kaikkien edustavien syötteiden itse keksiminen ei ole realistista, tarvitaan muita testaustekniikkoja. Tässä kannattaa miettiä, mitä muita ominaisuuksia metodillamme pitäisi olla. 
 Tuntuisi ilmeiseltä, että metodimme pitäisi palauttaa sama arvo, riippumatta siitä, missä järjestyksessä kaaret on lisätty verkkoon. Tehdään siis testi joka kokeilee tätä: 
 
 ```python

@@ -14,11 +14,11 @@ children:
     permalink: /riippuvuuksien_injektointi_python
   - title: Testisyötteiden edustavuus
     permalink: /respresentativeinputs
-  - title: Edistynemmmät testaustekniikat kurssilla 
+  - title: Edistynemmmät testaustekniikat 
     permalink: /testing#yksikkötestien-lisäksi
 ---
 
-Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. Sivut ovat vielä rakenteilla. Hyödyllisistä materiaaleista saa mielellään vinkata Jeremiakselle. 
+Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. 
 
 ## Testauksen vaatimuksista
 Lue harjoitustyön [testauksen vaatimuksista](/testreqs) kurssin arvostelussa.
@@ -29,7 +29,7 @@ Mikäli yksikkötestaus ei ole entuudestaan tuttua kannattaa ensin lukea Ohjelmi
 voi olla hyötyä. Riippuvuuksien injektointi on ohjelmointitekniikka joka tekee testaamisesta helpompaa. 
 
 ## Monimutkaisten algoritmien testauksesta. 
-Harjoitustyössä toteutetaan monimutkaisia algoritmeja. Näiden testaaminen voi olla haasteellista, usein yksikkötestit yksinään eivät riitä. Monimutkaisten algoritmien testaaminen vaatii hyvää ymmärrystä algoritmin toiminnasta. Mitä tarkoittaa että algoritmisi toimii oikein? 
+Harjoitustyössä toteutetaan monimutkaisia algoritmeja. Näiden testaaminen voi olla haasteellista, usein yksikkötestit eivät riitä. Monimutkaisten algoritmien testaaminen vaatii hyvää ymmärrystä algoritmin toiminnasta. Mitä tarkoittaa että algoritmisi toimii oikein? 
 - Pelejä pelaavan botin oikeellisuus ei ole että se "pelaa hyvin". Miinaharavabotti ei saa koskaan osua miinaan silloin, kun ruutua pidetään turvallisena. Shakkibotti ei saa tehdä laittomia siirtoja, ja sen on osattava tehdä matti, mikäli se on mahdollista sillä laskentasyvyydellä, jota käytetään. 
 - Reitinhaku algoritmin oikeellisuus ei ole vain että se löytää lyhyimmän reitin. Esimerkiksi A* haku, jonka heuristiikka on käänteellinen, löytää lyhyimmän reitin mutta siihen menee vaan paljon kauemmin aikaa kuin pitäisi. 
 - Pakkausalgoritmin oikeellisuuteen ei riitä, että purettu tiedosto on sama kuin pakattu. Tämän lisäksi esim pakatun tiedoston koon täytyy olla odotuksien mukainen. 

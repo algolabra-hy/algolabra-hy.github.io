@@ -8,11 +8,9 @@ inheader: no
 
 #### Tällä hetkellä tuetut toiminnot
 
-Tekoälyalustaa kehitetään jatkuvasti. Tällä hetkellä (alkukesä 2024) se tukee **shakkia** ja **connect-fouria**. Tekoälyalustan lokaali (omalla koneella pyöritettävä) versio toimii **linux koneilla** (ainakin fuksiläppärillä). Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. **Huom** tekoälyalusta ei toimii virtuaalikoneilla.   
+Tällä hetkellä tekoälyalusta tukee **shakkia** ja **connect-fouria**. Tekoälyalustan lokaali (omalla koneella pyöritettävä) versio toimii **linux koneilla** (ainakin fuksiläppärillä). Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. **Huom** tekoälyalusta ei toimii virtuaalikoneilla. Sen serveripohjainen (remote) versio toimii muillakin, mutta sitä kannattaa käyttää  vasta oman tekoälyn perustoimintojen ollessa kunnossa .
 
-Sen serveripohjainen (remote) versio toimii muillakin, mutta sitä kannattaa käyttää  vasta oman tekoälyn perustoimintojen ollessa kunnossa .
-
-## Briefly in english
+## Briefly in English
 This page describes how to use an AI-platform to support the devleopment of game AI:s in the project. The platform offers an GUI and 
 the ability to play against your AI with minimal overhead. 
 The platform can be found on [Github](https://github.com/game-ai-platform-team/tira-ai-local)
@@ -32,9 +30,8 @@ Tekoälyalusta löytyy [Githubista](https://github.com/game-ai-platform-team/tir
 läpi. **Huomaa** kuitenkin, että readmen mainitsema [esimerkkiharjoitustyön](https://github.com/game-ai-platform-team/stupid-chess-ai) [tekoäly](https://github.com/game-ai-platform-team/stupid-chess-ai/blob/main/src/stupid_ai.py) käyttää pythonin chess kirjastoa jonka käyttö **ei ole sallittua** harjotustyössä. 
 *Mikäli käytät harjoitustyössäsi tekoälyalustaa* muista mainita tästä dokumentaatiossasi ja ohjelmasi käyttöohjeissa jotta vertaisarvioijat osaavat ajaa ohjelmaasi oikein. 
 
-Käydään seuraavaksi läpi alustan käyttöönottoa. Tällä sivulla on oleellisesti samat ohjeet kuin [alustan readmessa](https://github.com/game-ai-platform-team/tira-ai-local/blob/master/README.md).
 
-## Minimaaliset ohjeet 
+## Minimaaliset ohjeet käyttöönottoon
 
 Alla minimaaliset ohjeet python-pohjaisen shakki tai connect-four kehityksen aloittamiseen ai platformin kanssa linux koneella. 
 Tämän osion jälkeen sinun pitäisi pystyä aloittamaan oman harjoitustyösi kehitys pythonilla. 
@@ -64,7 +61,7 @@ Tässä vaiheessa kannattaa tustua esimerkkitekoälyjen rakenteeseen ja [tekoäl
 Muista, että molemmat esimerkkitekoälyt tekevät vain sattumanvaraisia siirtoja, eli aika pian kannattaa poistaa kaikki niiden sisältö ja rakentaa oma. 
 Muista että stupid_ai.py_n käyttämää pythonin chess kirjastoa **ei saa** käyttää omassa lopullisessa harjoitustyössä, toteuta laillisten siirtojen tarkistus ja laudan tilan hallinta itse! 
 
-Voit myös muokata (ja sinun kannattaakin näin tehdä) tiedostojen nimiä ja projektin rakennetta. Muista kuitenkin aina muutosten jälkeen muokata tiraconfig kansioiden scriptejä. "runcommand" scriptissä pitäisi olla täsmälleen se komento, jota tekoälyalustan pitäisi kutsua käynnistäkseen oma tekoälysi, ja "setup.sh":ssa pitäisi olla kaikkien niiden kirjastojen asennus, joita oma tekoälysi käyttää. Huomaa, että seup.sh:ta ei tarvitse ajaa jos koneellasi on jo tekoälyn tarvitsemat kirjastot. Lisää niiden asennuskomennot kuitenkin sinne jotta esim. vertaisarvioijasi ovivat ajaa projektiasi.  
+Voit myös muokata (ja sinun kannattaakin näin tehdä) tiedostojen nimiä ja projektin rakennetta. Muista kuitenkin aina muutosten jälkeen muokata tiraconfig kansioiden scriptejä. "runcommand" scriptissä pitäisi olla täsmälleen se komento, jota tekoälyalustan pitäisi kutsua käynnistäkseen oma tekoälysi, ja "setup.sh":ssa pitäisi olla kaikkien niiden kirjastojen asennus, joita oma tekoälysi käyttää. Huomaa, että seup.sh:ta ei tarvitse ajaa jos koneellasi on jo tekoälyn tarvitsemat kirjastot. Lisää niiden asennuskomennot kuitenkin sinne jotta esim. vertaisarvioijasi vpovat ajaa projektiasi.  
 
 ## Oman harjoitustyön konfigurointi 
 Tekoälyalusta tukee pythonin ja poetryn lisäksi monia muitakin ohjelmointikieliä. Tässä selitetään miten oma harjoitustyösi pitäisi konfiguroida, jotta se toimisi 
@@ -87,7 +84,7 @@ Tässä ensimmäisellä rivillä kerrotaan terminaalille, että kyseessä on scr
 **runcommand** tiedostossa pitäisi olla täsmälleen se komento, jolla tekoälysi voi käynnistää terminaalista. Huomaa että tämän ei tarvitse olla 
 python komento, jopa käännettyjä kieliä voi käyttää (tällöin setup.sh:n pitäisi kääntää ohjelmasi).
 
-Ajettaessa runcommandissa oleva komento, tekälysi pitäisi käynnistyä ja mennä ikuiseen looppiin jonka aikana se lukee komentoja stdinistä, ja tulostaa 
+Ajettaessa runcommandissa oleva komento, tekoälysi pitäisi käynnistyä ja mennä ikuiseen looppiin jonka aikana se lukee komentoja stdinistä, ja tulostaa 
 omia komentojaan stdouttiin. Pythonille tämä voisi näyttää esimerkiksi seuraavalta:
 ```python 
 def main():
@@ -110,17 +107,18 @@ Oma tekoälysi keskustelee alustan kanssa standard outputin ja inputin kautta.
 **Input**. Jokaisen tekoäly looppisi pitäisi siis alkaa lukemalla inputtia standard inputista. Pythonissa tämä onnistuu metodilla 
 ``ìnput()``. Kaikki alustan lähettämät merkkijonot ovat muotoa ``KOMENTO:DATA`` jossa ``KOMENTO`` on yksi seuraavista:
 -  ``PLAY``. Tämä tarkoittaa, että alusta haluaa tekoälysi pelaavan siirron ja tulostavan sen standard outtiin. 
-    - **Huomaa** että tekoälysi voi saada monta play komentoa peräkkäin ja sen pitäisi siis pystyä laskemaan seuraava siirto pelin molemille osapuolille. Pidä siis huoli siitä, että tekoälysi tietää kumman vuoro on ja osaa tehdä siirron vuorossa olevalle pelaajalle aina lukiessaan ``PLAY`` komennon. 
-- ``MOVE``. Tämä tarkoittaa, että tekoälyalusta suoritti jonkun siirron jonka om tekoälysi pitäisi tallettaa pelilogiikkaansa. Yleensä tämä komento lähetetään sen jälkeen, kun ihminen on pelannut siirron alustan kautta. Suoritettu siirto on ``DATA``:ssa. Sen tarkka muoto riippuu mitä peliä pelataan. Katso pelikohtaiset formaatit [alta](). 
+    - **Huomaa** että tekoälysi voi saada monta play komentoa peräkkäin ja sen pitäisi siis pystyä laskemaan seuraava siirto pelin molemmille osapuolille. Pidä siis huoli siitä, että tekoälysi tietää kumman vuoro on ja osaa tehdä siirron vuorossa olevalle pelaajalle aina lukiessaan ``PLAY`` komennon. 
+- ``MOVE``. Tämä tarkoittaa, että tekoälyalusta suoritti jonkun siirron jonka oma tekoälysi pitäisi tallettaa pelilogiikkaansa. Yleensä tämä komento lähetetään sen jälkeen, kun ihminen on pelannut siirron alustan kautta. Suoritettu siirto on ``DATA``:ssa. Sen tarkka muoto riippuu mitä peliä pelataan. Katso pelikohtaiset formaatit [alta](). 
 - ``BOARD``. Tämä tarkoittaa, että tekoälysi sovelluslogiikan pitäisi asettaa lauta johonkin tiettyyn konfiguraatioon. Nyt ```DATA``` osassa on jokin merkkijono esitys pelilaudan nykyisestä tilasta.  Katso pelikohtaiset formaatit [alta](/aiplatform#pelikohtainen-info).
 - ``RESET``. Tämä tarkoittaa, että alusta haluaa, että tekoälysi resetoi pelin alkuasetelmaan. 
 
-**Voidaksesi käyttää alustaa** sinun täytyy toteuttaa vähintään ``PLAY``ja ``MOVE`` komentojen kästtely tekoälyssäsi. ``BOARD`` ja ``RESET`` komennot lähetään vaan, jos tekoälyalustan käyttäjä (eli yleensä sinä itse):
+**Voidaksesi käyttää alustaa** sinun täytyy toteuttaa vähintään ``PLAY``ja ``MOVE`` komentojen kästtely tekoälyssäsi. ``BOARD`` ja ``RESET`` komennot lähetään vaan, jos tekoälyalustan käyttäjä (eli yleensä sinä itse) joko:
 1. painaa reset nappia tai
 1. yrittää selata siirtoja taaksepäin tehdäkseen jonkun muun siirron. 
-Eli kunhan et koskaan käytä näitä toimintoja, tekoälyä joka tukee vain PLAY ja MOVE komentoja voi käyttää. Suositteleme kuitenkin, että toteutat myös ``BOARD``ja ``RESET`` komennot niin pian kuin mahdollista. 
 
-**Output** Oma tekoälysi voi kirjoittaa standard outtiin (esim. Pythonissa print() metodilla) mitä vaan. Tekoälyalusta etsii tulostuksia jotka ovat muotoa ``MOVE:siirto`` joista se lukee siirron [pelikohtaisessa formaatissa](/aiplatform#pelikohtainen-info) ja suorittaa sen. Mikäli ``siirto`` ei vastaa siinä pelitilanteessa laillista siirtoa, tekoälyalusta kaatuu. 
+Eli kunhan et koskaan käytä näitä toimintoja, tekoälyä joka tukee vain PLAY ja MOVE komentoja voi käyttää. Suosittelemme kuitenkin, että toteutat myös ``BOARD``ja ``RESET`` komennot niin pian kuin mahdollista. 
+
+**Output.** Oma tekoälysi voi kirjoittaa standard outtiin (esim. Pythonissa print() metodilla) mitä vaan. Tekoälyalusta etsii tulostuksia jotka ovat muotoa ``MOVE:siirto`` joista se lukee siirron [pelikohtaisessa formaatissa](/aiplatform#pelikohtainen-info) ja suorittaa sen. Mikäli ``siirto`` ei vastaa siinä pelitilanteessa laillista siirtoa, tekoälyalusta kaatuu. 
 
 Kaikki muut tekoälyn tulostamat merkkijonot tallennetaan alustan terminaaliin ja näytetään käyttäjälle. Näin voit kirjoittaa omaa kehitystäsi helpottavia logeja. 
 
@@ -183,7 +181,7 @@ merkkijonolla "MOVE:" tekoäly ensin poistaa siitä alkuosan, jonka jälkeen sen
 Tämän jälkeen se suorittaa saadun siirron. 
 Esimerkki lähettää alustalle tiedon tehdystä siirrosta komennolla ``print(f"MOVE:{choice}")``. Kaikki muut print statementit tulevat näkyviin alustan terminaalissa. 
 
-## Pelikohtainen info. 
+## Pelikohtainen info
 Katsotaan vielä pelikohtaiset merkkijonoesitykset laudan tiloista ja siirroista. 
 
 ### Shakki

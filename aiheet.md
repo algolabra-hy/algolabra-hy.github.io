@@ -23,7 +23,7 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
   - 15-peli
 - [DPLL](/aiheet#dpll)
 - [Koneoppiminen](/aiheet#koneoppiminen)
-  - Laskennallinen luovuus, tekstin tai musiikin generointi.
+  - Laskennallinen luovuus, tekstin tai musiikin generointi
   - Hahmontunnistus 
   - Luolastojen Generointi
 - [Salaus ja tietoturva](/aiheet#salaus-ja-tietoturva)
@@ -99,8 +99,9 @@ Minmax-algoritmi laskee jokaisesta pelitilateesta eteenpäin ja valitsee siirron
 voidaan laskea voittoon, häviöön tai tasapeliin asti, lasketaan sen sijaan tietty määrä siirtoja eteenpäin ja 
 arvioidaan jollain heuristiikalla, kuinka hyvään pelitilanteeseen päästään. Heuristiikan perusteella valitaan se siirto, joka johtaa parhaimpaan pelitilanteeseen. 
 
-**Jos haluat tehdä shakille tai connect fourille tekoälyn ja sinulla on linux kone** suosittelemme vahvasti harjoitustyön [tekoäly alustan](/aiplatform) käyttöä. 
-Alusta tarjoaa graafisen käyttöliittymän ja mahdollisuuden pelata omaa tekoälyäsi vastaan minimaalisella overheadilla. Huomaa, että minkäänlainen linuxin emulointi ei kelpaa. 
+**Jos haluat tehdä shakille tai connect fourille tekoälyn ja sinulla on linux kone** suosittelemme vahvasti harjoitustyön [tekoälyalustan](/aiplatform) käyttöä. 
+Alusta tarjoaa graafisen käyttöliittymän ja mahdollisuuden pelata omaa tekoälyäsi vastaan minimaalisella overheadilla. Huomaa, että alusta toimii tällä hetkellä vain oikeilla 
+Linux koneilla, minkäänlainen linuxin emulointi ei kelpaa. 
 
 
 ### Tarkempi määrittely
@@ -124,7 +125,7 @@ mainitaan erikseen kunkin pelin kohdalta. Mikäli pelin kohdalla ei mainita muut
 - Voiton tarkistus tehdään tutkimalla vain rivit, jotka sisältävät edellisen siirron. Jos viiden rivi on syntynyt, voittaja on edellisen siirron tehnyt pelaaja, ja edellinen siirto on osa voittoriviä.
 
 **Hyödylliset neuvot.**
-**Älä** toteuttaa ensin 3 x 3 pelin toimintalogiikaa ja tekoälyä. Kaikki pitää kuitenkin tehdä täysin eri tavalla, kun lauta on laaja.
+**Älä** toteuttaa ensin 3 x 3 pelin toimintalogiikkaa ja tekoälyä. Kaikki pitää kuitenkin tehdä täysin eri tavalla, kun lauta on laaja.
 
 #### Shakki
 
@@ -141,12 +142,11 @@ Shakin tekoälyn toteuttamiseen voit käyttää harjoitustyön [tekoälyalustaa]
 6 x 7 -kokoisella laudalla pelattava peli, jossa voittaa kun saa neljä omaa pelimerkkiä riviin. 
 Jos peli ei ole tuttu, katso [Connect Four Wikipediasta](https://en.wikipedia.org/wiki/Connect_Four). 
 **Tämä on hyvä aihe**, jos haluat käyttää suurimman osan työajastasi juuri minimax-algoritmin tehostamiseen. Tutkittavien siirtojen generointi ja 
-siirtojen toteuttaminen on Connect4:ssä yksinkertaisempaa kuin monessa muussa pelissä, ja sen sijaan panostetaan laskennan nopeuttamiseen 
-käyttäen peliohjelmointiin yleisesti soveltuvia menetelmiä.
+siirtojen toteuttaminen on Connect4:ssä yksinkertaisempaa kuin monessa muussa pelissä, jonka seurauksena voit panostaa laskennan nopeuttamiseen.
 
 Pelisiirtojen etsimiseen ja koodisi testaamiseen voit käyttää jotain netistä löytyvää valmista connect 4 työkalua. Esim. [tätä](https://connect4.gamesolver.org/)
 
-**Lisävaatimukset**
+**Lisävaatimukset.**
 Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
 - *Siirtojen järjestäminen.* Kokeillaan kaikissa laskennan vaiheissa (minimaxin sisällä) ensin keskimmäiseen sarakkeeseen tehtävä siirto ja edetään siitä reunoja kohti. Tämä tehostaa alfa-beta -karsintaa, koska paras siirto löytyy useammin keskeltä.
 
@@ -196,9 +196,7 @@ etäisyysfunktioista kerrotaan esim. [Michael Kimin blogissa](https://michael.ki
 Lisää tietoa IDA* algoritmista löytyy esim [geeks for geeksin](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/) sivulta. 
 
 #### Miinaharava
-Tälle kurssille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Becerran kandidaatin tutkielmasta](https://dash.harvard.edu/handle/1/14398552).  
-Jos käytät projektissa Javaa, voit toteuttaa ratkaisijan / auttajan käyttöliittymän valmiilla [Miinaharavan projektipohjalla](https://github.com/TiraLabra/minesweeper). 
-Jos käytät valmista Java-pohjaa, kerro koodin kommenteissa selvästi mikä on omaa koodiasi, ja mikä on pohjaa. Älä muokkaa pohjaa, vaan kirjoita oma koodisi omaan luokkaansa / metodiinsa.
+Tälle kurssille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Becerran kandidaatin tutkielmasta](https://dash.harvard.edu/handle/1/14398552). Jos käytät projektissa Javaa, voit toteuttaa ratkaisijan / auttajan käyttöliittymän valmiilla [Miinaharavan projektipohjalla](https://github.com/TiraLabra/minesweeper). Jos käytät valmista Java-pohjaa, kerro koodin kommenteissa selvästi mikä on omaa koodiasi, ja mikä on pohjaa. Älä muokkaa pohjaa, vaan kirjoita oma koodisi omaan luokkaansa / metodiinsa.
 
 ---
 
@@ -209,7 +207,7 @@ Nykyaikaiset ns. CDCL algoritmien toteutukset (SAT-solverit) pystyvät päättä
 kaavojen toteutuvuuden. Tälläisiä algoritmeja käytetään monissa [käytännön sovelluksissa](https://en.wikipedia.org/wiki/SAT_solver#Applications),
 tehokkaat SAT solverit ovat esimerkiksi oleellisia erilaisten piirien oikeellisuden varmistamisessa. 
 
-Tehokkaan CDCL algoritmin toteuttaminen on harjoitustyölle liian vaativaa. Sen sijaan tässä
+Tehokkaan CDCL algoritmin toteuttaminen harjoitustyön aikana on liian vaativaa. Sen sijaan tässä
 aiheessa tutkimme sen edeltäjää, [DPLL](https://en.wikipedia.org/wiki/DPLL_algorithm) algoritmia. 
 
 ### Tarkempi määrittely
