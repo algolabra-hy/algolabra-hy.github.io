@@ -1,8 +1,3 @@
-@charset "utf-8";
-
-@use "sass:list";
-@use "sass:color";
-@use "bootstrap";
 /**
  * Reset some basic elements
  */
@@ -19,9 +14,9 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: bootstrap.$base-font-weight list.slash(bootstrap.$base-font-size, bootstrap.$base-line-height) bootstrap.$base-font-family;
-  color: bootstrap.$text-color;
-  background-color: bootstrap.$background-color;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
      -moz-font-feature-settings: "kern" 1;
@@ -34,14 +29,14 @@ body {
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
-
+ */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: bootstrap.$spacing-unit * 0.5;
+  margin-bottom: $spacing-unit / 2;
 }
- */
+
 
 
 /**
@@ -62,7 +57,7 @@ figure > img {
 }
 
 figcaption {
-  font-size: bootstrap.$small-font-size;
+  font-size: $small-font-size;
 }
 
 
@@ -71,7 +66,7 @@ figcaption {
  * Lists
  */
 ul, ol {
-  margin-left: bootstrap.$spacing-unit;
+  margin-left: $spacing-unit;
 }
 
 li {
@@ -87,7 +82,7 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: bootstrap.$base-font-weight;
+  font-weight: $base-font-weight;
 }
 
 
@@ -96,15 +91,15 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: bootstrap.$brand-color;
+  color: $brand-color;
   text-decoration: none;
 
   &:visited {
-    color: color.adjust(bootstrap.$brand-color, $lightness: -15%);
+    color: darken($brand-color, 15%);
   }
 
   &:hover {
-    color: bootstrap.$text-color;
+    color: $text-color;
     text-decoration: underline;
   }
 
@@ -122,10 +117,10 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: bootstrap.$grey-color;
-  border-left: 4px solid bootstrap.$grey-color-light;
-  padding-left: bootstrap.$spacing-unit * 0.5;
-  @include bootstrap.relative-font-size(1.125);
+  color: $grey-color;
+  border-left: 4px solid $grey-color-light;
+  padding-left: $spacing-unit / 2;
+  @include relative-font-size(1.125);
   letter-spacing: -1px;
   font-style: italic;
 
@@ -141,8 +136,8 @@ blockquote {
  */
 pre,
 code {
-  @include bootstrap.relative-font-size(0.9375);
-  border: 1px solid bootstrap.$grey-color-light;
+  @include relative-font-size(0.9375);
+  border: 1px solid $grey-color-light;
   border-radius: 3px;
   background-color: #eef;
 }
@@ -168,19 +163,19 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(#{bootstrap.$content-width} - (#{bootstrap.$spacing-unit} * 2));
-  max-width:         calc(#{bootstrap.$content-width} - (#{bootstrap.$spacing-unit} * 2));
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
   margin-right: auto;
   margin-left: auto;
-  padding-right: bootstrap.$spacing-unit;
-  padding-left: bootstrap.$spacing-unit;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
   @extend %clearfix;
 
-  @include bootstrap.media-query(bootstrap.$on-laptop) {
-    max-width: -webkit-calc(#{bootstrap.$content-width} - (#{bootstrap.$spacing-unit}));
-    max-width:         calc(#{bootstrap.$content-width} - (#{bootstrap.$spacing-unit}));
-    padding-right: bootstrap.$spacing-unit * 0.5;
-    padding-left: bootstrap.$spacing-unit * 0.5;
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
   }
 }
 
@@ -188,13 +183,13 @@ pre {
 
 /**
  * Clearfix
-
+ */
 %clearfix:after {
   content: "";
   display: table;
   clear: both;
 }
- */
+
 
 
 /**
@@ -205,7 +200,7 @@ pre {
   vertical-align: middle;
 
   path {
-    fill: bootstrap.$grey-color;
+    fill: $grey-color;
   }
 }
 
