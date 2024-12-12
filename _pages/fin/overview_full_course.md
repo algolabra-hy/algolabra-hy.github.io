@@ -2,7 +2,7 @@
 layout: page
 permalink: /yleiskatsaus
 title: Yleiskatsaus harjoitustyöstä
-title_long: Yleiskatsaus harjoitustyön Kklusta
+title_long: Yleiskatsaus harjoitustyön Kulusta
 inheader: no
 ---
 
@@ -61,6 +61,7 @@ et käytä aikaa sellaisten asioiden kehitykseen, jotka eivät kuulu omaan aihee
 
   - 3 kertaa 3 ristionollan kehitys ei edistä isomman pelin kehitystä koska
       useimmat haasteet ilmaantuvat vasta kun siirryt isompiin lautoihin. 
+  - Polunetsinnän graaffisen käyttöliittymän hienosäätö ei edistä harjoitustyötä koska sen ydin on polunetsintä algoritmit,
   - Kehitä testejä samaan aikaan ohjelman kanssa, niistä on silloin eniten hyötyä. Muista kuitenkin, että 
       tarvittavien testien tyypit riippuu omasta aiheestasi. Kaikki aiheet eivät vaadi esim. suorituskykytestausta.
   - Kysy henkilökunnalta jos olet epävarma jostain asiasta. Varaudu kuitenkin miettimään asiaa ensin. Kysy mielummin "onko asian X kehittäminen minulle hyödyllistä" kuin "mitä minun pitäisi nyt tehdä"? 

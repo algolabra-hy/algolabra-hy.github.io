@@ -6,7 +6,7 @@ inheader: no
 permalink: /korjaus/
 ---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
   <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
   />
 </a>
@@ -14,7 +14,7 @@ permalink: /korjaus/
 ## Typoja materiaalissa
 
 Kun huomaat näillä sivuilla kirjoitusvirheitä tai muita heikkouksia, tee korjausehdotus. Kurssimateriaali on repositoriossa
-[https://github.com/algolabra-hy/algolabra-hy.github.io/](https://github.com/algolabra-hy/algolabra-hy.github.io/). Esimerkiksi tämä sivu löytyy tiedostosta [korjaus.md](https://github.com/algolabra-hy/algolabra-hy.github.io/blob/main/korjaus.md).
+[https://github.com/algolabra-hy/algolabra-hy.github.io/](https://github.com/algolabra-hy/algolabra-hy.github.io/). Esimerkiksi tämä sivu löytyy tiedostosta [fixes_to_the_pages.md](https://github.com/algolabra-hy/algolabra-hy.github.io/blob/main/fixes_to_the_pages.md).
 
 Muutosehdotuksen tekeminen aloitetaan painamalla tiedoston _kynä-symbolia_:
 

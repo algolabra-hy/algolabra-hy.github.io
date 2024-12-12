@@ -21,6 +21,8 @@ github_username: jezberg
 repo_url: 'https://github.com/algolabra-hy/algolabra-hy.github.io'
 repo_branch: 'master'
 
+include: ['_pages', '_pages/fin']
+
 
 # Build settings
 markdown: kramdown

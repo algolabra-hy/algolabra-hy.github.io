@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.9"
+gem "jekyll", "~> 4.0"
 gem "webrick", "~> 1.7"
 gem "kramdown-parser-gfm"
 
@@ -24,6 +24,7 @@ gem "minima", "~> 2.0"
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
    gem "jekyll-menus"
+   gem 'html-proofer'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

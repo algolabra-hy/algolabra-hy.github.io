@@ -6,6 +6,8 @@ title_long: Harjoitustyön Testaaminen
 inheader: yes
 dropdown: true
 children:
+  - title: Yleiskatsaus testaamisesta (lue tämä ensin)
+    permalink: /testing
   - title: Testauksen vaatimuksesta 
     permalink: /testreqs
   - title: Yksikkötestaaminen Pythonilla

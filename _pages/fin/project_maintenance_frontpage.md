@@ -1,12 +1,14 @@
 ---
 layout: page
-permalink: /yleista
-title: Yleisiä Ohjeita
+permalink: /projektinhallinta
+title: Harjoitustyön projektinhallinta
 title_long: Ohjeita
 inheader: yes
 dropdown: true
 children:
-  - title: Yleiskatsaus kurssin kulusta
+  - title: Yleiskatsaus projektinhallinasta (lue tämä ensin)
+    permalink: /projektinhallinta
+  - title: Kurssin kulku
     permalink: /yleiskatsaus
   - title: Esimerkkiaikataulu 
     permalink: /aikataulu
