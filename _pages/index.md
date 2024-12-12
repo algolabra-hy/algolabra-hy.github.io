@@ -11,10 +11,11 @@ ennen ilmoittautumista. Mikäli kuitenkin olet jo ilmoittautunut, käy ensin luk
 [kurssitoteutuksen moodle sivut]({{site.moodle}}) jossa selitetään kurssin tavoitteista, rakenteesta, ja arvostelusta tarkemmin. 
 Nämä sivut olettavat, että olet tutustunut moodlen materiaaliin ja voivat tuntua sekavilta jos et ole.
 
-## Sen jälkeen
+## Moodlen jälkeen
 1. Tee ensin harjoitustyöllesi repositorio Gihubiin. Jos tämä ei ole entuudestaan tuttua [näistä ohjeista]({% link _pages/fin/git.md %}) pitäisi olla apua. 
     - Muista myös [sallia issuet]({% link _pages/fin/git.md %}#issuiden-salliminen).
 1. Tämän jälkeen rekisteröidy [Labtooliin](https://study.cs.helsinki.fi/labtool/). Muista rekisteröityä oikealle kurssille.
+1. Nyt voit tustua näillä sivuilla löytyviin materiaaleihin. Suosittelemme aloittamaan [harjoitustyön projektinhallinnan yleiskatsauksesta]({% link _pages/fin/project_maintenance_frontpage.md %})
 
 ## Kurssimateriaalin tekijä ja lisenssi
 

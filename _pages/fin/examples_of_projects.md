@@ -3,7 +3,7 @@ layout: page
 permalink: /esimerkkeja
 title: Esimerkkejä Harjoitustöistä
 title_long: Esimerkkejä Harjoitustöistä
-inheader: no
+inheader: yes
 ---
 
 Näille sivulle kerätään esimerkkejä aikaisemmin suoritetuista (hyvistä) harjoitustöistä. 

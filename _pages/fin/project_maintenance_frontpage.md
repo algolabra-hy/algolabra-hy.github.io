@@ -6,7 +6,7 @@ title_long: Ohjeita
 inheader: yes
 dropdown: true
 children:
-  - title: Yleiskatsaus projektinhallinasta (lue tämä ensin)
+  - title: Yleiskatsaus projektinhallinnasta (lue tämä ensin)
     permalink: /projektinhallinta
   - title: Kurssin kulku
     permalink: /yleiskatsaus
@@ -14,8 +14,6 @@ children:
     permalink: /aikataulu
   - title: Aihe ehdotuksia
     permalink: /aiheet
-  - title: Esimerkkejä aikaisemmista projekteista
-    permalink: /esimerkkeja
   - title: Git ohjeet
     permalink: /git
   - title: Työkalut projektinhallintaan
@@ -31,7 +29,7 @@ children:
 - Harjoitustyön aikana vertaisarvioinnit ja viikottaiset palautteet saadaan [Labtoolin](https://study.cs.helsinki.fi/labtool/) kautta. Harjoitustyön repositorion luomisen jälkeen kaikkien opiskelijoiden täytyy rekisteröityä Labtooliin ad-tunnuksillaan oikealle kurssille. 
 
 ## Yleiskatsaus 
-- [Yleiskatsaus harjoitustyön rakenteesta](/yleiskatsaus) käy läpi tärkeimpiä harjoitustyöhön liittyviä ohjeita. 
+- [Yleiskatsaus kurssin kulusta](/yleiskatsaus) käy läpi tärkeimpiä harjoitustyöhön liittyviä ohjeita. 
 - [Viikottainen aikataulu](/aikataulu) käy läi tarkemmin harjoitustyön suositusaikataulun ja mitä viikkopalautuksiin kuuluu. 
 - [Esimerkkejä harjoitustöistä](/esimerkkeja) sivulla löytyy esimerkkejä jo toteutetuista harjoitustöistä.
     - Näihin saa tutustua, huomaa kuitenkin, että muiden koodia ei saa esittää omanaan. 
