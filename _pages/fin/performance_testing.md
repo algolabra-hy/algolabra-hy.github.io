@@ -7,7 +7,7 @@ inheader: no
 ---
 _Nämä ohjeet on kirjoittanut Jeremias Berg_
 
-{% include no_requirement.md %}
+{% include no_requirement_fin.md %}
 
 Käydään tässä läpi, miten ns suorituskykytesteillä voidaan testata asioita, joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta](/unittest) ja [invarianttitestuksesta](/invarianttest), varsinkin [Poetryn](/poetry) käytöstä.
 

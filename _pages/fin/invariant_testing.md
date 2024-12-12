@@ -7,7 +7,7 @@ inheader: no
 ---
 _Nämä ohjeet on kirjoittanut Jeremias Berg_
 
-{% include no_requirement.md %}
+{% include no_requirement_fin.md %}
 
 Jatketaan siitä mihin [yksikkötestauksessa](/unittest) jäätiin. Jos unittest sovelluskehys, poetry ja pytest ovat tuttuja, voit lukea
 tämän suoraan. Muuten kannattaa tutustua ensin [tähän](/unittest).
