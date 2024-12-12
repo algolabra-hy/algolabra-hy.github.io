@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /testing
-title: Harjoitustyön Testaaminen
-title_long: Harjoitustyön Testaaminen
+title: Harjoitustyön testaaminen
+title_long: Harjoitustyön testaaminen
 inheader: yes
 dropdown: true
 children:

@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /esimerkkeja
-title: Esimerkkejä Harjoitustöistä
-title_long: Esimerkkejä Harjoitustöistä
+title: Esimerkkejä harjoitustöistä
+title_long: Esimerkkejä harjoitustöistä
 inheader: yes
 ---
 
