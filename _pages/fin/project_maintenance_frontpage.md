@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /project-management-fi
-title: Harjoitustyön projektinhallinta
+title: Harjoitustyön Toteutus
 title_long: Ohjeita
 inheader: yes
 lang: fi # fi or en

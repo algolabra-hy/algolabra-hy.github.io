@@ -1,0 +1,7 @@
+main:
+  en:
+    sitetitle:  "Algorithms and AI Project"
+    langname: "English"
+  fi:
+    sitetitle:  "Algoritmit ja Tekoäly Harjoitustyö"
+    langname: "Suomeksi"

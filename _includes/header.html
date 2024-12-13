@@ -1,9 +1,10 @@
 <header class="site-header" role="banner">
 
   <div class="wrapper">
+    {% assign translationwords = site.data.translation.main %}
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
-    <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <a class="site-title" href="{{ "/" | relative_url }}">{{ translationwords[page.lang].sitetitle | escape }}</a>
     
     {% if page_paths %}
       <nav class="site-nav">
@@ -36,12 +37,12 @@
               {% endif %}
             {% endif %}
           {% endfor %}
-          {% assign translations=site.pages | where:"ref", page.ref | sort: 'lang' %}
+          {% assign translationpages=site.pages | where:"ref", page.ref | sort: 'lang' %}
           <div class="dropdown">
             <button class="dropbtn"><a class="page-link" href="{{ my_page.url | relative_url }}">Kielet</a></button>
             <div class="dropdown-content">
-              {% for page in translations %}
-              <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+              {% for t_page in translationpages %}
+              <a href="{{ t_page.url }}" class="{{ t_page.lang }}">{{ translationwords[t_page.lang].langname }}</a>
               {% endfor %}
             </div>
           </div>
