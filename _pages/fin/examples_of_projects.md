@@ -1,9 +1,11 @@
 ---
 layout: page
-permalink: /esimerkkeja
+permalink: /examples-fi
 title: Esimerkkejä harjoitustöistä
 title_long: Esimerkkejä harjoitustöistä
 inheader: yes
+lang: fi # fi or en
+ref: examples_of_projects # same as the markdown filename
 ---
 
 Näille sivulle kerätään esimerkkejä aikaisemmin suoritetuista (hyvistä) harjoitustöistä. 
@@ -18,4 +20,4 @@ Nämä sivut päivittyvät pikkuhiljaa. Pyydämme eriksen lupaa harjoitustöiden
 - Joona Kettunen, [Reitinhakualgoritmien vertailu](https://github.com/joonarafael/visualpathfinder) (Typescript)
 
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}

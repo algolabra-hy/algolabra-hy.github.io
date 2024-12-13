@@ -12,7 +12,11 @@ layout: default
   </header>
 
   <div style="color:black; border-style: solid; border-width: thick; border-color: red; padding: 10px; margin-bottom: 15px; padding: 10px; background-color: #F1EFEF;">
-    {% include moodle_read_fin.md %}
+    {% if page.lang == "fi" %}
+      {% include moodle_read_fin.md %}
+    {% else %}
+      {% include moodle_read_en.md %}
+    {% endif %}
   </div>
 
   <div class="post-content">

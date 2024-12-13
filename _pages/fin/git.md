@@ -1,9 +1,11 @@
 ---
 layout: page
-permalink: /git
+permalink: /git-fi
 title: Git 
 title_long: Gitin käyttö harjoitustyössä 
 inheader: no
+lang: fi # fi or en
+ref: git # same as the markdown filename
 ---
 
 _Alkuperäinen ohje: Mika Huttunen ja Silja Polvi joita Jeremias Berg on päivittänyt_
@@ -265,7 +267,7 @@ Voidaksesi saada palautetta sinun täytyy ensin sallia issueiden luomisen alla o
    ![]({{ "/images/git-8.png" | absolute_url }})
 
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}
 
 
 

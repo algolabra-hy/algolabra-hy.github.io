@@ -1,8 +1,10 @@
 ---
 layout: page
-permalink: /unittest
+permalink: /unittest-fi
 title: Yksikkötestaaminen
 title_long: Unittest
+lang: fi # fi or en
+ref: unit_testing # same as the markdown filename
 inheader: no
 ---
 
@@ -48,7 +50,7 @@ class Maksukortti:
 
 **HUOM:** Kaikki raha-arvot, kuten maksukortin saldo ja aterioiden hinnat ovat senteissä.
 
-Käydään läpi yksi tapa tämän luokan testaamiseen [poetryn](/poetry),  [unittestin](https://docs.python.org/3/library/unittest.html) ja [pytestin](https://docs.pytest.org/en/stable/) avulla. 
+Käydään läpi yksi tapa tämän luokan testaamiseen [poetryn]({% link _pages/fin/poetry.md %}),  [unittestin](https://docs.python.org/3/library/unittest.html) ja [pytestin](https://docs.pytest.org/en/stable/) avulla. 
 
 ### Alkutoimet
 
@@ -425,7 +427,7 @@ coverage run --branch -m pytest src; coverage html
 
 ### Huomio isompien projektien testaamisesta
 
-Kannattaa huomata, että _src_-hakemiston **alihakemistoissa** (ei siis itse _src_-hakemistossa) tulee olla tyhjät <i>\_\_init\_\_.py</i>-tiedostot, jotta testikattavuuteen sisällytetään kaikki halutut tiedostot. Esim. kurssin Ohjelmistotekniikka [referenssisovelluksessa]({{site.python_reference_app_url}}) tapauksessa <i>\_\_init\_\_.py</i>-tiedostot on lisätty seuraavasti:
+Kannattaa huomata, että _src_-hakemiston **alihakemistoissa** (ei siis itse _src_-hakemistossa) tulee olla tyhjät <i>\_\_init\_\_.py</i>-tiedostot, jotta testikattavuuteen sisällytetään kaikki halutut tiedostot. Esim. kurssin Ohjelmistotekniikka referenssisovelluksessa tapauksessa <i>\_\_init\_\_.py</i>-tiedostot on lisätty seuraavasti:
 
 ```
 src/
@@ -443,4 +445,4 @@ src/
   ...
 ```
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}

@@ -1,7 +1,9 @@
 ---
 layout: page
-permalink: /pylint
+permalink: /pylint-fi
 title: Pylint ja koodin staattinen analyysi
+lang: fi # fi or en
+ref: pylint # same as the markdown filename
 ---
 
 _Tämä ohje on kopio kurssin Ohjelmistotekniikka [Pylint-ohjeesta](https://ohjelmistotekniikka-hy.github.io/python/viikko4#pylint-ja-koodin-laaduun-staattinen-analyysi) ohjeesta muutamin lisäyksin_
@@ -54,7 +56,7 @@ print(x)
 
 Nyt `pylint src`-komennon suorittaminen pitäisi kertoa, ettei virheitä enää löydy.
 
-Voimme myös jättää tarkistuksien ulkopuolelle kokonaisia hakemistoja ja tiedostoja. Muokkaamalla [tätä]({{site.python_exercise_repo_url}}/blob/main/viikko2/varasto/.pylintrc#L13) riviä _.pylintrc_ tiedossa. Voimme esimerkiksi jättää käyttöliittymästä vastaavan koodin hakemistossa _src/ui_ ja testit hakemistossa _src/tests_ tarkistuksien ulkopuolle:
+Voimme myös jättää tarkistuksien ulkopuolelle kokonaisia hakemistoja ja tiedostoja. Voimme esimerkiksi jättää käyttöliittymästä vastaavan koodin hakemistossa _src/ui_ ja testit hakemistossa _src/tests_ tarkistuksien ulkopuolle:
 
 ```
 ignore=CVS,ui,tests
@@ -88,4 +90,4 @@ autopep8 --in-place --recursive src
 
 Koodin formatointi onnistuu myös monissa editoreissa kätevästi yhdellä näppäinkomennolla. Ohje koodin formatointiin Visual Studio Codessa löytyy [täältä](https://code.visualstudio.com/docs/editor/codebasics#_formatting).
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}

@@ -1,15 +1,17 @@
 ---
 layout: page
-permalink: /performancetest
+permalink: /performancetest-fi
 title: Suorituskykytestaus
 title_long: Suorituskykytest
 inheader: no
+lang: fi # fi or en
+ref: performance_testing # same as the markdown filename
 ---
 _Nämä ohjeet on kirjoittanut Jeremias Berg_
 
 {% include no_requirement_fin.md %}
 
-Käydään tässä läpi, miten ns suorituskykytesteillä voidaan testata asioita, joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta](/unittest) ja [invarianttitestuksesta](/invarianttest), varsinkin [Poetryn](/poetry) käytöstä.
+Käydään tässä läpi, miten ns suorituskykytesteillä voidaan testata asioita, joihin voi olla vaikea päästä kiinni yksikkö tai invarianttitestien kautta. Vaikka esimerkki tässä on eri, seuraava olettaa tuntemusta [yksikkötestauksesta]({% link _pages/fin/unit_testing.md %}) ja [invarianttitestuksesta]({% link _pages/fin/invariant_testing.md %}), varsinkin [Poetryn]({% link _pages/fin/poetry.md %}) käytöstä.
 
 
 ## Quicksortin Testaus
@@ -54,7 +56,7 @@ class TestSort(unittest.TestCase):
 ```
 Tässä siis yksi testi joka testaa invarianttia <span style="color:blue">"oma quicksort implementaatiomme laittaa listan saman järjestykseen kuin pythonin kirjaston järjestysalgoritmi"</span>. Tähän testiin on @example komennolla lisätty muutama reunatapaus kuten tyhjä lista, käännetty lista, sekä jo järjestyksessä oleva lista. 
 
-Kokeillaan testejä (jos projektin alustaminen tuntuu epäselvältä, katso esimerkki [yksikkötestauksen luvusta](/unittest)): 
+Kokeillaan testejä (jos projektin alustaminen tuntuu epäselvältä, katso esimerkki [yksikkötestauksen materiaalista]({% link _pages/fin/unit_testing.md %})): 
 ```
 (sorttaus-py3.9) jezberg@LM2-500-27156 sorttaus % coverage run --branch -m pytest src; coverage html
 =========================================== test session starts ============================================
@@ -76,7 +78,7 @@ Eli toisin sanoen, voimme testiemme perusteella todeta, että 15000 eri listalla
 ## Suorituskykytestaus
 Kuten osa jo varmaan on huomannut, tämä implementaatio quicksortista on (keinotekoisesti) muokattu olemaan erittäin huono. Koska pivotiksi valitaan aina listan pienin alkio, jokaisessa rekursiivisessa kutsussa osalista vasen on tyhjä, jolloin tämä algoritmin ajoaika on aina neliöllinen listan pituuden suhteen. Tarkastellaan seuraavaksi muutamaa tapaa, millä tämän bugin voisi huomata automatisoiduilla testeillä. 
 
-**Huom** Seuraavassa on tärkeää huomata, että suorituskykytestien suunnitellu on huomattavan paljon haasteellisempaa, kuin [yksikkötestien](/unittest) ja [invarianttitestien](/invarianttest). Tämä johtuu siitä, että koodin ajanotto ei ole determinististä. Saman metodin ajaminen moneen kertaan samalla syötteellä voi kestää eri määrän aikaa, riippuen esim processorin muusta käytöstä. Tämä tarkoittaa, että suorituskykytestien kirjoituksessa täytyy olla tarkkana sen kanssa, että testit todellakin testaavat sitä, mitä on tarkoitus. 
+**Huom** Seuraavassa on tärkeää huomata, että suorituskykytestien suunnitellu on huomattavan paljon haasteellisempaa, kuin [yksikkötestien]({% link _pages/fin/unit_testing.md %}) ja [invarianttitestien]({% link _pages/fin/invariant_testing.md %}). Tämä johtuu siitä, että koodin ajanotto ei ole determinististä. Saman metodin ajaminen moneen kertaan samalla syötteellä voi kestää eri määrän aikaa, riippuen esim processorin muusta käytöstä. Tämä tarkoittaa, että suorituskykytestien kirjoituksessa täytyy olla tarkkana sen kanssa, että testit todellakin testaavat sitä, mitä on tarkoitus. 
 
 ### Vertailu Toiseen (Huonompaan) Algoritmiin 
 
@@ -400,4 +402,4 @@ Näimme, että järkevissä suorituskykytesteissä tarvitaan vähän isompia lis
 Vaikka quicksort, ja järjestys algoritmit muutenkin, ovat harjoitustyötä varten liian helppoja, samoja ideoita voi hyvin soveltaa myös harjoitustyöhön sopivissa aiheissa. Monet reitinhakualgoritmit voivat olla väärin implementoituja, mutta silti palauttaa lyhyimmän reitin. Mieti miten polunetsintäsi pitäis toimia, ja suunnitele testit testaamaan niitä heuristiikkoja. Polunetsinnässäkään ei tarvitse (välttämättä) luottaa ajoaikaan, sen sijaan voit laskea esimerkiksi vierailtujen solmujen määrän.
 
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}

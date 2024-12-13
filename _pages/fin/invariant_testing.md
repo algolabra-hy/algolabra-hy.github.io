@@ -1,16 +1,18 @@
 ---
 layout: page
-permalink: /invarianttest
+permalink: /invarianttest-fi
 title: Invarianttitestaus
 title_long: Invariant
+lang: fi # fi or en
+ref: invariant_testing # same as the markdown filename
 inheader: no
 ---
 _Nämä ohjeet on kirjoittanut Jeremias Berg_
 
 {% include no_requirement_fin.md %}
 
-Jatketaan siitä mihin [yksikkötestauksessa](/unittest) jäätiin. Jos unittest sovelluskehys, poetry ja pytest ovat tuttuja, voit lukea
-tämän suoraan. Muuten kannattaa tutustua ensin [tähän](/unittest).
+Jatketaan siitä mihin [yksikkötestauksessa]({% link _pages/fin/unit_testing.md %}) jäätiin. Jos unittest sovelluskehys, poetry ja pytest ovat tuttuja, voit lukea
+tämän suoraan. Muuten kannattaa tutustua ensin [tähän]({% link _pages/fin/unit_testing.md %}).
 
 Muistutuksena, tämänhetkinen `Maksukortti` luokka:
 
@@ -133,7 +135,7 @@ src/maksukortti.py      24      1      8      2    91%   18->exit, 23
 TOTAL                   24      1      8      2    91%
 (maksukortti-py3.9) jezberg@dhcp-85-175 maksukortti % 
 ```
-Huomaamme, että testien kattavuus on itse asiassa lisääntynyt. Syy tähän on, että lisäehtomme tuli haaraan jota [aikaisemmassa osassa](/unittest) ei testattu. Toisin sanoen kattavuudesta voisimme (virheellisesti) päätellä, että testaamme luokan toiminnallisuutta kunnollisesti, vaikka nyt millään kortilla jolla on 13.37€ rahaa ei voi ostaa maukkaita aterioita. 
+Huomaamme, että testien kattavuus on itse asiassa lisääntynyt. Syy tähän on, että lisäehtomme tuli haaraan jota [aikaisemmassa osassa]({% link _pages/fin/unit_testing.md %}) ei testattu. Toisin sanoen kattavuudesta voisimme (virheellisesti) päätellä, että testaamme luokan toiminnallisuutta kunnollisesti, vaikka nyt millään kortilla jolla on 13.37€ rahaa ei voi ostaa maukkaita aterioita. 
 
 **Huom.** Tässä keinotekoisessa esimerkissä on toki helppo huomata, että metodia ```monimutkainen_ehto()``` ei testata ja lisätä yksikkötesti joka alustaa kortin juuri 1337 sentillä. 
 Tässä kuitenkin simuloidaan tilannetta, jossa funktion 
@@ -199,7 +201,7 @@ Tutkitaan vielä coveragen raporttia samalla lailla kun aiemmin:
 coverage run --branch -m pytest src; coverage html
 ```
 ![]({{ "/images/invarianttest0.png" | absolute_url }})
-Kun verrataan [aiempaan reporttiin](http://localhost:4000/unittest#visuaalisempi-testikattavuusraportti)
+Kun verrataan [aiempaan reporttiin]({% link _pages/fin/unit_testing.md %}#visuaalisempi-testikattavuusraportti)
 huomataan, että haarakattavuutemme on parempi. Eritysesti, nykyisen rivin 18 (aiemman rivin 15) haarasta testataan nyt molemmat tapaukset. 
 Tämä johtuu siitä, että juuri kirjoittamamme testi kokeilee myös arvoja jotka ovat alle 4 euroa, kun aiemmat testit kutsuvat ```syo_maukkaasti``` metodia vain kun kortilla on 10 euroa. 
 
@@ -335,7 +337,7 @@ def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
 joka epäonnistuu ilman parametrien säätöä. Tälläinen tapaus voisi sattua jos vaikka tietäisimme että ```monimutkainen_ehto``` metodimme Maksukortti luokassa tekee jotain (vaikka emme tietäisi mitä) vain jos arvo on tietyllä välillä. 
 
 # Syötteiden Generoinnista
-Lopuksi mainittakoon vielä, että hypothesiksen syötteen generointi ulottuu huomattavasti kokonaislukuja pidemmälle. Hypothetiksen [valmiit strategiat](https://hypothesis.readthedocs.io/en/latest/data.html) määrittelevät kuinka perustyyppejä voidaan luoda, mutta myös miten voit määritellä oman datatyyppisi luojan tai yhdistellä eri tyyppien generoijia toisinsa. Täten voit käytännössä käyttää hypothesista minkälaisten metodien testaamiseen tahansa. Palataakseni aikaisempiin esimerkkeihin, voisimme esim testata metodeja jotka otavat koko neuroverkon syötteeksi (muista [riippuvuuden injektointi](/riippuvuuksien_injektointi_python)) ja kertoa hypothesikselle, miten neuroverkkoja muodostetaan. Tällöin kirjasto voisi (teoriassa) testata sattumanvaraisesti muodostetuilla (ja treenatuilla) neuroverkoilla kunnes löytyy joku, jonka virhe on yli 15%, ilman että meidän täytyy itse osata määritellä, miten sellainen muodostetaan. 
+Lopuksi mainittakoon vielä, että hypothesiksen syötteen generointi ulottuu huomattavasti kokonaislukuja pidemmälle. Hypothetiksen [valmiit strategiat](https://hypothesis.readthedocs.io/en/latest/data.html) määrittelevät kuinka perustyyppejä voidaan luoda, mutta myös miten voit määritellä oman datatyyppisi luojan tai yhdistellä eri tyyppien generoijia toisinsa. Täten voit käytännössä käyttää hypothesista minkälaisten metodien testaamiseen tahansa. Palataakseni aikaisempiin esimerkkeihin, voisimme esim testata metodeja jotka otavat koko neuroverkon syötteeksi (muista [riippuvuuden injektointi]({% link _pages/fin/dependency_injection_python.md %})) ja kertoa hypothesikselle, miten neuroverkkoja muodostetaan. Tällöin kirjasto voisi (teoriassa) testata sattumanvaraisesti muodostetuilla (ja treenatuilla) neuroverkoilla kunnes löytyy joku, jonka virhe on yli 15%, ilman että meidän täytyy itse osata määritellä, miten sellainen muodostetaan. 
 
 
 ## Yhteenveto 
@@ -362,4 +364,4 @@ def test_syo_maukkaasti_vahentaa_saldoa_oikein_hypothesis(self, arvo):
 - Löydätkö tästä testistä bugin? 
 - Mitä tapahtuu jos maksukorttimme vähentäisi 450 senttiä silloin kun kortilla on 410 senttiä? 
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}

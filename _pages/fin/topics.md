@@ -1,18 +1,20 @@
 ---
 layout: page
-permalink: /aiheet
+permalink: /topics-fi
 title: Harjoitustyön mahdolliset aiheet
 title_long: Aiheideoita
 inheader: no
+lang: fi # fi or en
+ref: topics # same as the markdown filename
 ---
 
 ## Aiheen valinnasta
 Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse[^1], tai valita alla olevasta listasta. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa[^2]. 
 
 ## Lista aiheista
-- [Verkot ja Polunetsintä](/aiheet#verkot-ja-polunetsintä)
-- [Tiedon tiivistys](/aiheet#tiedon-tiivistys) 
-- [Pelit](/aiheet#pelit)
+- [Verkot ja Polunetsintä]({% link _pages/fin/topics.md %}#verkot-ja-polunetsintä)
+- [Tiedon tiivistys]({% link _pages/fin/topics.md %}#tiedon-tiivistys) 
+- [Pelit]({% link _pages/fin/topics.md %}#pelit)
   - Gomoku
   - Miinaharava 
   - Shakki
@@ -21,17 +23,17 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
   - 2048
   - Kivi-sakset-paperi
   - 15-peli
-- [DPLL](/aiheet#dpll)
-- [Koneoppiminen](/aiheet#koneoppiminen)
+- [DPLL]({% link _pages/fin/topics.md %}#dpll)
+- [Koneoppiminen]({% link _pages/fin/topics.md %}#koneoppiminen)
   - Laskennallinen luovuus, tekstin tai musiikin generointi
   - Hahmontunnistus 
   - Luolastojen Generointi
-- [Salaus ja tietoturva](/aiheet#salaus-ja-tietoturva)
-- [Signaalin käsittely](/aiheet#signaalinkäsittely-kuva-ääni)
-- [Kontin pakkaus](/aiheet#kontin-pakkaus)
-- [Sännölliset lausekkeet](/aiheet#säännöllisten-lausekkeiden-tulkki-tai-kääntäjä)
-- [Kirjoitusvirheiden korjaaja](/aiheet#kirjoitusvirheiden-korjaaja)
-- [Tieteellinen laskin](/aiheet#tieteellinen-laskin)
+- [Salaus ja tietoturva]({% link _pages/fin/topics.md %}#salaus-ja-tietoturva)
+- [Signaalin käsittely]({% link _pages/fin/topics.md %}#signaalinkäsittely-kuva-ääni)
+- [Kontin pakkaus]({% link _pages/fin/topics.md %}#kontin-pakkaus)
+- [Sännölliset lausekkeet]({% link _pages/fin/topics.md %}#säännöllisten-lausekkeiden-tulkki-tai-kääntäjä)
+- [Kirjoitusvirheiden korjaaja]({% link _pages/fin/topics.md %}#kirjoitusvirheiden-korjaaja)
+- [Tieteellinen laskin]({% link _pages/fin/topics.md %}#tieteellinen-laskin)
 
 ---
 
@@ -47,7 +49,7 @@ Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
   - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
 - [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf), joka on astetta haastavampi.
 
-Myös osiosta [Pelit](/aiheet#pelit) löytyvän 15-pelin ratkaiseminen perustuu reitinhakualgoritmiin.
+Myös osiosta [Pelit]({% link _pages/fin/topics.md %}#pelit) löytyvän 15-pelin ratkaiseminen perustuu reitinhakualgoritmiin.
 
 
 ### Hyödyllisiä neuvoja 
@@ -87,7 +89,7 @@ Kuvaa ja ääntä pakattaessa pyritään paljon suurempaan pakkaustehoon, mutta 
 Aiheen vaatimusten saavuttaminen vaatii datan lukemista ja kirjoittamista tiedostoon bittitasolla, 
 mikä ei onnistu samoilla välineillä kuin tekstitiedoston käsittely. 
 Voit käyttää ohjelmointikielen valmiita tietorakenteita kaikissa pakkausalgoritmeissa.
-**Huomaa** että pakkausalgoritmejasi täytyy testata [edustavilla](/respresentativeinputs) syötteillä, jotka ovat tarpeeksi isoja. Myös päästä päähän -testaus (pakkaus +purku ja tuloksen vertaaminen alkuperäiseen tiedostoon) on välttämätön osa oikeellisuustestausta, koska jotkin virheet tulevat esiin vasta, kun tiedosto on tarpeeksi suuri tai siinä on riittävän monta eri merkkiä. Et voi käsin laskea vertailuarvoksi, millainen usean megatavun kokoisen tiedoston oikea pakkaustulos on. 
+**Huomaa** että pakkausalgoritmejasi täytyy testata [edustavilla]({% link _pages/fin/testing_representative_inputs.md %}) syötteillä, jotka ovat tarpeeksi isoja. Myös päästä päähän -testaus (pakkaus +purku ja tuloksen vertaaminen alkuperäiseen tiedostoon) on välttämätön osa oikeellisuustestausta, koska jotkin virheet tulevat esiin vasta, kun tiedosto on tarpeeksi suuri tai siinä on riittävän monta eri merkkiä. Et voi käsin laskea vertailuarvoksi, millainen usean megatavun kokoisen tiedoston oikea pakkaustulos on. 
 
 ---
 
@@ -99,7 +101,7 @@ Minmax-algoritmi laskee jokaisesta pelitilateesta eteenpäin ja valitsee siirron
 voidaan laskea voittoon, häviöön tai tasapeliin asti, lasketaan sen sijaan tietty määrä siirtoja eteenpäin ja 
 arvioidaan jollain heuristiikalla, kuinka hyvään pelitilanteeseen päästään. Heuristiikan perusteella valitaan se siirto, joka johtaa parhaimpaan pelitilanteeseen. 
 
-**Jos haluat tehdä shakille tai connect fourille tekoälyn ja sinulla on linux kone** suosittelemme vahvasti harjoitustyön [tekoälyalustan](/aiplatform) käyttöä. 
+**Jos haluat tehdä shakille tai connect fourille tekoälyn ja sinulla on linux kone** suosittelemme vahvasti harjoitustyön [tekoälyalustan]({% link _pages/fin/ai_platform.md %}) käyttöä. 
 Alusta tarjoaa graafisen käyttöliittymän ja mahdollisuuden pelata omaa tekoälyäsi vastaan minimaalisella overheadilla. Huomaa, että alusta toimii tällä hetkellä vain oikeilla 
 Linux koneilla, minkäänlainen linuxin emulointi ei kelpaa. 
 
@@ -136,7 +138,7 @@ Normaaleilla säännöillä 8 x 8 laudalla pelattava shakkipeli jossa voit jätt
   - toistuvaan asemaan perustuva tasapeli.
 
 Projektisi heuristiikkafunktion tulee arvioida materiaalin määrän lisäksi jollain tavalla nappuloiden sijoittumista laudalla.
-Shakin tekoälyn toteuttamiseen voit käyttää harjoitustyön [tekoälyalustaa](/aiplatform).
+Shakin tekoälyn toteuttamiseen voit käyttää harjoitustyön [tekoälyalustaa]({% link _pages/fin/ai_platform.md %}).
 
 #### Connect4
 6 x 7 -kokoisella laudalla pelattava peli, jossa voittaa kun saa neljä omaa pelimerkkiä riviin. 
@@ -185,7 +187,7 @@ graafinen käyttöliittymä, jotta pelaaminen on sujuvaa.
 Kivi-sakset-paperi on kaikille tuttu peli, jota ei yleisesti voi pelata hyvin tai huonosti. Näimpä (tehokasta) tekoälyä pelille **ei** voi toteuttaa
 minimax algoritmilla. Sen sijaan tässä projektissa tehdään oppiva tekoäly joka pyrkii oppimaan vastustajansa pelityylin ja 
 pelaamaan hyvin sitä vastaan. Yksi tapa oppia toisen pelityyli on käyttää useamman eri asteen [Markovin ketjuja](https://arxiv.org/pdf/2003.06769) (katso myös kohta 
-[laskennallisesta luovuudesta](/aiheet/#koneoppiminen)). 
+[laskennallisesta luovuudesta]({% link _pages/fin/topics.md %}#koneoppiminen)). 
 Siihen voi yhdistää muitakin malleja vastustajan toimminnalle. *Kannattaa jutella ohjaajan kanssa, jos tämä aihe kiinnostaa.*
 
 #### 15-peli
@@ -221,7 +223,7 @@ Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil
 tietorakenteet täytyy toteuttaa itse. Aihe on parasta toteuttaa **C++** kielellä. 
 
 ### Hyödyllisiä neuvoja 
-Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCal](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemmissa näiden repositorioissa löytyy myös testilauseita: ([Cadicalin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
+Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemmissa näiden repositorioissa löytyy myös testilauseita: ([CaDiCaLin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
 [Kissatin testit](https://github.com/arminbiere/kissat/tree/master/test/cnf.)). Muista vaan, että sekä CaDiCal, että Kissat ovat erittäin optimpoituja 
 CDCL algoritmin toteutuksia, tämän kurssin aikana oma ratkojasi ei pääse lähellekkään samanlaista tehokkuutta. 
 
@@ -242,7 +244,7 @@ jotta se pystyy ratkomaan [Sudokuja](https://sat.inesc-id.pt/~ines/publications/
 Koneoppiminen on erittäin laaja alue josta löytyy paljon harjoitustyöhön sopivia 
 aiheita. Monissa koneoppimiseen liittyvissä aiheissa kannattaa muistaa, että algoritmit ovat stokastisia, 
 niiden tuottama tulos riippuu osaksi myös siitä harjoitusdatasta, jota niille syötetään. Täten niiden oikeellisuuden 
-varmistamiseen tarvitaan hyvin suunniteltuja [testejä](/testing) edustavilla syötteillä.
+varmistamiseen tarvitaan hyvin suunniteltuja [testejä]({% link _pages/fin/testing_frontpage.md %}) joissa käytetään [edustavia]({% link _pages/fin/testing_representative_inputs.md %}) syötteitä.
 
 # Laskennallinen luovuus
 Sekä sanojen, lauseiden, musiikin, että kuvien[^3] tuottaminen algoritmisesti onnistuu periaatteessa samalla tavalla. 
@@ -379,7 +381,7 @@ Yksi tähän soveltuva etäisyysmitta on [Damerau–Levenshtein -etäisyys](http
 ### Tieteellinen laskin
 Toteuta laskin joka laskee annetun matemaattisen lausekkeen arvon, ja mahdollisesti sijoittaa sen muuttujaan, joita on käytettävissä riittävä määrä. Lauseke voi sisältää lukuarvoja, muuttujia, peruslaskutoimituksia ja sekä yhden (sqrt, sin) että kaksi parametria (min, max) saavia funktioita. Ohjelman tulisi antaa yksilöity virheilmoitus, jos käyttäjä syöttää virheellisen lausekkeen, ja erityisesti se ei saa ilmoittaa mitään arvoa lausekkeelle, jolle ei oikeasti voi laskea arvoa.  Tälläinen ohjelma toteutetaan [shunting-yard](https://en.wikipedia.org/wiki/Shunting-yard_algorithm) algoritmilla.
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}
 
 [^1]: **Huomaa**, että lopullinen päätösvalta kunkin aiheen hyväksyttävyydellä on kurssin henkilökunnalla. Omaa aihe ehdotustasi joudutaan ehkä muokkaamaan jotta päästään kurssin vaatimaan vaativuuteen. 
 [^2]: Muista kuitenkin, että ohjaaja auttaa tiedonhaussa tarvittaessa, yritä ensin itse ja ota sitten yhteyttä matalalla kynnyksellä. 

@@ -23,9 +23,30 @@ repo_branch: 'master'
 
 include: ['_pages', '_pages/fin']
 
-
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+language_default: fi
+
+defaults:
+- scope:
+    path: '_pages/fi'
+  values:
+    permalink: 'fi/:ref'
+    language: fi
+- scope:
+    path: '_pages/en'
+  values:
+    permalink: 'en/:ref'
+    language: en
+
+collections:
+  fi:
+    output: true
+    permalink: /pages/fin/:path/
+  en:
+    output: true
+    permalink: /pages/en/:path/

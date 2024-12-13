@@ -1,12 +1,14 @@
 ---
 layout: page
-permalink: /dokumentaatio
+permalink: /documentation-fi
 title: Dokumentaatio
 title_long: Työn aikana tehtävät dokumentit
 inheader: no
+lang: fi # fi or en
+ref: documentation # same as the markdown filename
 ---
 Kaikki dokumentit palautetaan joko GitHubin tukemassa markdown-muodossa tai .pdf-muodossa
-harjoitustyösi [repositoriossa](/git). 
+harjoitustyösi [repositoriossa]({% link _pages/fin/git.md %}). 
 Mitään ei siis palauteta esim. sähköpostitse. 
 Sijoita dokumentit omaan hakemistoonsa projektin juureen ja linkaa ne repositoriosi etusivulle.
 
@@ -117,10 +119,10 @@ Testausdokumentin pitääs sisältää seuraavat:
   - Testattu 10 kertaan satunnaisesti valituilla lähtö- ja maalipisteillä, että JPS löytää saman pituisen reitin kuin Dijkstran algoritmi.
   - Kummallakin algoritmilla on pakattu 8 MB tekstitiedosto, purettu se ja tarkastettu, että tuloksena on täsmälleen alkuperäinen tiedosto.
 
-[Testauksesta lisää](https://algolabra-hy.github.io/testing)
+[Testauksesta lisää]({% link _pages/fin/testing_frontpage.md %})
 
 ### Käyttöohje
 Miten ohjelma suoritetaan, miten eri toiminnallisuuksia käytetään
 Minkä muotoisia syötteitä ohjelma hyväksyy
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}

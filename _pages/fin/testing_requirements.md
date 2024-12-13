@@ -1,13 +1,15 @@
 ---
 layout: page
-permalink: /testreqs
+permalink: /testreqs-fi
 title: Harjoitustyön vaatimukset testeille
 title_long: Mitä vaaditaan harjotustyön testeiltä
 inheader: no
+lang: fi # fi or en
+ref: testing_requirements # same as the markdown filename
 ---
 
 ## Testien vaatimuksista - mitä pitää testata?
-Jokaisessa harjoitustyössä vaaditaan vähintään automaattiset [yksikkötestit](unittest) jotka testaavat työn **toimintalogiikkaa**. 
+Jokaisessa harjoitustyössä vaaditaan vähintään automaattiset [yksikkötestit]({% link _pages/fin/unit_testing.md %}) jotka testaavat työn **toimintalogiikkaa**. 
 Käyttöliittymää ja I/O:ta (esimerkiksi tiedostojen lukua) *ei* tarvitse testata, eikä niiden testauksesta saa arvostelussa lisäpisteitä. 
 
 Yleisesti ottaen hyvien testien tarkoitus on varmistaa, että oma algoritmi on oikein toteutettu. Mitä tämä täsmälleen tarkoittaa
@@ -20,12 +22,12 @@ riippuu aiheesta. Alla muutamia esimerkkejä. Kurssin henkilökunta auttaa tarvi
 - Toimiiko RSA salauksesi oikein sekä pienillä, että isoilla avaimilla? 
 - Pakkaako ja purkaako tiedonpakkausalgoritmisi kaiken kokoisia tiedostoja oikein?
 
-Toinen tärkeä osa vakuuttavia testejä on [edustavilla](/respresentativeinputs) syötteillä testaaminen. Useat harjoitustyössä 
+Toinen tärkeä osa vakuuttavia testejä on [edustavilla]({% link _pages/fin/testing_representative_inputs.md %}) syötteillä testaaminen. Useat harjoitustyössä 
 toteutetut algoritmit ovat tarpeeksi monimutkaisia, että kaikkia bugeja ei löydy pienillä syötteillä. 
 RSA:han liittyvissä harjoitustöissä realistinen alkulukujen koko ei esimerkiksi ole 13 tai edes 61403. 
 Vakuuttavissa testeissä on siis sekä "ihmiselle ymmärrettäviä" syötteitä, että "realistisia" syötteitä.
-Tämän takia yksikkötestit eivät yleensä riitä vakuuttaviin testeihin, tarvitaan myös esim. [integraatio](https://en.wikipedia.org/wiki/Integration_testing) 
-tai [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testausta. 
+Yleensä vakuuttaviin testeihin vaditaan yksikkötestaamisen lisäksi [edistyneempiä testaustekniikoita]({% link _pages/fin/testing_frontpage.md %}#yksikkötestien-lisäksi). Mieti itse mikä sopisi aiheeseesi ja kysy ohjaajalta tarvittaessa. Tyypillisesti [integraatio](https://en.wikipedia.org/wiki/Integration_testing) 
+tai [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) tetaus riittää. 
 
 ## Testien tarkoituksesta tällä kurssilla
 Tämän kurssin olennaisena osana on kokonaisen projektin, ja sen testien *itsenäinen* suunnittelu ja toteutus.
@@ -55,8 +57,8 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 | Taso (pistemäärä)                 | Kuvaus |
 | :---------------------------------  |--------: |
 | riittämätön/hylätty (0)           | <span style="font-size:0.9em;">Projektin päämetodeja ei testata ollenkaan tai niiden testit eivät testaa oikeellisuuteen liittyviä asioita.</span> |
-| heikko (1)                    |  <span style="font-size:0.9em;">Projektin päämetodeja testataan muutamalla syötteellä. Valittujen syötteiden [edustavuudessa](/respresentativeinputs) puutteita.</span>        |
-| keskinkertainen <br> (2-4)           | <span style="font-size:0.9em;">Keskeisimmät metodit on testattu muutamalla [edustavalla](/respresentativeinputs) syötteellä. Testien dokumentaatiosta käy ilmi niiden tarkoitus.</span> |
+| heikko (1)                    |  <span style="font-size:0.9em;">Projektin päämetodeja testataan muutamalla syötteellä. Valittujen syötteiden [edustavuudessa]({% link _pages/fin/testing_representative_inputs.md %}) puutteita.</span>        |
+| keskinkertainen <br> (2-4)           | <span style="font-size:0.9em;">Keskeisimmät metodit on testattu muutamalla [edustavalla]({% link _pages/fin/testing_representative_inputs.md %}) syötteellä. Testien dokumentaatiosta käy ilmi niiden tarkoitus.</span> |
 | tyydyttävä (5-7)                |  <span style="font-size:0.9em;">Kaikki keskeiset metodit on testattu. Käytettävät syötteet ovat edustavia. Testit ovat toistettavia ja selkeitä.</span>       |
 | vakuuttava / erinomainen (8-10) | <span style="font-size:0.9em;">Kaikki[^1] metodit on testattu. Testauksessa käytetään niitä oman harjoitustyön aiheeseen sopivia tekniikoita[^2] jotka täydentävät yksikkötestejä ja ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat erittäin selkeitä ja niiden kattavuus laaja. Käytettävät syötteet ovat erittäin edustavia.</span>  |
 
@@ -64,9 +66,9 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 
 
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}
 
 
 # Lisähuomautukset
 [^1]: poislukien erittäin yksinkertaiset metodit kuten getterit ja setterit jotka eivät muokkaa syötteitään mitenkään.
-[^2]: Tälläiset tekniikat voivat olla esimerkiksi empiirinen testaus, [integraatio](https://en.wikipedia.org/wiki/Integration_testing) testaus, [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testaus, [invarianttitestaus](/invarianttest) tai [suorituskykytestaus](/performancetest). **Huomaa** kuitenkin että näitä kaikkia ei vaadita. Tärkeintä on tehdä omalle harjoitustyölle sopivat testit, ohjaaja auttaa tarvittaessa.   
+[^2]: Tälläiset tekniikat voivat olla esimerkiksi empiirinen testaus, [integraatio](https://en.wikipedia.org/wiki/Integration_testing) testaus, [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testaus, [invarianttitestaus]({% link _pages/fin/invariant_testing.md %}) tai [suorituskykytestaus]({% link _pages/fin/performance_testing.md %}). **Huomaa** kuitenkin että näitä kaikkia ei vaadita. Tärkeintä on tehdä omalle harjoitustyölle sopivat testit, ohjaaja auttaa tarvittaessa.   

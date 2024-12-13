@@ -1,7 +1,9 @@
 ---
 layout: page
-permalink: /poetry
-title: Poetry ja Riippuvuuksien hallinta
+permalink: /poetry-fi
+title: Poetry ja riippuvuuksien hallinta
+lang: fi # fi or en
+ref: poetry # same as the markdown filename
 ---
 
 _Nämä ohjeet ovat melkein suora kopio kurssin [Ohjelmistotuotanto](https://ohjelmistotuotanto-hy.github.io/poetry) kurssin sivuilta_ 
@@ -79,11 +81,6 @@ Asenna Poetry suorittamalla terminaalissa seuraava komento:
 Asennuksen jälkeen Poetry-binäärin polku tulee asettaa `PATH`-muuttujaan. Lisää [tämän](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) ohjeen mukaisesti `PATH`-muuttujaan polku `%APPDATA%\Python\Scripts`.
 
 Käynnistä terminaali uudestaan ja varmista, että asennus onnistui suorittamalla komento `poetry --version`. Komennon pitäisi tulostaa asennettu versio.
-
-
-### Ongelmia Poetryn asennuksessa?
-
-Tämän sivun [lopussa](/poetry#ratkaisuja-yleisiin-ongelmiin) on ohjeita muutamiin ongelmatilanteisiin.
 
 ### Projektin alustaminen
 
@@ -280,4 +277,4 @@ Kun kaikki toimenpiteet on suoritettu, yritä suorittaa epäonnistunut Poetry-ko
 
 Jos `poetry install`-komennon suorittaminen pyytää keyring-salasanaa, ongelma pitäisi ratketa suorittamalla terminaalissa `export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring` ja sen jälkeen suorittamalla komento `poetry install` uudestaan. Kyseisen rivin voi laittaa _.bashrc_ (tai vastaavaan) tiedostoon, jotta sitä ei tarvitse suorittaa jokaisen terminaali-istunnon aluksi.
 
-{% include typo_instructions.md %}
+{% include typo_instructions_fin.md %}

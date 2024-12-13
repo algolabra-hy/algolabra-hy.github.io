@@ -2,9 +2,11 @@
 layout: page
 title: Gradle
 inheader: no
-permalink: /gradle/
+permalink: /gradle-fi
+lang: fi # fi or en
+ref: gradle # same as the markdown filename
 ---
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
   <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
   />
 </a>
@@ -18,14 +20,14 @@ Gradlea käytetään pääsääntöisesti java projektien kehitykseen. Sille lö
 (epävirallisia) [Python plugineja](https://github.com/PrzemyslawSwiderski/python-gradle-plugin), jotka mahdollistavat käytön myös Python projektien kehitykseen. 
 Python plugineja saa käyttää omassa harjoitustyössä, mutta niiden toimivuutta ei ole kurssinhenkilökunnan puolelta testattu. 
 Toisaalta, koska Python koodia ei tarvitse (eikä helposti voikkaan) kääntää, gradle on tavallaan turhan monimutkainen Pythonin kanssa käytettäväksi. 
-Suosittelemme Pythonille ennemmin [Poetrya](/poetry/).
+Suosittelemme Pythonille ennemmin [Poetrya]({% link _pages/fin/poetry.md %}).
 
 
 ## Johdatus Gradlen konfigurointiin (Javalle)
 
 _Nämä ohjeet ovat melkein suora kopio kurssin [Ohjelmistotuotanto](https://ohjelmistotuotanto-hy.github.io/gradle/) kurssin sivuilta_ 
 
-Tehdään gradle-projekti alusta asti itse. Tee [projektirepoositooriossi](/git) uusi hakemisto ja mene hakemistoon. 
+Tehdään gradle-projekti alusta asti itse. Tee [projektirepositoorioosi]({% link _pages/fin/git.md %}) uusi hakemisto ja mene hakemistoon. 
 
 Kokeile toimiiko koneessasi komento `gradle`. Huomaa, että esimerkiksi fuksiläppäreissä on asennettuna erittäin vanha gradlen versio. 
 Komennon suorittaminen näyttää mikä versio on kyseessä
@@ -566,3 +568,4 @@ Kun suoritamme uudelleen komennon _gradle test_ kaikki toimii.
 
 Muista vielä kokeilla rikkoa testi ja varmistaa että testit huomaavat virheen.
 
+{% include typo_instructions_fin.md %}
