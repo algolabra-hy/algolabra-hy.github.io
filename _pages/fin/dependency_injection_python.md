@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Riippuvuuksien injektointi
-inheader: no
 permalink: /dependency-injection-fi
 lang: fi # fi or en
 ref: dependency_injection_python # same as the markdown filename

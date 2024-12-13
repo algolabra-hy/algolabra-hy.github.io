@@ -5,7 +5,6 @@ title: Harjoitustyön (suositus) Aikataulu
 title_long: Tarkempi ehdotus harjoitustyön aikataulusta
 lang: fi # fi or en
 ref: suggested_schedule # same as the markdown filename
-inheader: no
 ---
 
 Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät kurssikalenterista moodlesta. 

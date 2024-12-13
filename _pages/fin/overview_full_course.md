@@ -5,7 +5,6 @@ title: Yleiskatsaus harjoitustyöstä
 title_long: Yleiskatsaus harjoitustyön kulusta
 lang: fi # fi or en
 ref: overview_full_course # same as the markdown filename
-inheader: no
 ---
 
 Alla yleiskatsaus kurssin kulusta. Kaikista tällä sivuilla käsitellyistä aiheista löytyy 

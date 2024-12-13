@@ -3,7 +3,6 @@ layout: page
 permalink: /performancetest-fi
 title: Suorituskykytestaus
 title_long: Suorituskykytest
-inheader: no
 lang: fi # fi or en
 ref: performance_testing # same as the markdown filename
 ---

@@ -1,4 +1,4 @@
-    <h2>(If you have already signed up) Read the moodle</h2>
+    <h2>(If you have already signed up) Read the moodle first</h2>
     
     <p>
       The <a href="{{site.moodle}}">Moodle pages</a> of the course contain important information

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Gradle
-inheader: no
 permalink: /gradle-en
 lang: en # fi or en
 ref: gradle # same as the markdown filename

@@ -5,7 +5,6 @@ title: Harjoitustyön (suositus) Aikataulu
 title_long: Tarkempi ehdotus harjoitustyön aikataulusta
 lang: en # fi or en
 ref: suggested_schedule # same as the markdown filename
-inheader: no
 ---
 
 This page will be made during Jan 2025 and is included here for testing purposes. 

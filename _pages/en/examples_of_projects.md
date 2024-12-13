@@ -3,7 +3,6 @@ layout: page
 permalink: /examples-en
 title: Esimerkkejä harjoitustöistä
 title_long: Esimerkkejä harjoitustöistä
-inheader: no
 lang: en # fi or en
 ref: examples_of_projects # same as the markdown filename
 ---

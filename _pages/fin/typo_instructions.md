@@ -2,7 +2,6 @@
 layout: page
 title: Materiaalin korjaukset
 title_long: 'Korjaukset Materiaaliin'
-inheader: no
 permalink: /typos-fi
 lang: fi # fi or en
 ref: typo_instructions # same as the markdown filename

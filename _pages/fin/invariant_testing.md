@@ -5,7 +5,6 @@ title: Invarianttitestaus
 title_long: Invariant
 lang: fi # fi or en
 ref: invariant_testing # same as the markdown filename
-inheader: no
 ---
 _Nämä ohjeet on kirjoittanut Jeremias Berg_
 

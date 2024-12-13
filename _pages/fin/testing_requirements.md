@@ -3,7 +3,6 @@ layout: page
 permalink: /testreqs-fi
 title: Harjoitustyön vaatimukset testeille
 title_long: Mitä vaaditaan harjotustyön testeiltä
-inheader: no
 lang: fi # fi or en
 ref: testing_requirements # same as the markdown filename
 ---

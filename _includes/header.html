@@ -1,10 +1,10 @@
 <header class="site-header" role="banner">
 
   <div class="wrapper">
-    {% assign translationwords = site.data.translation.main %}
-    {% assign default_paths = site.pages | map: "path" %}
-    {% assign page_paths = site.header_pages | default: default_paths %}
-    <a class="site-title" href="{{ "/" | relative_url }}">{{ translationwords[page.lang].sitetitle | escape }}</a>
+    {% assign translationwords = site.data.translation.main[page.lang] %}
+    {% assign translatedmenu = site.data.navigation.main[page.lang] %}
+    {% assign page_paths = translatedmenu %}
+    <a class="site-title" href="{{ "/" | relative_url }}">{{ translationwords.sitetitle | escape }}</a>
     
     {% if page_paths %}
       <nav class="site-nav">
@@ -20,29 +20,26 @@
         </label>
 
         <div class="trigger">
-          {% for path in page_paths %}
-            {% assign my_page = site.pages | where: "path", path | first %}
-            {% if my_page.inheader %}
-              {% if my_page.dropdown %}
-              <div class="dropdown">
-                <button class="dropbtn"><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></button>
-                <div class="dropdown-content">
-                  {% for child in my_page.children %} 
-                  <a class="page-link" href="{{ child.permalink | relative_url }}">{{ child.title | escape }}</a>
-                  {% endfor %}
-                </div>
+          {% for my_page in page_paths %}
+            {% if my_page.dropdown %}
+            <div class="dropdown">
+              <button class="dropbtn"><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></button>
+              <div class="dropdown-content">
+                {% for child in my_page.children %} 
+                <a class="page-link" href="{{ child.url | relative_url }}">{{ child.title | escape }}</a>
+                {% endfor %}
               </div>
-              {% else %}
-              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-              {% endif %}
+            </div>
+            {% else %}
+            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             {% endif %}
           {% endfor %}
           {% assign translationpages=site.pages | where:"ref", page.ref | sort: 'lang' %}
           <div class="dropdown">
-            <button class="dropbtn"><a class="page-link" href="{{ my_page.url | relative_url }}">{{ translationwords[page.lang].langbutton }}</a></button>
+            <button class="dropbtn"><a class="page-link">{{ translationwords.langbutton }}</a></button>
             <div class="dropdown-content">
               {% for t_page in translationpages %}
-              <a href="{{ t_page.url }}" class="{{ t_page.lang }}">{{ translationwords[t_page.lang].langname }}</a>
+              <a href="{{ t_page.url }}" class="{{ t_page.lang }}">{{ site.data.translation.main[t_page.lang].langname }}</a>
               {% endfor %}
             </div>
           </div>

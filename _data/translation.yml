@@ -3,7 +3,9 @@ main:
     sitetitle:  "Algorithms and AI Project"
     langbutton: "Other Languages"
     langname: "English"
+    license: "The materials license" 
   fi:
     sitetitle:  "Algoritmit ja Tekoäly Harjoitustyö"
-    langbutton: "Muilla Kielillä"
+    langbutton: "Kieli (Language)"
     langname: "Suomeksi"
+    lisence: "Materiaalin lisenssi"

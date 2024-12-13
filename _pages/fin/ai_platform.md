@@ -5,7 +5,6 @@ title: Tekoälyalusta
 title_long: AI platform
 lang: fi # fi or en
 ref: ai_platform
-inheader: no
 ---
 
 #### Tällä hetkellä tuetut toiminnot

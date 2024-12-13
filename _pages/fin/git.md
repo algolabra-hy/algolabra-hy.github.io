@@ -3,7 +3,6 @@ layout: page
 permalink: /git-fi
 title: Git 
 title_long: Gitin käyttö harjoitustyössä 
-inheader: no
 lang: fi # fi or en
 ref: git # same as the markdown filename
 ---

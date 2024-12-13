@@ -3,7 +3,6 @@ layout: page
 permalink: /topics-en
 title: Topic suggestions for the project
 title_long: Topics 
-inheader: no
 lang: en # fi or en
 ref: topics # same as the markdown filename do not change 
 ---

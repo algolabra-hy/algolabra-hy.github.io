@@ -1,14 +1,14 @@
 <footer class="site-footer">
 
   <div class="wrapper">
-
+    {% assign translationwords_footer = site.data.translation.main[page.lang] %}
     <h2 class="footer-heading"></h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>
-            {% if site.author %} {{ site.author | escape }} {% else %} {{ site.title | escape }} {% endif %}
+            {% if site.author %} {{ site.author | escape }} {% else %} {{ translationwords.sitetitle | escape }} {% endif %}
           </li>
           <li>
             <a href="mailto:{{ site.email }}">{{ site.email }}</a>
@@ -31,8 +31,7 @@
             <img alt="Creative Commons -lisenssi" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"
             />
           </a>
-          <br/> Materiaali on lisensoitu
-          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons BY-NC-SA 3.0 -lisenssillä</a>.
+          <br/>{{ translationwords.license | escape }} <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons BY-NC-SA 3.0</a>.
       </div>
     </div>
 

@@ -3,7 +3,6 @@ layout: page
 permalink: /documentation-fi
 title: Dokumentaatio
 title_long: Työn aikana tehtävät dokumentit
-inheader: no
 lang: fi # fi or en
 ref: documentation # same as the markdown filename
 ---

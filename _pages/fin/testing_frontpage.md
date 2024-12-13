@@ -3,21 +3,8 @@ layout: page
 permalink: /testing-fi
 title: Harjoitustyön testaaminen
 title_long: Harjoitustyön testaaminen
-inheader: yes
-dropdown: true
 lang: fi # fi or en
 ref: testing_frontpage # same as the markdown filename
-children:
-  - title: Yleiskatsaus testaamisesta (lue tämä ensin)
-    permalink: /testing-fi
-  - title: Testauksen vaatimuksesta 
-    permalink: /testreqs-fi
-  - title: Yksikkötestaaminen
-    permalink: /unittest-fi
-  - title: Riippuvuuden injektointi
-    permalink: /dependency-injection-fi
-  - title: Testisyötteiden edustavuus
-    permalink: /testing-representative-inputs-fi
 ---
 
 Täältä löydät harjoitustyön testaamiseen liittyvää materiaalia. 

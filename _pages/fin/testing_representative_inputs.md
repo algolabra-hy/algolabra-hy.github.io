@@ -3,7 +3,6 @@ layout: page
 permalink: /testing-representative-inputs-fi
 title: Testisyötteiden edustavuus
 title_long: Edustavuus
-inheader: no
 lang: fi # fi or en
 ref: testing_representative_inputs # same as the markdown filename
 ---

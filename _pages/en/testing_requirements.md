@@ -3,7 +3,6 @@ layout: page
 permalink: /testreqs-en
 title: Testing requirements
 title_long: How to get high marks
-inheader: no
 lang: en # fi or en
 ref: testing_requirements # same as the markdown filename should not be changes
 ---

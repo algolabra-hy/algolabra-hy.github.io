@@ -3,7 +3,6 @@ layout: page
 permalink: /topics-fi
 title: Harjoitustyön mahdolliset aiheet
 title_long: Aiheideoita
-inheader: no
 lang: fi # fi or en
 ref: topics # same as the markdown filename
 ---

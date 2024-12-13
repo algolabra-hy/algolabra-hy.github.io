@@ -1,26 +1,28 @@
 main:
   fi:
-    - title: "Esimerkkejä Harjoitustöistä"
+    - title: Esimerkkejä Harjoitustöistä
       url: /examples-fi
-    - title: "Harjoitustyön Toteutus"
+    - title: Harjoitustyön Toteutus
       url: /project-management-fi
+      dropdown: true
       children:
         - title: Yleiskatsaus projektinhallinnasta (lue tämä ensin)
-          permalink: /project-management-fi
+          url: /project-management-fi
         - title: Kurssin kulku
-          permalink: /overview-fi
+          url: /overview-fi
         - title: Esimerkkiaikataulu 
-          permalink: /schedule-fi
+          url: /schedule-fi
         - title: Aihe ehdotuksia
-          permalink: /topics-fi
+          url: /topics-fi
         - title: Git ohjeet
-          permalink: /git-fi
+          url: /git-fi
         - title: Työn aikana tuotettava dokumentaatio
-          permalink: /documentation-fi
+          url: /documentation-fi
         - title: Tekoälyalusta pelitekoälyille
-          permalink: /aiplatform-fi
+          url: /aiplatform-fi
     - title: "Harjoitustyön Testauksesta"
-      url: /testing-en
+      url: /testing-fi
+      dropdown: true
       children:
         - title: Yleiskatsaus testaamisesta (lue tämä ensin)
           url: /testing-fi
@@ -33,27 +35,29 @@ main:
         - title: Testisyötteiden edustavuus
           url: /testing-representative-inputs-fi
   en:
-    - title: "Examples of projects"
+    - title: "Examples of Projects"
       url: /examples-en
     - title: "Realizing the Project"
       url: /project-management-en
+      dropdown: true
       children:
-        - title: Overview on project management (read this firs)
-          permalink: /project-management-en
+        - title: Overview on project management (read this first)
+          url: /project-management-en
         - title: Organization of the course
-          permalink: /overview-en
+          url: /overview-en
         - title: Suggested schedule 
-          permalink: /schedule-en
+          url: /schedule-en
         - title: Proposals of topics
-          permalink: /topics-en
+          url: /topics-en
         - title: Git instructions
-          permalink: /git-en
+          url: /git-en
         - title: Documentation to be prepared
-          permalink: /documentation-en
+          url: /documentation-en
         - title: AI platform for game AIs
-          permalink: /aiplatform-en
+          url: /aiplatform-en
     - title: "Testing the project"
       url: /testing-en
+      dropdown: true
       children:
         - title: Overview on testing (read this first)
           url: /testing-en
