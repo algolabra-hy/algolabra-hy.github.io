@@ -39,7 +39,7 @@
           {% endfor %}
           {% assign translationpages=site.pages | where:"ref", page.ref | sort: 'lang' %}
           <div class="dropdown">
-            <button class="dropbtn"><a class="page-link" href="{{ my_page.url | relative_url }}">Kielet</a></button>
+            <button class="dropbtn"><a class="page-link" href="{{ my_page.url | relative_url }}">{{ translationwords[page.lang].langbutton }}</a></button>
             <div class="dropdown-content">
               {% for t_page in translationpages %}
               <a href="{{ t_page.url }}" class="{{ t_page.lang }}">{{ translationwords[t_page.lang].langname }}</a>

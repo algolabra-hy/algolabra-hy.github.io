@@ -1,7 +1,9 @@
 main:
   en:
     sitetitle:  "Algorithms and AI Project"
+    langbutton: "Other Languages"
     langname: "English"
   fi:
     sitetitle:  "Algoritmit ja Tekoäly Harjoitustyö"
+    langbutton: "Muilla Kielillä"
     langname: "Suomeksi"
