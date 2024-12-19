@@ -67,5 +67,5 @@ et käytä aikaa sellaisten asioiden kehitykseen, jotka eivät kuulu omaan aihee
       tarvittavien testien tyypit riippuu omasta aiheestasi. Kaikki aiheet eivät vaadi esim. suorituskykytestausta.
   - Kysy henkilökunnalta jos olet epävarma jostain asiasta. Varaudu kuitenkin miettimään asiaa ensin. Kysy mielummin "onko asian X kehittäminen minulle hyödyllistä" kuin "mitä minun pitäisi nyt tehdä"? 
 
-  {% include typo_instructions_fin.md %}
+{% include typo_instructions_fin.md %}
     
