@@ -8,7 +8,7 @@ ref: topics # same as the markdown filename
 ---
 
 ## Aiheen valinnasta
-Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse[^1], tai valita alla olevasta listasta. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa[^2]. 
+Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse, tai voit valita aiheen alla olevasta listasta. Ohjaaja arvioi ja hyväksyy aiheen määrittelydokumentin perusteella kurssin alussa. Itse keksittyä aihetta voidaan joutua muokkaamaan sopivan vaativuuden ja laajuuden saavuttamiseksi. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa. **Kysy ohjaajalta neuvoa matalalla kynnyksellä projektin kaikissa vaiheissa alkaen aiheen valinnasta.**
 
 ## Lista aiheista
 - [Verkot ja Polunetsintä]({% link _pages/fin/topics.md %}#verkot-ja-polunetsintä)
@@ -250,7 +250,7 @@ niiden tuottama tulos riippuu osaksi myös siitä harjoitusdatasta, jota niille 
 varmistamiseen tarvitaan hyvin suunniteltuja [testejä]({% link _pages/fin/testing_frontpage.md %}) joissa käytetään [edustavia]({% link _pages/fin/testing_representative_inputs.md %}) syötteitä.
 
 # Laskennallinen luovuus
-Sekä sanojen, lauseiden, musiikin, että kuvien[^3] tuottaminen algoritmisesti onnistuu periaatteessa samalla tavalla. 
+Niin sanojen (esim. nimigeneraattori), lauseiden kuin musiikin tuottaminen algoritmisesti onnistuu periaatteessa samalla tavalla. 
 Ohjelma lukee ensin harjoitusdatan ja opettelee siitä erilaisia sanojen / lauseiden / sävel- / sointusekvenssejä. 
 Uutta materiaalia tuotetaan sitten tarkastelemalla tämänhetkistä tekstiä tai musiikkia, ja lisäämällä siihen jatkoa harjoitusdatasta opittujen 
 sekvenssien perusteella. 
@@ -386,9 +386,6 @@ Toteuta laskin joka laskee annetun matemaattisen lausekkeen arvon, ja mahdollise
 
 {% include typo_instructions_fin.md %}
 
-[^1]: **Huomaa**, että lopullinen päätösvalta kunkin aiheen hyväksyttävyydellä on kurssin henkilökunnalla. Omaa aihe ehdotustasi joudutaan ehkä muokkaamaan jotta päästään kurssin vaatimaan vaativuuteen. 
-[^2]: Muista kuitenkin, että ohjaaja auttaa tiedonhaussa tarvittaessa, yritä ensin itse ja ota sitten yhteyttä matalalla kynnyksellä. 
-[^3]: Kuvien tuottaminen on tälle kursille liian haastava aihe. 
 
 
 
