@@ -20,6 +20,7 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
   - Reversi 
   - Battle Sheep 
   - 2048
+  - Pentago
   - Kivi-sakset-paperi
   - 15-peli
 - [DPLL]({% link _pages/fin/topics.md %}#dpll)
@@ -43,7 +44,7 @@ Miten löydetään tehokkaasti nopein/lyhin reitti verkossa kahden pisteen väli
 Toteuta **vähintään kahden** eri reitinhakualgoritmin vertailu. Näistä **korkeintaan toinen** saa olla [Dijkstra](https://fi.wikipedia.org/wiki/Dijkstran_algoritmi) tai [A](https://fi.wikipedia.org/wiki/A*-algoritmi)\* koska Dijkstra opitaan harjoitustyön esitetoihin kuuluvalla Tira-kurssilla, ja A* on toteutukseltaan erittäin lähellä Dijkstraa. 
 
 Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
-- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [tieteellinen paperi täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
+- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [täältä](https://zerowidth.com/2013/a-visual-explanation-of-jump-point-search/). [Tieteellinen paperi löytyy täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
   - Soveltuu vain pikselikartoille. Pikselikartalla on kahdeksan etenemissuuntaa ja kaksi mahdollista painoa, kaaren paino riippuu siitä kuljetaanko seuraavaan solmuun suoraan vai viistottain. 
   - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
 - [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf), joka on astetta haastavampi.
@@ -179,8 +180,11 @@ Yun Nie, Wenqi Hou ja Yicheng An ovat kirjoittaneet [lyhyen artikkelin lähestym
 
 #### Battle sheep
 [Battle Sheep](https://www.lautapelit.fi/product/20852/battle-sheep) on hauska vaihtoehto klassikkopeleille. 
-Pelilaudan ei tarvitse olla muokattava, kuten lautapelissä, vaan voit käyttää sopivaa kiinteää pelilautaa. Tähän peliin tarvitaan 
+Pelilaudan ei tarvitse olla muokattava, kuten lautapelissä, vaan voit käyttää sopivaa kiinteää pelilautaa. Tähän peliin tarvitaan mielellään 
 graafinen käyttöliittymä, jotta pelaaminen on sujuvaa.
+
+#### Pentago
+Myös [Pentago](https://www.martinex.fi/peliko-pentago) on mielenkiintoinen uutuuspeli, jonka voi toteuttaa mimimaxilla. Ihmispelaajalle on vaativaa miettiä eteenpäin siirtoja, joissa käännetään pelilaudan osia, joten tekoälyllä on mahdollisuus menestyä. Toisaalta pelissä on alkuun peräti 36*8 = 288 siirtovaihtoehtoa. Jo neljän seuraavan siirron laskemiseen (kaksi siirtoparia) tarvitaan tehokkaita ratkaisuja.
 
 #### Kivi-sakset-paperi
 Kivi-sakset-paperi on kaikille tuttu peli, jota ei yleisesti voi pelata hyvin tai huonosti. Näimpä (tehokasta) tekoälyä pelille **ei** voi toteuttaa
