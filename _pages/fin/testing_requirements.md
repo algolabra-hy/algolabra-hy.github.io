@@ -68,5 +68,4 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 {% include typo_instructions_fin.md %}
 
 
-# Lisähuomautukset
-[^1]: Tälläiset tekniikat voivat olla esimerkiksi empiirinen testaus, [integraatio](https://en.wikipedia.org/wiki/Integration_testing) testaus, [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testaus, [invarianttitestaus]({% link _pages/fin/invariant_testing.md %}) tai [suorituskykytestaus]({% link _pages/fin/performance_testing.md %}). **Huomaa** kuitenkin että näitä kaikkia ei vaadita. Tärkeintä on tehdä omalle harjoitustyölle sopivat testit, ohjaaja auttaa tarvittaessa.   
+
