@@ -146,7 +146,7 @@ Jos peli ei ole tuttu, katso [Connect Four Wikipediasta](https://en.wikipedia.or
 **Tämä on hyvä aihe**, jos haluat käyttää suurimman osan työajastasi juuri minimax-algoritmin tehostamiseen. Tutkittavien siirtojen generointi ja 
 siirtojen toteuttaminen on Connect4:ssä yksinkertaisempaa kuin monessa muussa pelissä, jonka seurauksena voit panostaa laskennan nopeuttamiseen.
 
-Pelisiirtojen etsimiseen ja koodisi testaamiseen voit käyttää jotain netistä löytyvää valmista connect 4 työkalua. Esim. [tätä](https://connect4.gamesolver.org/)
+Pelin tutkimiseen ja esimerkiksi testaamiseen tarvittavien varmaan voittoon johtavien pelitilanteiden laatimiseen voit käyttää [tätä täydellisesti pelaavaa tekoälyä](https://connect4.gamesolver.org/).
 
 **Lisävaatimukset.**
 Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
