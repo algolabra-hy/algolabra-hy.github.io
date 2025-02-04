@@ -71,7 +71,7 @@ When implementing the code, **do not** attempt to create a separate "graph" obje
 
 Ready-made maps can be found, for example, on the [Moving AI Lab](http://www.movingai.com/benchmarks/) website, in the [Shortest-Path Lab repository](https://bitbucket.org/shortestpathlab/benchmarks/src/master/grid-maps/), or from the [National Land Survey of Finland maps](http://kartat.kapsi.fi/). Note that in Moving AI’s grid maps, the reported distances are computed so that the path avoids the corner of an obstacle pixel rather than cutting diagonally across and partially passing through the obstacle pixel.  
 
-Public transportation [routes / schedules](https://developers.google.com/transit/gtfs/)), [Digitransit maps](https://digitransit.fi/en/developers/), and [open map data](https://www.openstreetmap.org) have also been popular sources for ready-made maps.
+Public transportation ([routes / schedules](https://developers.google.com/transit/gtfs/)), [Digitransit maps](https://digitransit.fi/en/developers/), and [open map data](https://www.openstreetmap.org) have also been popular sources for ready-made maps.
 
 Some maps include distance data for various routes, which can be useful for testing. If your algorithm returns the correct path length for multiple sufficiently long and diverse routes, it probably finds the correct path. However, for example, when testing JPS, you must also examine that the processed jump points are correct. There may be errors in the algorithm that cause unnecessary computations, even if the shortest path is found.
 
