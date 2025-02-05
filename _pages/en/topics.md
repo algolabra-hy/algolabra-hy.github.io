@@ -151,6 +151,67 @@ In minimax-based Connect4 projects, the following optimizations are required:
 
 **Note** that in iterative deepening, you cannot store move values in the hash table and return them in later iterations. You only can store information about the best move in the state. Values computed in earlier iterations are not valid because the heuristic value changes as deeper computations are performed. The same game state can be reached through multiple move sequences also within the same iteration, but due to alpha-beta pruning, the computed values are often not exact but rather upper or lower bounds of the true values. Therefore, the value computed previously cannot be directly used even when the search depth is the same. All valid moves must be investigated unless an alpha-beta cutoff occurs, and the move previously estimated best can only be used for move ordering.
 
+#### Othello / Reversi
+
+In Othello, you have an 8 × 8 board. The player with the most pieces on the board when the game ends wins the game.
+
+**Useful Tips**
+Compared to chess, for example, evaluating a game state meaningfully in Othello is difficult. However, the same challenge applies to a human player as well.
+Guidance on designing a heuristic evaluation function can be found, for example, in:
+- [Kartik Kukreja’s blog](https://kartikkukreja.wordpress.com/2013/03/30/heuristic-function-for-reversiothello/).
+[Vaishnavi Sannidhanam and Muthukaruppan Annamalai’s course project](https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf)
+
+Besides minimax, you can also use [Monte Carlo Tree Search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) to decide the moves without an evaluation function.
+
+#### 2048
+[2048](https://en.wikipedia.org/wiki/2048_(video_game)) differs from the previous games in that it features only one player and a random element. [Expectiminimax algorithm](https://en.wikipedia.org/wiki/Expectiminimax) applies to such problems, modified so that instead of two players, there is one player and a random event. Good results have also been achieved using minimax, where the random event is treated as the opponent, even though this approach assumes that a new number always appears in the worst possible location with the worst possible value.
+
+If you take a model for the heuristic evaluation function from somewhere, note that the same function might not be ideal for both minimax and expectiminimax. With minimax, a greater search depth can be achieved through alpha-beta pruning, so, for example, the number of free squares better predicts success. A good heuristic function, in any case, considers both the number of free spaces and the distribution of values.
+Yun Nie, Wenqi Hou, and Yicheng An have written a [short article on the approaches and heuristics](https://cs229.stanford.edu/proj2016/report/NieHouAn-AIPlays2048-report.pdf).
+
+#### Battle sheep
+
+[Battle Sheep](https://www.lautapelit.fi/product/20852/battle-sheep) is a fun alternative to classic games. The board doesn't need to be modifiable like in the board game; you can use an appropriate fixed board. A graphical user interface is highly recommended for this game to ensure smooth gameplay.
+
+#### Pentago
+[Pentago](https://www.martinexshop.com/peliko-pentago) is also an interesting new game that can be implemented using minimax. It is challenging for human players to plan moves that involve rotating parts of the board, so the AI has a good opportunity to excel. On the other hand, at the start, there are as many as 36*8 = 288 possible moves. Even computing only four moves ahead (two pairs of moves) requires efficient solutions.
+
+#### Rock-Paper-Scissors
+
+Rock-paper-scissors is a game familiar to everyone that generally cannot be played well or poorly. An AI for the game cannot be implemented using the minimax algorithm because it assumes that the opponent always makes the best counter-move, which means that every move you make leads to a loss and is equally bad. Instead, develop an AI that tries to learn its opponent's playing style and perform well against it. One way to learn an opponent's style is to use [Markov chains](https://arxiv.org/pdf/2003.06769) of various orders (see also the section on [computational creativity]({% link _pages/en/topics.md %}#machine-learning)). Other models of the opponent's behavior can also be added to this framework. **It is advisable to discuss this topic with your supervisor if you are interested**.
+
+#### 15 Puzzle
+[The 15 Puzzle](https://en.m.wikipedia.org/wiki/15_Puzzle) is a challenging problem, and solving it can take a significant amount of time in the worst-case scenario, especially with a weak heuristic. The solution should primarily utilize the [IDA* algorithm](https://en.wikipedia.org/wiki/Iterative_deepening_A*). Discuss with your supervisor if you wish to use an alternative approach. Heuristic distance functions suitable for this puzzle are described, for example, on [Michael Kim’s blog](https://michael.kim/blog/puzzle). More information on the IDA* algorithm can be found on, for instance, the [Geeks for Geeks website](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/).
+
+#### Minesweeper
+Information on Minesweeper solvers suitable for this course can be found in [David Becerrar's bachelor's thesis](https://dash.harvard.edu/handle/1/14398552). If you are using Java in your project, you can implement the solver/assistant interface using the provided [Minesweeper project template](https://github.com/TiraLabra/minesweeper). If you use the ready-made Java template, clearly indicate in the code comments which parts are your code and which belong to the template. Do not modify the template; instead, write your code in new classes/methods.
+
+---
+
+## DPLL
+
+[The Boolean satisfiability problem](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) is central to theoretical and applied computer science. Modern implementations of so-called CDCL algorithms (SAT solvers) are capable of determining the satisfiability of formulas containing millions of variables. Such algorithms are used in many [practical applications](https://en.wikipedia.org/wiki/SAT_solver#Applications); for example, efficient SAT solvers are essential in verifying the correctness of various circuits.
+Implementing an efficient CDCL algorithm is too demanding for a course project. Instead, in this topic we will study its predecessor, the [DPLL algorithm](https://en.wikipedia.org/wiki/DPLL_algorithm).
+
+### Detailed specification
+Implement a program that reads a propositional logic formula in conjunctive normal form (CNF) from a [DIMACS](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS) formatted file and returns either a satisfying truth assignment or a confirmation that no such assignment exists. The program must use the DPLL algorithm.
+The program must implement [unit propagation](https://en.wikipedia.org/wiki/Unit_propagation) and [pure literal elimination](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/preprocessing.html#pure-literal-elimination). A more detailed explanation of the algorithm can be found [here](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html). The data structures required for handling the formula must be implemented from scratch. C++ is the best language for implementing this topic.
+
+### Useful tips
+You can test the correctness of your algorithm by comparing its results with those of a CDCL SAT solver. Suitable options for this include [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) and [Kissat](https://github.com/arminbiere/kissat). Both repositories also contain test formulas: [CaDiCaL tests](https://github.com/arminbiere/cadical/tree/master/test/cnf), [Kissat tests](https://github.com/arminbiere/kissat/tree/master/test/cnf).
+Notice that both CaDiCaL and Kissat are highly optimized implementations of the CDCL algorithm, and your solver will not come close to their efficiency within the scope of this course.
+
+You can generate additional test formulas using tools like [CNFGen](https://massimolauria.net/cnfgen/).
+
+**Additional Challenge**
+If you want an extra challenge, you can explore the [2-watched literal technique](https://www.youtube.com/watch?v=n3e-f0vMHz8) for implementing unit propagation efficiently.
+Without the 2-watched literal technique, your program will likely only be able to solve formulas with around 100 variables. This is sufficient for the course project, but you should adjust your test inputs accordingly.
+Further optimizations for your algorithm can be found in the [Aalto University course materials](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/cdcl.html). A particularly significant (but challenging) optimization is learning conflict clauses and performing non-chronological backjumping.
+
+Keep in mind that SAT solvers can be used to solve various problems by first encoding them in propositional logic. Can you make your DPLL algorithm efficient enough to solve [Sudoku puzzles](https://sat.inesc-id.pt/~ines/publications/aimath06.pdf)?
+
+---
+
 
 
 
