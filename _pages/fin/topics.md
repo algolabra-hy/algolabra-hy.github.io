@@ -218,7 +218,7 @@ aiheessa tutkimme sen edeltäjää, [DPLL](https://en.wikipedia.org/wiki/DPLL_al
 ### Tarkempi määrittely
 Toteuta ohjelma, joka lukee propositioloogisen kaavan konjunktiivisessa 
 normaalimuodossa [DIMACS](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS) tiedostomuodossa 
-ja palauttaa joko sen toteuttavan totuusjakelun, tai tiedon siitä, ettei tälläistä jakelua ole. Ohjelman pitää käyttää DPLL algoritmia. 
+ja palauttaa joko sen toteuttavan totuusjakauman, tai tiedon siitä, ettei tälläistä jakaumaa ole. Ohjelman pitää käyttää DPLL algoritmia. 
 
 Ollakseen hyväksyttävä ohjelman täytyy toteuttaa [yksikköpropagaatio](https://en.wikipedia.org/wiki/Unit_propagation) ja [
 puhtaan literaalin poisto](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/preprocessing.html#pure-literal-elimination). 
