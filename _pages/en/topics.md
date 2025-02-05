@@ -38,8 +38,8 @@ Note that the suggestions below are only to help you get started. A key part of 
 - [Encryption and Security]({% link _pages/en/topics.md %}#encryption-and-security)
 - [Signal Processing]({% link _pages/en/topics.md %}#signal-processing)
 - [Container packing]({% link _pages/en/topics.md %}#container-packing)
-- [Regular expressions]({% link _pages/en/topics.md %}#compiler-or-interpreter-for-regular-expressios)
-- [Spell checker]({% link _pages/en/topics.md %}#Spell-checker)
+- [Regular expressions]({% link _pages/en/topics.md %}#compiler-or-interpreter-for-regular-expressions)
+- [Spell checker]({% link _pages/en/topics.md %}#spell-checker)
 - [Scientific calculator]({% link _pages/en/topics.md %}#scientific-calculator)
 
 ---
@@ -293,7 +293,7 @@ Implement a calculator that computes the value of a given mathematical expressio
 
 ---
 
-## Signal Processing (Image, Sound)
+## Signal Processing
 Implement one or more signal processing algorithms depending on their complexity. Many signal-processing algorithms utilize matrix operations and linear algebra, so familiarity with these concepts will be beneficial. The program should produce output (visualization or sound) that even someone unfamiliar with the algorithm can observe to ensure the program is functioning roughly as intended. Previous topics have included, for example, identifying the strongest frequency of a signal and/or noise filtering or a guitar tuner using the [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform).
 
 ---
