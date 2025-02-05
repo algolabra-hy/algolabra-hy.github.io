@@ -38,7 +38,7 @@ Note that the suggestions below are only to help you get started. A key part of 
 - [Encryption and Security]({% link _pages/en/topics.md %}#encryption-and-security)
 - [Signal Processing]({% link _pages/en/topics.md %}#signal-processing)
 - [Container packing]({% link _pages/en/topics.md %}#container-packing)
-- [Regular expressions]({% link _pages/en/topics.md %}#compiler-or-interpreter-for-regular-expressions)
+- [Regular expressions]({% link _pages/en/topics.md %}#interpreter-or-compiler-for-regular-expressions)
 - [Spell checker]({% link _pages/en/topics.md %}#spell-checker)
 - [Scientific calculator]({% link _pages/en/topics.md %}#scientific-calculator)
 
