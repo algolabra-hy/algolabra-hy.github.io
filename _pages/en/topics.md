@@ -129,10 +129,10 @@ Do not first implement the game logic and AI for a 3 × 3 board. Everything need
 
 A chess game played on an 8 × 8 board with standard rules, where you may choose to omit some or all of the following features:
 
-    Castling
-    En passant
-    Pawn promotion
-    Stalemate
+- Castling
+- En passant
+- Pawn promotion
+- Stalemate
 
 Your project’s heuristic function should evaluate, in addition to material count, the placement of pieces on the board. For the UI, you can use the [AI platform]({% link _pages/en/ai_platform.md %}) provided for the project.
 
