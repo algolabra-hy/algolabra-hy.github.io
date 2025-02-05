@@ -187,18 +187,18 @@ graafinen käyttöliittymä, jotta pelaaminen on sujuvaa.
 Myös [Pentago](https://www.martinex.fi/peliko-pentago) on mielenkiintoinen uutuuspeli, jonka voi toteuttaa mimimaxilla. Ihmispelaajalle on vaativaa miettiä eteenpäin siirtoja, joissa käännetään pelilaudan osia, joten tekoälyllä on mahdollisuus menestyä. Toisaalta pelissä on alkuun peräti 36*8 = 288 siirtovaihtoehtoa. Jo neljän seuraavan siirron laskemiseen (kaksi siirtoparia) tarvitaan tehokkaita ratkaisuja.
 
 #### Kivi-sakset-paperi
-Kivi-sakset-paperi on kaikille tuttu peli, jota ei yleisesti voi pelata hyvin tai huonosti. Näimpä (tehokasta) tekoälyä pelille **ei** voi toteuttaa
-minimax algoritmilla. Sen sijaan tässä projektissa tehdään oppiva tekoäly joka pyrkii oppimaan vastustajansa pelityylin ja 
+Kivi-sakset-paperi on kaikille tuttu peli, jota ei yleisesti voi pelata hyvin tai huonosti. Tekoälyä pelille **ei** voi toteuttaa
+minimax algoritmilla, koska siinä oletetaan vastustajan tekevän aina parhaan vastasiirron, jolloin jokainen oma siirto johtaa yhtä lailla tappioon. Sen sijaan tässä projektissa tehdään oppiva tekoäly joka pyrkii oppimaan vastustajansa pelityylin ja 
 pelaamaan hyvin sitä vastaan. Yksi tapa oppia toisen pelityyli on käyttää useamman eri asteen [Markovin ketjuja](https://arxiv.org/pdf/2003.06769) (katso myös kohta 
 [laskennallisesta luovuudesta]({% link _pages/fin/topics.md %}#koneoppiminen)). 
-Siihen voi yhdistää muitakin malleja vastustajan toimminnalle. *Kannattaa jutella ohjaajan kanssa, jos tämä aihe kiinnostaa.*
+Tähän useaa teloälyä vertailevaan kehykseen voi yhdistää muitakin malleja vastustajan toimminnalle. *Kannattaa jutella ohjaajan kanssa, jos tämä aihe kiinnostaa.*
 
 #### 15-peli
 [15-peli](https://en.m.wikipedia.org/wiki/15_Puzzle) on haastava ratkaistava, pelin ratkaisu vie pahimmassa tapauksessa paljon aikaa ainakin heikolla heuristiikalla. 
 Ratkaisussa tulee lähtökohtaisesti käyttää [IDA* -algoritmia](https://en.wikipedia.org/wiki/Iterative_deepening_A*). 
 Keskustele ohjaajan kanssa jos haluat käyttää jotain muuta. Tähän peliin soveltuvista heuristisista 
 etäisyysfunktioista kerrotaan esim. [Michael Kimin blogissa](https://michael.kim/blog/puzzle).
-Lisää tietoa IDA* algoritmista löytyy esim [geeks for geeksin](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/) sivulta. 
+Lisää tietoa IDA*-algoritmista löytyy esim [geeks for geeksin](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/) sivulta. 
 
 #### Miinaharava
 Tälle kurssille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Becerran kandidaatin tutkielmasta](https://dash.harvard.edu/handle/1/14398552). Jos käytät projektissa Javaa, voit toteuttaa ratkaisijan / auttajan käyttöliittymän valmiilla [Miinaharavan projektipohjalla](https://github.com/TiraLabra/minesweeper). Jos käytät valmista Java-pohjaa, kerro koodin kommenteissa selvästi mikä on omaa koodiasi, ja mikä on pohjaa. Älä muokkaa pohjaa, vaan kirjoita oma koodisi omaan luokkaansa / metodiinsa.
