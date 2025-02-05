@@ -35,7 +35,7 @@ Note that the suggestions below are only to help you get started. A key part of 
   - Computational creativity, text or music generation
   - Image recognition 
   - Generating dungeons
-- [Encryption and Security]({% link _pages/en/topics.md %}#encryption and security)
+- [Encryption and Security]({% link _pages/en/topics.md %}#encryption-and-security)
 - [Signal Processing]({% link _pages/en/topics.md %}#signal-processing)
 - [Container packing]({% link _pages/en/topics.md %}#container-packing)
 - [Regular expressions]({% link _pages/en/topics.md %}#compiler-or-interpreter-for-regular-expressios)
