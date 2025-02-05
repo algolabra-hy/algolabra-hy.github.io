@@ -260,8 +260,8 @@ Uutta materiaalia tuotetaan näiden sääntöjen pohjalta.
 Toteuta ohjelma, joka lukee harjoitusdataa, oppii siitä sekvenssejä ja generoi niiden perusteella  
 uusia sekvenssejä käyttäjän kehotteiden perusteella. Tällä kurssilla suosittelemme käyttämään 
 [markovin ketjuja](https://en.wikipedia.org/wiki/Markov_chain) jonka avulla voidaan onnistuneesti tuottaa esimerkiksi musiikkia tai 
-luonnollisen kielen kaltaisia sanoja tai [lauseita](https://algoritmaonline.com/text-generating-with-markov-chains/). Ketju tallettaa 
-harjoitusdatansa [trie](https://www.geeksforgeeks.org/trie-insert-and-search/#:~:text=Definition%3A%20A%20trie%20(derived%20from,%2C%20are%2C%20bat%2C%20bad.)) 
+luonnollisen kielen kaltaisia sanoja tai lauseita. Ketju tallettaa 
+harjoitusdatansa [trie](https://en.wikipedia.org/wiki/Trie) 
 tietorakenteeseen josta voidaan tehokkaasti etsiä mahdollisia jatkoja annetulle syöttelle. 
 
 Toteuta itse trie-tietorakenne sanojen / lauseiden / sävel- / sointusekvenssien tallettamiseen. 
