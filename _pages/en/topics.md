@@ -203,7 +203,7 @@ Notice that both CaDiCaL and Kissat are highly optimized implementations of the 
 
 You can generate additional test formulas using tools like [CNFGen](https://massimolauria.net/cnfgen/).
 
-**Additional Challenge**
+### Additional Challenge
 If you want an extra challenge, you can explore the [2-watched literal technique](https://www.youtube.com/watch?v=n3e-f0vMHz8) for implementing unit propagation efficiently.
 Without the 2-watched literal technique, your program will likely only be able to solve formulas with around 100 variables. This is sufficient for the course project, but you should adjust your test inputs accordingly.
 Further optimizations for your algorithm can be found in the [Aalto University course materials](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/cdcl.html). A particularly significant (but challenging) optimization is learning conflict clauses and performing non-chronological backjumping.
