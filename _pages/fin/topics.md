@@ -289,7 +289,7 @@ Tarvitaan sopivaa dataa, joka muunnetaan automaattisesti ohjelman käyttämään
 
 **Jos tämä aihe kiinnostaa, kannattaa jutella ohjaajan kanssa jo ennen työn aloittamista.** 
 
-# Hahmontunnistus
+### Hahmontunnistus
 #### Tarkempi määrittely 
 Toteuta ohjelma, joka harjoitusdatan perusteella oppii tunnistamaan jotakin kuvia. Lopullinen ohjelma 
 lukee ensin harjoitusdatan, oppii sen perusteella tunnistamaan uusia, entuudestaan tuntemattomia kuvia. 
@@ -317,8 +317,8 @@ Lisää materiaalia neuroverkoista:
 - [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)in erittäin hyvin tehdyt videot neuroverkoista. 
 - [Deep Learning](https://www.deeplearningbook.org/) oppikirja ns. syväoppimisesta. **Huom** vaikka syväoppiminen on "aidoissa" sovelluksissa useimmin käytetty tekniikka, on syväoppivan verkon toteuttaminen huomattavasti haastavampaa kuin tältä harjoitustyöltä vaaditaan. 
 
-
-# Luolastojen generointi
+---
+## Luolastojen generointi
 #### Tarkempi määrittely
 Toteuta ohjelma, joka luo jonkinlaisen luolaston, tai kartan dynaamisesti. 
 Luolaston generointi voi olla joko etukäteen tapahtuva tai dynaamisesti pelin aikana pelaajan liikkumisen mukaan kehittyvä. 
