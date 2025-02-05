@@ -368,9 +368,8 @@ kontti mahdollisimman tehokkaasti, jos tiedetään pakettien määrä ja koot. T
 
 ### Säännöllisten lausekkeiden tulkki tai kääntäjä
 
-Toteuta ns. tulkki, eli ohjelma joka sovittaa [säännöllistä lauseketta](https://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions) 
-merkkijonoon ja kertoo, kuuluuko se lausekkeen määräämään kieleen. Toteuta myös [kääntäjä](https://www.geeksforgeeks.org/regular-expression-to-dfa/) 
-joka annetun säännölisen lausekkeen perusteella tuottaa [DFA](https://en.wikipedia.org/wiki/Deterministic_finite_automaton):n joka hyväksyy samat merkkijonot, kuin lauseke. 
+Toteuta tulkki, eli ohjelma joka sovittaa [säännöllistä lauseketta](https://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions) 
+merkkijonoon ja kertoo, kuuluuko se lausekkeen määräämään kieleen. Vaihtoehtoisesti voit toteuttaa [kääntäjän](https://www.geeksforgeeks.org/regular-expression-to-dfa/), joka annetun säännölisen lausekkeen perusteella tuottaa [DFA:n](https://en.wikipedia.org/wiki/Deterministic_finite_automaton), joka hyväksyy samat merkkijonot, kuin lauseke. 
 
 
 ### Kirjoitusvirheiden korjaaja
