@@ -158,7 +158,7 @@ In Othello, you have an 8 × 8 board. The player with the most pieces on the boa
 Compared to chess, for example, evaluating a game state meaningfully in Othello is difficult. However, the same challenge applies to a human player as well.
 Guidance on designing a heuristic evaluation function can be found, for example, in:
 - [Kartik Kukreja’s blog](https://kartikkukreja.wordpress.com/2013/03/30/heuristic-function-for-reversiothello/).
-[Vaishnavi Sannidhanam and Muthukaruppan Annamalai’s course project](https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf)
+- [Vaishnavi Sannidhanam and Muthukaruppan Annamalai’s course project](https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf)
 
 Besides minimax, you can also use [Monte Carlo Tree Search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) to decide the moves without an evaluation function.
 
@@ -170,7 +170,7 @@ Yun Nie, Wenqi Hou, and Yicheng An have written a [short article on the approach
 
 #### Battle sheep
 
-[Battle Sheep](https://www.lautapelit.fi/product/20852/battle-sheep) is a fun alternative to classic games. The board doesn't need to be modifiable like in the board game; you can use an appropriate fixed board. A graphical user interface is highly recommended for this game to ensure smooth gameplay.
+[Battle Sheep](https://en.lautapelit.fi/product/20852/battle-sheep) is a fun alternative to classic games. The board doesn't need to be modifiable like in the board game; you can use an appropriate fixed board. A graphical user interface is highly recommended for this game to ensure smooth gameplay.
 
 #### Pentago
 [Pentago](https://www.martinexshop.com/peliko-pentago) is also an interesting new game that can be implemented using minimax. It is challenging for human players to plan moves that involve rotating parts of the board, so the AI has a good opportunity to excel. On the other hand, at the start, there are as many as 36*8 = 288 possible moves. Even computing only four moves ahead (two pairs of moves) requires efficient solutions.
