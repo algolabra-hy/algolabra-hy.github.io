@@ -249,7 +249,7 @@ aiheita. Monissa koneoppimiseen liittyvissä aiheissa kannattaa muistaa, että a
 niiden tuottama tulos riippuu osaksi myös siitä harjoitusdatasta, jota niille syötetään. Täten niiden oikeellisuuden 
 varmistamiseen tarvitaan hyvin suunniteltuja [testejä]({% link _pages/fin/testing_frontpage.md %}) joissa käytetään [edustavia]({% link _pages/fin/testing_representative_inputs.md %}) syötteitä.
 
-# Laskennallinen luovuus
+### Laskennallinen luovuus
 Niin sanojen (esim. nimigeneraattori), lauseiden kuin musiikin tuottaminen algoritmisesti onnistuu periaatteessa samalla tavalla. 
 Ohjelma lukee ensin harjoitusdatan ja opettelee siitä erilaisia sanojen / lauseiden / sävel- / sointusekvenssejä. 
 Uutta materiaalia tuotetaan sitten tarkastelemalla tämänhetkistä tekstiä tai musiikkia, ja lisäämällä siihen jatkoa harjoitusdatasta opittujen 
