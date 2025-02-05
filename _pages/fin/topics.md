@@ -352,7 +352,7 @@ vaihtamiseen tai yksittäisten merkkien korvaamiseen aina jollain tietyllä merk
 **Vaihtoehtoisesti** voit toteuttaa ohjelman joka **murtaa** (eli purkaa tietämättä siihen tarvittavaa avainta) salauksia. Vaihtosalaukseen perustuvan 
 salakirjoituksen saa murrettua sanaston avulla merkkien frekvenssejä analysoimalla, jos teksti on riittävän pitkä ja tiedetään mitä kieltä se on. 
 Ratkaisuksi käy peruuttava haku, joka kokeilee korvata salattuja merkkejä siinä järjestyksessä, mitkä frekvenssien perusteella ovat luultavimpia. 
-Sanaston talletukseen sopii [trie](https://www.geeksforgeeks.org/introduction-to-trie-data-structure-and-algorithm-tutorials/#:~:text=Trie%20data%20structure%20is%20defined,finding%20something%20or%20obtaining%20it.)-tietorakenne. Koska mikään sanasto ei ole täydellinen, pitää peruuttava haku toteuttaa niin, että hyväksytään tietty määrä virheellisiltä vaikuttavia sanoja.
+Sanaston talletukseen sopii [trie](https://en.wikipedia.org/wiki/Trie)-tietorakenne. Koska mikään sanasto ei ole täydellinen, pitää peruuttava haku toteuttaa niin, että hyväksytään tietty määrä virheellisiltä vaikuttavia sanoja.
 
 ---
 ## Muita aiheita
