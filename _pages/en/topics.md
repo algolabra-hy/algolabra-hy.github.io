@@ -225,7 +225,7 @@ For this course, we recommend using [Markov chains](https://en.wikipedia.org/wik
 , a data structure that efficiently finds possible continuations for a given input.
 You must implement the trie data structure for storing word, sentence, melody, or chord sequences. All functions of the program must be implemented so that the order of the Markov chain used for generation is arbitrary. In other words, separate code should not be written for different orders. You may use existing libraries and external tools for preprocessing training data, playing or notating melodies, etc.
 
-### Useful tips
+#### Useful tips
 A Markov chain is a process where each state is determined probabilistically based on the previous states. In this case, a single state can be a character, word, or note. The first state is either randomly chosen or provided by the user, and subsequent states are chosen probabilistically according to the rules learned from the training data. In a first-order Markov chain, the value of each state depends only on the previous state, i.e., the last generated character, word, or note. Similarly, in a second-order Markov chain, the state depends on the two most recent states in the generation process.
 Note that implementing a second-order Markov chain requires storing all consecutive triplets from the training data along with their frequencies so that for each pair of most recent states, the possible successors and their probabilities can be determined.
 Try generating content starting with a first-order chain, and compare the results at different orders. The next character, word, or note is chosen based on the probabilities learned from the training data. To generate sensible (or interesting) sentences, at least a second-order Markov chain is required. Music generated with a first-order chain will also be quite random, although it follows some scale as long as the training data is consistent with respect to the scale.
@@ -302,7 +302,7 @@ Implement one or more signal processing algorithms depending on their complexity
 ### Container Packing
 The shipping company NopsaToimitus wants to optimize the space used in container transportation. Design a method to fill one or more containers as efficiently as possible, given the number and sizes of the packages. This topic requires a three-dimensional representation of the containers on the screen in order to assess the final result.
 
-###Interpreter or Compiler for Regular Expressions
+### Interpreter or Compiler for Regular Expressions
 Implement an interpreter, a program that matches a [regular expression](https://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions) to a string and determines whether it belongs to the language defined by the expression. Alternatively, implement a [compiler](https://www.geeksforgeeks.org/regular-expression-to-dfa/) that, based on a given regular expression, generates a [DFA](https://en.wikipedia.org/wiki/Deterministic_finite_automaton)
  that accepts the same strings as the expression.
 
