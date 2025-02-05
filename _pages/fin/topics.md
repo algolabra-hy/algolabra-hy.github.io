@@ -264,20 +264,18 @@ luonnollisen kielen kaltaisia sanoja tai lauseita. Ketju tallettaa
 harjoitusdatansa [trie](https://en.wikipedia.org/wiki/Trie) 
 tietorakenteeseen josta voidaan tehokkaasti etsiä mahdollisia jatkoja annetulle syöttelle. 
 
-Toteuta itse trie-tietorakenne sanojen / lauseiden / sävel- / sointusekvenssien tallettamiseen. 
-Voit käyttää sekä valmiita kirjastoja että ulkoisia ohjelmia opetusdatan esikäsittelyyn, melodian soittamiseen / nuotintamiseen jne.
+Toteuta itse trie-tietorakenne sanojen / lauseiden / sävel- / sointusekvenssien tallettamiseen. Ohjelman kaikki toiminnot tulee toteuttaa niin, että generoinnissa käytetyn Markovin ketjun aste on mielivaltainen. Eri asteita varten ei siis kirjoiteta eri koodia.
+Voit käyttää sekä valmiita kirjastoja että ulkoisia ohjelmia opetusdatan esikäsittelyyn, melodian soittamiseen / nuotintamiseen jne. 
 
 ### Hyödyllisiä ohjeita
 
-Markovin ketju on prosessi, jonka jokainen tila määrittelee todennäköisyyden sitä seuraaville tiloille. 
-Tässä tapauksessa jokainen tila on tämänhetkisen syötteen (sanan, lauseen, musiikin etc.) viimeinen kirjain/sana/nuotti, tai sointu. 
-Siirtyminen seuraavaan tilaan määrittelee mitä lisätään syötteeseen. Niin sanotun *ensimmäisen asteen* markovin ketjun
-kunkin tila riippuu vain edellisestä tilasta, tässä tapauksessa tämähetkisen syötteen viimeisimmästä osasta. Vastaavasti, toisen asteen ketjun tila 
-riippuu kahdesta viimeisimmästä tilasta, eli toisin sanoen tämänhetkisen syötteen kahdesta viimeisimmästä osasta.  
-Huomaa, että esimerkiksi toisen asteen Markovin ketjun toteuttaminen vaatii kaikkien opetusdatassa peräkkäin esiintyvien kolmikoiden tallettamista, 
-jotta tiedetään kullekin viimeisimmälle kaksikolle mahdolliset seuraajat ja niiden todennäköisyydet. 
+Markovin ketju on prosessi, jossa kukin tila määräytyy probabilistisesti edellisten tilojen perusteella. 
+Tässä tapauksessa yksittäinen tila on merkki, sana tai nuotti. Ensimmäinen tila arvotaan tai kysytään käyttäjältä, ja seuraavat tilat arvotaan painotetusti opetusdatasta opittujen sääntöjen mukaisesti. Ensimmäisen asteen markovin ketjun
+kunkin tilan arvo riippuu vain edellisestä tilasta, tässä tapauksessa aiemmin generoidun datan viimeisestä kirjaimesta tms. Vastaavasti toisen asteen ketjun tila 
+riippuu kahdesta viimeisimmästä tilasta generaatiossa.  
+Huomaa, että esimerkiksi toisen asteen Markovin ketjun toteuttaminen vaatii kaikkien opetusdatassa peräkkäin esiintyvien kolmikoiden ja niiden esiintymismäärien tallettamista, jotta tiedetään kullekin viimeisimmälle kaksikolle mahdolliset seuraajat ja niiden todennäköisyydet. 
 
-Kokeile generointia alkaen 1. asteesta ja vertaa tuloksia eri asteilla. Seuraava kirjain, sana tai sävel arvotaan opetusdatasta opittujen 
+Kokeile generointia alkaen 1. asteesta, ja vertaa tuloksia eri asteilla. Seuraava kirjain, sana tai sävel arvotaan opetusdatasta opittujen 
 todennäköisyyksien mukaan. Järkevien - tai hauskojen - lauseiden tuottamiseen tarvitaan minimissään toisen asteen Markovin ketju. 
 Musiikkikin on 1-asteella tuotettuna aika satunnaista, vaikka noudattaa toki jotain sävellajia, kunhan opetusdata on ollut siinä suhteessa konsistenttia. 
 
@@ -289,7 +287,7 @@ Varsinkin tekstiä tuotettaessa tarvitaan paljon harjoitusdataa (kokonaisia kirj
 riittää pienempi määrä opetusdataa, mutta silti niin paljon, että datan syöttäminen käsin olisi kohtuuttoman työlästä. 
 Tarvitaan sopivaa dataa, joka muunnetaan automaattisesti ohjelman käyttämään muotoon.
 
-Jos tämä aihe kiinnostaa, kannattaa jutella ohjaajan kanssa jo ennen työn aloittamista. 
+**Jos tämä aihe kiinnostaa, kannattaa jutella ohjaajan kanssa jo ennen työn aloittamista.** 
 
 # Hahmontunnistus
 #### Tarkempi määrittely 
