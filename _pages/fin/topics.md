@@ -267,7 +267,7 @@ tietorakenteeseen josta voidaan tehokkaasti etsiä mahdollisia jatkoja annetulle
 Toteuta itse trie-tietorakenne sanojen / lauseiden / sävel- / sointusekvenssien tallettamiseen. Ohjelman kaikki toiminnot tulee toteuttaa niin, että generoinnissa käytetyn Markovin ketjun aste on mielivaltainen. Eri asteita varten ei siis kirjoiteta eri koodia.
 Voit käyttää sekä valmiita kirjastoja että ulkoisia ohjelmia opetusdatan esikäsittelyyn, melodian soittamiseen / nuotintamiseen jne. 
 
-### Hyödyllisiä ohjeita
+#### Hyödyllisiä ohjeita
 
 Markovin ketju on prosessi, jossa kukin tila määräytyy probabilistisesti edellisten tilojen perusteella. 
 Tässä tapauksessa yksittäinen tila on merkki, sana tai nuotti. Ensimmäinen tila arvotaan tai kysytään käyttäjältä, ja seuraavat tilat arvotaan painotetusti opetusdatasta opittujen sääntöjen mukaisesti. Ensimmäisen asteen markovin ketjun
@@ -291,12 +291,12 @@ Tarvitaan sopivaa dataa, joka muunnetaan automaattisesti ohjelman käyttämään
 
 ### Hahmontunnistus
 #### Tarkempi määrittely 
-Toteuta ohjelma, joka harjoitusdatan perusteella oppii tunnistamaan jotakin kuvia. Lopullinen ohjelma 
-lukee ensin harjoitusdatan, oppii sen perusteella tunnistamaan uusia, entuudestaan tuntemattomia kuvia. 
+Toteuta ohjelma, joka harjoitusdatan perusteella oppii tunnistamaan jotakin kuvia. Ohjelma 
+lukee ensin harjoitusdatan, ja oppii sen perusteella tunnistamaan uusia, entuudestaan tuntemattomia kuvia. 
 Alla muutama tarkempi aiheidea. Muutkin ovat mahdollisia (juttele ohjaajan kanssa). 
 
 **Kasvojentunnistuksen** voi toteuttaa esimerkiksi [Eigenface](https://en.wikipedia.org/wiki/Eigenface):n avulla. 
-Tähän aiheeseen vaaditaan vähintään kurssi lineaarialgebra ja matriisilaskenta 1+2 käytynä. Jos käsitteet kovarianssimatriisi ja pääkomponenttianalyysi ovat 
+Tähän aiheeseen vaaditaan vähintään kursseja lineaarialgebra ja matriisilaskenta 1+2 vastaavat tiedot. Jos käsitteet kovarianssimatriisi ja pääkomponenttianalyysi ovat 
 tuttuja, ymmärrät varmaan tähän aiheeseen liittyvän matemaattisen teorian. Toteuta vaativia matriisilaskennan operaatioita itse.
 
 **Käsin kirjoitettujen numeroiden tunnistus.** [MNIST](http://yann.lecun.com/exdb/mnist/) on tietokanta, jota käytetään paljon hahmontunnistusmenetelmien 
@@ -305,7 +305,7 @@ jotta työmäärä on kohtuullinen. Joka tapauksessa neuroverkko vastavirta-algo
 
 Neuroverkkoja ennestään tuntemattomalle helpompi ratkaisu on muuntaa MNIST:in harmaasävykuvat mustavalkoisiksi ja käyttää 
 [k:n lähimmän naapurin](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) menetelmää pistejoukkojen etäisyysmitoilla. 
-Tällöin tuntematon kuva luokitellaan samaksi, kuin k sitä lähimmät naapurit. Näin voi myös saavuttaa niin hyvän luokittelutuloksen, 
+Tällöin tuntematon kuva luokitellaan samaksi, kuin enemmistö sen k lähimmästä naapurista on. Näin voi myös saavuttaa niin hyvän luokittelutuloksen, 
 että neuroverkoilla ei ole helppo päästä samaan. Artikkeli [A Modified Hausdorff Distance for Object Matching](https://ieeexplore.ieee.org/document/576361) 
 kertoo muutamasta mahdollisesta etäisyysmitasta. Artikkelissa parhaaksi mainitun mitan D22 lisäksi kannattaa kokeilla ainakin mittaa D23 sellaisenaan ja ilman kerrointa 1/N osakaavassa d6.
 
@@ -314,7 +314,7 @@ Lisää materiaalia neuroverkoista:
 - [Neuroverkkojen testauksesta](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) kertona Sebastian Björkqvistin artikkeli. 
 - [Michael Nielsenin](http://neuralnetworksanddeeplearning.com/chap1.html) kirjoittama arikkeli MNISTin numeroiden tunnistuksesta neuroverkoilla. 
 - [Heli Tuomisen](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) kirjoittama kurssimateriaali neuroverkkojen matematiikasta suomeksi. 
-- [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)in erittäin hyvin tehdyt videot neuroverkoista. 
+- [3Blue1Brownin](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) erittäin hyvin tehdyt videot neuroverkoista. 
 - [Deep Learning](https://www.deeplearningbook.org/) oppikirja ns. syväoppimisesta. **Huom** vaikka syväoppiminen on "aidoissa" sovelluksissa useimmin käytetty tekniikka, on syväoppivan verkon toteuttaminen huomattavasti haastavampaa kuin tältä harjoitustyöltä vaaditaan. 
 
 ---
