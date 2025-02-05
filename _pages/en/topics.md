@@ -211,11 +211,100 @@ Further optimizations for your algorithm can be found in the [Aalto University c
 Keep in mind that SAT solvers can be used to solve various problems by first encoding them in propositional logic. Can you make your DPLL algorithm efficient enough to solve [Sudoku puzzles](https://sat.inesc-id.pt/~ines/publications/aimath06.pdf)?
 
 ---
+## Machine Learning
+Machine learning is a vast field with many topics suitable for a course project. When working on machine learning-related topics, it is important to remember that the algorithms are stochastic, meaning their output depends partly on the training data provided.
+Therefore, ensuring their correctness requires well-designed [tests]({% link _pages/en/testing_frontpage.md %}) that use [representative]({% link _pages/en/testing_representative_inputs.md %}) inputs.
+
+### Computational Creativity
+The algorithmic generation of words (e.g., a name generator), sentences, and music follows the same basic principles.
+The program first reads training data and learns permissible sequences of words, sentences, melodies, or chord progressions. New content is then generated based on these learned rules.
+
+#### Detailed Specification
+Implement a program that reads training data, learns sequences from it, and generates new sequences based on user prompts.
+For this course, we recommend using [Markov chains](https://en.wikipedia.org/wiki/Markov_chain), which can successfully generate music, word-like structures, or natural language sentences. The chain stores its training data in a [trie](https://en.wikipedia.org/wiki/Trie) 
+, a data structure that efficiently finds possible continuations for a given input.
+You must implement the trie data structure for storing word, sentence, melody, or chord sequences. All functions of the program must be implemented so that the order of the Markov chain used for generation is arbitrary. In other words, separate code should not be written for different orders. You may use existing libraries and external tools for preprocessing training data, playing or notating melodies, etc.
+
+### Useful tips
+A Markov chain is a process where each state is determined probabilistically based on the previous states. In this case, a single state can be a character, word, or note. The first state is either randomly chosen or provided by the user, and subsequent states are chosen probabilistically according to the rules learned from the training data. In a first-order Markov chain, the value of each state depends only on the previous state, i.e., the last generated character, word, or note. Similarly, in a second-order Markov chain, the state depends on the two most recent states in the generation process.
+Note that implementing a second-order Markov chain requires storing all consecutive triplets from the training data along with their frequencies so that for each pair of most recent states, the possible successors and their probabilities can be determined.
+Try generating content starting with a first-order chain, and compare the results at different orders. The next character, word, or note is chosen based on the probabilities learned from the training data. To generate sensible (or interesting) sentences, at least a second-order Markov chain is required. Music generated with a first-order chain will also be quite random, although it follows some scale as long as the training data is consistent with respect to the scale.
+
+**Music Generation.** In previous projects, music data has been given to the program as MIDI files, Lilypond sheet music, or abc notation. The Python library music21 offers many useful tools. Music has been generated randomly long before computers, as seen in [Musikalisches Würfelspiel](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel). You can also use [genetic algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm) to create art. However, defining the fitness function required for the algorithm is challenging.
+
+**Amount of Training Data.** To avoid simply repeating the training data as it is, when generating at, for example, the 2nd degree Markov chain, there must be enough learned possible sequences of three words or notes so that, based on the two preceding ones, the third can be chosen in multiple ways sufficiently often. Especially when generating text, a large amount of training data is needed (e.g., entire books, etc.). If generating music or names, a smaller amount of training data is sufficient, but still enough that manually inputting the data would be impractical. Suitable data is required, which can be automatically converted into a format the program can use.
+If this topic interests you, it is advisable to discuss it with your supervisor before starting the project.
+
+### Image recognition
+#### Detailed Specification
+
+Implement a program that learns to recognize images based on training data. The program first reads the training data and then identifies new, previously unknown images. Below are a few specific topic ideas, but other options are also possible (discuss with your supervisor).
+
+**Face Recognition** can be implemented using methods such as [Eigenfaces](https://en.wikipedia.org/wiki/Eigenface). This topic requires knowledge of linear algebra and matrix calculations. If you are familiar with concepts like covariance matrices and principal component analysis, you likely understand the mathematical theory behind this topic. Implement complex matrix operations yourself.
+
+**Handwritten Digit Recognition.** The [MNIST database](http://yann.lecun.com/exdb/mnist/) is widely used for testing pattern recognition methods. In this course, for example, neural networks have been used to classify digits. Discuss with your instructor which prebuilt tools you can use to keep the workload reasonable. In any case, the neural network, including backpropagation and other necessary algorithms, must be implemented by yourself.
+
+A simpler approach for those unfamiliar with neural networks is to convert the MNIST grayscale images into black and white and use the [k-nearest neighbors method](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) with distance measures for point sets.
+In this approach, an unknown image is classified based on the major category of its k nearest neighbors. This method can sometimes achieve classification results that are difficult to match even with neural networks. The article [A Modified Hausdorff Distance for Object Matching](https://ieeexplore.ieee.org/document/576361) describes several possible distance measures. In addition to the D22 measure, which the article highlights as the best, it is also worth testing the D23 measure, both as is and without the 1/N factor in the d6 subformula.
+
+Additional resources on neural networks:
+- [The Neural Blog](https://theneuralblog.com/forward-pass-backpropagation-example/) – An article by Rabindra Lamsal on feedforward networks and their training.
+- [Testing Neural Networks](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) – An article by Sebastian Björkqvist on neural network testing.
+- [Michael Nielsen's article](http://neuralnetworksanddeeplearning.com/chap1.html) on recognizing MNIST digits with neural networks.
+- [Heli Tuominen's Finnish course material](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) on the mathematics of neural networks.
+- [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) – Exceptionally well-made videos explaining neural networks.
+- [Deep Learning](https://www.deeplearningbook.org/) – A textbook on deep learning. Note: While deep learning is the most commonly used technique in real-world applications, implementing a deep learning network is significantly more complex than what is required for this project.
+
+---
+
+## Dungeon Generation
+### Detailed Specification
+Implement a program that dynamically generates a dungeon or map. The dungeon generation can either be precomputed or dynamically developed during gameplay as the player moves. Dungeons are created through a multi-step process. For example, one algorithm can generate rooms, another can create corridors between them, and a third can refine the final appearance. The program must include at least one sufficiently advanced algorithm not covered in the course prerequisites, such as an algorithm for performing [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation).
+
+**Useful Resources:**
+- [Procedurally Generated Dungeons](https://vazgriz.com/119/procedurally-generated-dungeons/)
+- [Tom Stephenson’s blog post](https://www.tomstephensondeveloper.co.uk/post/creating-simple-procedural-dungeon-generation) on dungeon generation
+- [Bowyer–Watson algorithm](https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm) for computing Delaunay triangulations
+
+---
+
+## Encryption and Security
+Cybersecurity is more important today than ever. Encryption can be performed in various ways for different purposes. For example, [RSA encryption](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) is a suitable topic for a project.
+
+### Detailed Specification
+Implement a program that encrypts and decrypts text. In addition to encryption and decryption, the program must generate keys with a length of at least 2048 bits, like in actual RSA encryption. The user can encrypt text up to the length allowed by the key size. You don't need to implement [Padding](https://en.wikipedia.org/wiki/Padding_(cryptography)). The methods required for finding large prime numbers and key generation, such as the [Miller-Rabin algorithm](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test), must be implemented. However, built-in modular exponentiation functions from the programming language can be used for calculations. Miller-Rabin is slow, and on average, hundreds of 1024-bit odd numbers must be tested before finding two probable prime numbers (with 40 iterations of Miller-Rabin).
+To optimize this, generate a list of the first 500 prime numbers in advance and check if the candidate number is divisible by any of them. Only if it is not should the number be passed to the Miller-Rabin test. An efficient algorithm for generating small prime numbers is the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).
+
+Encryption methods that rely on simple transposition of individual words or characters within the text, or substitution, where each character is always replaced with a fixed corresponding character, do **not** meet the requirements of this course.
+
+**Alternatively**, you can implement a program that breaks (i.e., decrypts without knowing the required key) encryptions. For ciphers based on substitution, the encryption can be cracked by analyzing the frequency of characters in the text, provided the text is long enough and the language is known. The solution involves a backtracking search, which attempts to replace encrypted characters in the order of those most likely to occur based on the frequency analysis. A [trie data structure](https://en.wikipedia.org/wiki/Trie) is suitable for storing the vocabulary. Since no vocabulary is complete, the backtracking search should be implemented so that a certain number of seemingly incorrect words are accepted.
+
+---
+
+## Spell Checker
+
+Implement a program that suggests the correct spelling when given a user’s misspelled word. The program can be implemented by storing possible words in a self-implemented [trie data structure](https://en.wikipedia.org/wiki/Trie) and comparing the user’s misspelled string to correctly spelled words using distance metrics. One suitable distance measure for this task is the [Damerau–Levenshtein distance](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance). 
+
+---
+
+## Scientific Calculator
+Implement a calculator that computes the value of a given mathematical expression and possibly assigns the value to a variable. A sufficient number of variables is needed. The expression may include numeric values, variables, basic arithmetic operations, and functions with one (sqrt, sin) or two parameters (min, max). The program should provide a specific error message if the user inputs an incorrect expression, and it should especially not return any value for an incorrect expression. The expression is parsed using the [shunting-yard algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm) and then evaluated.
 
 
+---
 
+## Signal Processing (Image, Sound)
+Implement one or more signal processing algorithms depending on their complexity. Many signal-processing algorithms utilize matrix operations and linear algebra, so familiarity with these concepts will be beneficial. The program should produce output (visualization or sound) that even someone unfamiliar with the algorithm can observe to ensure the program is functioning roughly as intended. Previous topics have included, for example, identifying the strongest frequency of a signal and/or noise filtering or a guitar tuner using the [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform).
 
+---
 
+## Other topics
+### Container Packing
+The shipping company NopsaToimitus wants to optimize the space used in container transportation. Design a method to fill one or more containers as efficiently as possible, given the number and sizes of the packages. This topic requires a three-dimensional representation of the containers on the screen in order to assess the final result.
+
+###Interpreter or Compiler for Regular Expressions
+Implement an interpreter, a program that matches a [regular expression](https://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions) to a string and determines whether it belongs to the language defined by the expression. Alternatively, implement a [compiler](https://www.geeksforgeeks.org/regular-expression-to-dfa/) that, based on a given regular expression, generates a [DFA](https://en.wikipedia.org/wiki/Deterministic_finite_automaton)
+ that accepts the same strings as the expression.
 
 
 {% include typo_instructions_en.md %}
