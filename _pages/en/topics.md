@@ -16,7 +16,7 @@ Note that the suggestions below are only to help you get started. A key part of 
 
 **Ask the instructor for guidance at any stage of the project, starting with topic selection.**
 
-## Suggested topics
+## Suggested Topics
 - [Graphs and pathfinding]({% link _pages/en/topics.md %}#graphs-and-pathfinding)
 - [Data compression]({% link _pages/en/topics.md %}#data-compression) 
 - [Games]({% link _pages/en/topics.md %}#games)
@@ -43,7 +43,7 @@ Note that the suggestions below are only to help you get started. A key part of 
 
 ---
 
-## Graphs and pathfinding
+## Graphs and Pathfinding
 How can the fastest/shortest route between two points in a graph be efficiently found? The graph nodes can be, for example, street addresses, public transportation stops, or coordinates.
 
 ### Detailed Specification
@@ -196,7 +196,7 @@ Implementing an efficient CDCL algorithm is too demanding for a course project. 
 Implement a program that reads a propositional logic formula in conjunctive normal form (CNF) from a [DIMACS](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS) formatted file and returns either a satisfying truth assignment or a confirmation that no such assignment exists. The program must use the DPLL algorithm.
 The program must implement [unit propagation](https://en.wikipedia.org/wiki/Unit_propagation) and [pure literal elimination](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/preprocessing.html#pure-literal-elimination). A more detailed explanation of the algorithm can be found [here](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html). The data structures required for handling the formula must be implemented from scratch. C++ is the best language for implementing this topic.
 
-### Useful tips
+### Useful Tips
 You can test the correctness of your algorithm by comparing its results with those of a CDCL SAT solver. Suitable options for this include [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) and [Kissat](https://github.com/arminbiere/kissat). Both repositories also contain test formulas: [CaDiCaL tests](https://github.com/arminbiere/cadical/tree/master/test/cnf), [Kissat tests](https://github.com/arminbiere/kissat/tree/master/test/cnf).
 Notice that both CaDiCaL and Kissat are highly optimized implementations of the CDCL algorithm, and your solver will not come close to their efficiency within the scope of this course.
 
@@ -224,7 +224,7 @@ For this course, we recommend using [Markov chains](https://en.wikipedia.org/wik
 , a data structure that efficiently finds possible continuations for a given input.
 You must implement the trie data structure for storing word, sentence, melody, or chord sequences. All functions of the program must be implemented so that the order of the Markov chain used for generation is arbitrary. In other words, separate code should not be written for different orders. You may use existing libraries and external tools for preprocessing training data, playing or notating melodies, etc.
 
-#### Useful tips
+#### Useful Tips
 A Markov chain is a process where each state is determined probabilistically based on the previous states. In this case, a single state can be a character, word, or note. The first state is either randomly chosen or provided by the user, and subsequent states are chosen probabilistically according to the rules learned from the training data. In a first-order Markov chain, the value of each state depends only on the previous state, i.e., the last generated character, word, or note. Similarly, in a second-order Markov chain, the state depends on the two most recent states in the generation process.
 Note that implementing a second-order Markov chain requires storing all consecutive triplets from the training data along with their frequencies so that for each pair of most recent states, the possible successors and their probabilities can be determined.
 Try generating content starting with a first-order chain, and compare the results at different orders. The next character, word, or note is chosen based on the probabilities learned from the training data. To generate sensible (or interesting) sentences, at least a second-order Markov chain is required. Music generated with a first-order chain will also be quite random, although it follows some scale as long as the training data is consistent with respect to the scale.
@@ -234,7 +234,7 @@ Try generating content starting with a first-order chain, and compare the result
 **Amount of Training Data.** To avoid simply repeating the training data as it is, when generating at, for example, the 2nd degree Markov chain, there must be enough learned possible sequences of three words or notes so that, based on the two preceding ones, the third can be chosen in multiple ways sufficiently often. Especially when generating text, a large amount of training data is needed (e.g., entire books, etc.). If generating music or names, a smaller amount of training data is sufficient, but still enough that manually inputting the data would be impractical. Suitable data is required, which can be automatically converted into a format the program can use.
 If this topic interests you, it is advisable to discuss it with your supervisor before starting the project.
 
-### Image recognition
+### Image Recognition
 #### Detailed Specification
 
 Implement a program that learns to recognize images based on training data. The program first reads the training data and then identifies new, previously unknown images. Below are a few specific topic ideas, but other options are also possible (discuss with your supervisor).
