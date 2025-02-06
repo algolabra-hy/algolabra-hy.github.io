@@ -26,7 +26,7 @@ toteutetut algoritmit ovat tarpeeksi monimutkaisia, että kaikkia bugeja ei löy
 RSA:han liittyvissä harjoitustöissä realistinen alkulukujen koko ei esimerkiksi ole 13 tai edes 61403. 
 Vakuuttavissa testeissä on siis sekä "ihmiselle ymmärrettäviä" syötteitä, että "realistisia" syötteitä.
 Yleensä vakuuttaviin testeihin vaditaan yksikkötestaamisen lisäksi [edistyneempiä testaustekniikoita]({% link _pages/fin/testing_frontpage.md %}#yksikkötestien-lisäksi). Mieti itse mikä sopisi aiheeseesi ja kysy ohjaajalta tarvittaessa. Tyypillisesti [integraatio](https://en.wikipedia.org/wiki/Integration_testing) 
-tai [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) tetaus riittää. 
+tai [päästä-päähän](https://www.techtarget.com/searchsoftwarequality/definition/End-to-end-testing) testaus riittää. 
 
 ## Testien tarkoituksesta tällä kurssilla
 Tämän kurssin olennaisena osana on kokonaisen projektin, ja sen testien *itsenäinen* suunnittelu ja toteutus.
@@ -59,7 +59,7 @@ Taulukossa sana "metodi" viittaa toimintalogiikan metodeihin.
 | heikko (1)                    |  <span style="font-size:0.9em;">Projektin päämetodeja testataan muutamalla syötteellä. Valittujen syötteiden [edustavuudessa]({% link _pages/fin/testing_representative_inputs.md %}) puutteita.</span>        |
 | keskinkertainen <br> (2-4)           | <span style="font-size:0.9em;">Keskeisimmät metodit on testattu muutamalla [edustavalla]({% link _pages/fin/testing_representative_inputs.md %}) syötteellä. Testien dokumentaatiosta käy ilmi niiden tarkoitus.</span> |
 | tyydyttävä (5-7)                |  <span style="font-size:0.9em;">Kaikki keskeiset metodit on testattu. Käytettävät syötteet ovat edustavia. Testit ovat toistettavia ja selkeitä.</span>       |
-| vakuuttava / erinomainen (8-10) | <span style="font-size:0.9em;">Testauksessa käytetään niitä omaan aiheeseen sopivia tekniikoita[^1] jotka ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat erittäin selkeitä on selkeä. Käytettävät syötteet ovat perusteltuja ja edustavia.</span>  |
+| vakuuttava / erinomainen (8-10) | <span style="font-size:0.9em;">Testauksessa käytetään niitä omaan aiheeseen sopivia tekniikoita jotka ovat oikeelisuuden testaamisen kannalta oleellisia. Testit ovat erittäin selkeitä on selkeä. Käytettävät syötteet ovat perusteltuja ja edustavia.</span>  |
 
 ---
 
