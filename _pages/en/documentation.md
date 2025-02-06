@@ -26,6 +26,7 @@ Answer the following questions in your report:
 4. What remains unclear or has been challenging?
 - Answer this honestly, as you can receive help based on your response.
 5. What will I do next?
+
 You may also include feedback or questions for the course instructors in your weekly report. Questions will be answered as part of the weekly feedback.
 
 **NOTE:**
