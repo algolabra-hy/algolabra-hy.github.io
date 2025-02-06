@@ -84,5 +84,24 @@ The implementation document must include the following:
 - **Use of large language models (ChatGPT, etc.). Mention which model you used and how. If you did not use any, explicitly state that. This is important!**
 - References
 
+### Testing Document
+The testing document must include the following:
+- Unit testing coverage report.
+- What was tested and how?
+- What types of inputs were used for testing?
+- How can the tests be reproduced?
+- Presentation of possible empirical testing results in graphical form (if relevant to the project).
+- It is not sufficient to simply state that testing was done using automated unit tests; concrete details about the tests are required. Examples include:
+  - Tested whether the AI makes the correct moves in a situation where a four-move win is guaranteed. Verified that the moves return a win value of 100,000.
+  - Tested 10 times with randomly selected start and goal points to ensure that JPS finds a path of the same length as Dijkstra’s algorithm.
+  - Both algorithms were used to compress an 8 MB text file, decompress it, and verify that the result matches the original file exactly.
+  
+[More on testing]({% link _pages/en/testing_frontpage.md %})
+
+### User Guide
+How to run the program, and how to use its different functionalities.
+What types of inputs the program accepts.
+
+
 
 {% include typo_instructions_en.md %}
