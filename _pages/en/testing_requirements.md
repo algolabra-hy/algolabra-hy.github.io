@@ -28,7 +28,7 @@ Aim to ensure that for every test you implement, you can explain (at least to yo
 **The instructor is available to help if needed** — reach out if you're struggling to progress with the tests. However, be prepared for the instructor to ask what your method is supposed to do and what size inputs it should handle. You don’t need to have exhaustive answers to these questions before contacting the instructor. Think about them and be ready to explain your perspective to the instructor about why the test development isn't progressing.
 
 ## Grading of the Tests
-The table below provides more detailed guidance on what is required from the tests in the project. However, each project will always be evaluated as a whole, and for example, the difficulty of the topic may slightly influence the evaluation. It is advisable to ask the instructor for help when needed.
+The table below provides more detailed guidance on what is required from the tests in the project. However, each project will always be graded as a whole, and for example, the difficulty of the topic may slightly influence the grading. It is advisable to ask the instructor for help when needed.
  In the table, the word "method" refers to the methods of the functional logic.
 
  ---
