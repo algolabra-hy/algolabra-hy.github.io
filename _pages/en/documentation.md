@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /documentation-en
-title: Dokumentaatio
+title: Documentation
 title_long: Työn aikana tehtävät dokumentit
 lang: en # fi or en
 ref: documentation # same as the markdown filename
