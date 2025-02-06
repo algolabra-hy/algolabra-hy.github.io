@@ -6,7 +6,7 @@ title_long: Työn aikana tehtävät dokumentit
 lang: en # fi or en
 ref: documentation # same as the markdown filename
 ---
-All documents must be submitted either in a GitHub-supported Markdown format or as a .pdf file in your [repository]({% link _pages/en/git.md %}).
+All documents will be submitted either in a GitHub-supported Markdown format or as a .pdf file in your [repository]({% link _pages/en/git.md %}).
 Submissions via email, for example, will not be accepted.
 Place the documents in their own directory at the root of the project and link them to the repository's main page.
 ## Weekly Submissions
