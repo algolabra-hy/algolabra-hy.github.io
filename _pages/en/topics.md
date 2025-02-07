@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /topics-en
-title: Topic suggestions for the project
+title: Topic Suggestions for the Project
 title_long: Topics 
 lang: en # fi or en
 ref: topics # same as the markdown filename do not change 
