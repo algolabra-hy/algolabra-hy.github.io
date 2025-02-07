@@ -35,6 +35,6 @@ In other words, your coursework should include *both* unit tests and more advanc
 ## Additional Material
 - [Pylint]({% link _pages/en/pylint.md %}) is a static analysis tool for Python code that helps maintain code quality.
 - [Testing Neural Networks](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) – A blog post by Sebastian Björkqvist.
-- [Range Minimum Query Example](https://github.com/TiraLabra/Testing-and-rmq) – A repository with examples of testing more complex algorithms.
+- [Range Minimum Query Example](https://github.com/TiraLabra/Testing-and-rmq) – A repository with examples of testing more complicated algorithms.
 
 {% include typo_instructions_en.md %}
