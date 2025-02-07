@@ -28,7 +28,8 @@ While unit tests and representative inputs go a long way, [comprehensive coursew
 - [End-to-End Testing](https://www.browserstack.com/guide/end-to-end-testing)
 - [Invariant Testing]({% link _pages/en/invariant_testing.md %}), and
 - [Performance Testing]({% link _pages/en/performance_testing.md %})
-***Note:** You don’t need to use all of these. The most important thing is to choose the testing methods that best suit your coursework. The course staff can assist.
+
+**Note:** You don’t need to use all of these. The most important thing is to choose the testing methods that best suit your coursework. The course staff can assist.
 Compared to unit tests, correctness and performance tests for more complex features can take a significant amount of time. Therefore, they may not be ideal to run alongside unit tests every time. Instead, a few representative cases (e.g., automatically found ones) can be included in unit tests, while the rest can be executed separately in a dedicated test program.
 In other words, your coursework should include *both* unit tests and more advanced testing methods.
 
