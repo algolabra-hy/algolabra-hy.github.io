@@ -32,6 +32,7 @@ The table below provides more detailed guidance on what is required from the tes
  In the table, the word "method" refers to the methods of the functional logic.
 
  ---
+ 
 | Level (score)                     | Description |
 | :---------------------------------  |--------: |
 | Insufficient/Fail (0)             | <span style="font-size:0.9em;">The main methods of the project are not tested at all, or the tests do not verify correctness-related aspects.</span> |
