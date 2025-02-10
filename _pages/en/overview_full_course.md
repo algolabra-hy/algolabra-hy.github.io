@@ -3,6 +3,7 @@ layout: page
 permalink: /overview-en
 title: Overview of the Project
 title_long: Overview of the Project
+lang: en # fi or en
 ref: overview_full_course # same as the markdown filename
 ---
 Here is an overview of the course structure. More detailed information on all topics covered on this page can be found in other parts of the course material.
