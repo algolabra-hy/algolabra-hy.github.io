@@ -49,7 +49,9 @@ You are free to use any available tools for UI development. However, testing the
 The course [schedule]({% link _pages/en/suggested_schedule.md %}) is tight. Plan your time so that you can focus primarily on developing the [core]({% link _pages/en/documentation.md %}#specification-document) of your project.
 - Do not spend more time on UI development than necessary to understand how your program functions.
 - Example: If you are building a chess bot, move generation should be completed by the second week.
+- 
 There is little time for work that does not contribute directly to the project. Avoid tasks that do not align with your specific topic.
+
 - Developing a 3x3 tic-tac-toe game does not help in creating a larger game, as most challenges arise in more complex boards.
 - Fine-tuning a graphical UI for pathfinding does not advance your project, as the core focus is the pathfinding algorithms.
 - Develop tests alongside your program - this is when they are most useful. However, the required test types depend on your topic; not all projects need performance testing.
