@@ -48,7 +48,7 @@ How can the fastest/shortest route between two points in a graph be efficiently 
 
 ### Detailed Specification
 
-Implement a comparison of at least two different pathfinding algorithms. **Only one algorithm can be [Dijkstra’s algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) or [A\*](https://en.wikipedia.org/wiki/A*_search_algorithm)**, since Dijkstra is covered in the prerequisite Tira course, and A\* is very similar in implementation.
+Implement a comparison of at least two different pathfinding algorithms. **Only one algorithm can be [Dijkstra’s algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) or [A\*](https://en.wikipedia.org/wiki/A*_search_algorithm)**, since Dijkstra is covered in the prerequisite Data Structures and Algorithms course and A\* is very similar in implementation.
 
 Suitable pathfinding algorithms for this project include:
 - JPS (Jump Point Search). Useful visualization resources can be found for example [here](https://www.youtube.com/watch?v=NmM4pv8uQwI) and [here](https://zerowidth.com/2013/a-visual-explanation-of-jump-point-search/). The original research paper is available [here](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pd).
