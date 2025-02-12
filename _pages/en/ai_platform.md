@@ -175,6 +175,7 @@ The interface supports the UCI standard for representing chess moves as strings.
 The fifth character is used only for pawn promotion.
  The fifth character denotes the piece to which the pawn is promoted:
 **q** -> queen, **r** -> rook, **b** -> bishop, **k** -> knight
+
 ![]({{ "https://ucichessengine.files.wordpress.com/2011/03/square_numbers.gif" | absolute_url }})
 
 For example, the string "e2e4" represents a piece moving from e2 to e4. The string "e7e8q" represents a pawn on e7 promoting to a queen.
