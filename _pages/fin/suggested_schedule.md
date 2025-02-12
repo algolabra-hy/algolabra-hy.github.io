@@ -74,7 +74,7 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
 - Ensimmäinen vertaisarviointi jaetaan viikon palautuksen jälkeen. 
     - Katso labtoolista linkki katselmoitavaan repoon. 
     - Muista sallia [issuet]({% link _pages/fin/git.md %}#issuiden-salliminen)
-    - Vertaisarvioinnin deadline on **kolme päivää** arvioiden jaon jälkeen.
+    - Vertaisarvioinnin deadline on sama kuin 5. viikkopalautuksella.
     - Ohjeet vertaisarviointiin [moodlessa]({{site.moodle}}). 
 
 ## Viikko 5
@@ -101,7 +101,7 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
 - Toinen vertaisarviointi jaetaan viikon palautuksen jälkeen, tälle deadline muutama päivä arvioinnin jälkeen. 
     - Katso labtoolista linkki katselmoitavaan repoon. 
     - Muista sallia [issuet]({% link _pages/fin/git.md %}#issuiden-salliminen)
-    - Vertaisarvioinnin deadline on **kolme päivää** arvioiden jaon jälkeen.
+    - Vertaisarvioinnin deadline on viikon 7 torstaina.
     - Ohjeet vertaisarviointiin [moodlessa]({{site.moodle}}). 
 
 ## Lopullinen Palautus
