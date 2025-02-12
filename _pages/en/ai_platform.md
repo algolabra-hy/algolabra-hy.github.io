@@ -41,7 +41,7 @@ More details on configuring your project can be found in the section [Configurin
  ![]({{ "/images/tira-ai6.png" | absolute_url }})
 
 If you've made it this far, you can start developing your AI by modifying the file ``main.py`` (for Connect Four) or ``src/stupid_ai.py`` (for Chess).
-At this point, it's a good idea to familiarize yourself with the structure of the example AIs and the [guidelines for communicating with the AI platform]({% link _pages/en/ai_platform.md %}#communicating-with-the-ai-platform).
+At this point, it's a good idea to familiarize yourself with the structure of the example AIs and the [guidelines for communicating with the AI platform]({% link _pages/en/ai_platform.md %}#communication-with-the-ai-platform).
 Remember that both example AIs make only random moves, so you should remove their logic and start building your AI as soon as possible.
 Important: The stupid_ai.py file uses Python's chess library, which is **not allowed** in your final course project. You must implement move validation and board state management yourself!
 
