@@ -100,7 +100,7 @@ Your AI communicates with the platform through standard output and input.
 **To use the platform**, you need to implement at least the handling of ``PLAY`` and ``MOVE`` commands in your AI. The ``BOARD`` and ``RESET`` commands are only sent if the user of the AI platform (usually yourself) either:
 1. presses the reset button, or
 1. tries to browse through past moves to make a different move.
-2. 
+ 
 So, as long as you don't use these features, an AI that supports only ``PLAY`` and ``MOVE`` commands can be used. However, we recommend you implement ``BOARD`` and ``RESET`` commands as soon as possible.
 
 **Output** Your AI can print anything to standard output (e.g., using the print() method in Python). The AI platform looks for outputs in the format: ``MOVE:move``
