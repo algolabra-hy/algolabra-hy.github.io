@@ -168,7 +168,7 @@ remote: Total 11 (delta 1), reused 6 (delta 0), pack-reused 0
 Receiving objects: 100% (11/11), done.
 Resolving deltas: 100% (1/1), done.
 ```
-Klooni luodaan siis muuten kuten kohdassa <a href="/git#repositorion-valmisteleminen-käyttöä-varten">repositorion valmistelu käyttöä varten</a>, paitsi että nyt kloonikansio nimetään itse.
+Klooni luodaan siis muuten kuten kohdassa [Repositorion valmisteleminen käyttöä varten](https://algolabra-hy.github.io/git-fi#repositorion-valmisteleminen-käyttöä-varten), paitsi että nyt kloonikansio nimetään itse.
 Muokkaa alkuperäisessä repossa olevaa tiedostoa README. Anna add-komento, commit-komento ja push-komento alkuperäisessä repositoriokloonikansiossasi, jotta äsken tehty muutos päätyy Githubiin asti.
 ``` 
 jezberg@LM2-500-27156 harjoitustyo % echo " repoharjoitus kolmosen lisäys readmehen\n" >> README.md 
