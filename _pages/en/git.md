@@ -169,13 +169,23 @@ Receiving objects: 100% (11/11), done.
 Resolving deltas: 100% (1/1), done.
 ```
 The clone is created just as in the [section on preparing the repository for use](https://algolabra-hy.github.io/git-en#preparing-the-repository-for-use), except now you name the clone folder yourself.
-Modify the README file in the original repository. Then, run the following commands in the original repository clone folder to ensure your changes are pushed to GitHub:
-Use the add command:
-git add README
-Commit the changes:
-git commit -m "Updated README file"
-Push the changes to GitHub:
-git push
-Now, our change will be reflected on GitHub.
+Modify the README file in the original repository. Then, run commands ```add```, ```commit```, and ```push``` in the original repository clone folder to ensure your changes are pushed to GitHub.
+``` 
+jezberg@LM2-500-27156 harjoitustyo % echo " exercise three modification of readme\n" >> README.md 
+jezberg@LM2-500-27156 harjoitustyo % git commit -a -m "Exercise3" 
+[main b1ecdc0] Exercise3
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+jezberg@LM2-500-27156 harjoitustyo % git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 383 bytes | 383.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:jezberg/harjoitustyo.git
+   96644ec..b1ecdc0  main -> main
+```
+
+
 
 {% include typo_instructions_en.md %}
