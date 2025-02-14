@@ -8,9 +8,9 @@ ref: examples_of_projects # same as the markdown filename
 ---
 
 Näille sivulle kerätään esimerkkejä aikaisemmin suoritetuista (hyvistä) harjoitustöistä. 
-Näihin saa tutustua ennen oman projektin aloitusta. Huomaa kuitenkin, että muiden koodin tai sisällön esittäminen omanaan ei ole sallittua ja tulkitaan vilpiksi.
+Näihin saa tutustua ennen oman projektin aloitusta. Huomaa kuitenkin, että muiden koodin tai sisällön esittäminen omanaan **ei ole sallittua** ja tulkitaan vilpiksi. Toisen kirjoittaman koodin mekaaninen muuntelu katsotaan myös plagioinniksi aivan kuten muissakin kirjallisissa suorituksissa yliopistossa.
 
-Nämä sivut päivittyvät pikkuhiljaa. Pyydämme eriksen lupaa harjoitustöiden esittelemiseen näillä sivuilla. 
+Pyydämme eriksen lupaa harjoitustöiden esittelemiseen näillä sivuilla. 
 
 - Kalle Saunamäki, [pakkausalgoritmien vertailu](https://github.com/ksaunamaki/tiralabra) (C#)
 - Reetta Ylitalo, [RSA](https://github.com/ylireetta/tiralabra-rsa) (Java)
