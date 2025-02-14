@@ -151,5 +151,31 @@ Run command ```git push```.
 Then, check your repository view on GitHub to confirm that your new folder and the file inside it have appeared.
 ![]({{ "/images/git-5.png" | absolute_url }})
 
+If you want to add multiple files at once, you can use the command ```git add```.
+This will add all new files in the current folder (.) to version control.
+
+Now you know how to add files and folders to GitHub: add - commit - push! Follow the same process to create a documentation folder for your project and add the necessary documentation for the first week inside it.
+# Repository Exercise 3: Pull - Fetching Changes from GitHub
+If you are working on multiple computers, version control helps keep your project up to date without having to transfer files from one device to another, such as using a USB stick. This is one of the benefits of version control! In this exercise, you will practice copying files from GitHub to your local machine using a second repository clone folder. In a real-world scenario, this second clone folder would be on a different device. You don’t need the second clone (shadow-repo) for anything other than this exercise.
+Create another clone of the repository with a different name (e.g., shadow-repo) by running the following command in the command line:
+```git clone git@github.com:your-username/project-name.git shadow-repo```
+jezberg@LM2-500-27156 Documents % git clone git@github.com:jezberg/harjoitustyo.git shadow-repo
+Cloning into 'shadow-repo'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 11 (delta 1), reused 6 (delta 0), pack-reused 0
+Receiving objects: 100% (11/11), done.
+Resolving deltas: 100% (1/1), done.
+```
+The clone is created just as in the [section on preparing the repository for use](https://algolabra-hy.github.io/git-en#preparing-the-repository-for-use), except now you name the clone folder yourself.
+Modify the README file in the original repository. Then, run the following commands in the original repository clone folder to ensure your changes are pushed to GitHub:
+Use the add command:
+git add README
+Commit the changes:
+git commit -m "Updated README file"
+Push the changes to GitHub:
+git push
+Now, our change will be reflected on GitHub.
 
 {% include typo_instructions_en.md %}
