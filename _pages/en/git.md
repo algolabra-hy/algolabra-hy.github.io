@@ -158,9 +158,10 @@ Now you know how to add files and folders to GitHub: add - commit - push! Follow
 # Repository Exercise 3: Pull - Fetching Changes from GitHub
 If you are working on multiple computers, version control helps keep your project up to date without having to transfer files from one device to another, such as using a USB stick. This is one of the benefits of version control! In this exercise, you will practice copying files from GitHub to your local machine using a second repository clone folder. In a real-world scenario, this second clone folder would be on a different device. You don’t need the second clone (shadow-repo) for anything other than this exercise.
 Create another clone of the repository with a different name (e.g., shadow-repo) by running the following command in the command line:
-```git clone git@github.com:your-username/project-name.git shadow-repo```
+```git clone git@github.com:your-username/project-name.git```
 
-```jezberg@LM2-500-27156 Documents % git clone git@github.com:jezberg/harjoitustyo.git shadow-repo
+```
+jezberg@LM2-500-27156 Documents % git clone git@github.com:jezberg/harjoitustyo.git shadow-repo
 Cloning into 'shadow-repo'...
 remote: Enumerating objects: 11, done.
 remote: Counting objects: 100% (11/11), done.
