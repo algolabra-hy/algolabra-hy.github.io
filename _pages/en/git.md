@@ -173,7 +173,7 @@ Resolving deltas: 100% (1/1), done.
 The clone is created just as in the [section on preparing the repository for use](https://algolabra-hy.github.io/git-en#preparing-the-repository-for-use), except now you name the clone folder yourself.
 Modify the README file in the original repository. Then, run commands ```add```, ```commit```, and ```push``` in the original repository clone folder to ensure your changes are pushed to GitHub.
 ``` 
-jezberg@LM2-500-27156 harjoitustyo % echo " exercise three modification of readme\n" >> README.md 
+jezberg@LM2-500-27156 harjoitustyo % echo "exercise three modification of readme\n" >> README.md 
 jezberg@LM2-500-27156 harjoitustyo % git commit -a -m "Exercise3" 
 [main b1ecdc0] Exercise3
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -187,7 +187,86 @@ Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 To github.com:jezberg/harjoitustyo.git
    96644ec..b1ecdc0  main -> main
 ```
+Here, the first command adds the line "exercise three modification of readme" to the README file. Note that a separate add command is not needed because README is already under version control.
 
+Go to the shadow repository you created at the beginning of this exercise. Now, open the README file in this new repository, and you will notice that it has not changed.
+```
+jezberg@LM2-500-27156 shadow-repo % cat README.md 
+# harjoitustyo
+
+Repotreenin harjoitus%   
+```
+Pull the changes you made in your original folder from GitHub to the shadow repository with the command:
+```git pull```.
+```
+jezberg@LM2-500-27156 shadow-repo % git pull     
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 363 bytes | 72.00 KiB/s, done.
+From github.com:jezberg/harjoitustyo
+   96644ec..b1ecdc0  main       -> origin/main
+Updating 96644ec..b1ecdc0
+Fast-forward
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+jezberg@LM2-500-27156 shadow-repo % cat README.md
+# harjoitustyo
+
+exercise three modification of readme
+``` 
+You will notice that the README file updates according to the changes you made in the original clone! Check this again in the README file located in the shadow repository.
+# Git & NetBeans
+Git and NetBeans are good friends. Use the repository clone folder on your computer as the storage location for your NetBeans project: set the “Project Location” in NetBeans to the repository folder on your computer. Now, you are saving your project directly into the repository folder all the time.
+
+After first navigating to your repository folder in the command line, enter the command: ```git status```
+You will notice two new files: your project file and the .gitignore file. The latter is created by NetBeans and contains a list of files that should not be included in version control. It must be added to version control. You do not need to understand the file in detail, but if you want to or if the file did not generate automatically, you can find a short .gitignore explanation at the end of this document.
+
+Now, add the files with the commands ```git add project-name```, and ```git add .gitignore```.
+At this point, running ```git status``` should display both your project and the .gitignore file.
+Next, commit and push the changes. Your project is in your GitHub repository, and you can start working on it! 
+
+## Summary
+1. When starting on a new computer, create an SSH key and clone the desired repository to your machine.
+1. At the beginning of your work session, pull the latest version of your project from GitHub.
+1. When making changes, add new and modified files and commit with a descriptive message.
+- Think of the add + commit combination as saving your work. *It’s better to commit too often than too little.*
+Use ```git status``` to check what you have modified and what is staged for commit. If issues arise, you can revert to an older commit, even one from a week ago.
+1. Before finishing your session, push (push) your changes to GitHub.
+1. Always verify in your browser that all changes have been uploaded to your repository; otherwise, instructors won’t be able to see them.
+1. Your repository also serves as a backup of your work - if your computer fails or servers of the department act up, all your hard work is safely stored on GitHub!
+1. To remove a file from the repository, use ```git rm filename```. Be careful! This command also deletes the file from your local repository (on your computer).
+
+**REMEMBER:** Your GitHub repository is public. The whole world can see it. **Do NOT** upload sensitive information, such as your student number.
+Now, you can continue your project from any computer exactly where you left off last time.
+## Short .gitignore Guide
+.gitignore is a file that contains information about which files and folders should not be included in version control or pushed to GitHub. These are specified as rules, with each rule on its own line.
+Typically, these files are generated by development environments on every run or contain sensitive information that shouldn’t be stored in version control, as they may take up space or be visible to everyone.
+The .gitignore file itself should be pushed to GitHub, as it defines what should be excluded from version control.
+
+NetBeans automatically creates a .gitignore file when you create a NetBeans project in a folder that is already a repository. NetBeans adds a rule for /project-folder-name/nbproject/private/ to prevent files generated by NetBeans during the compilation and execution of your program from being included in version control. This means that changes in the private/ folder won’t be detected by the ```git status``` command.
+
+If, for some reason, NetBeans didn’t generate this file, you can create it manually.
+
+Create a text file named .gitignore (note that the file has no extension).
+Inside the file, add the following two lines:
+/project_folder_name/nbproject/private/
+/project_folder_name/nbproject/dist/
+You can also add your own rules to the .gitignore file. Each rule should be placed on a separate line.
+
+More examples of the rules:
+- [http://git-scm.com/docs/gitignore](http://git-scm.com/docs/gitignore)
+- [https://help.github.com/articles/ignoring-files](https://help.github.com/articles/ignoring-files)
+- [http://cfmumbojumbo.com/cf/index.cfm/coding/git-giving-files-the-cold-shoulder-gitignore/](http://cfmumbojumbo.com/cf/index.cfm/coding/git-giving-files-the-cold-shoulder-gitignore/)
+
+## Allowing Issues
+Course peer feedback will be provided via GitHub Issues. To receive feedback, you must enable issue creation by following the instructions below.
+1. Go to your repository.
+1. Click on Settings at the top.
+![]({{ "/images/git-7.png" | absolute_url }})
+1. On the Settings page, check the Issues box (see image below). The settings will be saved automatically.
+![]({{ "/images/git-8.png" | absolute_url }})
 
 
 {% include typo_instructions_en.md %}
