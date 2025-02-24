@@ -164,6 +164,208 @@ Verification tasks
 check - Runs all checks.
 test - Runs the unit tests.
 </pre>
+If we execute, for example, the task _build_, meaning the command ```gradle build```, the output is as follows:
+<pre>
+BUILD SUCCESSFUL in 885ms
+</pre>
+This doesn't explain much yet. The [documentation for the Java plugin](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_tasks) clarifies the matter:
+![]({{ "/images/lh2-1.png" | absolute_url }})
+So, _build_ depends on two plugins: _check_ and _assemble_.
+![]({{ "/images/lh2-2.png" | absolute_url }})
+These also depend on a few tasks. In the end, ```gradle build``` executes all the following tasks:
+<pre>
+compileJava
+processResources 
+classes
+jar
+assemble
+compileTestJava
+processTestResources
+testClasses
+test
+check
+</pre>
+So, _build_ compiles the code, packages it into a JAR file, and runs the project's tests.  
+
+Before moving forward, execute ```gradle clean```, which removes all files created by the previous command.
+## A reasonable editor  
+
+This time, don't use NetBeans. Instead, write all code and configurations using a text editor.  
+
+A good choice for an editor is [Visual Studio Code](https://code.visualstudio.com), which is available on the department's computers and freshmen laptops.
+
+## Adding Code to the Project  
+
+Gradle assumes that the program's code is located in the directory _src/main/java_ under the project root.  
+
+Create the necessary directory (or directories) and the file _src/main/java/Main.java_ with the following example content:
+<pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello gradle!");
+    }
+}
+</pre>
+Then, execute the task _compileJava_ and inspect the contents of the project directory using the command _tree_:
+<pre>
+$ tree
+.
+├── build
+│   ├── classes
+│   │   └── java
+│   │       └── main
+│   │           └── Main.class
+...
+</pre>
+**Remember** that Gradle commands must be executed from the project root, i.e., the directory where the _build.gradle_ file is located.  
+
+The task _compileJava_ has now created the _build_ directory, containing the compiled _class_ file.  
+Run the compiled code by navigating to the appropriate directory and executing the command ```java Main```:
+<pre>
+$ cd build/classes/java/main/
+$ java Main
+Hello gradle!
+</pre>
+Usually, Java code is not executed directly using _class_ files. A better approach is to package the code into a _jar_ file.  
+
+The _jar_ file is created using the Gradle task _jar_. The help command provides the following information:
+<pre>
+% gradle help --task jar
+
+> Task :help
+Detailed task information for jar
+
+Path
+     :jar
+
+Type
+     Jar (org.gradle.api.tasks.bundling.Jar)Määritellään taskia varten _pääohjelman sijainti_ lisäämällä seuraava tiedoston _build.gradle_ loppuun:
+
+
+Options
+     --rerun     Causes the task to be re-run even if up-to-date.
+
+Description
+     Assembles a jar archive containing the classes of the 'main' feature.
+
+Group
+     build
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+</pre>
+To define the _main class location_ for the task, add the following to the end of the _build.gradle_ file:
+<pre>
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
+</pre>
+Note that the _build.gradle_ file must begin with the _plugins_ definition. If it is not at the beginning, you will encounter the following error message:
+<pre>
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/Users/mluukkai/dev/intro_gradle/build.gradle' line: 7
+
+...
+
+@ line 7, column 1.
+  plugins {
+</pre>
+Now, return to the project root directory and execute the task _jar_ to generate the JAR file (i.e., run the command ```gradle jar```).  
+
+You can run the generated JAR file as follows (note that the file name depends on your project name and is likely not _gradle-test.jar_):
+<pre>
+$ java -jar build/libs/gradle-test.jar
+Hello gradle!
+</pre>
+## application-plugin
+In principle, you can also run the code using the command ```gradle run```.  
+
+However, this currently results in the error message:  
+_Task 'run' not found in root project._  
+
+The reason is that the _run_ task is not defined by the Java plugin but by the [Application plugin](https://docs.gradle.org/current/userguide/application_plugin.html).  
+
+To enable this, modify the beginning of the _build.gradle_ file as follows:
+<pre>
+plugins {
+    id 'java'
+    id 'application'
+}
+</pre>
+In fact, the line defining the _java_ plugin is no longer needed since the _application_ plugin already includes the necessary tasks.  
+
+However, running the command ```gradle run``` now results in the error:  
+_No main class specified._  
+
+According to the [plugin documentation](https://docs.gradle.org/current/userguide/application_plugin.html), the _main class_ must be specified by adding the following line to the _build.gradle_ file:
+<pre>
+application {
+    mainClass = 'Main'
+}
+</pre>
+Now, running the program using the task works:
+<pre>
+$ gradle run
+> Task :compileJava UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+
+> Task :run
+Hello gradle!
+
+BUILD SUCCESSFUL in 1s
+</pre>
+It’s best to run the program using the _-q_ option, which suppresses Gradle’s own output:
+<pre>
+$ gradle run -q
+Hello gradle!
+</pre>
+Let's extend the program so that it asks for the user's name using a Scanner object:
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("kuka olet: ");
+        String nimi = scanner.nextLine();
+
+        System.out.println("Hello " + nimi);
+    }
+}
+```
+If the program is packaged into a _jar_ file (by running the ```gradle jar``` command), it will work as expected:
+<pre>
+$ java -jar build/libs/gradle-test.jar
+kuka olet:
+mluukkai
+Hello mluukkai
+</pre>
+If the program is executed using Gradle's _run_ task, the result will be an error:
+<pre>
+$ gradle run
+kuka olet:
+Exception in thread "main" java.util.NoSuchElementException: No line found
+        at java.util.Scanner.nextLine(Scanner.java:1540)
+        at Main.main(Main.java:7)
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':run'.
+> Process 'command '/Library/Java/JavaVirtualMachines/jdk1.11.0_101.jdk/Contents/Home/bin/java'' finished with non-zero exit value 1
+
+</pre>
+The reason for this is that by default, Gradle's _run_ task does not attach the terminal to the input stream _System.in_. This can be fixed by adding the following to the _build.gradle_ file:
+<pre>
+run {
+    standardInput = System.in
+}
+</pre>
 
 
 
