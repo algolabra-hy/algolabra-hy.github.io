@@ -12,7 +12,7 @@ _Alkuperäinen ohje: Mika Huttunen ja Silja Polvi joita Jeremias Berg on päivit
 # Aloittaminen
 ÄLÄ käytä Netbeansin tarjoamaa Git-lisäosaa ÄLÄKÄ graafisia ohjelmia. Tähän asti kaikki kurssilla päivän koodaustyönsä menettäneiden ongelmat ovat johtuneet näistä. Käytä aina Linuxissa/OSX:ssä terminaalia tai Windowsissa Git Bashia, ja tee Commitit sekä Pushit käsin.
 
-Kokeile ensin onko git asennettu koneellesi, esim ajamalla komento "git -v" terminaalissa jolloin tulosteen pitäisi muistuttaa jotain seuraavanlaista:
+Kokeile ensin onko git asennettu koneellesi, esim ajamalla komento ```git -v``` terminaalissa jolloin tulosteen pitäisi muistuttaa jotain seuraavanlaista:
 ```  
 jezberg@LM2-500-27156 ~ % git -v 
 git version 2.39.3 (Apple Git-145)
@@ -24,7 +24,7 @@ Tilin luomisen jälkeen voit luoda uuden repositorion ylä oikealla olevan "+" s
 
 ![]({{ "/images/git-0.png" | absolute_url }})
 
-Laita repositorion nimeksi esimerkiksi “harjoitustyö”, harjoitustyösi aihe tai oma nimiehdotuksesi ohjelmalle. **Valitse “Public”**. Jos haluat suorittaa kaikki tällä sivulla löytyvät reponhallinta harjoitukset, valitse ruutu “Add a README file”. Halutessasi voit myös valita omalle koodauskielellesi sopivan "gitignore" tiedoston (lisää gitigonersta tässä alla)
+Anna repositoriolle nimi, joka kuvaa harjoitustyösi aihetta. **Valitse “Public”**. Jos haluat suorittaa kaikki tällä sivulla löytyvät reponhallinta harjoitukset, valitse ruutu “Add a README file”. Halutessasi voit myös valita omalle koodauskielellesi sopivan "gitignore" tiedoston (lisää gitigonersta tässä alla)
 
 ![]({{ "/images/git-1.png" | absolute_url }})
 
@@ -46,7 +46,7 @@ Paina napista "code" ja avautuvasta ponnahdusikkunasta "ssh".
 Kopioi näkyviin tuleva repositorion osoite, joka on suunnilleen muotoa git@github.com:käyttäjätunnuksesi/harjoitustyo.git.
 Osoitteen voi kopioida esimerkiksi painamalla osoitteen vieressä olevaa symbolia. 
 
-Avaa komentorivi ja kopioi (kloonaa) repositorio omalle koneellesi komennolla git clone "osoite"
+Avaa komentorivi ja kopioi (kloonaa) repositorio omalle koneellesi komennolla ```git clone "osoite"```
 ```
 jezberg@LM2-500-27156 Documents % git clone git@github.com:jezberg/harjoitustyo.git
 Cloning into 'harjoitustyo'...
@@ -101,7 +101,7 @@ jezberg@LM2-500-27156 harjoitustyo %
 Jos tästä kommennosta unohtuu viesti (tässä "ensi muokkaus"), aukeaa editori (luultavimmin vim tai nano) jonne viestin voi kirjoittaa. Jos editorin käyttö ei ole tuttua, siitä voi myös poistua 
 komennolla :q ja antaa commit käsky uudelleen.
 
-Nyt tekemäsi muokkaukset (README-tiedoston muokkaus) ovat paikallisessa repositoriossasi. Sieltä ne pitää vielä työntää verkossa olevaan Githubin repoosi komennolla git push. 
+Nyt tekemäsi muokkaukset (README-tiedoston muokkaus) ovat paikallisessa repositoriossasi. Sieltä ne pitää vielä työntää verkossa olevaan Githubin repoosi komennolla ```git push```. 
 ```
 jezberg@LM2-500-27156 harjoitustyo % git push                      
 Enumerating objects: 5, done.
@@ -168,7 +168,7 @@ remote: Total 11 (delta 1), reused 6 (delta 0), pack-reused 0
 Receiving objects: 100% (11/11), done.
 Resolving deltas: 100% (1/1), done.
 ```
-Klooni luodaan siis muuten kuten kohdassa <a href="/git#repositorion-valmisteleminen-käyttöä-varten">repositorion valmistelu käyttöä varten</a>, paitsi että nyt kloonikansio nimetään itse.
+Klooni luodaan siis muuten kuten kohdassa [Repositorion valmisteleminen käyttöä varten](https://algolabra-hy.github.io/git-fi#repositorion-valmisteleminen-käyttöä-varten), paitsi että nyt kloonikansio nimetään itse.
 Muokkaa alkuperäisessä repossa olevaa tiedostoa README. Anna add-komento, commit-komento ja push-komento alkuperäisessä repositoriokloonikansiossasi, jotta äsken tehty muutos päätyy Githubiin asti.
 ``` 
 jezberg@LM2-500-27156 harjoitustyo % echo " repoharjoitus kolmosen lisäys readmehen\n" >> README.md 
@@ -219,9 +219,9 @@ Huomaat, että README-tiedosto päivittyy niiden muutosten mukaan, jotka teit al
 # Git & Netbeans
 Git ja Netbeans ovat hyviä kavereita. Käytä Netbeans-projektin tallennuspaikkana koneellasi olevaa repositoriokloonikansiota: aseta Netbeansissa kohtaan “Project Location” koneella oleva repositorion kansio (esim. HarjoitusRepo). Nyt tallennat projektiasi koko ajan repositorion kansioon.
 
-Anna (kun olet ensin siirtynyt komentorivillä repositoriokansioosi) komentoriville komento git status. Huomaat kaksi uutta tiedostoa: harjoitustyösi lisäksi tiedoston .gitignore. Viimeksi mainittu on Netbeansin luoma tiedosto, joka antaa listan versionhallintaan kuulumattomista tiedostoista. Se pitää lisätä versionhallinnoitavaksi. Tiedostosta ei tarvitse ymmärtää enempää, mutta jos haluat tai tiedosto ei generoitunut automaattisesti, lue tämän dokumentin lopusta lyhyt .gitignore selite.
-Anna komento git add harkkatyöprojektisiNimi ja sen jälkeen komento git add .gitignore.
-Nyt komennon git status pitäisi näyttää sekä harkkatyöprojektisi sisältöineen että .gitignore Anna commit-komento ja push-komento. Nyt harjoitustyösi löytyy Githubistasi!
+Kun olet ensin siirtynyt komentorivillä repositoriokansioosi, anna komentoriville komento ```git status```. Huomaat kaksi uutta tiedostoa: harjoitustyösi lisäksi tiedoston .gitignore. Viimeksi mainittu on Netbeansin luoma tiedosto, joka antaa listan versionhallintaan kuulumattomista tiedostoista. Se pitää lisätä versionhallinnoitavaksi. Tiedostosta ei tarvitse ymmärtää enempää, mutta jos haluat tai tiedosto ei generoitunut automaattisesti, lue tämän dokumentin lopusta lyhyt .gitignore selite.
+Anna komento ```git add harkkatyöprojektisiNimi``` ja sen jälkeen komento ```git add .gitignore```.
+Nyt komennon ```git status``` pitäisi näyttää sekä harkkatyöprojektisi sisältöineen että .gitignore Anna commit-komento ja push-komento. Nyt harjoitustyösi löytyy Githubistasi!
 Nyt voit aloittaa harjoitustyösi tekemisen.
 
 ## Yhteenveto
@@ -233,7 +233,7 @@ Nyt voit aloittaa harjoitustyösi tekemisen.
 1. Viimeistään lopettaessasi työskentelyn työnnä (push) muutoksesi Githubiin.
 1. Tarkista selaimesta, että KAIKKI muutokset menivät repositorioosi: Muuten ohjaajat eivät niitä näe
 1. Repositorio on myös varmuuskopio työstäsi - jos tietokoneesi hajoaa tai laitoksen palvelimet reistailevat, on kaikki vaivalla tekemäsi työ tallessa Githubissa!
-1. Tiedoston poistaminen repositoriosta tehdään git rm tiedostonnimi komennon avulla. HUOM ole huolellinen tämän käytössä, sillä komento poistaa tiedoston myös paikallisesta repositoriosta (siis omalta koneeltasi)
+1. Tiedoston poistaminen repositoriosta tehdään ```git rm tiedostonnimi``` komennon avulla. HUOM ole huolellinen tämän käytössä, sillä komento poistaa tiedoston myös paikallisesta repositoriosta (siis omalta koneeltasi)
 
 **MUISTA:** Github-repositoriosi on julkinen. Sen näkee koko maailma. ÄLÄ pistä sinne esimerkiksi opiskelijanumerosi.
 Nyt voit jatkaa harjoitustyötäsi miltä tahansa tietokoneelta aina siitä mihin lopetit edellisellä kerralla.
@@ -241,7 +241,7 @@ Nyt voit jatkaa harjoitustyötäsi miltä tahansa tietokoneelta aina siitä mihi
 ## Lyhyt .gitignore -ohje
 .gitignore on tiedosto, joka sisältää tiedon niistä tiedostoista ja kansioista, joita ei haluta versionhallintaan eikä Githubiin. Nämä esitetään sääntöinä, jokainen sääntö omalla rivillään. Yleensä nämä tiedostot ovat kehitysympäristöjen joka ajokerralla generoitavia tai arkaluontoista tietoa sisältäviä tiedostoja, joita ei haluta versionhallintaan viemään tilaa tai kaikkien nähtäville. .gitignore tiedosto itsessään halutaan Githubiin.
 
-Netbeans luo .gitignore -tiedoston automaattisesti, kun Netbeans-projektin luo kansioon, joka on repositorio. Netbeans lisää sinne säännön /projektikansiosi_nimi/nbproject/private/, joka estää versionhallintaan menemästä tiedostoja, jotka Netbeans luo aina kun käännät ja ajat ohjelmasi. git status komento ei siis huomaa lainkaan, vaikka private/ -kansion sisällä tapahtuu muutoksia.
+Netbeans luo .gitignore -tiedoston automaattisesti, kun Netbeans-projektin luo kansioon, joka on repositorio. Netbeans lisää sinne säännön /projektikansiosi_nimi/nbproject/private/, joka estää versionhallintaan menemästä tiedostoja, jotka Netbeans luo aina kun käännät ja ajat ohjelmasi. ```git status``` komento ei siis huomaa lainkaan, vaikka private/ -kansion sisällä tapahtuu muutoksia.
 
 Jos Netbeans jostain syystä ei tehnyt tällaista tiedostoa, voit luoda sen itse.
 

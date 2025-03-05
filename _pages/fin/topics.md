@@ -8,7 +8,7 @@ ref: topics # same as the markdown filename
 ---
 
 ## Aiheen valinnasta
-Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse[^1], tai valita alla olevasta listasta. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa[^2]. 
+Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse, tai voit valita aiheen alla olevasta listasta. Ohjaaja arvioi ja hyväksyy aiheen määrittelydokumentin perusteella kurssin alussa. Itse keksittyä aihetta voidaan joutua muokkaamaan sopivan vaativuuden ja laajuuden saavuttamiseksi. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa. **Kysy ohjaajalta neuvoa matalalla kynnyksellä projektin kaikissa vaiheissa alkaen aiheen valinnasta.**
 
 ## Lista aiheista
 - [Verkot ja Polunetsintä]({% link _pages/fin/topics.md %}#verkot-ja-polunetsintä)
@@ -20,6 +20,7 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
   - Reversi 
   - Battle Sheep 
   - 2048
+  - Pentago
   - Kivi-sakset-paperi
   - 15-peli
 - [DPLL]({% link _pages/fin/topics.md %}#dpll)
@@ -43,7 +44,7 @@ Miten löydetään tehokkaasti nopein/lyhin reitti verkossa kahden pisteen väli
 Toteuta **vähintään kahden** eri reitinhakualgoritmin vertailu. Näistä **korkeintaan toinen** saa olla [Dijkstra](https://fi.wikipedia.org/wiki/Dijkstran_algoritmi) tai [A](https://fi.wikipedia.org/wiki/A*-algoritmi)\* koska Dijkstra opitaan harjoitustyön esitetoihin kuuluvalla Tira-kurssilla, ja A* on toteutukseltaan erittäin lähellä Dijkstraa. 
 
 Harjoitustyöhön sopivia reitinhakualgoritmeja ovat:
-- [JPS, eli Jump Point Search](https://www.youtube.com/watch?v=afoQvbXvaiQ), josta löytyy tietoa myös [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [tieteellinen paperi täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
+- JPS, eli Jump Point Search, josta löytyy havainnollistavaa materiaalia esimerkiksi [täältä](https://www.youtube.com/watch?v=NmM4pv8uQwI) ja [täältä](https://zerowidth.com/2013/a-visual-explanation-of-jump-point-search/). [Tieteellinen paperi löytyy täältä](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pdf).
   - Soveltuu vain pikselikartoille. Pikselikartalla on kahdeksan etenemissuuntaa ja kaksi mahdollista painoa, kaaren paino riippuu siitä kuljetaanko seuraavaan solmuun suoraan vai viistottain. 
   - Pikselikarttoja löytyy esim. [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta.
 - [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf), joka on astetta haastavampi.
@@ -56,11 +57,11 @@ Reitinhakualgoritmien vertailussa on syytä heti alkuun toteuttaa löydetyn reit
 Visualisointi auttaa hakualgoritmin oikeellisuuden toteamisessa, ja se nopeuttaa myös virheiden löytämistä ohjelman kehityksen aikana. 
 Visualisoinnin laatimiseen ei saisi mennä paljon työaikaa, sillä varsinainen ydin on reitinhakualgoritmien toteutus ja huolellinen testaus. Graafinen käyttöliittymä on kätevä, mutta selkeä ASCII-grafiikka riittää, jos käytät pikselikarttoja. **Huomaa** että oikeellisuuden ja tehokkuuden testaamiseen tarvitaan monimutkaisia ja tarpeeksi laajoja karttoja, jotka ovat vertailemiesi algoritmien kannalta mielekkäitä. Niiden tuottaminen käsin olisi kohtuuttoman työlästä, joten tarvitset myös valmiita karttoja jostain lähteestä.
 
-Koodin toteutuksessa **ei** kannata lähteä toteuttamaan minkäänlaista "verkko" oliota. Sen sijaan kannattaa suoraan lukea kokonaisluku tai merkrkitaulukoita. Esimerkiksi [finxterin blogissa](https://blog.finxter.com/jump-search-algorithm-in-python-a-helpful-guide-with-video/) (johon ensimmäinen videokin viittaa) kuvattu JPS toteutus on todella hidas. Tälläisiä materiaaleja voi hyvin käyttää algoritmien ymmärtämiseen, mutta sen varaan ei kannata rakentaa omaa koodiaan.
+Koodin toteutuksessa **ei** kannata lähteä toteuttamaan minkäänlaista "verkko" oliota. Sen sijaan kannattaa suoraan lukea kokonaisluku tai merkkitaulukoita. 
 
 Valmiita karttoja löytyy esimerkiksi [Moving AI Lab](http://www.movingai.com/benchmarks/) sivuilta, [shortest-path labin](https://bitbucket.org/shortestpathlab/benchmarks/src/master/grid-maps/) repositoriosta, tai [maanmittauslaitoksen kartoista](http://kartat.kapsi.fi/). Huomaa, että Moving AI:n pikselikartoissa ilmoitetut etäisyydet on laskettu niin, että reitti kiertää esteen kulmapikselin, sen sijaan että kulkisi viistosti tavallaan puoliksi estepikselin yli. Myös joukkoliikenteen [reitti / aikataulut](https://developers.google.com/transit/gtfs/) tai [digitransitin kartat](https://digitransit.fi/en/developers/) ja [avoin karttadata](https://www.openstreetmap.org) ovat olleet suosittuja valmiiden karttojen lähteitä.
 
-Joidenkin karttojen mukana tulee etäisyystietoja erilaisille reiteille, ja niitä voi hyödyntää testeissä. Muista kuitenkin, että se että algoritmisi palauttaa oikean pituden ei vielä takaa, että se toimii oikein. 
+Joidenkin karttojen mukana tulee etäisyystietoja erilaisille reiteille, ja niitä voi hyödyntää testeissä. Jos algoritmisi palauttaa oikean pituuden useille riittävän pitkille ja monipuolisille reiteille, se ilmeisesti löytää oikean reitin. Esim. JPS:n oikea toiminta tulee kuitenkin varmistaa myös tutkimalla, että sen käsittelemät hyppypisteet ovat oikeat, sillä algoritmissa voi olla virhe, jonka takia tehdään paljon turhaa työtä, vaikka lyhin reitti löytyykin.
 
 ---
 
@@ -145,14 +146,14 @@ Jos peli ei ole tuttu, katso [Connect Four Wikipediasta](https://en.wikipedia.or
 **Tämä on hyvä aihe**, jos haluat käyttää suurimman osan työajastasi juuri minimax-algoritmin tehostamiseen. Tutkittavien siirtojen generointi ja 
 siirtojen toteuttaminen on Connect4:ssä yksinkertaisempaa kuin monessa muussa pelissä, jonka seurauksena voit panostaa laskennan nopeuttamiseen.
 
-Pelisiirtojen etsimiseen ja koodisi testaamiseen voit käyttää jotain netistä löytyvää valmista connect 4 työkalua. Esim. [tätä](https://connect4.gamesolver.org/)
+Pelin tutkimiseen ja esimerkiksi testaamiseen tarvittavien varmaan voittoon johtavien pelitilanteiden laatimiseen voit käyttää [tätä täydellisesti pelaavaa tekoälyä](https://connect4.gamesolver.org/).
 
 **Lisävaatimukset.**
 Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
 - *Siirtojen järjestäminen.* Kokeillaan kaikissa laskennan vaiheissa (minimaxin sisällä) ensin keskimmäiseen sarakkeeseen tehtävä siirto ja edetään siitä reunoja kohti. Tämä tehostaa alfa-beta -karsintaa, koska paras siirto löytyy useammin keskeltä.
 
-- [*Iteratiivinen syveneminen.*](https://domwil.co.uk/minimaxer/part2/) Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu, kun saadaan nopeasti nostettua / laskettua alfa / beta -arvoa. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto.
-
+- *Iteratiivinen syveneminen.* Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu, kun saadaan nopeasti nostettua / laskettua alfa / beta -arvoa. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto.
+- Voiton tarkistus tehdään tutkimalla vain rivit, jotka sisältävät edellisen siirron. Jos neljän rivi on syntynyt, voittaja on edellisen siirron tehnyt pelaaja, ja edellinen siirto on osa voittoriviä.
 **Huomaa**, että iteratiivisessa syventämisessä et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä myöhemillä kierroksilla. Voit vain tallettaa tiedon siitä, mikä oli paras siirto eli sarake siinä tilanteessa. Aikaisemmilla kierroksilla tallennetut arvot eivät ole päteviä, koska heuristinen arvo muuttuu, kun lasketaan syvemmälle. Samalla iteraatiolla voidaan päätyä samaan pelitilanteeseen useammalla siirtosarjalla, mutta alfa-beta -karsinnan takia lasketut arvot eivät useimmiten ole aitoja vaan vain ylä- tai alarajoja todellisille arvoille. Talletettua pelitilanteen arvoa ei siksi voi sellaisenaan hyödyntää silloinkaan, kun laskentasyvyys on sama. Kaikkia sallittuja siirtoja täytyy kokeilla (mahdolliseen alfa/beta -katkaisuun asti), tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain kokeiltavien siirtojen järjestämiseen. 
 
 #### Othello / Reversi
@@ -179,22 +180,25 @@ Yun Nie, Wenqi Hou ja Yicheng An ovat kirjoittaneet [lyhyen artikkelin lähestym
 
 #### Battle sheep
 [Battle Sheep](https://www.lautapelit.fi/product/20852/battle-sheep) on hauska vaihtoehto klassikkopeleille. 
-Pelilaudan ei tarvitse olla muokattava, kuten lautapelissä, vaan voit käyttää sopivaa kiinteää pelilautaa. Tähän peliin tarvitaan 
+Pelilaudan ei tarvitse olla muokattava, kuten lautapelissä, vaan voit käyttää sopivaa kiinteää pelilautaa. Tähän peliin tarvitaan mielellään 
 graafinen käyttöliittymä, jotta pelaaminen on sujuvaa.
 
+#### Pentago
+Myös [Pentago](https://www.martinex.fi/peliko-pentago) on mielenkiintoinen uutuuspeli, jonka voi toteuttaa mimimaxilla. Ihmispelaajalle on vaativaa miettiä eteenpäin siirtoja, joissa käännetään pelilaudan osia, joten tekoälyllä on mahdollisuus menestyä. Toisaalta pelissä on alkuun peräti 36*8 = 288 siirtovaihtoehtoa. Jo neljän seuraavan siirron laskemiseen (kaksi siirtoparia) tarvitaan tehokkaita ratkaisuja.
+
 #### Kivi-sakset-paperi
-Kivi-sakset-paperi on kaikille tuttu peli, jota ei yleisesti voi pelata hyvin tai huonosti. Näimpä (tehokasta) tekoälyä pelille **ei** voi toteuttaa
-minimax algoritmilla. Sen sijaan tässä projektissa tehdään oppiva tekoäly joka pyrkii oppimaan vastustajansa pelityylin ja 
+Kivi-sakset-paperi on kaikille tuttu peli, jota ei yleisesti voi pelata hyvin tai huonosti. Tekoälyä pelille **ei** voi toteuttaa
+minimax algoritmilla, koska siinä oletetaan vastustajan tekevän aina parhaan vastasiirron, jolloin jokainen oma siirto johtaa yhtä lailla tappioon. Sen sijaan tässä projektissa tehdään oppiva tekoäly joka pyrkii oppimaan vastustajansa pelityylin ja 
 pelaamaan hyvin sitä vastaan. Yksi tapa oppia toisen pelityyli on käyttää useamman eri asteen [Markovin ketjuja](https://arxiv.org/pdf/2003.06769) (katso myös kohta 
 [laskennallisesta luovuudesta]({% link _pages/fin/topics.md %}#koneoppiminen)). 
-Siihen voi yhdistää muitakin malleja vastustajan toimminnalle. *Kannattaa jutella ohjaajan kanssa, jos tämä aihe kiinnostaa.*
+Tähän useaa teloälyä vertailevaan kehykseen voi yhdistää muitakin malleja vastustajan toimminnalle. *Kannattaa jutella ohjaajan kanssa, jos tämä aihe kiinnostaa.*
 
 #### 15-peli
 [15-peli](https://en.m.wikipedia.org/wiki/15_Puzzle) on haastava ratkaistava, pelin ratkaisu vie pahimmassa tapauksessa paljon aikaa ainakin heikolla heuristiikalla. 
 Ratkaisussa tulee lähtökohtaisesti käyttää [IDA* -algoritmia](https://en.wikipedia.org/wiki/Iterative_deepening_A*). 
 Keskustele ohjaajan kanssa jos haluat käyttää jotain muuta. Tähän peliin soveltuvista heuristisista 
 etäisyysfunktioista kerrotaan esim. [Michael Kimin blogissa](https://michael.kim/blog/puzzle).
-Lisää tietoa IDA* algoritmista löytyy esim [geeks for geeksin](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/) sivulta. 
+Lisää tietoa IDA*-algoritmista löytyy esim [geeks for geeksin](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/) sivulta. 
 
 #### Miinaharava
 Tälle kurssille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Becerran kandidaatin tutkielmasta](https://dash.harvard.edu/handle/1/14398552). Jos käytät projektissa Javaa, voit toteuttaa ratkaisijan / auttajan käyttöliittymän valmiilla [Miinaharavan projektipohjalla](https://github.com/TiraLabra/minesweeper). Jos käytät valmista Java-pohjaa, kerro koodin kommenteissa selvästi mikä on omaa koodiasi, ja mikä on pohjaa. Älä muokkaa pohjaa, vaan kirjoita oma koodisi omaan luokkaansa / metodiinsa.
@@ -214,7 +218,7 @@ aiheessa tutkimme sen edeltäjää, [DPLL](https://en.wikipedia.org/wiki/DPLL_al
 ### Tarkempi määrittely
 Toteuta ohjelma, joka lukee propositioloogisen kaavan konjunktiivisessa 
 normaalimuodossa [DIMACS](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS) tiedostomuodossa 
-ja palauttaa joko sen toteuttavan totuusjakelun, tai tiedon siitä, ettei tälläistä jakelua ole. Ohjelman pitää käyttää DPLL algoritmia. 
+ja palauttaa joko sen toteuttavan totuusjakauman, tai tiedon siitä, ettei tälläistä jakaumaa ole. Ohjelman pitää käyttää DPLL algoritmia. 
 
 Ollakseen hyväksyttävä ohjelman täytyy toteuttaa [yksikköpropagaatio](https://en.wikipedia.org/wiki/Unit_propagation) ja [
 puhtaan literaalin poisto](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/preprocessing.html#pure-literal-elimination). 
@@ -222,9 +226,8 @@ Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil
 tietorakenteet täytyy toteuttaa itse. Aihe on parasta toteuttaa **C++** kielellä. 
 
 ### Hyödyllisiä neuvoja 
-Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemmissa näiden repositorioissa löytyy myös testilauseita: ([CaDiCaLin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
-[Kissatin testit](https://github.com/arminbiere/kissat/tree/master/test/cnf.)). Muista vaan, että sekä CaDiCal, että Kissat ovat erittäin optimpoituja 
-CDCL algoritmin toteutuksia, tämän kurssin aikana oma ratkojasi ei pääse lähellekkään samanlaista tehokkuutta. 
+Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemmissa näiden repositorioissa löytyy myös testilauseita: [CaDiCaLin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
+[Kissatin testit](https://github.com/arminbiere/kissat/tree/master/test/cnf). Muista vaan, että sekä CaDiCal, että Kissat ovat erittäin optimoituja CDCL algoritmin toteutuksia, tämän kurssin aikana oma ratkojasi ei pääse lähellekkään samanlaista tehokkuutta. 
 
 Lisää testilauseita voi luoda esim: [CNFGen](https://massimolauria.net/cnfgen/) työkalulla. 
 
@@ -245,38 +248,37 @@ aiheita. Monissa koneoppimiseen liittyvissä aiheissa kannattaa muistaa, että a
 niiden tuottama tulos riippuu osaksi myös siitä harjoitusdatasta, jota niille syötetään. Täten niiden oikeellisuuden 
 varmistamiseen tarvitaan hyvin suunniteltuja [testejä]({% link _pages/fin/testing_frontpage.md %}) joissa käytetään [edustavia]({% link _pages/fin/testing_representative_inputs.md %}) syötteitä.
 
-# Laskennallinen luovuus
-Sekä sanojen, lauseiden, musiikin, että kuvien[^3] tuottaminen algoritmisesti onnistuu periaatteessa samalla tavalla. 
-Ohjelma lukee ensin harjoitusdatan ja opettelee siitä erilaisia sanojen / lauseiden / sävel- / sointusekvenssejä. 
-Uutta materiaalia tuotetaan sitten tarkastelemalla tämänhetkistä tekstiä tai musiikkia, ja lisäämällä siihen jatkoa harjoitusdatasta opittujen 
-sekvenssien perusteella. 
+### Laskennallinen luovuus
+
+Niin sanojen (esim. nimigeneraattori), lauseiden kuin musiikin tuottaminen algoritmisesti onnistuu periaatteessa samalla tavalla. 
+Ohjelma lukee ensin harjoitusdatan ja opettelee siitä sallittuja sanojen / lauseiden / sävel- / sointusekvenssejä. 
+Uutta materiaalia tuotetaan näiden sääntöjen pohjalta.
+
 
 #### Tarkempi määrittely 
 Toteuta ohjelma, joka lukee harjoitusdataa, oppii siitä sekvenssejä ja generoi niiden perusteella  
 uusia sekvenssejä käyttäjän kehotteiden perusteella. Tällä kurssilla suosittelemme käyttämään 
 [markovin ketjuja](https://en.wikipedia.org/wiki/Markov_chain) jonka avulla voidaan onnistuneesti tuottaa esimerkiksi musiikkia tai 
-luonnollisen kielen kaltaisia sanoja tai [lauseita](https://algoritmaonline.com/text-generating-with-markov-chains/). Ketju tallettaa 
-harjoitusdatansa [trie](https://www.geeksforgeeks.org/trie-insert-and-search/#:~:text=Definition%3A%20A%20trie%20(derived%20from,%2C%20are%2C%20bat%2C%20bad.)) 
+luonnollisen kielen kaltaisia sanoja tai lauseita. Ketju tallettaa 
+harjoitusdatansa [trie](https://en.wikipedia.org/wiki/Trie) 
 tietorakenteeseen josta voidaan tehokkaasti etsiä mahdollisia jatkoja annetulle syöttelle. 
 
-Toteuta itse trie-tietorakenne sanojen / lauseiden / sävel- / sointusekvenssien tallettamiseen. 
-Voit käyttää sekä valmiita kirjastoja että ulkoisia ohjelmia opetusdatan esikäsittelyyn, melodian soittamiseen / nuotintamiseen jne.
+Toteuta itse trie-tietorakenne sanojen / lauseiden / sävel- / sointusekvenssien tallettamiseen. Ohjelman kaikki toiminnot tulee toteuttaa niin, että generoinnissa käytetyn Markovin ketjun aste on mielivaltainen. Eri asteita varten ei siis kirjoiteta eri koodia.
+Voit käyttää sekä valmiita kirjastoja että ulkoisia ohjelmia opetusdatan esikäsittelyyn, melodian soittamiseen / nuotintamiseen jne. 
 
-### Hyödyllisiä ohjeita
+#### Hyödyllisiä ohjeita
 
-Markovin ketju on prosessi, jonka jokainen tila määrittelee todennäköisyyden sitä seuraaville tiloille. 
-Tässä tapauksessa jokainen tila on tämänhetkisen syötteen (sanan, lauseen, musiikin etc.) viimeinen kirjain/sana/nuotti, tai sointu. 
-Siirtyminen seuraavaan tilaan määrittelee mitä lisätään syötteeseen. Niin sanotun *ensimmäisen asteen* markovin ketjun
-kunkin tila riippuu vain edellisestä tilasta, tässä tapauksessa tämähetkisen syötteen viimeisimmästä osasta. Vastaavasti, toisen asteen ketjun tila 
-riippuu kahdesta viimeisimmästä tilasta, eli toisin sanoen tämänhetkisen syötteen kahdesta viimeisimmästä osasta.  
-Huomaa, että esimerkiksi toisen asteen Markovin ketjun toteuttaminen vaatii kaikkien opetusdatassa peräkkäin esiintyvien kolmikoiden tallettamista, 
-jotta tiedetään kullekin viimeisimmälle kaksikolle mahdolliset seuraajat ja niiden todennäköisyydet. 
+Markovin ketju on prosessi, jossa kukin tila määräytyy probabilistisesti edellisten tilojen perusteella. 
+Tässä tapauksessa yksittäinen tila on merkki, sana tai nuotti. Ensimmäinen tila arvotaan tai kysytään käyttäjältä, ja seuraavat tilat arvotaan painotetusti opetusdatasta opittujen sääntöjen mukaisesti. Ensimmäisen asteen markovin ketjun
+kunkin tilan arvo riippuu vain edellisestä tilasta, tässä tapauksessa aiemmin generoidun datan viimeisestä kirjaimesta tms. Vastaavasti toisen asteen ketjun tila 
+riippuu kahdesta viimeisimmästä tilasta generaatiossa.  
+Huomaa, että esimerkiksi toisen asteen Markovin ketjun toteuttaminen vaatii kaikkien opetusdatassa peräkkäin esiintyvien kolmikoiden ja niiden esiintymismäärien tallettamista, jotta tiedetään kullekin viimeisimmälle kaksikolle mahdolliset seuraajat ja niiden todennäköisyydet. 
 
-Kokeile generointia alkaen 1. asteesta ja vertaa tuloksia eri asteilla. Seuraava kirjain, sana tai sävel arvotaan opetusdatasta opittujen 
+Kokeile generointia alkaen 1. asteesta, ja vertaa tuloksia eri asteilla. Seuraava kirjain, sana tai sävel arvotaan opetusdatasta opittujen 
 todennäköisyyksien mukaan. Järkevien - tai hauskojen - lauseiden tuottamiseen tarvitaan minimissään toisen asteen Markovin ketju. 
 Musiikkikin on 1-asteella tuotettuna aika satunnaista, vaikka noudattaa toki jotain sävellajia, kunhan opetusdata on ollut siinä suhteessa konsistenttia. 
 
-**Musiikin tuottaminen.** Aiemmissa projekteissa on musiikkidataa syötetty ohjelmalle MIDI-tiedostoina, [Lilypond](http://lilypond.org/)-nuotteina tai [abc](https://abcnotation.com/)-notaationa. Python-kirjastossa [music21](https://web.mit.edu/music21/) on monia hyödyllisiä välineitä. Markov ketjuja musiikin generaatioon voi tehostaa muillakin tekniikoilla, katso esim. [Musikalisches Würfelspiel](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel). Myös [geneettisillä algoritmeilla](https://en.wikipedia.org/wiki/Genetic_algorithm) voi tuottaa taidetta.
+**Musiikin tuottaminen.** Aiemmissa projekteissa on musiikkidataa syötetty ohjelmalle MIDI-tiedostoina, [Lilypond](http://lilypond.org/)-nuotteina tai [abc](https://abcnotation.com/)-notaationa. Python-kirjastossa [music21](https://web.mit.edu/music21/) on monia hyödyllisiä välineitä. Musiikkia on tuotettu satunnaisesti jo paljon ennen tietokoneita, katso [Musikalisches Würfelspiel](https://en.wikipedia.org/wiki/Musikalisches_W%C3%BCrfelspiel). Myös [geneettisillä algoritmeilla](https://en.wikipedia.org/wiki/Genetic_algorithm) voi tuottaa taidetta. Algoritmissa tarvittavan kelpoisuus-funktion määritteleminen on kuitenkin vaikeaa.
 
 **Harjoitusdatan määrä**. Jotta ei päädytä toistamaan opetusdataa sellaisenaan, pitää esim. 2-asteella generoitaessa olla niin paljon opittuja mahdollisia 
 kolmen sanan / sävelen jonoja, että kahden edellisen perusteella voi kolmannen riittävän usein valita useammalla tavalla.
@@ -284,16 +286,16 @@ Varsinkin tekstiä tuotettaessa tarvitaan paljon harjoitusdataa (kokonaisia kirj
 riittää pienempi määrä opetusdataa, mutta silti niin paljon, että datan syöttäminen käsin olisi kohtuuttoman työlästä. 
 Tarvitaan sopivaa dataa, joka muunnetaan automaattisesti ohjelman käyttämään muotoon.
 
-Jos tämä aihe kiinnostaa, kannattaa jutella ohjaajan kanssa jo ennen työn aloittamista. 
+**Jos tämä aihe kiinnostaa, kannattaa jutella ohjaajan kanssa jo ennen työn aloittamista.** 
 
-# Hahmontunnistus
+### Hahmontunnistus
 #### Tarkempi määrittely 
-Toteuta ohjelma, joka harjoitusdatan perusteella oppii tunnistamaan jotakin kuvia. Lopullinen ohjelma 
-lukee ensin harjoitusdatan, oppii sen perusteella tunnistamaan uusia, entuudestaan tuntemattomia kuvia. 
+Toteuta ohjelma, joka harjoitusdatan perusteella oppii tunnistamaan jotakin kuvia. Ohjelma 
+lukee ensin harjoitusdatan, ja oppii sen perusteella tunnistamaan uusia, entuudestaan tuntemattomia kuvia. 
 Alla muutama tarkempi aiheidea. Muutkin ovat mahdollisia (juttele ohjaajan kanssa). 
 
 **Kasvojentunnistuksen** voi toteuttaa esimerkiksi [Eigenface](https://en.wikipedia.org/wiki/Eigenface):n avulla. 
-Tähän aiheeseen vaaditaan vähintään kurssi lineaarialgebra ja matriisilaskenta 1+2 käytynä. Jos käsitteet kovarianssimatriisi ja pääkomponenttianalyysi ovat 
+Tähän aiheeseen vaaditaan vähintään kursseja lineaarialgebra ja matriisilaskenta 1+2 vastaavat tiedot. Jos käsitteet kovarianssimatriisi ja pääkomponenttianalyysi ovat 
 tuttuja, ymmärrät varmaan tähän aiheeseen liittyvän matemaattisen teorian. Toteuta vaativia matriisilaskennan operaatioita itse.
 
 **Käsin kirjoitettujen numeroiden tunnistus.** [MNIST](http://yann.lecun.com/exdb/mnist/) on tietokanta, jota käytetään paljon hahmontunnistusmenetelmien 
@@ -302,7 +304,7 @@ jotta työmäärä on kohtuullinen. Joka tapauksessa neuroverkko vastavirta-algo
 
 Neuroverkkoja ennestään tuntemattomalle helpompi ratkaisu on muuntaa MNIST:in harmaasävykuvat mustavalkoisiksi ja käyttää 
 [k:n lähimmän naapurin](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) menetelmää pistejoukkojen etäisyysmitoilla. 
-Tällöin tuntematon kuva luokitellaan samaksi, kuin k sitä lähimmät naapurit. Näin voi myös saavuttaa niin hyvän luokittelutuloksen, 
+Tällöin tuntematon kuva luokitellaan samaksi, kuin enemmistö sen k lähimmästä naapurista on. Näin voi myös saavuttaa niin hyvän luokittelutuloksen, 
 että neuroverkoilla ei ole helppo päästä samaan. Artikkeli [A Modified Hausdorff Distance for Object Matching](https://ieeexplore.ieee.org/document/576361) 
 kertoo muutamasta mahdollisesta etäisyysmitasta. Artikkelissa parhaaksi mainitun mitan D22 lisäksi kannattaa kokeilla ainakin mittaa D23 sellaisenaan ja ilman kerrointa 1/N osakaavassa d6.
 
@@ -311,11 +313,11 @@ Lisää materiaalia neuroverkoista:
 - [Neuroverkkojen testauksesta](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) kertona Sebastian Björkqvistin artikkeli. 
 - [Michael Nielsenin](http://neuralnetworksanddeeplearning.com/chap1.html) kirjoittama arikkeli MNISTin numeroiden tunnistuksesta neuroverkoilla. 
 - [Heli Tuomisen](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) kirjoittama kurssimateriaali neuroverkkojen matematiikasta suomeksi. 
-- [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)in erittäin hyvin tehdyt videot neuroverkoista. 
+- [3Blue1Brownin](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) erittäin hyvin tehdyt videot neuroverkoista. 
 - [Deep Learning](https://www.deeplearningbook.org/) oppikirja ns. syväoppimisesta. **Huom** vaikka syväoppiminen on "aidoissa" sovelluksissa useimmin käytetty tekniikka, on syväoppivan verkon toteuttaminen huomattavasti haastavampaa kuin tältä harjoitustyöltä vaaditaan. 
 
-
-# Luolastojen generointi
+---
+## Luolastojen generointi
 #### Tarkempi määrittely
 Toteuta ohjelma, joka luo jonkinlaisen luolaston, tai kartan dynaamisesti. 
 Luolaston generointi voi olla joko etukäteen tapahtuva tai dynaamisesti pelin aikana pelaajan liikkumisen mukaan kehittyvä. 
@@ -349,7 +351,7 @@ vaihtamiseen tai yksittäisten merkkien korvaamiseen aina jollain tietyllä merk
 **Vaihtoehtoisesti** voit toteuttaa ohjelman joka **murtaa** (eli purkaa tietämättä siihen tarvittavaa avainta) salauksia. Vaihtosalaukseen perustuvan 
 salakirjoituksen saa murrettua sanaston avulla merkkien frekvenssejä analysoimalla, jos teksti on riittävän pitkä ja tiedetään mitä kieltä se on. 
 Ratkaisuksi käy peruuttava haku, joka kokeilee korvata salattuja merkkejä siinä järjestyksessä, mitkä frekvenssien perusteella ovat luultavimpia. 
-Sanaston talletukseen sopii [trie](https://www.geeksforgeeks.org/introduction-to-trie-data-structure-and-algorithm-tutorials/#:~:text=Trie%20data%20structure%20is%20defined,finding%20something%20or%20obtaining%20it.)-tietorakenne. Koska mikään sanasto ei ole täydellinen, pitää peruuttava haku toteuttaa niin, että hyväksytään tietty määrä virheellisiltä vaikuttavia sanoja.
+Sanaston talletukseen sopii [trie](https://en.wikipedia.org/wiki/Trie)-tietorakenne. Koska mikään sanasto ei ole täydellinen, pitää peruuttava haku toteuttaa niin, että hyväksytään tietty määrä virheellisiltä vaikuttavia sanoja.
 
 ---
 ## Muita aiheita
@@ -365,9 +367,8 @@ kontti mahdollisimman tehokkaasti, jos tiedetään pakettien määrä ja koot. T
 
 ### Säännöllisten lausekkeiden tulkki tai kääntäjä
 
-Toteuta ns. tulkki, eli ohjelma joka sovittaa [säännöllistä lauseketta](https://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions) 
-merkkijonoon ja kertoo, kuuluuko se lausekkeen määräämään kieleen. Toteuta myös [kääntäjä](https://www.geeksforgeeks.org/regular-expression-to-dfa/) 
-joka annetun säännölisen lausekkeen perusteella tuottaa [DFA](https://en.wikipedia.org/wiki/Deterministic_finite_automaton):n joka hyväksyy samat merkkijonot, kuin lauseke. 
+Toteuta tulkki, eli ohjelma joka sovittaa [säännöllistä lauseketta](https://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions) 
+merkkijonoon ja kertoo, kuuluuko se lausekkeen määräämään kieleen. Vaihtoehtoisesti voit toteuttaa [kääntäjän](https://www.geeksforgeeks.org/regular-expression-to-dfa/), joka annetun säännölisen lausekkeen perusteella tuottaa [DFA:n](https://en.wikipedia.org/wiki/Deterministic_finite_automaton), joka hyväksyy samat merkkijonot, kuin lauseke. 
 
 
 ### Kirjoitusvirheiden korjaaja
@@ -382,9 +383,6 @@ Toteuta laskin joka laskee annetun matemaattisen lausekkeen arvon, ja mahdollise
 
 {% include typo_instructions_fin.md %}
 
-[^1]: **Huomaa**, että lopullinen päätösvalta kunkin aiheen hyväksyttävyydellä on kurssin henkilökunnalla. Omaa aihe ehdotustasi joudutaan ehkä muokkaamaan jotta päästään kurssin vaatimaan vaativuuteen. 
-[^2]: Muista kuitenkin, että ohjaaja auttaa tiedonhaussa tarvittaessa, yritä ensin itse ja ota sitten yhteyttä matalalla kynnyksellä. 
-[^3]: Kuvien tuottaminen on tälle kursille liian haastava aihe. 
 
 
 
