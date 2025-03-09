@@ -7,7 +7,7 @@ lang: fi # fi or en
 ref: suggested_schedule # same as the markdown filename
 ---
 
-Kurssilla on palautus jokaisen viikon lauantaina, näiden deadlinet löytyvät kurssikalenterista moodlesta. 
+Kurssilla on palautus jokaisen viikon (1-6) lauantaina, näiden deadlinet löytyvät kurssikalenterista moodlesta. 
 
 ## Viikko 1
 - Aihe, käytettävä ohjelmointikieli ja työn laajuus päätetty.
