@@ -18,8 +18,7 @@ Kurssilla on palautus jokaisen viikon (1-6) lauantaina, näiden deadlinet löyty
     - Muista myös sallia [issuet]({% link _pages/fin/git.md %}#issuiden-salliminen).
 - [Projektinhallinta]({% link _pages/fin/project_maintenance_frontpage.md %}#projektin-hallinta) kunnossa.
     - Tämä tarkoittaa, että repositorion pitäisi olla tehtynä ja labtooliin rekisteröitynä. Tämän lisäksi jonkinlainen tapa kääntää koodia
-      ja hallita riippuvuuksia pitäisi olla. Pythonilla tämä voi tarkoittaa poetrya, mutta jos jokin muu työkalu on
-      tutumpi niin sitäkin saa käyttää. 
+      ja hallita riippuvuuksia pitäisi olla. Pythonin kanssa on syytä käyttää Poetrya, joka on muillakin opiskelijoilla yleensä käytössä ja heille tuttu väline.
 
 **Viikko 1. Palautus** (katso päivä kurssikalenterista ja [ohjeet]({% link _pages/fin/documentation.md %}) palautuksista)
 - [Viikkoraportti 1]({% link _pages/fin/documentation.md %}#viikkopalautukset)
