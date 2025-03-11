@@ -35,6 +35,41 @@ Before we dive into using Poetry, first it must be installed. Follow the install
 
 **NOTE:** All installation methods may require closing and reopening the terminal window for Poetry commands to start functioning. In some cases, even restarting the computer may be necessary.
 
+#### **Linux and macOS Installation**
 
+To install Poetry, run the following command in the terminal:
+
+```bash
+curl -sSL https://install.python-poetry.org | POETRY_HOME=$HOME/.local python3 -
+```
+
+**NOTE:** If the `python3` command is not found, use the `python` command at the end instead. However, make sure the Python version is correct.
+
+**NOTE:** If you encounter the error `SSL: CERTIFICATE_VERIFY_FAILED` on macOS, open the Python installation directory with the command:
+
+```bash
+open /Applications/Python\ 3.9
+```
+
+(Replace "3.9" with the Python version you are using) and click on the _Install Certificates.command_ file. Wait for the operation to finish, and then run the installation command again.
+
+After installation, the path to the Poetry binary must be added to the `PATH` variable. You can do this by adding the following line to the end of your home directory's _.bashrc_ file:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+You can add it using a text editor like nano, or by running the following command:
+
+```bash
+echo "export PATH=\"\$HOME/.local/bin:\$PATH\"" >> $HOME/.bashrc
+```
+**NOTE:** If you use the zsh shell, the correct configuration file is _.zshrc_ instead of _.bashrc_. You can check the shell you are using with the command `echo $SHELL`. In this case, replace the `$HOME/.bashrc` path in the previous command with `$HOME/.zshrc`.
+
+**NOTE:** If you use macOS and the bash shell, use `$HOME/.bash_profile` instead of `$HOME/.bashrc` in the previous command.
+
+**NOTE:** On the melkki server, use `$HOME/.profile` instead of `$HOME/.bashrc` in the previous command.
+
+Restart the terminal and verify that the installation was successful by running the command `poetry --version`. The command should output the installed version.
 
 {% include typo_instructions_en.md %}
