@@ -13,7 +13,7 @@ The source code for libraries is often available on version control platforms li
 
 The versions of libraries used in a project are called the project's **dependencies**. In Python projects, dependencies are typically installed in **virtual environments** specific to the project, so there are no conflicts between the dependencies of different projects on the same computer. To make managing dependencies in virtual environments easier, we use the [Poetry](https://python-poetry.org/) command-line tool in this course.
 
-### **Notes on Commands**
+### Notes on Commands
 
 On many computers, Python version 3 commands are executed using the `python3` command instead of `python`. Check the version in use by running:
 
@@ -29,13 +29,13 @@ python --version
 
 If the version is below 3.10 in both cases, install the **latest Python version** from [here](https://www.python.org/downloads/). After installation, make sure the correct version is in use. Otherwise, use the command that references a version of Python **at least 3.10**.
 
-### **Installation**
+### Installation
 
 Before we dive into using Poetry, first it must be installed. Follow the installation instructions below that are appropriate for your computer's operating system. It is also a good idea to check out Poetry's [official](https://python-poetry.org/docs/) installation guide.
 
 **NOTE:** All installation methods may require closing and reopening the terminal window for Poetry commands to start functioning. In some cases, even restarting the computer may be necessary.
 
-#### **Linux and macOS Installation**
+#### Linux and macOS Installation
 
 To install Poetry, run the following command in the terminal:
 
