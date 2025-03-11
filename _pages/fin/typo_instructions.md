@@ -15,7 +15,7 @@ ref: typo_instructions # same as the markdown filename
 ## Typoja materiaalissa
 
 Kun huomaat näillä sivuilla kirjoitusvirheitä tai muita heikkouksia, tee korjausehdotus. Kurssimateriaali on repositoriossa
-[https://github.com/algolabra-hy/algolabra-hy.github.io/](https://github.com/algolabra-hy/algolabra-hy.github.io/). Esimerkiksi tämä sivu löytyy tiedostosta [fixes_to_the_pages.md](https://github.com/algolabra-hy/algolabra-hy.github.io/_pages/fin/typo_instructions.md).
+[https://github.com/algolabra-hy/algolabra-hy.github.io/](https://github.com/algolabra-hy/algolabra-hy.github.io/). Esimerkiksi tämä sivu löytyy tiedostosta [fixes_to_the_pages.md](https://github.com/algolabra-hy/algolabra-hy.github.io/blob/main/_pages/fin/typo_instructions.md).
 
 Muutosehdotuksen tekeminen aloitetaan painamalla tiedoston _kynä-symbolia_:
 
