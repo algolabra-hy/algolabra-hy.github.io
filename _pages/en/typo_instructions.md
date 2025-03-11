@@ -15,7 +15,7 @@ ref: typo_instructions # same as the markdown filename
 ## Typo Corrections in the Material
 
 If you notice any typos or other weaknesses on these pages, please make a correction suggestion. The course material is stored in the repository
-[https://github.com/algolabra-hy/algolabra-hy.github.io/](https://github.com/algolabra-hy/algolabra-hy.github.io/). For example, this page can be found in the file [fixes_to_the_pages.md](https://github.com/algolabra-hy/algolabra-hy.github.io/blob/main/typo_instructions.md).
+[https://github.com/algolabra-hy/algolabra-hy.github.io/](https://github.com/algolabra-hy/algolabra-hy.github.io/). For example, this page can be found in the file [typo_instructions.md]([https://github.com/algolabra-hy/algolabra-hy.github.io/blob/main/typo_instructions.md](https://github.com/algolabra-hy/algolabra-hy.github.io/blob/main/_pages/en/typo_instructions.md)).
 
 To make a suggestion, start by clicking the _pen symbol_ for the file:
 
