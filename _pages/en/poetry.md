@@ -72,4 +72,215 @@ echo "export PATH=\"\$HOME/.local/bin:\$PATH\"" >> $HOME/.bashrc
 
 Restart the terminal and verify that the installation was successful by running the command `poetry --version`. The command should output the installed version.
 
+#### Windows Installation
+
+Install Poetry by running the following command in the terminal:
+
+```powershell
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+```
+
+After installation, the Poetry binary path must be added to the `PATH` variable. Follow [this guide](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/) to add the path `%APPDATA%\Python\Scripts` to the `PATH` variable.
+
+Restart the terminal and verify that the installation was successful by running the command `poetry --version`. The command should output the installed version.
+
+### Initializing a Project
+
+Let's practice using Poetry by creating a small example project. Create a directory named _poetry-test_ in a location of your choice. The directory does not need to be in a repository registered with Labtool. Open the directory in a terminal and run the following command:
+
+```bash
+poetry init --python "^3.10"
+```
+
+The `--python "^3.10"` option specifies that the project requires at least Python version 3.10. Running the command will start an interactive setup process, asking you various questions. You can answer them as you prefer, and all responses can be modified later. Therefore, skipping questions by pressing the Enter key is a good option.
+
+Once you have answered the last question, check the contents of the directory. A _pyproject.toml_ file should appear, containing something like the following:
+```
+[tool.poetry]
+name = "poetry-test"
+version = "0.1.0"
+description = ""
+authors = ["Matti Luukkainen <matti.luukkainen@helsinki.fi>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+```
+The `[tool.poetry]` section of the file contains general information about the project, such as its name, description, and maintainers. Below this section, there are sections listing the project's dependencies. In the `[tool.poetry.dependencies]` section, we can see the Python version requirement we specified during the `poetry init` command, which is written as `python = "^3.10"`. The `^3.10` notation means the project requires at least Python version 3.10.
+
+Once you are familiar with the _pyproject.toml_ file, finalize the project initialization by running the following command:
+
+```bash
+poetry install
+```
+
+Running this command performs the necessary setup for the project, such as initializing a virtual environment and installing dependencies. Therefore, this command should always be executed before starting to use a new project.
+
+Executing the command will likely result in the following message:
+```
+Installing the current project: poetry-test (0.1.0)
+The current project could not be installed: [Errno 2] No such file or directory: '~/poetry-test/README.md'
+If you do not want to install the current project use --no-root
+```
+This happens because Poetry attempts to install the current project as well, but there is no module named _poetry-test_ in the project. Despite how the message might look, this is [not an error](https://github.com/python-poetry/poetry/pull/8369) but rather a warning. The project initialization has been completed successfully. However, if you want to avoid the warning, you can use the following command instead:
+
+```bash
+poetry install --no-root
+```
+
+In addition to setting up the virtual environment, this command installs only the project's dependencies, not the project itself.
+
+After running the command, a file named _poetry.lock_ should appear in the directory. This file contains version information for all installed dependencies. Thanks to this file, Poetry can always install the exact dependency versions specified when running the `poetry install` command. For this reason, the file should be added to version control.
+
+### Installing Dependencies
+
+{% include no_pip.md %}
+
+Next, let's install the first dependency for our project. The easiest way to find dependencies is by searching on Google and looking for relevant GitHub repositories or PyPI pages. As an example, let's install the [cowsay](https://pypi.org/project/cowsay/) library. This can be done from the project's root directory (the same directory where the _pyproject.toml_ file is located) with the following command:
+
+```bash
+poetry add cowsay
+```
+
+The installation command follows the format `poetry add <library>`. After executing the command, you will notice that new content has been added under the `[tool.poetry.dependencies]` section of the _pyproject.toml_ file:
+
+```
+[tool.poetry.dependencies]
+python = "^3.10"
+cowsay = "^2.0.3"
+```
+The `poetry add` command installs the latest version of a library by default, which, at the time of execution, was `2.0.3`. This is often exactly what we want to do. However, if we wanted to install a specific version of the cowsay library, such as version `1.0`, we could do so with the following command:
+
+```bash
+poetry add cowsay==1.0
+```
+
+If we wanted to remove the library from our project's dependencies, we could do so with the command:
+
+```bash
+poetry remove cowsay
+```
+
+However, let's keep the cowsay library installed for now.
+
+### Running Commands in the Virtual Environment
+
+Next, let's add a folder named _src_ to the _poetry-test_ directory and create a file named _index.py_ inside it. Add the following code to the file:
+
+```python
+import cowsay
+
+cowsay.tux("Poetry is awesome!")
+```
+
+In the code, we use the `import` statement to access the cowsay library. If we try to run the file in the terminal with the command:
+
+```bash
+python3 src/index.py
+```
+
+We will get the following error message:
+
+```
+ModuleNotFoundError: No module named 'cowsay'
+```
+
+This happens because we are not inside the project's virtual environment, and Python cannot find our project's dependencies. This can be fixed by using the [run](https://python-poetry.org/docs/cli/#run) command:
+
+```bash
+poetry run python3 src/index.py
+```
+The `poetry run` command executes the given command within the virtual environment, where Python can find our dependencies.
+
+When actively developing a project and running commands in the terminal continuously, it is most convenient to stay inside the virtual environment. We can enter the virtual environment with the following command [shell](https://python-poetry.org/docs/cli/#shell):
+
+```bash
+poetry shell
+```
+
+Once inside the virtual environment, the prompt will display the virtual environment's name in parentheses:
+
+```bash
+$ (poetry-test-IhtScY6W-py3.9)
+```
+
+While inside the virtual environment, we can run commands "normally," without needing to use the `run` command:
+
+```bash
+python3 src/index.py
+```
+
+To exit the virtual environment, we can use the `exit` command.
+
+Poetry's imported dependencies are only available within the virtual environment, and VS Code's built-in "debugging mode" (F5 by default) may not work as expected. Try first using `poetry shell` and only then launch VS Code with the `code /path/to/project` command.
+
+### Development Dependencies
+
+With Poetry, you can group dependencies based on their intended use. A common way to group dependencies is to separate them into _development_ and _runtime_ dependencies. Development dependencies are required during software development but are not necessary for running the application.
+
+Running the `poetry add` command by default installs dependencies under the `[tool.poetry.dependencies]` section. In addition to these runtime dependencies, we can install dependencies that are needed only during development. These are dependencies that are not required for running the application itself (for example, running the `python3 src/index.py` command).
+
+To install development dependencies, you can use the `--group dev` flag with the `poetry add` command. For example, the [pytest](https://pytest.org/) library, which we will become familiar with soon, can be installed as a development dependency with the following command:
+
+```bash
+poetry add pytest --group dev
+```
+
+Running this command adds the `pytest` library as a development dependency under the `[tool.poetry.group.dev.dependencies]` section:
+
+```
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+```
+
+Defining development dependencies is useful because it reduces the number of dependencies that need to be installed when we only want to run the application. In this case, dependencies can be installed with the command `poetry install --without dev`.
+
+{% include no_pip.md %}
+
+### Solutions to Common Issues
+
+Often, Poetry issues can be resolved with the following steps:
+
+1. Make sure you have the latest version of Poetry installed by running the command `poetry self update`.
+2. Ensure the correct Python version requirement is specified in the _pyproject.toml_ file:
+
+   ```
+   [tool.poetry.dependencies]
+   python = "^3.10"
+   ```
+
+   **If the version is incorrect**, change it to the correct one and run the command `poetry update`.
+
+3. Clear the cache by running the following commands:
+   ```bash
+   poetry cache clear pypi --all
+   poetry cache clear PyPi --all
+   ```
+
+4. List the virtual environments used in the project with the command `poetry env list`, and remove them one by one with the command `poetry env remove <name>`. For example:
+
+   ```bash
+   $ poetry env list
+   unicafe-jLeQYxxf-py3.9 (Activated)
+   $ poetry env remove unicafe-jLeQYxxf-py3.9
+   Deleted virtualenv: /Users/kalleilv/Library/Caches/pypoetry/virtualenvs/unicafe-jLeQYxxf-py3.9
+   ```
+Once the virtual environments have been removed, run the command `poetry install`.
+
+After completing all the steps, try running the failed Poetry command again.
+
+### Keyring Issue
+
+If the `poetry install` command prompts for a keyring password, the issue can be resolved by running the following in the terminal:
+```bash
+export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
+```
+Then, run the `poetry install` command again. 
+
+You can add this line to your _.bashrc_ (or equivalent) file so that it doesn’t need to be run at the start of every terminal session.
+
 {% include typo_instructions_en.md %}
