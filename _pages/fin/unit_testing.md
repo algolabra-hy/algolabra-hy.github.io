@@ -334,7 +334,7 @@ class TestMaksukortti(unittest.TestCase):
         self.assertEqual(self.kortti.saldo_euroina(), 150.0)
 ```
 
-### Onko jo testattu tarpeeksi: testikattavuua
+### Onko jo testattu tarpeeksi: testikattavuus
 
 Olemme tyytyväisiä, uskomme että testitapauksia on nyt tarpeeksi. Onko tosiaan näin? Onneksi on olemassa työkaluja, joilla voidaan tarkastaa testien rivi- ja haarautumakattavuus. _Rivikattavuus_ mittaa mitä koodirivejä testien suorittaminen on tutkinut. Täydellinen rivikattavuuskaan ei tietenkään takaa että ohjelma toimii oikein, mutta on parempi kuin ei mitään. _Haarautumakattavuus_ taas mittaa mitä eri suoritushaaroja koodista on käyty läpi. Suoritushaaroilla tarkoitetaan esimerkiksi if-komentojen valintatilanteita.
 
