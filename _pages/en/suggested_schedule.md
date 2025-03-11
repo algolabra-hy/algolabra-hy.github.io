@@ -22,8 +22,8 @@ The course has a submission every Saturday of weeks 1–6, and the deadlines can
   - For Python, it is recommended to use Poetry, as other students commonly use it too, and it is a familiar tool for them.
 
 **Week 1. Submission** (Check the date in the course calendar and [instructions]({% link _pages/en/documentation.md %}) for submissions)
--[Weekly Report 1]({% link _pages/en/documentation.md %}#weekly-submissions)
--[Specification Document]({% link _pages/en/documentation.md %}#specification-document)
+- [Weekly Report 1]({% link _pages/en/documentation.md %}#weekly-submissions)
+- [Specification Document]({% link _pages/en/documentation.md %}#specification-document)
 Important: Remember to include your study program and the project’s programming language in the specification document!
 Also, make sure to clearly define the core of your exercise project. More instructions can be found in the [specification document guidelines]({% link _pages/en/documentation.md %}#specification-document).
 
@@ -79,6 +79,51 @@ Ensure that your code is in a state where meaningful feedback can be given.
   - Peer review instructions are available on [Moodle]({{site.moodle}}).
  
 ## Week 5
+- **The first peer review is completed.**  
+- Incorporating feedback received on your project.  
+- [Implementation Document]({% link _pages/en/documentation.md %}#implementation-document) and [Testing Documentation]({% link _pages/en/documentation.md %}#testing-document) are up to date.  
+- **The core functionality is complete.** Any custom data structures are nearly finished.  
+- **Tests are comprehensive** and adequately cover the project.  
+
+### **Week 5. Submission**  
+- [Weekly Report 5]({% link _pages/en/documentation.md %}#weekly-submissions)
+
+## Week 6
+- **Second peer review.**  
+- Finalizing the program.  
+- Finalizing tests.  
+- **[Documentation]({% link _pages/en/documentation.md %}) refinement.**  
+  - Remember to include the [User Guide]({% link _pages/en/documentation.md %}#user-guide).  
+
+### **Week 6. Submission**  
+- [Weekly Report 6]({% link _pages/en/documentation.md %}#weekly-submissions)  
+- The **second peer review** will be assigned after this week’s submission, with a deadline a few days after the review is given.  
+  - Find the link to the repository under review in Labtool.  
+  - Remember to enable [issues]({% link _pages/en/git.md %}#allowing-issues).  
+  - The peer review deadline is **Thursday of Week 7**.  
+  - Peer review instructions are available on [Moodle]({{site.moodle}}).
+
+## Final Submission
+
+(The exact date can be found in Moodle’s calendar.)  
+
+### **Documentation:**  
+- 100% clear and well-commented code.  
+- Completed documents:  
+  - [Specification Document]({% link _pages/en/documentation.md %}#specification-document) (no need to update the original).  
+  - [Implementation Document]({% link _pages/en/documentation.md %}#implementation-document).  
+  - [Testing Document]({% link _pages/en/documentation.md %}#testing-document).  
+  - [Weekly Reports]({% link _pages/en/documentation.md %}#weekly-submissions).  
+  - [User Guide]({% link _pages/en/documentation.md %}#user-guide).  
+
+### **Program:**  
+- An executable program.  
+- The defined scope in the **Specification Document** has been fully achieved.  
+- The project is **complete and polished**.  
+
+### **Testing:**  
+- **Comprehensive** [unit testing]({% link _pages/en/testing_requirements.md %}).  
+- The program’s testing process is documented in the **Testing Document**.
 
 
 {% include typo_instructions_en.md %}
