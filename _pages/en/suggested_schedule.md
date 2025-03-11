@@ -22,8 +22,8 @@ The course has a submission every Saturday of weeks 1–6, and the deadlines can
   - For Python, it is recommended to use Poetry, as other students commonly use it too, and it is a familiar tool for them.
 
 **Week 1. Submission** (Check the date in the course calendar and [instructions]({% link _pages/en/documentation.md %}) for submissions)
-[Weekly Report 1]({% link _pages/en/documentation.md %}#weekly-submissions)
-[Specification Document]({% link _pages/en/documentation.md %}#specification-document)
+-[Weekly Report 1]({% link _pages/en/documentation.md %}#weekly-submissions)
+-[Specification Document]({% link _pages/en/documentation.md %}#specification-document)
 Important: Remember to include your study program and the project’s programming language in the specification document!
 Also, make sure to clearly define the core of your exercise project. More instructions can be found in the [specification document guidelines]({% link _pages/en/documentation.md %}#specification-document).
 
