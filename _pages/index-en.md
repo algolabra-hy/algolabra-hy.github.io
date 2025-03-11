@@ -12,6 +12,6 @@ You can explore these pages to get a general overview of the course flow even be
 
 ## Course Material Author and License
 
-These pages are maintained by Jeremias Berg. The material heavily borrows from the [Software Engineering](https://ohjelmistotuotanto-hy.github.io/) course material, created by <a href="https://github.com/mluukkai">Matti Luukkainen</a> and <a href="https://github.com/Kaltsoon">Kalle Ilves</a>. If you find any improvements to be made to these pages, you can [participate]({% link _pages/en/typo_instructions.md %}#typoja-materiaalissa) in enhancing the pages yourself.
+These pages are maintained by Jeremias Berg. The material heavily borrows from the [Software Engineering](https://ohjelmistotuotanto-hy.github.io/) course material, created by <a href="https://github.com/mluukkai">Matti Luukkainen</a> and <a href="https://github.com/Kaltsoon">Kalle Ilves</a>. If you find any improvements to be made to these pages, you can [participate]({% link _pages/en/typo_instructions.md %}#typo-corrections-in-the-material) in enhancing the pages yourself.
 
 This material is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons BY-NC-SA 3.0 license</a>, which means you are free to use and distribute it as long as you don’t remove the names of the original authors. If you make modifications to the material and wish to distribute the modified version, it must be licensed under the same license. Commercial use of the material is prohibited without separate permission.
