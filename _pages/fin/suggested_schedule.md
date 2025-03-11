@@ -116,7 +116,7 @@ Varmista, että koodisi on sellaisessa kunnossa, että siitä voi antaa merkityk
     - [Käyttöohje]({% link _pages/fin/documentation.md %}#käyttöohje)
 
 **Ohjelma:**
--   Mielellään suoritettava ohjelma. 
+-   Suoritettava ohjelma. 
 -   Toiminnallisuudessa määrittelydokumenttiin kirjoitettu laajuus saavutettu.  
 -   Työ valmis ja hiottu.
 
