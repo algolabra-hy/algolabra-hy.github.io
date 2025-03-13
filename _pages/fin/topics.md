@@ -311,12 +311,12 @@ kertoo muutamasta mahdollisesta etäisyysmitasta. Artikkelissa parhaaksi mainitu
 Lisää materiaalia neuroverkoista:
 
 - [Takaisinvirtausalgoritmin toteuksesta](https://www.youtube.com/watch?v=sIX_9n-1UbM) (backpropagation) kertova yksityiskohtainen video.
-- [A step by step forward pass and backpropagation example](https://blog.rlamsal.com.np/forward-pass-backpropagation-example/) Rabindra Lamsalin kirjoittama artikkeli ns. feed forward verkosta ja sen treenaamisesta.
+- [A step by step forward pass and backpropagation example](https://blog.rlamsal.com.np/forward-pass-backpropagation-example/) - Rabindra Lamsalin kirjoittama artikkeli ns. feed forward verkosta ja sen treenaamisesta.
 - [3Blue1Brownin](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) erittäin hyvin tehdyt videot neuroverkoista.
 - [Michael Nielsenin](http://neuralnetworksanddeeplearning.com/chap1.html) kirjoittama arikkeli MNISTin numeroiden tunnistuksesta neuroverkoilla.
 - [Deep Learning](https://www.deeplearningbook.org/) oppikirja ns. syväoppimisesta. **Huom** vaikka syväoppiminen on "aidoissa" sovelluksissa useimmin käytetty tekniikka, on syväoppivan verkon toteuttaminen huomattavasti haastavampaa kuin tältä harjoitustyöltä vaaditaan. 
 - [Heli Tuomisen](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) kirjoittama kurssimateriaali neuroverkkojen matematiikasta suomeksi. 
-- [Neuroverkkojen testauksesta](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) kertona Sebastian Björkqvistin artikkeli.
+- [Neuroverkkojen testauksesta](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) kertova Sebastian Björkqvistin artikkeli.
 
 ---
 
