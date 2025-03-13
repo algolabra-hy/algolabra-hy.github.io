@@ -33,7 +33,7 @@ Note that the suggestions below are only to help you get started. A key part of 
 - [Machine learning]({% link _pages/en/topics.md %}#machine-learning)
   - Computational creativity, text or music generation
   - Image recognition 
-  - Generating dungeons
+- [Generating dungeons]({% link _pages/en/topics.md %}#dungeon-generation)           
 - [Encryption and Security]({% link _pages/en/topics.md %}#encryption-and-security)
 - [Signal Processing]({% link _pages/en/topics.md %}#signal-processing)
 - [Container packing]({% link _pages/en/topics.md %}#container-packing)
