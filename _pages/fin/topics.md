@@ -27,7 +27,7 @@ Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia 
 - [Koneoppiminen]({% link _pages/fin/topics.md %}#koneoppiminen)
   - Laskennallinen luovuus, tekstin tai musiikin generointi
   - Hahmontunnistus 
-  - Luolastojen Generointi
+- [Luolastojen Generointi]({% link _pages/fin/topics.md %}#luolastojen-generointi)               
 - [Salaus ja tietoturva]({% link _pages/fin/topics.md %}#salaus-ja-tietoturva)
 - [Signaalin käsittely]({% link _pages/fin/topics.md %}#signaalinkäsittely-kuva-ääni)
 - [Kontin pakkaus]({% link _pages/fin/topics.md %}#kontin-pakkaus)
