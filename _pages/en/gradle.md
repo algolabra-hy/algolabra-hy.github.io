@@ -331,24 +331,24 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("kuka olet: ");
-        String nimi = scanner.nextLine();
+        System.out.println("Who are you: ");
+        String name = scanner.nextLine();
 
-        System.out.println("Hello " + nimi);
+        System.out.println("Hello " + name);
     }
 }
 ```
 If the program is packaged into a _jar_ file (by running the ```gradle jar``` command), it will work as expected:
 <pre>
 $ java -jar build/libs/gradle-test.jar
-kuka olet:
+Who are you:
 mluukkai
 Hello mluukkai
 </pre>
 If the program is executed using Gradle's _run_ task, the result will be an error:
 <pre>
 $ gradle run
-kuka olet:
+Who are you:
 Exception in thread "main" java.util.NoSuchElementException: No line found
         at java.util.Scanner.nextLine(Scanner.java:1540)
         at Main.main(Main.java:7)
@@ -367,6 +367,135 @@ run {
 }
 </pre>
 
+Now the command _gradle run_ works.
 
+## Second Class
+
+Let's add a class to the program that allows multiplication calculations. Place the class in the package _ohtu_, i.e., in the file _src/main/java/ohtu/Multiplier.java_.
+
+```java
+package ohtu;
+
+public class Multiplier {
+    private int value;
+    
+    public Multiplier(int value) {
+        this.value = value;
+    }
+
+    public int multipliedBy(int other) {
+        return value * other;
+    }
+}
+```
+
+Use the class from the main program. Note that since the class is in a different package than the main program, the package must be imported:
+
+```java
+import java.util.*;
+import ohtu.Multiplier;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Multiplier three = new Multiplier(3);
+        System.out.println("Give a number ");
+        int luku = scanner.nextInt();
+
+        System.out.println("The number multiplied by three is " + three.multipliedBy(luku) );
+    }
+}
+```
+## Tests
+
+Now, let's create a JUnit test for the class. Gradle assumes that JUnit tests are placed under the directory _src/test/java_. We will place the test in the same package as the class being tested, in the file _src/test/java/ohtu/MultiplierTest.java_.
+
+```java
+package ohtu;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class MultiplierTest {
+
+    @Test
+    public void multiplicationWorks() {
+        Multiplier five = new Multiplier(5);
+
+        assertEquals(5, five.multipliedBy(1));
+        assertEquals(35, five.multipliedBy(7));
+    }
+}
+```
+
+Let's try running the tests with the command _gradle test_. As a result, we get a large number of error messages. The errors occur during the _compileTestJava_ task, which means during the compilation of the tests:
+
+<pre>
+$ gradle test
+
+> Task :compileTestJava FAILED
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:3: error: package org.junit does not exist
+import static org.junit.Assert.*;
+                       ^
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:4: error: package org.junit does not exist
+import org.junit.Test;
+                ^
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:8: error: cannot find symbol
+    @Test
+     ^
+  symbol:   class Test
+  location: class MultiplierTest
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:12: error: cannot find symbol
+        assertEquals(5, five.multipliedBy(1));
+        ^
+  symbol:   method assertEquals(int,int)
+  location: class MultiplierTest
+/Users/mluukkai/dev/intro_gradle/src/test/java/MultiplierTest.java:13: error: cannot find symbol
+        assertEquals(35, five.multipliedBy(7));
+        ^
+  symbol:   method assertEquals(int,int)
+  location: class MultiplierTest
+5 errors
+</pre>
+
+The reason for the errors is that our project does not recognize the code imported by the tests:
+
+<pre>
+import static org.junit.Assert.*;
+import org.junit.Test;
+</pre>
+
+This means that the JUnit library is a _dependency_ required during the compilation of our tests.
+
+## Dependencies
+
+In practice, dependencies are JAR files that contain the code of external libraries — in this case, JUnit. The advantage of Gradle, like Maven, is that the developer does not need to download dependencies manually. Instead, dependencies are defined in the _build.gradle_ file, and Gradle automatically downloads them if they are not already available on the system.
+
+The required configuration is as follows:
+
+<pre>
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: 'latest-release'
+}
+</pre>
+
+The first part, _repositories_, tells Gradle where to look for dependencies. [mavenCentral](https://search.maven.org) is one of the main repositories that store many libraries used by Gradle and Maven. The _repositories_ section can define multiple locations where Gradle searches for the project's dependencies.
+
+The second part specifies that the latest version of the JUnit library should be used for the _testImplementation_ phase. In practice, this means that when compiling the test code, Gradle adds JUnit to the _classpath_.
+
+There is also an alternative syntax for defining dependencies, where the dependency and its version are expressed as a single string:
+<pre>
+dependencies {
+    testImplementation 'junit:junit:latest-release'
+}
+</pre>
+
+When we run the command _gradle test_ again, everything works correctly.
+
+Remember to intentionally break a test and verify that the test framework detects the error.
 
 {% include typo_instructions_en.md %}
