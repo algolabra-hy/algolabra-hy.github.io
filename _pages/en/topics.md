@@ -253,7 +253,6 @@ Additional resources on neural networks:
 - [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) – Exceptionally well-made videos explaining neural networks.
 - [Michael Nielsen's article](http://neuralnetworksanddeeplearning.com/chap1.html) on recognizing MNIST digits with neural networks.
 - [Deep Learning](https://www.deeplearningbook.org/) – A textbook on deep learning. Note: While deep learning is the most commonly used technique in real-world applications, implementing a deep learning network is significantly more complex than what is required for this project.
-
 - [Heli Tuominen's Finnish course material](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) on the mathematics of neural networks.
 - [Testing Neural Networks](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) – An article by Sebastian Björkqvist on neural network testing.
   
