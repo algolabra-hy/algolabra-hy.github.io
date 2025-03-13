@@ -317,6 +317,7 @@ Lisää materiaalia neuroverkoista:
 - [Deep Learning](https://www.deeplearningbook.org/) oppikirja ns. syväoppimisesta. **Huom** vaikka syväoppiminen on "aidoissa" sovelluksissa useimmin käytetty tekniikka, on syväoppivan verkon toteuttaminen huomattavasti haastavampaa kuin tältä harjoitustyöltä vaaditaan. 
 
 ---
+
 ## Luolastojen generointi
 #### Tarkempi määrittely
 Toteuta ohjelma, joka luo jonkinlaisen luolaston, tai kartan dynaamisesti. 
@@ -331,6 +332,7 @@ joka ei kuulu kurssin esitietoihin, esimerkiksi jokin [delaunay triangulaation](
 - [Bowyer–Watson](https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm) algoritmi delaunay triangulaatioiden laskemiseen. 
 
 ---
+
 ## Salaus ja tietoturva
 Tietoturva on tänä päivänä tärkeämpää kuin koskaan. Salausta voi tehdä useilla eri tavoilla ja moniin käyttötarkoituksiin. 
 Esim. [RSA-salaus](https://fi.wikipedia.org/wiki/RSA) on harjoitustyöhön sopiva aihe. 
@@ -354,6 +356,7 @@ Ratkaisuksi käy peruuttava haku, joka kokeilee korvata salattuja merkkejä siin
 Sanaston talletukseen sopii [trie](https://en.wikipedia.org/wiki/Trie)-tietorakenne. Koska mikään sanasto ei ole täydellinen, pitää peruuttava haku toteuttaa niin, että hyväksytään tietty määrä virheellisiltä vaikuttavia sanoja.
 
 ---
+
 ## Muita aiheita
 ### Signaalinkäsittely (kuva, ääni)
 Toteuta algoritmien vaativuudesta riippuen yksi tai useampi signaalinkäsittelyalgoritmi. Useat signaalinkäsittelyn algoritmit hyödyntävät 
