@@ -255,7 +255,6 @@ Additional resources on neural networks:
 - [Deep Learning](https://www.deeplearningbook.org/) – A textbook on deep learning. Note: While deep learning is the most commonly used technique in real-world applications, implementing a deep learning network is significantly more complex than what is required for this project.
 
 - [Heli Tuominen's Finnish course material](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) on the mathematics of neural networks.
-
 - [Testing Neural Networks](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) – An article by Sebastian Björkqvist on neural network testing.
   
 ---
