@@ -247,13 +247,14 @@ A simpler approach for those unfamiliar with neural networks is to convert the M
 In this approach, an unknown image is classified based on the major category of its k nearest neighbors. This method can sometimes achieve classification results that are difficult to match even with neural networks. The article [A Modified Hausdorff Distance for Object Matching](https://ieeexplore.ieee.org/document/576361) describes several possible distance measures. In addition to the D22 measure, which the article highlights as the best, it is also worth testing the D23 measure, both as is and without the 1/N factor in the d6 subformula.
 
 Additional resources on neural networks:
-- [The Neural Blog](https://theneuralblog.com/forward-pass-backpropagation-example/) – An article by Rabindra Lamsal on feedforward networks and their training.
-- [Testing Neural Networks](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) – An article by Sebastian Björkqvist on neural network testing.
-- [Michael Nielsen's article](http://neuralnetworksanddeeplearning.com/chap1.html) on recognizing MNIST digits with neural networks.
-- [Heli Tuominen's Finnish course material](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) on the mathematics of neural networks.
-- [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) – Exceptionally well-made videos explaining neural networks.
-- [Deep Learning](https://www.deeplearningbook.org/) – A textbook on deep learning. Note: While deep learning is the most commonly used technique in real-world applications, implementing a deep learning network is significantly more complex than what is required for this project.
 
+- [Backpropagation Algorithm](https://www.youtube.com/watch?v=sIX_9n-1UbM) - A detailed video about implementing backpropagation.
+- [A step by step forward pass and backpropagation example](https://blog.rlamsal.com.np/forward-pass-backpropagation-example/) – An article by Rabindra Lamsal on feedforward networks and their training.
+- [3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) – Exceptionally well-made videos explaining neural networks.
+- [Michael Nielsen's article](http://neuralnetworksanddeeplearning.com/chap1.html) on recognizing MNIST digits with neural networks.
+- [Deep Learning](https://www.deeplearningbook.org/) – A textbook on deep learning. Note: While deep learning is the most commonly used technique in real-world applications, implementing a deep learning network is significantly more complex than what is required for this project.
+- [Heli Tuominen's Finnish course material](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) on the mathematics of neural networks.
+- [Testing Neural Networks](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) – An article by Sebastian Björkqvist on neural network testing.
 ---
 
 ## Dungeon Generation
