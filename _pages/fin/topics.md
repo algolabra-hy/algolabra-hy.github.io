@@ -308,13 +308,15 @@ Tällöin tuntematon kuva luokitellaan samaksi, kuin enemmistö sen k lähimmäs
 että neuroverkoilla ei ole helppo päästä samaan. Artikkeli [A Modified Hausdorff Distance for Object Matching](https://ieeexplore.ieee.org/document/576361) 
 kertoo muutamasta mahdollisesta etäisyysmitasta. Artikkelissa parhaaksi mainitun mitan D22 lisäksi kannattaa kokeilla ainakin mittaa D23 sellaisenaan ja ilman kerrointa 1/N osakaavassa d6.
 
-Lisää materiaalia neuroverkoista:  
-- [The Neural Blogin](https://theneuralblog.com/forward-pass-backpropagation-example/) Rabindra Lamsalin kirjoittama artikkeli ns. feed forward verkosta ja sen treenaamisesta. 
-- [Neuroverkkojen testauksesta](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) kertona Sebastian Björkqvistin artikkeli. 
-- [Michael Nielsenin](http://neuralnetworksanddeeplearning.com/chap1.html) kirjoittama arikkeli MNISTin numeroiden tunnistuksesta neuroverkoilla. 
-- [Heli Tuomisen](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) kirjoittama kurssimateriaali neuroverkkojen matematiikasta suomeksi. 
-- [3Blue1Brownin](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) erittäin hyvin tehdyt videot neuroverkoista. 
+Lisää materiaalia neuroverkoista:
+
+- [Takaisinvirtausalgoritmin toteuksesta](https://www.youtube.com/watch?v=sIX_9n-1UbM) (backpropagation) kertova yksityiskohtainen video.
+- [A step by step forward pass and backpropagation example](https://blog.rlamsal.com.np/forward-pass-backpropagation-example/) Rabindra Lamsalin kirjoittama artikkeli ns. feed forward verkosta ja sen treenaamisesta.
+- [3Blue1Brownin](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) erittäin hyvin tehdyt videot neuroverkoista.
+- [Michael Nielsenin](http://neuralnetworksanddeeplearning.com/chap1.html) kirjoittama arikkeli MNISTin numeroiden tunnistuksesta neuroverkoilla.
 - [Deep Learning](https://www.deeplearningbook.org/) oppikirja ns. syväoppimisesta. **Huom** vaikka syväoppiminen on "aidoissa" sovelluksissa useimmin käytetty tekniikka, on syväoppivan verkon toteuttaminen huomattavasti haastavampaa kuin tältä harjoitustyöltä vaaditaan. 
+- [Heli Tuomisen](https://tim.jyu.fi/view/143092#lis%C3%A4tietoa-aktivointifunktioista) kirjoittama kurssimateriaali neuroverkkojen matematiikasta suomeksi. 
+- [Neuroverkkojen testauksesta](https://www.sebastianbjorkqvist.com/blog/writing-automated-tests-for-neural-networks/) kertona Sebastian Björkqvistin artikkeli.
 
 ---
 
