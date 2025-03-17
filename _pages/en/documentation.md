@@ -55,7 +55,7 @@ For other programming languages, follow the documentation conventions specific t
 ### Specification Document
 The specification document must include the following information:
 - Which programming language are you using?
-- Also, mention any other languages you are proficient in to the extent that you could peer-review projects written in them.
+- Also, mention any other languages you are proficient into the extent that you could peer-review projects written in them.
 - What algorithms and data structures will you implement in your project?
 - What problem are you solving?
 - What inputs does the program receive, and how are they used?
@@ -63,7 +63,7 @@ The specification document must include the following information:
   - Find out as much as possible. You are not expected to prove or measure anything yourself.
   - Use time and space complexity as a tool to understand how to approach the project.
   - Check Wikipedia or other reliable sources, and ensure you understand where these complexities come from in your algorithm. Why does your algorithm require that amount of time?
-- References
+- List of sources you intend to use
   
 **The Core of Your Project**
 Describe the *core* of your project in a few sentences within the specification document.
@@ -83,7 +83,7 @@ The implementation document must include the following:
 - Performance and Big-O complexity comparison (if relevant to the project)
 - Possible shortcomings and suggestions for improvement
 - **Use of large language models (ChatGPT, etc.). Mention which model you used and how. If you did not use any, explicitly state that. This is important!**
-- References
+- List of the sources you have used, only those relevant to your work.
 
 ### Testing Document
 The testing document must include the following:
