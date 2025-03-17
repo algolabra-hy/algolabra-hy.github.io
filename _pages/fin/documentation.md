@@ -78,7 +78,7 @@ Määrittelydokumentin pitää sisältää seuraavat tiedot:
     - Tästä kannattaa selvittää niin paljon kuin voitte. **Ei** ole tarkoitus todistaa tai mitata mitään itse. 
     - Käytä aika ja tilavaatimuuksia apuvälineenä ymmärtääksenne, miten työhön kannattaa asennoitua. 
       - Nämä kannattaa katsoa wikipediasta ja varmistaa, että ymmärrätte oman algoritmin kohdalla mistä ne tulevat. Miksi algoritmisi tarvitsee sen verran aikaa? 
-- Viitteet
+- Lähteet, joita aiot käyttää.
 
 **Harjoitustyön Ydin.** Kuvaile määrittelydokumenttiin muutamalla lauseella, mikä on aiheesi *ydin*. 
 **Käytä tähän aikaa** koska se auttaa harjoitustyön 
@@ -103,7 +103,7 @@ Toteutusdokumentin tulee sisältää seuraavat:
 - Suorituskyky- ja O-analyysivertailu (mikäli sopii työn aiheeseen)
 - Työn mahdolliset puutteet ja parannusehdotukset
 - **Laajojen kielimallien (ChatGPT yms.) käyttö. Mainitse mitä mallia on käytetty ja miten. Mainitse myös mikäli et ole käyttänyt. Tämä on tärkeää!**
-- Viitteet
+- Lähteet, joita olet käyttänyt, vain ne joilla oli merkitystä työn kannalta.
 
 ### Testausdokumentti
 Testausdokumentin pitääs sisältää seuraavat:
