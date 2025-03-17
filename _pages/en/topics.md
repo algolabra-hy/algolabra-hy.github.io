@@ -52,8 +52,8 @@ Implement a comparison of at least two different pathfinding algorithms. **Only 
 
 Suitable pathfinding algorithms for this project include:
 - JPS (Jump Point Search). Useful visualization resources can be found for example [here](https://www.youtube.com/watch?v=NmM4pv8uQwI) and [here](https://zerowidth.com/2013/a-visual-explanation-of-jump-point-search/). The original research paper is available [here](http://users.cecs.anu.edu.au/~dharabor/data/papers/harabor-grastien-aaai11.pd).
-- JPS can only be applied to grid-based maps, where movement is allowed in eight directions with two possible weights (depending on whether the movement is straight or diagonal).
- - Grid-based maps can be found, for example, on [the Moving AI Lab website](http://www.movingai.com/benchmarks/).
+  - JPS can only be applied to grid-based maps, where movement is allowed in eight directions with two possible weights (depending on whether the movement is straight or diagonal).
+  - Grid-based maps can be found, for example, on [the Moving AI Lab website](http://www.movingai.com/benchmarks/).
 - [Fringe Search](https://webdocs.cs.ualberta.ca/~holte/Publications/fringe.pdf) is a more challenging but interesting algorithm to implement.
 
 Additionally, solving the 15-puzzle, listed under the section [Games]({% link _pages/en/topics.md %}#games), is based on a pathfinding algorithm.
