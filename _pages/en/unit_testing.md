@@ -227,9 +227,211 @@ The first test checks that eating the delicious meal correctly decreases the bal
 
 ### Test Setup
 
-We notice that there is repetition in our test code: the first three tests all create a card with a balance of 10 euros.
+We notice repetition in our test code: all the first three tests create a card with a balance of 10 euros.
 
-Translation of this page will be continued soon. Complete instructions for unit testing are available in the Finnish version.
+So we will move the method creation to the initialization method defined in the test class, `setUp`.
+
+```python
+class TestPaymentCard(unittest.TestCase):
+    def setUp(self):
+        self.card = PaymentCard(1000)
+
+    def test_constructor_sets_correct_balance(self):
+        self.assertEqual(str(self.card), "The payment card has 10.00 euros")
+
+
+    def test_eat_affordably_decreases_balance_correctly(self):
+        self.card.eat_affordably()
+
+        self.assertEqual(self.card.balance_in_euros(), 7.5)
+
+    def test_eat_deliciously_decreases_balance_correctly(self):
+        self.card.eat_deliciously()
+
+        self.assertEqual(self.card.saldo_euroina(), 6.0)
+
+    def test_eat_affordably_does_not_allow_balance_to_go_negative(self):
+    card = PaymentCard(200)
+    card.eat_affordably()
+
+    self.assertEqual(self.card.balance_in_euros), 2.0)
+```
+The `setUp` method is executed **before each test case** (i.e., each test method). This means that every test case gets access to a `PaymentCard` object with a balance of 10 euros. Note that the payment card being tested is stored in the test class's instance variable using the line `self.card = PaymentCard(1000)`. This ensures that the test methods can access the payment card created by the `setUp` method.
+
+Test methods can still initialize objects for different use cases, as in the test method `test_eat_affordably_does_not_allow_balance_to_go_negative`. Note that in this case, `self.card` refers to the instance variable initialized in the `setUp` method, whereas `card` refers to a local variable within the method.
+
+### Additional Tests  
+
+Let's create a test for the `load_money` method. The first test ensures that loading money is successful, and the second test verifies that the card's balance does not exceed 150 euros.
+
+```python
+def test_loading_money_completed_successfully(self):
+    self.card.load_money(2500)
+
+    self.assertEqual(str(self.kortti), "The payment card has 35.00 euros")
+
+def test_balance_not_over_maximum(self):
+    self.card.load_money(20000)
+
+    self.assertEqual(str(self.card), "The payment card has 150.00 euros")
+```
+### Tests Are Independent of Each Other  
+
+As mentioned earlier, tests are independent, meaning that each test functions as a standalone small function. But what does this really mean?  
+
+The `PaymentCard` is tested with multiple small test methods, each starting with the prefix **`test_`**. Each individual test checks a specific aspect, such as whether the card's balance decreases by the price of a meal. The key idea is that every test starts with a "clean slate," meaning that before each test, a new card is created in the `setUp` method.  
+
+Every test begins with a freshly created card. The test then either calls the method under test directly or first sets up the necessary preconditions before making the call. This approach was used in `test_eat_affordably_does_not_allow_balance_to_go_negative`, where a separate `PaymentCard` with insufficient balance was initialized to verify that purchasing a discounted meal does not result in a negative balance.
+
+### The Complete Test Class
+
+```python
+import unittest
+from paymentcard import PaymentCard
+
+class TestPaymentCard(unittest.TestCase):
+    def setUp(self):
+        self.card = PaymentCard(1000)
+
+    def test_constructor_sets_correct_balance(self):
+        self.assertEqual(str(self.card), "The payment card has 10.00 euros")
+
+
+    def test_eat_affordably_decreases_balance_correctly(self):
+        self.card.eat_affordably()
+
+        self.assertEqual(self.card.balance_in_euros(), 7.5)
+
+    def test_eat_deliciously_decreases_balance_correctly(self):
+        self.card.eat_deliciously()
+
+        self.assertEqual(self.card.balance_in_euros(), 6.0)
+
+    def test_eat_affordably_does_not_allow_balance_to_go_negative(self):
+        card = PaymentCard(200)
+        card.eat_affordably()
+
+        self.assertEqual(card.balance_in_euros(), 2.0)
+
+    def test_loading_money_completed_successfully(self):
+        self.card.load_money(2500)
+
+        self.assertEqual(self.card.balance_in_euros(), 35.0)
+
+    def test_balance_not_over_maximum(self):
+        self.card.load_money(20000)
+
+        self.assertEqual(self.card.balance_in_euros(), 150.0)
+```
+### Have We Tested Enough? Test Coverage  
+
+We are satisfied and believe that we have written enough test cases. But is this really the case? Fortunately, there are tools available to check both line and branch coverage.  
+
+- **Line coverage** measures which lines of code have been executed during testing. While 100% line coverage does not guarantee that the program is error-free, it is better than having no coverage at all.  
+- **Branch coverage** measures which execution branches have been traversed. Execution branches include, for example, different cases of `if` conditions.  
+
+Since branch coverage typically provides a more realistic assessment of test completeness, we will use it as the primary metric for test coverage in this course.  
+
+### Test Coverage Report  
+
+Test coverage can be collected using the [coverage](https://coverage.readthedocs.io/en/latest/) tool. Installing it as a development dependency for the project is done using the following command:
+```bash
+poetry add coverage --group dev
+```
+Collecting test coverage from tests executed with `pytest src` can be done within a virtual environment using the following command:  
+
+```bash
+coverage run --branch -m pytest src
+```
+With the `--branch` flag, we can collect [branch coverage](https://coverage.readthedocs.io/en/latest/branch.html), which tracks which decision points (such as `if` statements) have been tested.  
+
+Note that the `pytest src` command limits test discovery to the _src_ directory in the project's root.  
+
+After running the coverage command, we can print a report of the collected test coverage with:  
+
+```bash
+coverage report -m
+```  
+
+The output will look something like this:  
+
+```
+Name                            Stmts   Miss Branch BrPart  Cover   Missing
+---------------------------------------------------------------------------
+src/paymentcard.py                 22      1      8      2    90%   15->exit, 20
+src/tests/__init__.py               0      0      0      0   100%
+src/tests/paymentcard_test.py      23      0      0      0   100%
+---------------------------------------------------------------------------
+TOTAL                              45      1      8      2    94%
+```
+### Excluding Files from the Coverage Report  
+
+From the output, we can see that there are many files included in the report that are unnecessary for the project. We can configure which files should be included in the coverage report by modifying the _.coveragerc_ file in the project's root directory.  
+
+If we want to include only the `src` directory in the coverage report, the configuration should look like this:
+
+```
+[run]
+source = src
+```
+
+We can also exclude files and directories from the coverage report. For example, it might be sensible to exclude the test directory, the UI code directory, and the `src/index.py` file. This can be achieved with the following changes to the _.coveragerc_ file:
+
+```
+[run]
+source = src
+omit = src/**/__init__.py,src/tests/**,src/ui/**,src/index.py
+```
+Now, running the commands `coverage run --branch -m pytest src` and `coverage report -m` will include only the desired files from the `src` directory:
+
+```
+Name                 Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------
+src/maksukortti.py      22      1      8      2    90%   15->exit, 20
+----------------------------------------------------------------
+TOTAL                   22      1      8      2    90%
+```
+
+### A More Visual Test Coverage Report
+
+To generate a clearer, more visual representation of the test coverage, you can run the following command:
+
+```bash
+coverage html
+```
+
+Executing this command creates a new directory called `_htmlcov_` in the project's root directory. You can view the report by opening the `index.html` file within this folder in a browser. The report will look something like this:
+
+![]({{ "/images/unittest0.png" | absolute_url }})
+
+From the report, we can see that the overall branch coverage of the code is 90%. The "coverage" column in the table shows the branch coverage for individual files. Clicking on a file name in the table will open the file’s code and highlight the branches that are covered by tests. Covered branches are indicated by green bars next to the line numbers. Branches that are not covered at all are highlighted in red. If a branch is partially covered, it will be highlighted in yellow. Hovering over a line will provide more detailed information about why the branch is not fully covered:
+
+![]({{ "/images/unittest.png" | absolute_url }})
+In the situation of the image, the two if-conditions never received the value `True`, so those branches were not handled in the tests.
+
+After the code changes, two commands need to be executed in the new test coverage determination. You can execute both commands "with one click" by placing them on the same line separated by a semicolon.
+
+```bash
+coverage run --branch -m pytest src; coverage html
+```
+### Note on Testing Larger Projects
+
+It is important to note that in the subdirectories of the _src_ directory (not in the _src_ directory itself), there must be empty <i>\_\_init\_\_.py</i> files in order for all the desired files to be included in the test coverage. For example, in the case of the course Software Engineering reference application, the <i>\_\_init\_\_.py</i> files have been added as follows:
+```
+src/
+  entities/
+    __init__.py
+    todo.py
+    ...
+  repositories/
+    __init__.py
+    todo_repository.py
+    ...
+  services/
+    __init__.py
+    todo_service.py
+  ...
+```
 
 
 {% include typo_instructions_en.md %}
