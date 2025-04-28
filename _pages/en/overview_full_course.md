@@ -48,13 +48,13 @@ You are free to use any available tools for UI development. However, testing the
 ### Schedule and Time Management
 The course [schedule]({% link _pages/en/suggested_schedule.md %}) is tight. Plan your time so that you can focus primarily on developing the [core]({% link _pages/en/documentation.md %}#specification-document) of your project.
 - Do not spend more time on UI development than necessary to understand how your program functions.
-- Example: If you are building a chess bot, move generation should be completed by the second week.
-- 
-There is little time for work that does not contribute directly to the project. Avoid tasks that do not align with your specific topic.
-
-- Developing a 3x3 tic-tac-toe game does not help in creating a larger game, as most challenges arise in more complex boards.
-- Fine-tuning a graphical UI for pathfinding does not advance your project, as the core focus is the pathfinding algorithms.
-- Develop tests alongside your program - this is when they are most useful. However, the required test types depend on your topic; not all projects need performance testing.
-- Ask the instructor if you are unsure about something. However, be prepared to think about the issue first. Instead of asking "What should I do now?", ask "Is developing X beneficial for my project?"
+    - Example: If you are building a chess bot, move generation should be completed by the second week.
+- There is little time for work that does not contribute directly to the project. Avoid tasks that do not align with your specific topic.
+    - Developing a 3x3 tic-tac-toe game does not help in creating a larger game, as most challenges arise in more complex boards.
+    - Fine-tuning a graphical UI for pathfinding does not advance your project, as the core focus is the pathfinding algorithms.
+- Develop tests alongside your program - this is when they are most useful. 
+    - Note that the types of tests reqquired  depend on your topic; not all projects need performance testing.
+- Ask the instructor if you are unsure about something. 
+    - Be prepared to think about the issue first. Instead of asking "What should I do now?", ask "Is developing X beneficial for my project?"
 
 {% include typo_instructions_en.md %}
