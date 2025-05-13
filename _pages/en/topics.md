@@ -99,7 +99,7 @@ End-to-end testing (compressing + decompressing and comparing the result to the 
 ---
 
 ## Games
-In this topic, you will choose a game and implement an AI for it. For most games listed below, AI can be implemented using the [minimax algorithm with alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning). 
+In this topic, you will choose a game and implement an AI for it. For most games listed below, AI can be implemented using the [minimax algorithm with alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning) that is also (fairly) well explained in [this](https://www.youtube.com/watch?v=l-hh51ncgDI) video. 
 
 The minimax algorithm evaluates possible moves by looking ahead in the game and selecting a move that guarantees a win if such a move exists. The algorithm assumes that the AI and the opponent will always make the best possible move for themselves in every situation.
 Since most game states cannot be fully calculated to a guaranteed win, loss, or draw, the algorithm searches ahead for a limited number of moves instead. It then uses a heuristic to evaluate how favorable each resulting position is. The move that leads to the best outcome according to this evaluation is then chosen.
@@ -284,7 +284,7 @@ Encryption methods that rely on simple transposition of individual words or char
 
 ## Spell Checker
 
-Implement a program that suggests the correct spelling when given a user’s misspelled word. The program can be implemented by storing possible words in a self-implemented [trie data structure](https://en.wikipedia.org/wiki/Trie) and comparing the user’s misspelled string to correctly spelled words using distance metrics. One suitable distance measure for this task is the [Damerau–Levenshtein distance](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance). 
+Implement a program that suggests the correct spelling when given a user’s misspelled word. The program can be implemented by storing possible words in a self-implemented [trie data structure](https://en.wikipedia.org/wiki/Trie) and comparing the user’s misspelled string to correctly spelled words using distance metrics. One suitable distance measure for this task is the [Damerau–Levenshtein distance](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance). [Geeks for geeks](https://www.geeksforgeeks.org/damerau-levenshtein-distance/) has a nice description of it.  
 
 ---
 

@@ -95,7 +95,7 @@ Voit käyttää ohjelmointikielen valmiita tietorakenteita kaikissa pakkausalgor
 
 ## Pelit
 Miten toteutetaan tekoäly erityyppisille peleille? Tässä projektissa valitaan yksi peli, ja toteutetaan sille tekoäly. 
-Useimille alla olevista peleistä tekoälyn voi toteuttaa [minimax-algoritmilla, jota on tehostettu alpha-beta-karsinnalla](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning).
+Useimille alla olevista peleistä tekoälyn voi toteuttaa [minimax-algoritmilla, jota on tehostettu alpha-beta-karsinnalla](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning). Minimax algoritmin toimintaa selittäviä resursseja löytyy netistä paljon, esimerkiksi [tämä](https://www.youtube.com/watch?v=l-hh51ncgDI) video on aika hyvä. 
 
 Minmax-algoritmi laskee jokaisesta pelitilateesta eteenpäin ja valitsee siirron, joka johtaa varmaan voittoon, jos sellainen siirto on. Algoritmi olettaa, että sekä tekoäly että vastapelaaja tekevät joka tilanteessa itsensä kannalta parhaan mahdollisen siirron. Koska harvasta pelitilanteesta 
 voidaan laskea voittoon, häviöön tai tasapeliin asti, lasketaan sen sijaan tietty määrä siirtoja eteenpäin ja 
@@ -381,7 +381,7 @@ merkkijonoon ja kertoo, kuuluuko se lausekkeen määräämään kieleen. Vaihtoe
 Toteuta ohjelma, joka annettuna käyttäjän väärinkirjoitetun sanan ehdottaa sille oikeinkirjoitusta. 
 Tälläinen ohjelma voidaan toteuttaa tallettamalla mahdollisia sanoja itse toteutettuun [trie-tietorakenteeseen](https://en.wikipedia.org/wiki/Trie) ja 
 vertaamalla käyttäjän väärinkirjoitetun merkkijonon etäisyyttä oikein kirjoitettuihin sanoihin. 
-Yksi tähän soveltuva etäisyysmitta on [Damerau–Levenshtein -etäisyys](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance). 
+Yksi tähän soveltuva etäisyysmitta on [Damerau–Levenshtein -etäisyys](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance) josta lisää tietoa myös [Geeks for Geeksin sivuilla](https://www.geeksforgeeks.org/damerau-levenshtein-distance/). 
 
 ### Tieteellinen laskin
 Toteuta laskin joka laskee annetun matemaattisen lausekkeen arvon, ja mahdollisesti sijoittaa sen muuttujaan, joita on käytettävissä riittävä määrä. Lauseke voi sisältää lukuarvoja, muuttujia, peruslaskutoimituksia ja sekä yhden (sqrt, sin) että kaksi parametria (min, max) saavia funktioita. Ohjelman tulisi antaa yksilöity virheilmoitus, jos käyttäjä syöttää virheellisen lausekkeen, ja erityisesti se ei saa ilmoittaa mitään arvoa lausekkeelle, jolle ei oikeasti voi laskea arvoa.  Tälläinen ohjelma toteutetaan [shunting-yard](https://en.wikipedia.org/wiki/Shunting-yard_algorithm) algoritmilla.
