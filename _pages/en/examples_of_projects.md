@@ -14,6 +14,7 @@ We ask for separate permission to present assignments on these pages.
 - Sari Bäckman, [Scientific Calculator (Python)](https://github.com/sari-bee/tieteellinen_laskin)
 - Olivia Brotherus, [Spell Checker (Python)](https://github.com/brotholi/tiralabra)
 - Joona Kettunen, [Path-Finding Algorithm Comparison (Typescript)](https://github.com/joonarafael/visualpathfinder)
+- Pekka Linna [DPLL](https://github.com/pekkalin/Algolabra/) 
 
 
 {% include typo_instructions_en.md %}

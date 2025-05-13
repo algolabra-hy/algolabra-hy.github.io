@@ -17,6 +17,7 @@ Pyydämme eriksen lupaa harjoitustöiden esittelemiseen näillä sivuilla.
 - Sari Bäckman, [Tieteellinen laskin](https://github.com/sari-bee/tieteellinen_laskin) (Python)
 - Olivia Brotherus, [Kirjoitusvirheiden korjaus](https://github.com/brotholi/tiralabra) (Python)
 - Joona Kettunen, [Reitinhakualgoritmien vertailu](https://github.com/joonarafael/visualpathfinder) (Typescript)
+- Pekka Linna [DPLL](https://github.com/pekkalin/Algolabra/) (Python)
 
 
 {% include typo_instructions_fin.md %}
