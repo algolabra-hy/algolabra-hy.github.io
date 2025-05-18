@@ -125,6 +125,7 @@ mainitaan erikseen kunkin pelin kohdalta. Mikäli pelin kohdalla ei mainita muut
 - Tutkitaan vain vapaat ruudut, jotka ovat korkeintaan kahden ruudun päässä aiemmin tehdyistä siirroista, tai muu tätä tehokkaampi mielekäs kokeiltavien siirtojen karsinta. Tutkittavia siirtoja ei selvitetä erikseen joka pelitilanteessa, vaan pidetään yllä listaa tällaisista ruuduista, ja päivitetään sitä tehtyjen / minimaxissa kokeiltujen siirtojen myötä. Siirtojen mukaan päivitetty lista annetaan parametrina eteenpäin minimaxissa.
 - Ristinollassa on usein pakko reagoida vastustajan edelliseen siirtoon, tai se on jatkoa ajatellen kannattavaa. Usein paras reaktio on jokin edellisen siirron viereinen siirto. Noudata tätä heuristiikkaa lisäämällä / nostamalla viimeisimmän siirron lähinaapurit ensimmäisiksi tutkittaviksi.
 - Voiton tarkistus tehdään tutkimalla vain rivit, jotka sisältävät edellisen siirron. Jos viiden rivi on syntynyt, voittaja on edellisen siirron tehnyt pelaaja, ja edellinen siirto on osa voittoriviä.
+- Pelitilanteen hyvyyttä arvioidaan heuristiikkafunktiolla. Sen tulee olla mielekäs, mutta se voi olla yksinkertainen.
 
 **Hyödylliset neuvot.**
 **Älä** toteuttaa ensin 3 x 3 pelin toimintalogiikkaa ja tekoälyä. Kaikki pitää kuitenkin tehdä täysin eri tavalla, kun lauta on laaja.
@@ -154,13 +155,16 @@ Minimax-pohjaisissa Connect4 harjoitustöissä vaaditaan seuraavat optimoinnit:
 
 - *Iteratiivinen syveneminen.* Suoritetaan ensin minimax pienellä syvyydellä, sitten yhä suuremmalla, kunnes aikaraja on saavutettu. Näin saadaan ensinnäkin hyödynnettyä käytettävissä oleva aika paremmin, koska eri pelitilanteissa samalle syvyydelle tapahtuvaan laskentaan tarvittava aika vaihtelee paljon. Jokaisessa tutkitussa pelitilanteessa talletetaan tieto siitä, mikä oli paras siirto vuorossa olevan pelaajan kannalta. Kun tullaan uudestaan samaan pelitilanteeseen samalla tai myöhemmällä iteraatiolla, kokeillaan ensin edellisellä kerralla parhaaksi arvioitua siirtoa. Se on usein paras tai ainakin hyvä siirto myös sitten, kun lasketaan siirtoja syvemmälle, joten alfa-beta -karsinta tehostuu, kun saadaan nopeasti nostettua / laskettua alfa / beta -arvoa. Uusi hajautustaulu luodaan aina, kun käyttäjä on tehnyt oman siirtonsa, ja aletaan laskea tekoälyn siirtoa. Tällöin talletus onnistuu tavallisella hajautustaululla (dictionary, HashMap), koska muistin käyttö on maltillista. Hajautustaulussa avain kuvaa pelitilanteen, ja arvona on siirto.
 - Voiton tarkistus tehdään tutkimalla vain rivit, jotka sisältävät edellisen siirron. Jos neljän rivi on syntynyt, voittaja on edellisen siirron tehnyt pelaaja, ja edellinen siirto on osa voittoriviä.
+- Pelitilanteen hyvyyttä arvioidaan heuristiikkafunktiolla. Sen tulee olla mielekäs, mutta se voi olla yksinkertainen.
+
 **Huomaa**, että iteratiivisessa syventämisessä et voi tallettaa hajautustauluun siirtojen arvoja ja palauttaa niitä myöhemillä kierroksilla. Voit vain tallettaa tiedon siitä, mikä oli paras siirto eli sarake siinä tilanteessa. Aikaisemmilla kierroksilla tallennetut arvot eivät ole päteviä, koska heuristinen arvo muuttuu, kun lasketaan syvemmälle. Samalla iteraatiolla voidaan päätyä samaan pelitilanteeseen useammalla siirtosarjalla, mutta alfa-beta -karsinnan takia lasketut arvot eivät useimmiten ole aitoja vaan vain ylä- tai alarajoja todellisille arvoille. Talletettua pelitilanteen arvoa ei siksi voi sellaisenaan hyödyntää silloinkaan, kun laskentasyvyys on sama. Kaikkia sallittuja siirtoja täytyy kokeilla (mahdolliseen alfa/beta -katkaisuun asti), tietoa viimeksi parhaaksi arvioidusta siirrosta voi käyttää vain kokeiltavien siirtojen järjestämiseen. 
 
 #### Othello / Reversi
 [Othelloa](https://en.wikipedia.org/wiki/Reversi) pelataan 8 x 8 pelilaudalla. Pelin voittaa se, jolla on eniten nappuloita laudalla, kun kaikki ruudut on täytetty. 
 
 **Hyödylliset Neuvot.**
-Esim. shakkiin verrattuna Othellossa on vaikea arvioida pelitilanteen arvoa merkityksellisesti, mutta ihmistä vastaan pelatessa auttaa, että tehtävä on vaikea myös ihmiselle. 
+Esim. shakkiin verrattuna Othellossa on vaikea arvioida pelitilanteen arvoa merkityksellisesti, mutta ihmistä vastaan pelatessa auttaa, että tehtävä on vaikea myös ihmiselle. Pelitilanteen hyvyyttä tulee arvioida jollain mielekkällä heuristiikkafunktiolla.
+
 Neuvoja heuristisen evaluaatiofunktion laatimiseen löytyy, esim.
 - [Kartik Kukrejan blogista](https://kartikkukreja.wordpress.com/2013/03/30/heuristic-function-for-reversiothello/)
 - [Vaishnavi Sannidhanamin and Muthukaruppan Annamalain kurssiprojektista](https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf)
@@ -169,9 +173,9 @@ Othellon tekoälyn voi minimaxin lisäksi toteuttaa esim. [Monte Carlo Tree Sear
 
 #### 2048
 [2048](https://en.wikipedia.org/wiki/2048_(video_game)) poikkeaa aikaisemmista siinä mielessä, että pelissä on vain yksi pelaaja ja
-satunnaiselementti. Näimpä sen tekoälyn pohjaksi sopii [expectiminimax-algoritmi](https://en.wikipedia.org/wiki/Expectiminimax), 
+satunnaiselementti. Näinpä sen tekoälyn pohjaksi sopii [expectiminimax-algoritmi](https://en.wikipedia.org/wiki/Expectiminimax), 
 muunnettuna niin että siinä on kahden sijasta vain yksi pelaaja + satunnainen tapahtuma. Myös minimaxilla jossa satunnainen tapahtuma on vastapelaaja 
-on kuitenkin saavutettu hyviä tuloksia, vaikka silloin oletetaan aina uuden luvun ilmaantuvan pahimpaan mahdolliseen kohtaan pahimmalla arvolla.
+on kuitenkin saavutettu hyviä tuloksia, vaikka silloin oletetaan aina uuden luvun ilmaantuvan pahimpaan mahdolliseen kohtaan pahimmalla arvolla. Pelitilanteen hyvyyttä tulee arvioida jollain mielekkäällä heuristiikkafuntiolla.
 
 Jos otat jostain mallia heuristiseen arviointifunktioon, huomaa että ihan sama funktio ei ehkä ole ihanteellinen minimaxille ja 
 expectiminimaxille. Minimaxilla saavutetaan alfa-beta -karsinnan avulla suurempi laskentasyvyys, jolloin esim. vapaiden ruutujen 
@@ -182,9 +186,10 @@ Yun Nie, Wenqi Hou ja Yicheng An ovat kirjoittaneet [lyhyen artikkelin lähestym
 [Battle Sheep](https://www.lautapelit.fi/product/20852/battle-sheep) on hauska vaihtoehto klassikkopeleille. 
 Pelilaudan ei tarvitse olla muokattava, kuten lautapelissä, vaan voit käyttää sopivaa kiinteää pelilautaa. Tähän peliin tarvitaan mielellään 
 graafinen käyttöliittymä, jotta pelaaminen on sujuvaa.
+Pelitilanteen hyvyyttä tulee arvioida jollain mielekkällä heuristiikkafunktiolla.
 
 #### Pentago
-Myös [Pentago](https://www.martinex.fi/peliko-pentago) on mielenkiintoinen uutuuspeli, jonka voi toteuttaa mimimaxilla. Ihmispelaajalle on vaativaa miettiä eteenpäin siirtoja, joissa käännetään pelilaudan osia, joten tekoälyllä on mahdollisuus menestyä. Toisaalta pelissä on alkuun peräti 36*8 = 288 siirtovaihtoehtoa. Jo neljän seuraavan siirron laskemiseen (kaksi siirtoparia) tarvitaan tehokkaita ratkaisuja.
+Myös [Pentago](https://www.martinex.fi/peliko-pentago) on mielenkiintoinen uutuuspeli, jonka voi toteuttaa mimimaxilla. Ihmispelaajalle on vaativaa miettiä eteenpäin siirtoja, joissa käännetään pelilaudan osia, joten tekoälyllä on mahdollisuus menestyä. Toisaalta pelissä on alkuun peräti 36*8 = 288 siirtovaihtoehtoa. Jo neljän seuraavan siirron laskemiseen (kaksi siirtoparia) tarvitaan tehokkaita ratkaisuja. Pelitilanteen hyvyyttä tulee arvioida jollain mielekkällä heuristiikkafunktiolla.
 
 #### Kivi-sakset-paperi
 Kivi-sakset-paperi on kaikille tuttu peli, jota ei yleisesti voi pelata hyvin tai huonosti. Tekoälyä pelille **ei** voi toteuttaa
