@@ -9,8 +9,11 @@ ref: ai_platform
 
 #### Currently Supported Features
 Currently, the AI platform supports **chess** and **Connect Four**. The local version of the AI platform (which runs on your computer) works on **Linux computers** (at least on the freshman laptop).
+The platform does not work on the shared disks of the university stationary computers. Based on current (5.6.2025) information, the platform might require root access to the computer, we are investigating. 
+
 If you encounter the error message "no module called pex" while using it, you can try installing the Pex library by following [these instructions](https://pypi.org/project/pex/).
-**Note:** The AI platform does not work on virtual machines. Its server-based (remote) version works on other systems as well, but it is recommended to use it only after the basic functionality of your AI is in place.
+**Note:** The AI platform does not work on virtual machines. 
+
 
 ## AI-Platform – A Development-Supporting Framework for AIs
 AI-Platform is a software project developed as a framework for course assignments, providing students with a platform to develop their game AIs. More specifically, the platform offers - with minimal setup - a graphical user interface and the ability for a human player to compete against a developing AI bot.

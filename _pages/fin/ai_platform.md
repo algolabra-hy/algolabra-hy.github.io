@@ -9,7 +9,9 @@ ref: ai_platform
 
 #### Tällä hetkellä tuetut toiminnot
 
-Tällä hetkellä tekoälyalusta tukee **shakkia** ja **connect-fouria**. Tekoälyalustan lokaali (omalla koneella pyöritettävä) versio toimii **linux koneilla** (ainakin fuksiläppärillä). Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. **Huom** tekoälyalusta ei toimi virtuaalikoneilla. Sen serveripohjainen (remote) versio toimii muillakin, mutta sitä kannattaa käyttää vasta oman tekoälyn perustoimintojen ollessa kunnossa.
+Tällä hetkellä tekoälyalusta tukee **shakkia** ja **connect-fouria**. Tekoälyalustan lokaali (omalla koneella pyöritettävä) versio toimii **linux koneilla** (ainakin fuksiläppärillä). Alusta ei toimi yliopiston pöytäkoneiden jaetuilla levyillä. Tämänhetkisen (5.6.2025) tiedon mukaan alusta tarvitsee (ehkä) pääkäyttäjän oikeudet, tätä tutkitaan. 
+
+Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. **Huom** tekoälyalusta ei toimi virtuaalikoneilla. 
 
 ## AI-platform - tekoälyjen kehitystä tukeva alusta. 
 AI-platform on harjoitustyölle ohjelmistoprojektina tuotettu alusta, joka tarjoaa tämän kurssin opiskelijoille alustan, jolla kehittää 
