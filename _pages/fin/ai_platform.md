@@ -13,6 +13,10 @@ Tällä hetkellä tekoälyalusta tukee **shakkia** ja **connect-fouria**. Tekoä
 
 Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. **Huom** tekoälyalusta ei toimi virtuaalikoneilla. 
 
+#### Debug informatiota
+- **24.6.2025** jos ./tira-ai-local komennnon ajaminen kaatuu errorriin, joka liittyy sandboxaukseen, voit kokeilla lisätä komentoriviargumentin --no-sanbox. Tämä on ratkaisu numero 2 [tällä sivulla](https://authmane512.medium.com/solve-the-suid-sandbox-helper-binary-was-found-but-is-not-configured-correctly-3-solutions-4f1425a9a76c) ja toimii fuksiläppäreillä ilman root oikeutta. Muita tuolla sivulla olevia ratkaisuja ei ole kokeiltu.
+
+
 ## AI-platform - tekoälyjen kehitystä tukeva alusta. 
 AI-platform on harjoitustyölle ohjelmistoprojektina tuotettu alusta, joka tarjoaa tämän kurssin opiskelijoille alustan, jolla kehittää 
 pelitekoälyjään. Tarkemmin sanottuna alusta tarjoaa - minimaalisella setupilla - graafisen käyttöliittymän ja mahdollisuuden ihmiselle pelata kehitteillä olevaa 
@@ -36,7 +40,7 @@ ohjelmointikieliä. Kohdassa [oman harjoitustyön konfigurointi]({% link _pages/
 1. Kloonaa esimerkkitekoälyn projekti: [shakki](https://github.com/game-ai-platform-team/stupid-chess-ai), [connect 4](https://github.com/game-ai-platform-team/stupid-connect-four-ai)
     - kopioi sen sisältö oman harjoitustyösi repositorioon. 
 1. Asenna [poetry]({% link _pages/fin/poetry.md %}).
-1. Pura alustan zip tiedosto, navigoi purettuun kansioon terminaalissa ja käynnistä se komennolla ```./tira-ai-local```
+1. Pura alustan zip tiedosto, navigoi purettuun kansioon terminaalissa ja käynnistä se komennolla ```./tira-ai-local``` **Huom** jos tämä kaatuu sandboxaukseen liittyvään erroriin, katso debug info sivun alussa. 
 ![]({{ "/images/tira-ai2.png" | absolute_url }})
 1. Valitse ylhäältä oikea peli. 
 ![]({{ "/images/tira-ai4.png" | absolute_url }})

@@ -9,10 +9,14 @@ ref: ai_platform
 
 #### Currently Supported Features
 Currently, the AI platform supports **chess** and **Connect Four**. The local version of the AI platform (which runs on your computer) works on **Linux computers** (at least on the freshman laptop).
-The platform does not work on the shared disks of the university stationary computers. Based on current (5.6.2025) information, the platform might require root access to the computer, we are investigating. 
+The platform does not work on the shared disks of the university stationary computers. 
 
 If you encounter the error message "no module called pex" while using it, you can try installing the Pex library by following [these instructions](https://pypi.org/project/pex/).
 **Note:** The AI platform does not work on virtual machines. 
+
+#### Debug information
+
+- **24.6.2025** if running ./tira-ai-local fails with an error related to sandboxing, a workaround is to run with the command line argument --no-sandbox. This corresponds to solution number two listed [here](https://authmane512.medium.com/solve-the-suid-sandbox-helper-binary-was-found-but-is-not-configured-correctly-3-solutions-4f1425a9a76c) and works on a fuksiläppäri. Other solutions can also work but are untested. 
 
 
 ## AI-Platform – A Development-Supporting Framework for AIs
@@ -31,7 +35,7 @@ More details on configuring your project can be found in the section [Configurin
 1. Clone an example AI project: [Chess](https://github.com/game-ai-platform-team/stupid-chess-ai), [Connect Four](https://github.com/game-ai-platform-team/stupid-connect-four-ai)
 - Copy the contents of the cloned example AI project into your course project repository.
 1. Install [Poetry]({% link _pages/en/poetry.md %}).
-1. Extract the platform ZIP file, navigate to the extracted folder in the terminal, and start the platform with the command:```./tira-ai-local```
+1. Extract the platform ZIP file, navigate to the extracted folder in the terminal, and start the platform with the command:```./tira-ai-local``` **nNote** if the command fails on an error related to sandboxing, check degub information at the top of the page. 
 ![]({{ "/images/tira-ai2.png" | absolute_url }})
 1. Select the correct game from the top menu.
  ![]({{ "/images/tira-ai4.png" | absolute_url }})
