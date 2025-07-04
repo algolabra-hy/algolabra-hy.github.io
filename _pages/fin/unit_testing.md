@@ -101,7 +101,7 @@ Suoritetaan virtuaaliympäristössä komento `pytest src` uudestaan ja huomaamme
 
 Komento `pytest src` etsii suoritettavia testejä projektin juurihakemiston _src_-hakemistosta, sekä rekursiivisesti kaikista sen alahakemistoista. Jotta pytest tietää, mitä testejä tulisi suorittaa, **tulee nimeämisessä noudattaa oikeita käytänteitä.** Nämä käytänteet ovat:
 
-- Testien tiedostojen nimen tulee päättyä <i>\_test</i>-päätteeseen, esim. <i>maksukortti_test.py</i>
+- Testien tiedostojen nimen tulee alkaa <i>test\_</i>-etuliitteellä tai päättyä <i>\_test</i>-päätteeseen, esim. <i>test_maksukortti.py</i> tai <i>maksukortti_test.py</i>
 - Testattavan luokan nimen tulee alkaa _Test_-etuliitteellä, esim. `TestMaksukortti`
 - Testattavan luokan metodin nimen tulee alkaa <i>test\_</i>-etuliitteellä, esim. `test_hello_world`
 
