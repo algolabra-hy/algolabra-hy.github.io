@@ -128,6 +128,7 @@ mainitaan erikseen kunkin pelin kohdalta. Mikäli pelin kohdalla ei mainita muut
 - Pelitilanteen hyvyyttä arvioidaan heuristiikkafunktiolla. Sen tulee olla mielekäs, mutta se voi olla yksinkertainen.
 
 **Hyödylliset neuvot.**
+
 **Älä** toteuttaa ensin 3 x 3 pelin toimintalogiikkaa ja tekoälyä. Kaikki pitää kuitenkin tehdä täysin eri tavalla, kun lauta on laaja.
 
 #### Shakki
