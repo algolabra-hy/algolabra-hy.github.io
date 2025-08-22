@@ -35,7 +35,7 @@ More details on configuring your project can be found in the section [Configurin
 1. Clone an example AI project: [Chess](https://github.com/game-ai-platform-team/stupid-chess-ai), [Connect Four](https://github.com/game-ai-platform-team/stupid-connect-four-ai)
 - Copy the contents of the cloned example AI project into your course project repository.
 1. Install [Poetry]({% link _pages/en/poetry.md %}).
-1. Extract the platform ZIP file, navigate to the extracted folder in the terminal, and start the platform with the command:```./tira-ai-local``` **nNote** if the command fails on an error related to sandboxing, check degub information at the top of the page. 
+1. Extract the platform ZIP file, navigate to the extracted folder in the terminal, and start the platform with the command:```./tira-ai-local``` **nNote** if the command fails on an error related to sandboxing, check the degub information at the top of the page. 
 ![]({{ "/images/tira-ai2.png" | absolute_url }})
 1. Select the correct game from the top menu.
  ![]({{ "/images/tira-ai4.png" | absolute_url }})
