@@ -14,6 +14,8 @@ main:
           url: /schedule-fi
         - title: Aihe ehdotuksia
           url: /topics-fi
+        - title: Harjoitustyö kanditutkielman pohjana 
+          url: /bscthesis-fi
         - title: Git ohjeet
           url: /git-fi
         - title: Työn aikana tuotettava dokumentaatio
@@ -49,6 +51,8 @@ main:
           url: /schedule-en
         - title: Proposals of topics
           url: /topics-en
+        - title: The Project as basis for a B.Sc. Thesis
+          url: /bscthesis-fi
         - title: Git instructions
           url: /git-en
         - title: Documentation to be prepared

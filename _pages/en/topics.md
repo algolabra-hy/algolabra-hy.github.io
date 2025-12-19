@@ -12,7 +12,10 @@ ref: topics # same as the markdown filename do not change
 
 The main goal of the exercise is to implement and test more complex algorithms that have not been covered in previous courses. You can develop your own topic or choose one from the list below. The instructor will evaluate and approve the topic based on a specification document at the beginning of the course. If you choose your own topic, it may need to be adjusted to ensure appropriate complexity and scope.
 
-Note that the suggestions below are only to help you get started. A key part of the exercise  is independent information gathering (with instructor support), studying your chosen topic, and understanding the algorithms. **Be prepared to spend time on this.** Implementing an algorithm without understanding how it works is extremely difficult and frustrating.
+Note that the suggestions below are only to help you get started. A key part of the exercise is independent information gathering (with instructor support), studying your chosen topic, and understanding the algorithms. **Be prepared to spend time on this.** Implementing an algorithm without understanding how it works is extremely difficult and frustrating.
+
+Some of the project topics can also form the basis for a B.Sc. thesis later. More information on the potential synergies between the algorithm project and 
+the B.Sc. thesses can be found [on a separate page]({% link _pages/en/bsc_thesis.md %}).
 
 **Ask the instructor for guidance at any stage of the project, starting with topic selection.**
 

@@ -10,6 +10,8 @@ ref: topics # same as the markdown filename
 ## Aiheen valinnasta
 Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse, tai voit valita aiheen alla olevasta listasta. Ohjaaja arvioi ja hyväksyy aiheen määrittelydokumentin perusteella kurssin alussa. Itse keksittyä aihetta voidaan joutua muokkaamaan sopivan vaativuuden ja laajuuden saavuttamiseksi. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa. **Kysy ohjaajalta neuvoa matalalla kynnyksellä projektin kaikissa vaiheissa alkaen aiheen valinnasta.**
 
+Jotkut harjoitustyön aiheista voivat soveltua kandidaatin tutkielman aiheiden pohjaksi. Lisää tietoa tästä löytyy [toiselta sivulta]({% link _pages/fin/bsc_thesis.md %}). Suosittelemme harkitsemaan harjoitustyön ja kandidaatin tutkielamn mahdollisia synergioita. 
+
 ## Lista aiheista
 - [Verkot ja Polunetsintä]({% link _pages/fin/topics.md %}#verkot-ja-polunetsintä)
 - [Tiedon tiivistys]({% link _pages/fin/topics.md %}#tiedon-tiivistys) 
