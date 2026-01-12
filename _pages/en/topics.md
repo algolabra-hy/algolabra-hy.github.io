@@ -15,7 +15,7 @@ The main goal of the exercise is to implement and test more complex algorithms t
 Note that the suggestions below are only to help you get started. A key part of the exercise is independent information gathering (with instructor support), studying your chosen topic, and understanding the algorithms. **Be prepared to spend time on this.** Implementing an algorithm without understanding how it works is extremely difficult and frustrating.
 
 Some of the project topics can also form the basis for a B.Sc. thesis later. More information on the potential synergies between the algorithm project and 
-the B.Sc. thesses can be found [on a separate page]({% link _pages/en/bsc_thesis.md %}).
+the B.Sc. theses can be found [on a separate page]({% link _pages/en/bsc_thesis.md %}).
 
 **Ask the instructor for guidance at any stage of the project, starting with topic selection.**
 
@@ -26,6 +26,7 @@ the B.Sc. thesses can be found [on a separate page]({% link _pages/en/bsc_thesis
   - Gomoku
   - Minesweeper 
   - Chess
+  - Connect4
   - Reversi 
   - Battle Sheep 
   - 2048
