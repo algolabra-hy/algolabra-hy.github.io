@@ -25,6 +25,7 @@ Jotkut harjoitustyön aiheista voivat soveltua kandidaatin tutkielman aiheiden p
   - Gomoku
   - Miinaharava 
   - Shakki
+  - Connect4
   - Reversi 
   - Battle Sheep 
   - 2048
