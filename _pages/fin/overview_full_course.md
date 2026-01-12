@@ -7,19 +7,13 @@ lang: fi # fi or en
 ref: overview_full_course # same as the markdown filename
 ---
 
-Alla yleiskatsaus kurssin kulusta. Kaikista tällä sivuilla käsitellyistä aiheista löytyy 
-tarkempaa tietoa materiaalin muista osista. 
 
 Kurssilla opiskelija toteuttaa ohjelman, joka ratkaisee jonkin ohjelmointiongelman. Ongelmanratkaisuun käytetään sopivia tehokkaita algoritmeja ja tietorakenteita. Aihe on vapaa, kunhan ratkaisussa on tarpeeksi algoritmista vaativuutta. Käytännössä tämä tarkoittaa kirjallisuuteen perustuvien algoritmien käyttämistä, jotta tiedetään algoritmin olevan tarkoitukseen soveltuva ja tuottavan halutun tuloksen.
 Relevantin kirjallisuuden etsiminen ja siihen tutustuminen - tarvittaessa kurssin henkilökunnan avustuksella - on oleellinen ja aikaa vievä osa harjoitustyötä. 
+**Kysy kuitenkin neuvoa kurssihenkilökunnalta matalalla kynnyksellä kurssin kaikissa vsiheissa**
 
 ### Aiheen valinnasta 
-[Aihe ehdotuksista]({% link _pages/fin/topics.md %}) löytyy ehdotuksia harjoitustyön sopivista aiheista. Näiden lisäksi
-opiskelijat voivat valita oman ohjaajan hyväksymän aiheen. 
-Algoritmit, jotka on opittu kurssilla “Tietorakenteet ja Algoritmit” tai sitä edeltävillä ohjelmointikursseilla, ovat tämän kurssin esitietoa, eivätkä siten voi olla projektin oleellista sisältöä. Tämän lisäksi harjoitustyössä tulee 
-soveltaa jotain algoritmia käytännön tilanteessa. Tämä toteutuu kaikissa kurssimateriaalin aihe-ehdotuksissa.
-
-Jos valitset täysin oman aiheen, tai aihe-ehdotuksesi ei ole yksityiskohtainen, sovi tapaaminen ohaajan kanssa jo ensimmäisellä viikolla, ennen määrittelydokumentin palautusta, jotta voitte sopia, miten aihe kannattaa rajata, ja mitkä osat aiheesta sinun tulee toteuttaa itse, jotta harjoitustyölle saavutetaan sopiva laajuus.
+[Aihe ehdotuksista]({% link _pages/fin/topics.md %}) löytyylisätietoa harjoitustyön sopivista aiheista.
 
 ### Ohjelmointikielen valinnasta
 Harjoitustyössä käytettävä ohjelmointikieli on vapaasti valittavissa, kunhan se soveltuu aiheeseen.

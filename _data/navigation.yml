@@ -6,7 +6,7 @@ main:
       url: /project-management-fi
       dropdown: true
       children:
-        - title: Yleiskatsaus projektinhallinnasta (lue tämä ensin)
+        - title: Lue tämä ensin
           url: /project-management-fi
         - title: Kurssin kulku
           url: /overview-fi
@@ -16,12 +16,14 @@ main:
           url: /topics-fi
         - title: Harjoitustyö kanditutkielman pohjana 
           url: /bscthesis-fi
-        - title: Git ohjeet
-          url: /git-fi
         - title: Työn aikana tuotettava dokumentaatio
           url: /documentation-fi
         - title: Tekoälyalusta pelitekoälyille
           url: /aiplatform-fi
+        - title: Git ohjeet
+          url: /git-fi
+        - title: Projektinhallinta 
+          url: /project-maintenance-fi
     - title: "Harjoitustyön Testauksesta"
       url: /testing-fi
       dropdown: true
@@ -43,7 +45,7 @@ main:
       url: /project-management-en
       dropdown: true
       children:
-        - title: Overview on project management (read this first)
+        - title: Read this first
           url: /project-management-en
         - title: Organization of the course
           url: /overview-en
@@ -53,12 +55,14 @@ main:
           url: /topics-en
         - title: The Project as basis for a B.Sc. Thesis
           url: /bscthesis-fi
-        - title: Git instructions
-          url: /git-en
         - title: Documentation to be prepared
           url: /documentation-en
         - title: AI platform for game AIs
           url: /aiplatform-en
+        - title: Git instructions
+          url: /git-en
+        - title: Project management tools
+          ulr: /project-maintenance-en
     - title: "Testing the project"
       url: /testing-en
       dropdown: true

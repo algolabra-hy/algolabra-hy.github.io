@@ -10,7 +10,13 @@ ref: topics # same as the markdown filename
 ## Aiheen valinnasta
 Harjoitustyön keskeisenä tavoitteena on toteuttaa ja testata monimutkaisempia algoritmeja jota ei ole käsitelty aiemmilla kursseilla. Aiheen voi keksiä itse, tai voit valita aiheen alla olevasta listasta. Ohjaaja arvioi ja hyväksyy aiheen määrittelydokumentin perusteella kurssin alussa. Itse keksittyä aihetta voidaan joutua muokkaamaan sopivan vaativuuden ja laajuuden saavuttamiseksi. Huomaa kuitenkin että alla olevat ehdotukset on tarkoitettu vain auttamaan alkuun pääsemisessä. Harjoitustyöhon kuuluu oleellisena osana (ohjaajan tukema) itsenäinen tiedon haku, oman aiheen opiskelu ja algoritmin ymmärtäminen. **Varaudu käyttämään tähän aikaa.** Sellaisen algoritmin toteuttaminen, jonka toimintaa ei itse ymmärrä, on erittäin vaikeaa ja turhauttavaa. **Kysy ohjaajalta neuvoa matalalla kynnyksellä projektin kaikissa vaiheissa alkaen aiheen valinnasta.**
 
-Jotkut harjoitustyön aiheista voivat soveltua kandidaatin tutkielman aiheiden pohjaksi. Lisää tietoa tästä löytyy [toiselta sivulta]({% link _pages/fin/bsc_thesis.md %}). Suosittelemme harkitsemaan harjoitustyön ja kandidaatin tutkielamn mahdollisia synergioita. 
+Tällä sivulla mainittujen aiheiden lisäksi
+opiskelijat voivat valita oman ohjaajan hyväksymän aiheen. 
+Algoritmit, jotka on opittu kurssilla “Tietorakenteet ja Algoritmit” tai sitä edeltävillä ohjelmointikursseilla, ovat tämän kurssin esitietoa, eivätkä siten voi olla projektin oleellista sisältöä. Tämän lisäksi harjoitustyössä tulee 
+soveltaa jotain algoritmia käytännön tilanteessa. Tämä toteutuu kaikissa kurssimateriaalin aihe-ehdotuksissa.
+Jos valitset täysin oman aiheen, tai aihe-ehdotuksesi ei ole yksityiskohtainen, sovi tapaaminen ohaajan kanssa jo ensimmäisellä viikolla, ennen määrittelydokumentin palautusta, jotta voitte sopia, miten aihe kannattaa rajata, ja mitkä osat aiheesta sinun tulee toteuttaa itse, jotta harjoitustyölle saavutetaan sopiva laajuus.
+
+Jotkut harjoitustyön aiheista voivat soveltua kandidaatin tutkielman aiheiden pohjaksi. Lisää tietoa tästä löytyy [toiselta sivulta]({% link _pages/fin/bsc_thesis.md %}). Suosittelemme harkitsemaan harjoitustyön ja kandidaatin tutkielan mahdollisia synergioita. 
 
 ## Lista aiheista
 - [Verkot ja Polunetsintä]({% link _pages/fin/topics.md %}#verkot-ja-polunetsintä)
