@@ -11,7 +11,8 @@ ref: project_maintenance_frontpage # same as the markdown filename
 ## Ihan ensiksi
 - Kurssin aikana kaikki harjoitustyöt luodaan git repositorioina GitHub sivuille. Mikäli tämä ei ole tuttua, kannattaa tustua [näihin ohjeisiin]({% link _pages/fin/git.md %}). 
   - **Huom** harjoitustyön vertaisarviointi suoritetaan GitHubin issueina. Tätä varten harjoitustyön repossa täytyy [sallia issuet]({% link _pages/fin/git.md %}#issuiden-salliminen).
-- Harjoitustyön aikana vertaisarvioinnit ja viikottaiset palautteet saadaan [Labtoolin](https://study.cs.helsinki.fi/labtool/) kautta. Harjoitustyön repositorion luomisen jälkeen kaikkien opiskelijoiden täytyy rekisteröityä Labtooliin ad-tunnuksillaan oikealle kurssille. 
+- Harjoitustyön aikana vertaisarvioinnit ja viikottaiset palautteet saadaan [Labtoolin](https://study.cs.helsinki.fi/labtool/) kautta. Harjoitustyön repositorion luomisen jälkeen kaikkien opiskelijoiden täytyy rekisteröityä Labtooliin ad-tunnuksillaan oikealle kurssille.
+- Kurssin ensimmäisellä viikolla on tärkeää luoda [määrittelydokumentti]({% link _pages/fin/documentation.md %}#määrittelydokumentti) jonne oma aihevalinta ja sen osana toteutettavat algoritmit kerrotaan. Määrittelydokumentti tarkastetaan ensimmäisen vikopalautksen jälkeen, päästäkseen kurssista läpi opiskelijan projektin täytyy yltää hyväksytyssä määrittelydokumentissa mainittuun aiheeseen. 
 
 ## Yleiskatsaus 
 - [Yleiskatsaus kurssin kulusta]({% link _pages/fin/overview_full_course.md %}) käy läpi tärkeimpiä harjoitustyöhön liittyviä ohjeita. 
