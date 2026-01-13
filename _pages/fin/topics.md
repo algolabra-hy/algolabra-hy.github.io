@@ -138,7 +138,7 @@ mainitaan erikseen kunkin pelin kohdalta. Mikäli pelin kohdalla ei mainita muut
 
 **Hyödylliset neuvot.**
 
-**Älä** toteuttaa ensin 3 x 3 pelin toimintalogiikkaa ja tekoälyä. Kaikki pitää kuitenkin tehdä täysin eri tavalla, kun lauta on laaja.
+**Ei kannata** ensin toteuttaa 3 x 3 pelin toimintalogiikkaa ja tekoälyä. Yleensä isomman laudan toteuttamiseen tarvitaan kuitenkin erilainen lähestyminen ja pienen pelin tekemiseen mennyt aika on hukkaan heitetty. Lähde suoraan tekemään isoa lautaa. 
 
 #### Shakki
 
