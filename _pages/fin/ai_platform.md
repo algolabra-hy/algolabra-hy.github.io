@@ -14,7 +14,7 @@ Tällä hetkellä tekoälyalusta tukee **shakkia** ja **connect-fouria**. Tekoä
 Mikäli saat käyttäessäsi virheilmoituksen "no module called pex" voit kokeilla pex kirjaston asentamista [näiden ohjeiden](https://pypi.org/project/pex/) mukaan. **Huom** tekoälyalusta ei toimi virtuaalikoneilla. 
 
 #### Debug informaatiota
-- **24.6.2025** jos ./tira-ai-local komennon ajaminen kaatuu errorriin, joka liittyy sandboxaukseen, voit kokeilla lisätä komentoriviargumentin --no-sanbox. Tämä on ratkaisu numero 2 [tällä sivulla](https://authmane512.medium.com/solve-the-suid-sandbox-helper-binary-was-found-but-is-not-configured-correctly-3-solutions-4f1425a9a76c) ja toimii fuksiläppäreillä ilman root oikeutta. Muita tuolla sivulla olevia ratkaisuja ei ole kokeiltu.
+- **24.6.2025** jos ./tira-ai-local komennon ajaminen kaatuu errorriin, joka liittyy sandboxaukseen, voit kokeilla lisätä komentoriviargumentin --no-sandbox. Tämä on ratkaisu numero 2 [tällä sivulla](https://authmane512.medium.com/solve-the-suid-sandbox-helper-binary-was-found-but-is-not-configured-correctly-3-solutions-4f1425a9a76c) ja toimii fuksiläppäreillä ilman root oikeutta. Muita tuolla sivulla olevia ratkaisuja ei ole kokeiltu.
 
 
 ## AI-platform - tekoälyjen kehitystä tukeva alusta. 
