@@ -14,11 +14,11 @@ Sijoita dokumentit omaan hakemistoonsa projektin juureen ja linkaa ne repositori
 ## Viikkopalautukset
 Osa kurssipisteistä tulee harjoitustyön viikottaisen edistymisen perusteella. 
 Varmista viikottaisen deadlinen lähestyessä, että repositoriosi on ajantasalla ja 
-isää sinne viikkoraportti. Edistymistä katsotaan vain kerran viikossa, mutta muutokset kannattaa 
+lisää sinne viikkoraportti. Edistymistä katsotaan vain kerran viikossa, mutta muutokset kannattaa 
 pushata repositorioon vähintään joka kehityspäivän lopuksi.
 
 # Viikkoraportin kirjoitus ja tuntikirjanpito
-Raportti on noin puolesta sivusta kahteen sivua pitkä. Raportti palautetaan aina 
+Raportti on noin puolesta sivusta kahteen sivuun pitkä. Raportti palautetaan aina 
 viikkopalautuksen yhteydessä sijoitettuna samaan kansioon muun dokumentaation 
 kanssa ja nimetään selkeästi, esim. *Viikkoraportti 1*. 
 
