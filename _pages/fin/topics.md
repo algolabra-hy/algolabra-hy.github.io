@@ -220,7 +220,8 @@ Tälle kurssille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Bec
 
 ---
 
-## DPLL
+## DPLL 
+**Huom: Tämä määrittely käytössä lukuvuoden 25-26 kolmanteen periodiin asti** 
 [Propositiologiikan päätösongelma](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) on 
 keskeinen sekä teoreettisessa, että soveltavassa tietojenkäsittelytieteessä. 
 Nykyaikaiset ns. CDCL algoritmien toteutukset (SAT-solverit) pystyvät päättämään miljoonia muutujia sisältävien 
@@ -257,6 +258,49 @@ Huomaa, että SAT solvereilla voi ratkoa monta erilaista ongelmaa mallintamalla 
 jotta se pystyy ratkomaan [Sudokuja](https://sat.inesc-id.pt/~ines/publications/aimath06.pdf)?
 
 ---
+
+## DPLL (tulossa)
+**Huom: Tämä määrittely käytössä lukuvuoden 25-25 neljännestä periodista alkaen**
+[Propositiologiikan päätösongelma (SAT)](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) on keskeinen sekä teoreettisessa että soveltavassa tietojenkäsittelytieteessä. Nykyaikaiset CDCL-algoritmien toteutukset (SAT-solverit) pystyvät päättämään miljoonia muuttujia sisältävien kaavojen toteutuvuuden. Tällaisia algoritmeja käytetään monissa [käytännön sovelluksissa](https://en.wikipedia.org/wiki/SAT_solver#Applications). Tehokkaat SAT-solverit ovat esimerkiksi oleellisia erilaisten piirien oikeellisuuden todentamisessa.
+
+Tässä aiheessa toteutetaan kevyt CDCL-tyylinen algoritmi, jonka voi nähdä DPLL-algoritmina, johon on lisätty yksinkertainen klausuulin oppiminen.
+
+### Tarkempi määrittely
+Toteuta ohjelma, joka lukee propositiologiikan kaavan konjunktiivisessa normaalimuodossa (CNF) [DIMACS-tiedostomuodossa]((https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS)) ja palauttaa joko sitä toteuttavan totuusjakauman tai tiedon siitä, ettei tällaista jakaumaa ole. Ohjelman tulee käyttää [DPLL-algoritmia](https://en.wikipedia.org/wiki/DPLL_algorithm), johon on lisätty alla kuvattu yksinkertainen klausuulin oppiminen.
+
+Hyväksyttävässä toteutuksessa on oltava [yksikköpropagaatio](https://en.wikipedia.org/wiki/Unit_propagation) ja alla kuvattu klausuulin oppiminen.
+DPLL algoritmin tarkempi selitys löytyy esim. [täältä](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html).
+
+### Yksinkertainen klausuulin oppiminen
+*Huom: Seuraavan ymmärtäminen voi olla helpompaa, jos ensin tutustut DPLL-algoritmiin ja yksikköpropagaatioon. Kun noudatat seuraavan kappaleen kohdan "Jakelun mallintaminen" hyödyllistä neuvoa, voit ensin toteuttaa perus-DPLL:n ja yksikköpropagaation ja lisätä sen jälkeen tässä kuvatun klausuulin oppimisen.*
+
+Kuvitellaan, että ohjelmasi etsii kaavalle F toteuttavaa totuusjakaumaa ja haku käsittelee osittaisjakaumaa T, jossa:
+- T voidaan nähdä jonona muuttujien arvoja: (x_1 = b_1), (x_2 = b_2), ..., (x_n = b_n), missä jokainen x_i on muuttuja ja jokainen b_i on joko 0 tai 1.
+- Koodissa tätä kannattaa mallintaa pinona (stack) kokonaislukuja (l_1, l_2, ..., l_n), jossa l_i = x_i, jos b_i = 1, ja l_i = -x_i, jos b_i = 0.
+- Huomaa, että osa T:n arvoista on päätettyjä (eli ohjelman itsensä asettamia) ja osa propagoituja (yksikköpropagaation seurauksia muista arvoista).
+
+Oletetaan, että T:n asettamien arvojen alla jokin F:n klausuuli on epätosi, eli T asettaa kaikki kyseisen klausuulin literaalit arvoon 0. Tällöin sanotaan, että T johtaa konfliktiin. Tämä tarkoittaa, ettei mikään F:n toteuttava jakauma voi olla T:n jatke, ja nykyinen hakuhaara on lopetettava. Perus-DPLL peruuttaisi tässä vaiheessa poistamalla viimeisimmän T:hen lisätyn arvon. Klausuulin oppiminen tekee tämän lisäksi seuraavaa: kaavaan F lisätään uusi klausuuli C_L, joka (yksikköpropagaation kautta) estää hakua tutkimasta samankaltaisia osia hakuavaruudesta uudelleen.
+
+Kaikkein yksinkertaisin klausuulin oppiminen lisäisi klausuulin, joka kieltää koko T:n: C_L = ¬l_1 ∨ ¬l_2 ∨ ... ∨ ¬l_n, eli DIMACS-muodossa C_L = -l_1 ∨ -l_2 ∨ ... ∨ -l_n. Tätä voidaan kuitenkin parantaa monella tavalla. **Harjoitustyössä vaaditaan, että C_L-klausuuli sisältää vain päätetyt muuttujat, ja jätetään pois ne, jotka yksikköpropagaatio on asettanut.**
+
+**Toisin sanoen: Harjoitustyössä vaaditaan, että aina kun osittaisjakauma johtaa konfliktiin, kaavaan lisätään klausuuli, joka sisältää kyseisen osittaisjakauman päätettyjen muuttujien negaatiot.**
+
+### Hyödyllisiä neuvoja
+**Jakelun mallintaminen:** Kaavan toteuttava jakauma kannattaa mallintaa pinona (stack) kokonaislukuja. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 1, pinoon lisätään x_i. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 0, pinoon lisätään -x_i. Voidaksesi toteuttaa vaaditun klausuulin oppimisen, jakelusi tulee tallentaa tieto siitä, mitkä arvoista ovat päätettyjä (ohjelman valitsemia) ja mitkä propagoituja (yksikköpropagaation seurauksia).
+
+**Testaus:**
+- Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia jonkin CDCL SAT -solverin tuloksiin. Esimerkiksi [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) soveltuvat tähän hyvin. Molempien repositorioista löytyy myös testilauseita: CaDiCaLin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
+[Kissatin testit](https://github.com/arminbiere/kissat/tree/master/test/cnf). Muista, että sekä CaDiCaL että Kissat ovat erittäin optimoituja CDCL-toteutuksia; tämän kurssin aikana oma ratkaisusi ei luultavasti pääse lähellekään samaa tehokkuutta.
+- Lisää testilauseita voi luoda esimerkiksi [CNFGen](https://massimolauria.net/cnfgen/)-työkalulla.
+
+**Lisähaastetta:** Jos haluat parantaa ohjelman tehokkuutta vaativammilla tekniikoilla (ei vaadita työn hyväksymiseen), voit tutustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8)-tapaan toteuttaa yksikköpropagaatio tehokkaasti. Huomaa, että ilman 2-watched literalia ohjelmasi luultavimmin pystyy ratkaisemaan vain noin 100 muuttujan kokoisia kaavoja. Tämä riittää harjoitustyöhön, mutta testisyötteiden koko kannattaa säätää sen mukaan. Lisää tehostusideoita löytyy esimerkiksi [Aalto Yliopiston](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/cdcl.html)  kurssimateriaalista.
+
+Yleisenä ohjenuorana: Tehokkuutta saavutetaan olemalla mahdollisimman “laiska” ja säilyttämällä niin vähän tilaa vievää tietoa kuin mahdollista. Kysymys “onko kaavalle F toteuttavaa jakaumaa” on sama kuin “voiko kaikille F:n muuttujille asettaa arvon niin, ettei mikään F:n klausuuleista ole epätosi”. Vaikka tämä on itsestään selvää, jälkimmäisen muotoilun etuna on, ettei sinun tarvitse ylläpitää tietoa toteutuneista klausuuleista. Riittää, että ylläpidät nykyistä osittaisjakaumaa ja tarkistat, onko jokin klausuuli epätosi sen alla.
+
+Huomaa, että SAT-solvereilla voi ratkoa monia erilaisia ongelmia mallintamalla ne ensin propositiologiikkaan. Saatko oman DPLL-algoritmisi riittävän tehokkaaksi, jotta se pystyy ratkomaan Sudokuja – entä [isoja sudokuja](https://www.puzzle-magazine.com/25x25-sudoku-strategy.php)?
+
+---
+
 ## Koneoppiminen
 Koneoppiminen on erittäin laaja alue josta löytyy paljon harjoitustyöhön sopivia 
 aiheita. Monissa koneoppimiseen liittyvissä aiheissa kannattaa muistaa, että algoritmit ovat stokastisia, 

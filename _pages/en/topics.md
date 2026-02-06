@@ -192,7 +192,7 @@ Information on Minesweeper solvers suitable for this course can be found in [Dav
 ---
 
 ## DPLL
-
+**Note: This specification is used up until (and including) the third period of 2025-2026** 
 [The Boolean satisfiability problem](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) is central to theoretical and applied computer science. Modern implementations of so-called CDCL algorithms (SAT solvers) are capable of determining the satisfiability of formulas containing millions of variables. Such algorithms are used in many [practical applications](https://en.wikipedia.org/wiki/SAT_solver#Applications); for example, efficient SAT solvers are essential in verifying the correctness of various circuits.
 Implementing an efficient CDCL algorithm is too demanding for a course project. Instead, in this topic we will study its predecessor, the [DPLL algorithm](https://en.wikipedia.org/wiki/DPLL_algorithm).
 
@@ -213,6 +213,41 @@ Further optimizations for your algorithm can be found in the [Aalto University c
 
 Keep in mind that SAT solvers can be used to solve various problems by first encoding them in propositional logic. Can you make your DPLL algorithm efficient enough to solve [Sudoku puzzles](https://sat.inesc-id.pt/~ines/publications/aimath06.pdf)?
 
+---
+## DPLL (new specification)
+**Note: this specification will be used starting in the fourth perdiod of 2025-2026**
+
+[The propositional satisfiability problem (SAT)](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) is central in both theoretical and applied computer science. Modern implementations of CDCL algorithms (SAT solvers) can decide the satisfiability of formulas with millions of variables. Such algorithms are used in many [practical applications](https://en.wikipedia.org/wiki/SAT_solver#Applications); efficient SAT solvers are, for example, essential for proving the correctness of various circuits.
+
+In this topic, you will implement a lightweight CDCL-style algorithm that can be viewed as a DPLL algorithm with simple clause learning added.
+
+### Detailed Specification
+Implement a program that reads a propositional formula in conjunctive normal form (CNF) in the [DIMACS file format](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS) and returns either a satisfying assignment for it or information that no such assignment exists. 
+
+To be an acceptable project: The program must use the [DPLL algorithm](https://en.wikipedia.org/wiki/DPLL_algorithm) with the simple clause learning scheme described below.
+
+### Simple Clause Learning
+*Note: Understanding the following may be easier if you first familiarize yourself with the DPLL algorithm and unit propagation. As long as you follow the tip related to how to model a truth assignment in the next section, you can implement basic DPLL and unit propagation first, and only then add the clause learning described here.*
+
+Imagine your program is seeking a satisfying assignment for formula F, and the search is handling a partial assignment T where: T can be seen as a sequence of variable values: (x_1 = b_1), (x_2 = b_2) .... (x_n = b_n), where each x_i is a variable and each b_i is either 0 or 1. In code, it is advisable to model this as a stack of integers (l_1, l_2, ... , l_n) where l_i = x_i if b_i = 1 and l_i = -x_i if b_i = 0. Note that some values set by T are decided (set explicitly by your program), and some are propagated, i.e., consequences found by unit propagation from other values.
+
+Now assume that under the values set by T, some clause of F is false, i.e., T sets all literals of that clause to 0. In this case, we say T leads to a conflict, which specifically means that no satisfying assignment of F can be an extension of T, and the current search branch is terminated. A basic DPLL algorithm would at this point backtrack by removing only the most recent value added to T. Clause learning additionally adds a new clause C_L to the formula F which (via unit propagation) prevents the search from revisiting similar parts of the search space.
+
+Perhaps the simplest clause learning scheme would add a clause that forbids the entire T, i.e., set C_L = not l_1 or not l_2 or ... or not l_n, or in DIMACS form, C_L = -l_1 or -l_2 or .... or -l_n. However, this can be improved in many ways. In the project, it is required that the clause C_L contains only the variables that are decisions and leaves out those set by unit propagation.
+
+**In other words: For a project on this topic to be acceptable, your program needs to add a clause containing the negation of all decided literals whenever the current partial assignment results in a conflict.**
+
+### Useful Tips 
+**Modeling the assignment:** The satisfying assignment is best modeled as a stack of integers. Whenever you want to explore a situation where variable x_i takes the value 1, push x_i onto the stack. Whenever you want to explore a situation where variable x_i takes the value 0, push -x_i. To be able to implement the required clause learning, your assignment representation must store which of the current values are decisions (chosen by your program) and which are propagated (consequences found by unit propagation).
+
+**Testing** You can test the correctness of your algorithm by comparing its results to those of a CDCL SAT solver. [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) or [Kissat](https://github.com/arminbiere/kissat) are well suited for this. Both repositories also include test formulas: [Kissat tests](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
+[Kissat tests](https://github.com/arminbiere/kissat/tree/master/test/cnf). Just remember that both CaDiCaL and Kissat are highly optimized CDCL implementations; during this course, your own solver will (most likely) not come close to similar performance.
+
+You can generate more test formulas with, for example, the [CNFGen](https://massimolauria.net/cnfgen/) tool.
+
+**Additional challenge** If you want to try to increase efficiency with more demanding techniques (not required for passing the project), you can look into the so-called [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) technique for efficient unit propagation. More potential optimizations for your algorithm can be found, for example, in [Aalto University’s course materials]((https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/cdcl.html)). As a general comment, efficiency is achieved by being as lazy as possible and maintaining as little information as possible. The question “does the formula F have a satisfying assignment” is the same as “can you assign values to all variables of F so that none of F’s clauses is false”. While this may feel obvious, the advantage of the latter formulation is that you do not need to maintain information about which clauses are already satisfied. All you need to maintain is the current partial assignment and whether some clause is false under it.
+
+Note that SAT solvers can be used to solve many different problems by first modeling them in propositional logic. Can you make your DPLL algorithm efficient enough to solve Sudokus—what about [large Sudokus](https://www.puzzle-magazine.com/25x25-sudoku-strategy.php)?
 ---
 ## Machine Learning
 Machine learning is a vast field with many topics suitable for a course project. When working on machine learning-related topics, it is important to remember that the algorithms are stochastic, meaning their output depends partly on the training data provided.
