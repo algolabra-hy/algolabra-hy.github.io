@@ -193,6 +193,7 @@ Information on Minesweeper solvers suitable for this course can be found in [Dav
 
 ## DPLL
 **Note: This specification is used up until (and including) the third period of 2025-2026** 
+
 [The Boolean satisfiability problem](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) is central to theoretical and applied computer science. Modern implementations of so-called CDCL algorithms (SAT solvers) are capable of determining the satisfiability of formulas containing millions of variables. Such algorithms are used in many [practical applications](https://en.wikipedia.org/wiki/SAT_solver#Applications); for example, efficient SAT solvers are essential in verifying the correctness of various circuits.
 Implementing an efficient CDCL algorithm is too demanding for a course project. Instead, in this topic we will study its predecessor, the [DPLL algorithm](https://en.wikipedia.org/wiki/DPLL_algorithm).
 

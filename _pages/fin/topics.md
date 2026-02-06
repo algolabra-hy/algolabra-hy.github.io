@@ -222,6 +222,7 @@ Tälle kurssille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Bec
 
 ## DPLL 
 **Huom: Tämä määrittely käytössä lukuvuoden 25-26 kolmanteen periodiin asti** 
+
 [Propositiologiikan päätösongelma](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) on 
 keskeinen sekä teoreettisessa, että soveltavassa tietojenkäsittelytieteessä. 
 Nykyaikaiset ns. CDCL algoritmien toteutukset (SAT-solverit) pystyvät päättämään miljoonia muutujia sisältävien 
@@ -260,7 +261,7 @@ jotta se pystyy ratkomaan [Sudokuja](https://sat.inesc-id.pt/~ines/publications/
 ---
 
 ## DPLL (tulossa)
-**Huom: Tämä määrittely käytössä lukuvuoden 25-25 neljännestä periodista alkaen**
+**Huom: Tämä määrittely käytössä lukuvuoden 25-26 neljännestä periodista alkaen**
 [Propositiologiikan päätösongelma (SAT)](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) on keskeinen sekä teoreettisessa että soveltavassa tietojenkäsittelytieteessä. Nykyaikaiset CDCL-algoritmien toteutukset (SAT-solverit) pystyvät päättämään miljoonia muuttujia sisältävien kaavojen toteutuvuuden. Tällaisia algoritmeja käytetään monissa [käytännön sovelluksissa](https://en.wikipedia.org/wiki/SAT_solver#Applications). Tehokkaat SAT-solverit ovat esimerkiksi oleellisia erilaisten piirien oikeellisuuden todentamisessa.
 
 Tässä aiheessa toteutetaan kevyt CDCL-tyylinen algoritmi, jonka voi nähdä DPLL-algoritmina, johon on lisätty yksinkertainen klausuulin oppiminen.
