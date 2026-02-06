@@ -273,7 +273,7 @@ Hyväksyttävässä toteutuksessa on oltava [yksikköpropagaatio](https://en.wik
 DPLL algoritmin tarkempi selitys löytyy esim. [täältä](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html).
 
 ### Yksinkertainen klausuulin oppiminen
-*Huom: Seuraavan ymmärtäminen voi olla helpompaa, jos ensin tutustut DPLL-algoritmiin ja yksikköpropagaatioon. Kun noudatat seuraavan kappaleen kohdan "Jakelun mallintaminen" hyödyllistä neuvoa, voit ensin toteuttaa perus-DPLL:n ja yksikköpropagaation ja lisätä sen jälkeen tässä kuvatun klausuulin oppimisen.*
+*Huom: Seuraavan ymmärtäminen voi olla helpompaa, jos ensin tutustut DPLL-algoritmiin ja yksikköpropagaatioon. Kun noudatat seuraavan kappaleen kohdan "Jakauman mallintaminen" hyödyllistä neuvoa, voit ensin toteuttaa perus-DPLL:n ja yksikköpropagaation ja lisätä sen jälkeen tässä kuvatun klausuulin oppimisen.*
 
 Kuvitellaan, että ohjelmasi etsii kaavalle F toteuttavaa totuusjakaumaa ja haku käsittelee osittaisjakaumaa T, jossa:
 - T voidaan nähdä jonona muuttujien arvoja: (x_1 = b_1), (x_2 = b_2), ..., (x_n = b_n), missä jokainen x_i on muuttuja ja jokainen b_i on joko 0 tai 1.
@@ -287,7 +287,7 @@ Kaikkein yksinkertaisin klausuulin oppiminen lisäisi klausuulin, joka kieltää
 **Toisin sanoen: Harjoitustyössä vaaditaan, että aina kun osittaisjakauma johtaa konfliktiin, kaavaan lisätään klausuuli, joka sisältää kyseisen osittaisjakauman päätettyjen muuttujien negaatiot.** Monimutkaisemmat klausuulinoppimistavat ovat myös hyväksyttäviä. 
 
 ### Hyödyllisiä neuvoja
-**Jakelun mallintaminen:** Kaavan toteuttava jakauma kannattaa mallintaa pinona (stack) kokonaislukuja. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 1, pinoon lisätään x_i. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 0, pinoon lisätään -x_i. Voidaksesi toteuttaa vaaditun klausuulin oppimisen, jakelusi tulee tallentaa tieto siitä, mitkä arvoista ovat päätettyjä (ohjelman valitsemia) ja mitkä propagoituja (yksikköpropagaation seurauksia).
+**Jakauman mallintaminen:** Kaavan toteuttava jakauma kannattaa mallintaa pinona (stack) kokonaislukuja. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 1, pinoon lisätään x_i. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 0, pinoon lisätään -x_i. Voidaksesi toteuttaa vaaditun klausuulin oppimisen, jakelusi tulee tallentaa tieto siitä, mitkä arvoista ovat päätettyjä (ohjelman valitsemia) ja mitkä propagoituja (yksikköpropagaation seurauksia).
 
 **Testaus:**
 - Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia jonkin CDCL SAT -solverin tuloksiin. Esimerkiksi [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) soveltuvat tähän hyvin. Molempien repositorioista löytyy myös testilauseita: CaDiCaLin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
