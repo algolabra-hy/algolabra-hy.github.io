@@ -236,7 +236,7 @@ Now assume that under the values set by T, some clause of F is false, i.e., T se
 
 Perhaps the simplest clause learning scheme would add a clause that forbids the entire T, i.e., set C_L = not l_1 or not l_2 or ... or not l_n, or in DIMACS form, C_L = -l_1 or -l_2 or .... or -l_n. However, this can be improved in many ways. In the project, it is required that the clause C_L contains only the variables that are decisions and leaves out those set by unit propagation.
 
-**In other words: For a project on this topic to be acceptable, your program needs to add a clause containing the negation of all decided literals whenever the current partial assignment results in a conflict.**
+**In other words: For a project on this topic to be acceptable, your program needs to add a clause containing the negation of all decided literals whenever the current partial assignment results in a conflict.** More advanced clause learning schemes are also acceptable.
 
 ### Useful Tips 
 **Modeling the assignment:** The satisfying assignment is best modeled as a stack of integers. Whenever you want to explore a situation where variable x_i takes the value 1, push x_i onto the stack. Whenever you want to explore a situation where variable x_i takes the value 0, push -x_i. To be able to implement the required clause learning, your assignment representation must store which of the current values are decisions (chosen by your program) and which are propagated (consequences found by unit propagation).

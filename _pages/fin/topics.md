@@ -284,7 +284,7 @@ Oletetaan, että T:n asettamien arvojen alla jokin F:n klausuuli on epätosi, el
 
 Kaikkein yksinkertaisin klausuulin oppiminen lisäisi klausuulin, joka kieltää koko T:n: C_L = ¬l_1 ∨ ¬l_2 ∨ ... ∨ ¬l_n, eli DIMACS-muodossa C_L = -l_1 ∨ -l_2 ∨ ... ∨ -l_n. Tätä voidaan kuitenkin parantaa monella tavalla. **Harjoitustyössä vaaditaan, että C_L-klausuuli sisältää vain päätetyt muuttujat, ja jätetään pois ne, jotka yksikköpropagaatio on asettanut.**
 
-**Toisin sanoen: Harjoitustyössä vaaditaan, että aina kun osittaisjakauma johtaa konfliktiin, kaavaan lisätään klausuuli, joka sisältää kyseisen osittaisjakauman päätettyjen muuttujien negaatiot.**
+**Toisin sanoen: Harjoitustyössä vaaditaan, että aina kun osittaisjakauma johtaa konfliktiin, kaavaan lisätään klausuuli, joka sisältää kyseisen osittaisjakauman päätettyjen muuttujien negaatiot.** Monimutkaisemmat klausuulinoppimistavat ovat myös hyväksyttäviä. 
 
 ### Hyödyllisiä neuvoja
 **Jakelun mallintaminen:** Kaavan toteuttava jakauma kannattaa mallintaa pinona (stack) kokonaislukuja. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 1, pinoon lisätään x_i. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 0, pinoon lisätään -x_i. Voidaksesi toteuttaa vaaditun klausuulin oppimisen, jakelusi tulee tallentaa tieto siitä, mitkä arvoista ovat päätettyjä (ohjelman valitsemia) ja mitkä propagoituja (yksikköpropagaation seurauksia).
