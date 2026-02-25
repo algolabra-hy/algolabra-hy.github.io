@@ -221,47 +221,6 @@ Tälle kurssille sopivista miinaharavan ratkaisijoista löytyy tietoa [David Bec
 ---
 
 ## DPLL 
-**Huom: Tämä määrittely käytössä lukuvuoden 25-26 kolmanteen periodiin asti** 
-
-[Propositiologiikan päätösongelma](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) (SAT) on 
-keskeinen sekä teoreettisessa, että soveltavassa tietojenkäsittelytieteessä. 
-Nykyaikaiset ns. CDCL algoritmien toteutukset (SAT-solverit) pystyvät päättämään miljoonia muutujia sisältävien 
-kaavojen toteutuvuuden. Tälläisiä algoritmeja käytetään monissa [käytännön sovelluksissa](https://en.wikipedia.org/wiki/SAT_solver#Applications),
-tehokkaat SAT solverit ovat esimerkiksi oleellisia erilaisten piirien oikeellisuden varmistamisessa. 
-
-Tehokkaan CDCL algoritmin toteuttaminen harjoitustyön aikana on liian vaativaa. Sen sijaan tässä
-aiheessa tutkimme sen edeltäjää, [DPLL](https://en.wikipedia.org/wiki/DPLL_algorithm) algoritmia. 
-
-### Tarkempi määrittely
-Toteuta ohjelma, joka lukee propositioloogisen kaavan konjunktiivisessa 
-normaalimuodossa [DIMACS](https://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/SATLINK____DIMACS) tiedostomuodossa 
-ja palauttaa joko sen toteuttavan totuusjakauman, tai tiedon siitä, ettei tälläistä jakaumaa ole. Ohjelman pitää käyttää DPLL algoritmia. 
-
-Ollakseen hyväksyttävä ohjelman täytyy toteuttaa [yksikköpropagaatio](https://en.wikipedia.org/wiki/Unit_propagation) ja [
-puhtaan literaalin poisto](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/preprocessing.html#pure-literal-elimination). 
-Katso tarkempi selitys algoritmista [täältä](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/dpll.html). Kaavan käsittelyyn vaadittavat 
-tietorakenteet täytyy toteuttaa itse. Aihe on parasta toteuttaa **C++** kielellä. 
-
-### Hyödyllisiä neuvoja 
-Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia johonkin CDCL SAT solverin tuloksiin. Esim [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) ovat tähän oikeen soveltuvia. Molemmissa näiden repositorioissa löytyy myös testilauseita: [CaDiCaLin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
-[Kissatin testit](https://github.com/arminbiere/kissat/tree/master/test/cnf). Muista vaan, että sekä CaDiCal, että Kissat ovat erittäin optimoituja CDCL algoritmin toteutuksia, tämän kurssin aikana oma ratkojasi ei pääse lähellekkään samanlaista tehokkuutta. 
-
-Lisää testilauseita voi luoda esim: [CNFGen](https://massimolauria.net/cnfgen/) työkalulla. 
-
-**Lisähaastetta**
-Jos haluat lisähaastetta voit tutustua ns. [2-watched literal](https://www.youtube.com/watch?v=n3e-f0vMHz8) tapaan toteuttaa yksikköpropagaatio tehokkaasti. 
-Huomaa, että ilman 2-watched literaalia ohjelmasi luutavimmin pystyy vain ~100 muuttujan kokoisten kaavojen ratkaisuun. Tämä riittää harjoitustyöhön, mutta 
-testisyötteitesi koko kannattaa säätää tämän mukaan. 
-Lisää mahdollisia tehostuksia algoritmillesi löytyy esim [Aalto Yliopiston](https://users.aalto.fi/~tjunttil/2020-DP-AUT/notes-sat/cdcl.html) kurssimateriaalista. 
-Oleellisena (mutta haasteellisena) tehostuksena mainittakoon konfliktiklausuulien oppiminen ja epäkronolooginen taaksepäinhyppy. 
-
-Huomaa, että SAT solvereilla voi ratkoa monta erilaista ongelmaa mallintamalla ne ensiksi propositiologiikaan. Saatko omasta DPLL algoritmistasi tarpeeksi tehokkaan,
-jotta se pystyy ratkomaan [Sudokuja](https://sat.inesc-id.pt/~ines/publications/aimath06.pdf)?
-
----
-
-## DPLL (tulossa)
-**Huom: Tämä määrittely käytössä lukuvuoden 25-26 neljännestä periodista alkaen**
 [Propositiologiikan päätösongelma (SAT)](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) on keskeinen sekä teoreettisessa että soveltavassa tietojenkäsittelytieteessä. Nykyaikaiset CDCL-algoritmien toteutukset (SAT-solverit) pystyvät päättämään miljoonia muuttujia sisältävien kaavojen toteutuvuuden. Tällaisia algoritmeja käytetään monissa [käytännön sovelluksissa](https://en.wikipedia.org/wiki/SAT_solver#Applications). Tehokkaat SAT-solverit ovat esimerkiksi oleellisia erilaisten piirien oikeellisuuden todentamisessa.
 
 Tässä aiheessa toteutetaan kevyt CDCL-tyylinen algoritmi, jonka voi nähdä DPLL-algoritmina, johon on lisätty yksinkertainen klausuulin oppiminen.
@@ -290,7 +249,7 @@ Kaikkein yksinkertaisin klausuulin oppiminen lisäisi klausuulin, joka kieltää
 **Jakauman mallintaminen:** Kaavan toteuttava jakauma kannattaa mallintaa pinona (stack) kokonaislukuja. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 1, pinoon lisätään x_i. Kun tutkitaan tilannetta, jossa muuttuja x_i saa arvon 0, pinoon lisätään -x_i. Voidaksesi toteuttaa vaaditun klausuulin oppimisen, jakelusi tulee tallentaa tieto siitä, mitkä arvoista ovat päätettyjä (ohjelman valitsemia) ja mitkä propagoituja (yksikköpropagaation seurauksia).
 
 **Testaus:**
-- Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia jonkin CDCL SAT -solverin tuloksiin. Esimerkiksi [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) soveltuvat tähän hyvin. Molempien repositorioista löytyy myös testilauseita: CaDiCaLin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
+- Oman algoritmin oikeellisuutta voi testata vertaamalla sen tuloksia jonkin CDCL SAT -solverin tuloksiin. Esimerkiksi [CaDiCaL](https://github.com/arminbiere/cadical/tree/master) tai [Kissat](https://github.com/arminbiere/kissat) soveltuvat tähän hyvin. Molempien repositorioista löytyy myös testilauseita: [CaDiCaLin testit](https://github.com/arminbiere/cadical/tree/master/test/cnf), 
 [Kissatin testit](https://github.com/arminbiere/kissat/tree/master/test/cnf). Muista, että sekä CaDiCaL että Kissat ovat erittäin optimoituja CDCL-toteutuksia; tämän kurssin aikana oma ratkaisusi ei luultavasti pääse lähellekään samaa tehokkuutta.
 - Lisää testilauseita voi luoda esimerkiksi [CNFGen](https://massimolauria.net/cnfgen/)-työkalulla.
 
